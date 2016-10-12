@@ -37,9 +37,9 @@ group :development do
   gem 'spring'
 
   gem 'capistrano', '~> 3.6.1', require: false
-  gem 'capistrano-rails', '~> 1.1.8',require: false
+  gem 'capistrano-rails', '~> 1.1.8', require: false
   gem 'capistrano-bundler', '~> 1.1.2', require: false
-  gem 'capistrano-rvm', '0.1.2',require: false
+  gem 'capistrano-rvm', '0.1.2', require: false
   gem 'capistrano-passenger', '~> 0.2', require: false
 end
 

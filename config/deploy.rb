@@ -32,20 +32,20 @@ append :linked_dirs, 'log', 'tmp/pids', 'tmp/cache', 'tmp/sockets', 'public/asse
 # for the best compression
 task :compress_assets do
   on roles(:app) do
-    assets_path = release_path.join('public', fetch(:assets_prefix))
+    assets_path = release_path.join('public', 'assets')
     execute "find -L #{assets_path} \\( -name *.js -o -name *.css -o -name *.ico -o -name *.svg -o -name *.pdf \\) -exec bash -c \"[ ! -f '{}.gz' ] && zopfli --gzip --i20 '{}'\" \\; "
   end
 end
 
 task :compress_png do
   on roles(:app) do
-    assets_path = release_path.join('public', fetch(:assets_prefix))
+    assets_path = release_path.join('public', 'assets')
     execute "find -L #{assets_path} \\( -name *.png \\) -not \\( -name 'zopflied_*.png' \\) -exec bash -c 'FULLPATH='{}'; FILENAME=${FULLPATH##*/}; BASEDIRECTORY=${FULLPATH%$FILENAME}; [ ! -f \"${BASEDIRECTORY}zopflied_${FILENAME}\" ] && zopflipng \"${FULLPATH}\" \"${BASEDIRECTORY}zopflied_${FILENAME}\" ' \\; "
   end
 end
 
-after 'deploy:normalize_assets', 'compress_assets'
-after 'deploy:normalize_assets', 'compress_png'
+after 'deploy:normalise_assets', 'compress_assets'
+after 'deploy:normalise_assets', 'compress_png'
 
 # Default value for default_env is {}
 # set :default_env, { path: "/opt/ruby/bin:$PATH" }
