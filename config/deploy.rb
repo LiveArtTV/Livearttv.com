@@ -27,7 +27,7 @@ set :repo_url, 'git@github.com:SumatoSoft/eliteshopping.git'
 append :linked_files, 'config/database.yml', 'config/secrets.yml'
 
 # Default value for linked_dirs is []
-append :linked_dirs, 'log', 'tmp/pids', 'tmp/cache', 'tmp/sockets', 'public/assets'
+append :linked_dirs, 'log', 'tmp/pids', 'tmp/cache', 'tmp/sockets', 'public/assets', 'public/spree'
 
 # for the best compression
 task :compress_assets do
@@ -37,7 +37,15 @@ task :compress_assets do
   end
 end
 
+task :compress_png do
+  on roles(:app) do
+    assets_path = release_path.join('public', fetch(:assets_prefix))
+    execute "find -L #{assets_path} \\( -name *.png \\) -not \\( -name 'zopflied_*.png' \\) -exec bash -c 'FULLPATH='{}'; FILENAME=${FULLPATH##*/}; BASEDIRECTORY=${FULLPATH%$FILENAME}; [ ! -f \"${BASEDIRECTORY}zopflied_${FILENAME}\" ] && zopflipng \"${FULLPATH}\" \"${BASEDIRECTORY}zopflied_${FILENAME}\" ' \\; "
+  end
+end
+
 after 'deploy:normalize_assets', 'compress_assets'
+after 'deploy:normalize_assets', 'compress_png'
 
 # Default value for default_env is {}
 # set :default_env, { path: "/opt/ruby/bin:$PATH" }
