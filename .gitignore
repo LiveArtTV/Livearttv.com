@@ -33,6 +33,7 @@ db/*.sqlite3
 /public/shared/avatars
 /config/config.yml
 /config/database.yml
+/config/secrets.yml
 /coverage.data
 /coverage/
 /db/*.javadb/
