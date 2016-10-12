@@ -1,7 +1,7 @@
 default: &default
   adapter: postgresql
   encoding: unicode
-  username: app
+  username: postgres
   pool: 10
  
 development:

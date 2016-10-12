@@ -76,4 +76,26 @@ Rails.application.configure do
 
   # Do not dump schema after migrations.
   config.active_record.dump_schema_after_migration = false
+
+  config.assets.configure do |env|
+    env.gzip = false
+  end
+
+  config.action_mailer.delivery_method = :safety_mailer
+  config.action_mailer.safety_mailer_settings = {
+    allowed_matchers: [ // ],
+    delivery_method: :smtp,
+    delivery_method_settings: {
+      user_name: 'email_sumatosoft',
+      password: 'sumatosoft12345',
+      domain: 'demo.sumatosoft.com',
+      address: 'smtp.sendgrid.net',
+      port: 587,
+      authentication: :plain,
+      enable_starttls_auto: true
+    }
+  }
+
+  config.action_mailer.default_url_options = { host: 'eliteshopping.demo.sumatosoft.com' }
+
 end

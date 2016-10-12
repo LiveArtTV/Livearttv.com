@@ -26,10 +26,19 @@ group :development, :test do
   gem 'byebug'
 end
 
+group :development, :staging do
+  gem 'safety_mailer', '~> 0.0.10'
+end
+
 group :development do
   # Access an IRB console on exception pages or by using <%= console %> in views
   gem 'web-console', '~> 2.0'
   # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
   gem 'spring'
+
+  gem 'capistrano-rails', '~> 1.1',require: false
+  gem 'capistrano-bundler', '~> 1.1', require: false
+  gem 'capistrano-rvm', '0.1',require: false
+  gem 'capistrano-passenger', '~> 0.2', require: false
 end
 
