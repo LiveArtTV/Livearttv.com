@@ -44,8 +44,8 @@ task :compress_png do
   end
 end
 
-after 'deploy:normalise_assets', 'compress_assets'
-after 'deploy:normalise_assets', 'compress_png'
+after 'deploy:normalize_assets', 'compress_assets'
+after 'deploy:normalize_assets', 'compress_png'
 
 # Default value for default_env is {}
 # set :default_env, { path: "/opt/ruby/bin:$PATH" }
