@@ -39,3 +39,7 @@ group :development do
   gem 'capistrano-passenger', '~> 0.2', require: false
 end
 
+group :staging, :production do
+  gem 'airbrake', '~> 5.4.5'
+end
+
