@@ -8,6 +8,9 @@ gem 'coffee-rails', '~> 4.1.0'
 gem 'jquery-rails'
 gem 'turbolinks'
 gem 'jbuilder', '~> 2.0'
+gem 'haml'
+gem 'haml-rails'
+
 # bundle exec rake doc:rails generates the API under doc/api.
 
 # Use ActiveModel has_secure_password
@@ -16,10 +19,12 @@ gem 'jbuilder', '~> 2.0'
 gem 'spree', '~> 3.1.0'
 gem 'spree_auth_devise', '~> 3.1.0'
 gem 'spree_gateway', '~> 3.1.0'
+gem 'spree_videos', git: 'https://github.com/clevertechru/spree_videos.git', branch: '3-1-stable'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug'
+  gem 'mysql2'
 end
 
 group :development, :staging do
@@ -31,6 +36,9 @@ group :development do
   gem 'web-console', '~> 2.0'
   # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
   gem 'spring'
+
+  gem 'better_errors'
+  gem 'pry'
 
   gem 'capistrano', '~> 3.6.1', require: false
   gem 'capistrano-rails', '~> 1.1.8', require: false

@@ -13,3 +13,6 @@
  *= require_tree .
  *= require_self
  */
+div.spree-video-thumbnails{
+    padding: 3px 0;
+}
