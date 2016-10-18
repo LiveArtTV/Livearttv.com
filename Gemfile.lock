@@ -1,6 +1,15 @@
 GIT
+  remote: git://github.com/DynamoMTL/spree_chimpy.git
+  revision: 85b6140441a0755fbba6fd7dbc2c5d618352e11f
+  branch: 3-stable
+  specs:
+    spree_chimpy (2.0.0.alpha)
+      mailchimp-api (~> 2.0.5)
+      spree_core (~> 3.1)
+
+GIT
   remote: https://github.com/clevertechru/spree_videos.git
-  revision: 8fca7d452c57d22ffd5a1aafba68c612d2b1f3f3
+  revision: 8b114c6107aba8591c6c97b105a97ebde701b510
   branch: 3-1-stable
   specs:
     spree_videos (3.1.0)
@@ -177,6 +186,9 @@ GEM
       nokogiri (>= 1.5.9)
     mail (2.6.4)
       mime-types (>= 1.16, < 4)
+    mailchimp-api (2.0.6)
+      excon (>= 0.16.0)
+      json (>= 1.7.7)
     method_source (0.8.2)
     mime-types (3.1)
       mime-types-data (~> 3.2015)
@@ -422,6 +434,7 @@ DEPENDENCIES
   sass-rails (~> 5.0)
   spree (~> 3.1.0)
   spree_auth_devise (~> 3.1.0)
+  spree_chimpy!
   spree_gateway (~> 3.1.0)
   spree_videos!
   spring

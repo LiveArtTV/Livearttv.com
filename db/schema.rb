@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161013111633) do
+ActiveRecord::Schema.define(version: 20161018154753) do
 
   create_table "friendly_id_slugs", force: :cascade do |t|
     t.string   "slug",           limit: 255, null: false
@@ -104,6 +104,21 @@ ActiveRecord::Schema.define(version: 20161013111633) do
   add_index "spree_calculators", ["calculable_id", "calculable_type"], name: "index_spree_calculators_on_calculable_id_and_calculable_type", using: :btree
   add_index "spree_calculators", ["deleted_at"], name: "index_spree_calculators_on_deleted_at", using: :btree
   add_index "spree_calculators", ["id", "type"], name: "index_spree_calculators_on_id_and_type", using: :btree
+
+  create_table "spree_chimpy_order_sources", force: :cascade do |t|
+    t.integer  "order_id",    limit: 4
+    t.string   "campaign_id", limit: 255
+    t.string   "email_id",    limit: 255
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "spree_chimpy_subscribers", force: :cascade do |t|
+    t.string   "email",      limit: 255,                null: false
+    t.boolean  "subscribed",             default: true
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "spree_countries", force: :cascade do |t|
     t.string   "iso_name",        limit: 255
@@ -1016,6 +1031,7 @@ ActiveRecord::Schema.define(version: 20161013111633) do
     t.string   "confirmation_token",     limit: 255
     t.datetime "confirmed_at"
     t.datetime "confirmation_sent_at"
+    t.boolean  "subscribed"
   end
 
   add_index "spree_users", ["bill_address_id"], name: "index_spree_users_on_bill_address_id", using: :btree
