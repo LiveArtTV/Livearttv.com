@@ -12,8 +12,8 @@
 }
 .sca-qv-product-compare-price{color:#444;font-size:16px;}
 .sca-qv-zoom-container div{
-	display:inline-block !important;
-  margin:0 auto !important
+  display:inline-block !important;
+  margin:0 auto !important;
 }
 
 .sca-qv-zoom-container {
@@ -93,7 +93,7 @@ input.disabled.sca-qv-cartbtn:hover {
 }
 @-moz-document url-prefix() { .sca-qv-product-options select { height: 30px; line-height: 30px; } } /* Firefox fix */
 
-.sca-qv-hidden {display: none!important}
+.sca-qv-hidden { display: none !important; }
 
 .sca-qv-price-container{
   
@@ -131,8 +131,8 @@ input.disabled.sca-qv-cartbtn:hover {
 }
 .sca-qv-gallery {
     margin-bottom: 10px;
-    margin-right: 0px !important;
-    margin-left: 0px !important;
+    margin-right: 0 !important;
+    margin-left: 0 !important;
     text-align: center;
 }
 
@@ -180,7 +180,7 @@ input.disabled.sca-qv-cartbtn:hover {
 
 
 .zoomWrapper {
-	max-width: 100% !important
+	max-width: 100% !important;
 }
 
 
@@ -193,18 +193,18 @@ input.disabled.sca-qv-cartbtn:hover {
 
 .image-zoom-featured {
 	max-width: 367px !important;
-	height: auto !important
+	height: auto !important;
 }
 .sca-qv-gallery a img {
 	border: 1px solid #fff;
 }
 
 .zoomGalleryActive img,.sca-qv-gallery img:hover,#gal1 img:hover {
-	border: 1px solid #fc4c03 !important
+	border: 1px solid #fc4c03 !important;
 }
 
 .zoomGalleryActive img,.sca-qv-gallery img:hover,#gal1 img:hover {
-	border: 1px solid #fc4c03 !important
+	border: 1px solid #fc4c03 !important;
 }
 /***************************/
 .sca-qv-image{position:relative;} 
@@ -279,7 +279,7 @@ float:right;
 	}
 }
 @media ( max-width : 767px) {
- .sca-qv-image .sca-qv-button{display:none !important;}  
+ .sca-qv-image .sca-qv-button{ display:none !important; }
 }
 
 /***************************/
@@ -289,12 +289,12 @@ margin-left:12px;
 height:37px !important;
 line-height:37px !important;
 }
-.sca-qv-product-options{border-bottom:0px !important;} 
+.sca-qv-product-options{border-bottom:0 !important;}
 .sca-qv-product-options select {
     padding: 5px 6px !important;
 }
 /***************************/
-.sca-qv-optionrow div {margin-bottom:0px; !important;}
+.sca-qv-optionrow div {margin-bottom:0; !important;}
 /*.sca-qv-optionrow {width:300px !important;}*/
 .sca-qv-optionrow div {max-width: none !important;}
 #sca-qv-add-item-form {
