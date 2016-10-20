@@ -289,12 +289,12 @@ margin-left:12px;
 height:37px !important;
 line-height:37px !important;
 }
-.sca-qv-product-options{border-bottom:0 !important;}
+.sca-qv-product-options{border-bottom: 0 !important;}
 .sca-qv-product-options select {
     padding: 5px 6px !important;
 }
 /***************************/
-.sca-qv-optionrow div {margin-bottom:0; !important;}
+.sca-qv-optionrow div {margin-bottom: 0 !important;}
 /*.sca-qv-optionrow {width:300px !important;}*/
 .sca-qv-optionrow div {max-width: none !important;}
 #sca-qv-add-item-form {
