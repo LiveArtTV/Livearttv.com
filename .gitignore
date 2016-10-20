@@ -98,3 +98,5 @@ Guardfile
 .ruby-version
 
 .yardoc
+
+/public/_ap_rojo_files
