@@ -22,6 +22,7 @@ gem 'spree_gateway', '~> 3.1.0'
 gem 'spree_videos', git: 'https://github.com/clevertechru/spree_videos.git', branch: '3-1-stable'
 # gem 'spree_videos', path: 'lib/gems/spree_videos'
 gem 'spree_chimpy', github: 'DynamoMTL/spree_chimpy', branch: '3-stable'
+gem 'spree_static_content', github: 'spree-contrib/spree_static_content', branch: 'master'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
