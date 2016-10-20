@@ -607,7 +607,7 @@
 
               });
     .button_product_list.text-center
-      %a.btn_home_page.btn.btn-center{:href => "#!collections/all"}
+      %a.btn_home_page.btn.btn-center{href: products_path}
         View all items
 
 - if products.respond_to?(:total_pages)

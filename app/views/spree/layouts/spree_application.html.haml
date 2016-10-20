@@ -14,7 +14,7 @@
   = render partial: 'spree/shared/google_analytics.js'
   = render partial: 'spree/shared/header'
   %main.main-content
-    = render partial: 'shared/slider' if store_block?
+    = render partial: 'shared/slider' if store_block? && slider_block?
   .container
     .row{"data-hook" => ""}
       = breadcrumbs(@taxon)

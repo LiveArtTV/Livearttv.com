@@ -29,7 +29,7 @@
         #apollo-top-menu.collapse.navbar-collapse.hidden-xs.hidden-sm
           %ul.nav.navbar-nav.megamenu
             %li.parent.dropdown.full-width
-              %a.dropdown-toggle.has-category{"data-toggle" => "dropdown", :href => "#!collections/all", :target => "_self", :title => "Category"}
+              %a.dropdown-toggle.has-category{"data-toggle" => "dropdown", href: products_path, target: "_self", title: "Category"}
                 %span.menu-title Category
                 %b.caret
               .dropdown-sub.dropdown-menu.sub-apmegamenu-1
@@ -40,32 +40,15 @@
                         .col-sm-6
                           .mega-col-inner
                             .menu-title
-                              %a{:href => "#!collections", :title => "Collection"}
+                              %a{href: products_path, :title => "Collection"}
                                 Collection
                             .widget-inner
+                              - @taxons = @taxon && @taxon.parent ? @taxon.parent.children : Spree::Taxon.roots
                               %ul.nav-links
-                                %li
-                                  %a{:href => "#!collections/comb", :title => "Left Sidebar Grid"}
-                                    Left Sidebar
-                                    Grid
-                                %li
-                                  %a{:href => "#!collections/classroom", :title => "Right Sidebar Grid"}
-                                    Right
-                                    Sidebar Grid
-                                %li
-                                  %a{:href => "#!collections/cut", :title => "Fullwidth Grid"} Fullwidth Grid
-                                %li
-                                  %a{:href => "#!collections/office", :title => "Left Sidebar List"}
-                                    Left Sidebar
-                                    List
-                                %li
-                                  %a{:href => "#!collections/play-room", :title => "Right Sidebar List"}
-                                    Right
-                                    Sidebar List
-                                %li
-                                  %a{:href => "#!collections/dining-room", :title => "Fullwidth List"}
-                                    Fullwidth
-                                    List
+                                - cache(cache_key_for_taxons) do
+                                  - @taxons.each do |taxon|
+                                    %li
+                                      = link_to taxon.name, seo_url(taxon)
                         .col-sm-6
                           .mega-col-inner
                             .menu-title
@@ -140,7 +123,7 @@
                           .box-image
                             %img.img-responsive{:alt => "HTML", :src => "./ap_rojo_files/apmenuitem_ihtml_1.jpg"}/
             %li
-              %a{:href => "#!collections", :target => "_self", :title => "Shop"}
+              %a{href: products_path, target: "_self", title: "Shop"}
                 %span Shop
             %li.parent.dropdown.full-width.active
               %a.dropdown-toggle.has-category{"data-toggle" => "dropdown", :href => "#!", :target => "_self", :title => "Blog"}
