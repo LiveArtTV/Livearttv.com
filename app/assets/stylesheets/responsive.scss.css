@@ -1,0 +1,66 @@
+@media (max-width: 991px) {
+    #paneltool, .customer-service {
+        display: none
+    }
+
+    #back-top {
+        display: none
+    }
+
+    .page-404 h1 {
+        font-size: 100px
+    }
+
+    .page-404 h2 {
+        font-size: 40px
+    }
+
+    .page-404 .des_cription_404 {
+        font-size: 16px
+    }
+
+    .page-404 .btn_404 {
+        margin-top: 15px
+    }
+
+    .header_user_info .popup-title {
+        display: block;
+        margin: 0px 10px;
+        padding: 0px 10px
+    }
+
+    .header_user_info .links {
+        visibility: hidden
+    }
+}
+
+@media (max-width: 767px) {
+    .video-container {
+        position: relative;
+        padding-bottom: 56.25%
+    }
+
+    .video-container iframe {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100% !important;
+        height: 100% !important
+    }
+}
+
+@media (max-width: 480px) {
+    .page-404 h1 {
+        font-size: 80px;
+        line-height: 100px
+    }
+
+    .page-404 h2 {
+        font-size: 30px;
+        letter-spacing: 5px
+    }
+
+    .page-404 .des_cription_404 {
+        font-size: 14px
+    }
+}

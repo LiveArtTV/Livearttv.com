@@ -13,6 +13,8 @@
 %body{:class => body_class, "data-hook" => "body", :id => @body_id || 'default'}
   = render partial: 'spree/shared/google_analytics.js'
   = render partial: 'spree/shared/header'
+  %main.main-content
+    = render partial: 'shared/slider' if store_block?
   .container
     .row{"data-hook" => ""}
       = breadcrumbs(@taxon)
@@ -21,3 +23,4 @@
         = flash_messages
         = yield
       = yield :templates
+  = render partial: 'spree/shared/footer'

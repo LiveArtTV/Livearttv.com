@@ -1,0 +1,54 @@
+.container
+  .row
+    %section#slideshow.clearfix
+      .col-lg-8.col-md-12.col-ms-12.col-xs-12
+        .slider-container
+          #sliderlayer.apollo_slides.clearfix.nivoSlider
+            %a.slide-link.nivo-imageLink{:href => "https://ap-rojo.myshopify.com/collections/all", :style => "display: block;"}
+              %img.img-responsive{:alt => "decor for living room", :src => "./ap_rojo_files/slideshow_image_1.jpg", :style => "width: 773px; visibility: hidden;", :title => "#htmlcaption1"}/
+            %img.nivo-main-image{:src => "./ap_rojo_files/slideshow_image_1.jpg", :style => "display: inline; height: auto; width: 773px;"}/
+            .nivo-caption{:style => "display: block;"}
+              .slide-caption.caption_1
+                %div
+                  .text_first{:style => "color:#ffffff"} 29% off your 1st order
+                  %h3{:style => "color:#ffffff"} decor for living room
+                  %p{:style => "color:#ffffff"} hot trending decoration
+                  %a.btn.btn-slide{:href => "https://ap-rojo.myshopify.com/#", :title => "More Detail"} More Detail
+            .nivo-directionNav
+              %a.nivo-prevNav Prev
+              %a.nivo-nextNav Next
+          .nivo-controlNav
+            %a.nivo-control.active{:rel => "0"} 1
+          #htmlcaption1.apollo-html-caption
+            .slide-caption.caption_1
+              %div
+                .text_first{:style => "color:#ffffff"} 29% off your 1st order
+                %h3{:style => "color:#ffffff"} decor for living room
+                %p{:style => "color:#ffffff"} hot trending decoration
+                %a.btn.btn-slide{:href => "https://ap-rojo.myshopify.com/#", :title => "More Detail"} More Detail
+      .hidden-md.hidden-sm.hidden-xs.hidden-sp.col-lg-4.col-md-12.col-sm-12.col-xs-12.col-sp-12
+        .banner-slide.hidden-sm.hidden-xs
+          .list-group_banner.banner-top.img_anim
+            %a{:href => "https://ap-rojo.myshopify.com/#"}
+              %img{:alt => "banner", :src => "./ap_rojo_files/top_image_banner.jpg"}/
+          .list-group_banner.banner-bt.img_anim
+            %a{:href => "https://ap-rojo.myshopify.com/#"}
+              %img{:alt => "banner", :src => "./ap_rojo_files/bt_image_banner.jpg"}/
+      :javascript
+        $(document).ready(function () {
+            $('#sliderlayer').nivoSlider({
+                effect: 'random',
+                animSpeed: 500,
+                pauseTime: 8000
+            });
+            $('#sliderlayer').on('swipeleft', function (e) {
+                $('a.nivo-nextNav').trigger('click');
+                e.stopPropagation();
+                return false;
+            });
+            $('#sliderlayer').on('swiperight', function (e) {
+                $('a.nivo-prevNav').trigger('click');
+                e.stopPropagation();
+                return false;
+            });
+        });

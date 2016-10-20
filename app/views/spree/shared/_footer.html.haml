@@ -1,0 +1,211 @@
+%footer#footer
+  .footer-container
+    %section#footertop.footer-top
+      .container
+        .footer_top_wrap
+          .row
+            .col-xs-12.col-sm-12
+              .block.img_top_footer.text-center
+                = logo
+              .image_top_footer_description.text-center
+                %p
+                  Claritas est etiam processus dynamicus, qui sequitur mutationem consuetudium lectorum. Mirum est notare
+                  quam littera gothica, quam nunc putamus parum claram, anteposuerit litterarum formas humanitatis per
+                  seacula quarta decima et quinta decima videntur parum clari, fiant sollemnes in futurum.
+    %section#footercenter.footer-center
+      .container
+        .footer-center-wrap
+          .row
+            .col-md-3.col-sm-3.col-xs-12.col-sp-12
+              .block.footer-block.footerAccordion.box-contact-info
+                %h4.title_block get in touch
+                %ul.list-unstyled.block_content{:style => ""}
+                  %li.address
+                    %span Warrent House, 221b Baker Street - London - United Kingdom
+                  %li.phone
+                    %span (+84). 123 456 789
+                  %li.email
+                    %span info@eliteshopping.com
+            .col-md-2.col-sm-2.col-xs-12.col-sp-12
+              #block_links_footer_1.block.footer-block.footerAccordion
+                %h4.title_block support
+                .block_content{:style => ""}
+                  %ul.toggle-footer.list-group.list-unstyled{:style => ""}
+                    %li.item
+                      %a{:href => "#!", :title => "Returns"} Returns
+                    %li.item
+                      %a{:href => "#!pages/faq", :title => "F.A.Q"} F.A.Q
+                    %li.item
+                      %a{:href => "#!", :title => "Shaipping Policy"} Shaipping Policy
+                    %li.item
+                      %a{:href => "#!pages/frontpage", :title => "Search Terms"} Search Terms
+                    %li.item
+                      %a{:href => "#!pages/contact-us", :title => "Contact Us"} Contact Us
+            .col-md-2.col-sm-2.col-xs-12.col-sp-12
+              #block_links_footer_2.block.footer-block.footerAccordion
+                %h4.title_block information
+                .block_content{:style => ""}
+                  %ul.toggle-footer.list-group.list-unstyled{:style => ""}
+                    %li.item
+                      %a{:href => "#!pages/about-us", :title => "About Us "} About Us
+                    %li.item
+                      %a{:href => "#!pages/contact-us", :title => "Contact Us"} Contact Us
+                    %li.item
+                      %a{:href => "#!pages/terms-conditions", :title => "Terms & Conditions"}
+                        Terms &
+                        Conditions
+                    %li.item
+                      %a{:href => "#!pages/frontpage", :title => "Privacy Policy  "} Privacy Policy
+                    %li.item
+                      %a{:href => "#!pages/frontpage", :title => "Orders and Returns"}
+                        Orders and
+                        Returns
+                    %li.item
+                      %a{:href => "#!", :title => "Site Map"} Site Map
+            .col-md-2.col-sm-2.col-xs-12.col-sp-12
+              #block_links_footer_3.block.footer-block.footerAccordion
+                %h4.title_block account
+                .block_content{:style => ""}
+                  %ul.toggle-footer.list-group.list-unstyled{:style => ""}
+                    %li.item
+                      %a{:href => "#!account/login", :title => "Sign In"} Sign In
+                    %li.item
+                      %a{:href => "#!cart", :title => "View Cart"} View Cart
+                    %li.item
+                      %a{:href => "#!pages/wish-list", :title => "My Wishlist"} My Wishlist
+                    %li.item
+                      %a{:href => "#!", :title => "Track My Order"} Track My Order
+                    %li.item
+                      %a{:href => "#!", :title => "Help"} Help
+            .col-md-3.col-sm-3.col-xs-12.col-sp-12
+              #newsletter_block.block.footer-block.footerAccordion.inline
+                %h4.title_block
+                  Newsletter
+                .block_content{:style => ""}
+                  .des_newsletter
+                    Signup to receive our latest news and promotions. We never send spam!
+                  %form#mc-embedded-subscribe-form.form_newsletter{:action => "https://hvduc.us11.list-manage.com/subscribe/post?u=355ea7b2b4b03bc8640b8efdd&id=86fecc3357", :method => "post", :name => "mc-embedded-subscribe-form", :target => "_blank"}
+                    %input#mail.newsletter-input.form-control{"aria-label" => "Your email ...", :name => "EMAIL", :placeholder => "Your email ...", :type => "email", :value => ""}/
+                    %button#subscribe.button_mini.btn{:type => "submit"}
+                      %span Subscribe
+    %section#footernav.footer-nav
+      .container
+        #powered.powered.row.wow.animated{:style => "visibility: hidden; animation-name: none;"}
+          .col-lg-6.col-md-6.col-sm-6.col-xs-6.col-sp-12
+            %p.text-center-1
+              © Copyright 2016 EliteShopping.
+              %a{:href => "//sumatosoft.com", :rel => "nofollow", :target => "_blank"} Powered by SumatoSoft
+          .col-lg-6.col-md-6.col-sm-6.col-xs-6.col-sp-12
+            .payment-block.footer-block
+              #block_links_footer_.footer-block.footerAccordion
+                %ul.list-unstyled
+                  %li.item.payment-item
+                    %a.icon-social.visa{:href => "#!#", :title => "Visa"}
+                      %span.fa.fa-cc-visa  
+                  %li.item.payment-item
+                    %a.icon-social.paypal{:href => "#!#", :title => "Paypal"}
+                      %span.fa.fa-cc-paypal  
+                  %li.item.payment-item
+                    %a.icon-social.mastercard{:href => "#!#", :title => "mastercard"}
+                      %span.fa.fa-cc-mastercard  
+                  %li.item.payment-item
+                    %a.icon-social.credit-card{:href => "#!#", :title => "credit card "}
+                      %span.fa.fa-cc-amex  
+                  %li.item.payment-item
+                    %a.icon-social.stripe{:href => "#!#", :title => "stripe"}
+                      %span.fa.fa-cc-stripe  
+                  %li.item.payment-item
+                    %a.icon-social.stripe{:href => "#!#", :title => "stripe"}
+                      %span.fa.fa-cc-discover  
+                  %li.item.payment-item
+                    %a.icon-social.stripe{:href => "#!#", :title => "stripe"}
+                      %span.fa.fa-cc  
+
+
+      #errorJs.modal.fade{:style => "display: none;"}
+        .modal-dialog
+          .modal-content
+      #loading.loading_site{:style => "display: none;"}
+      #quick-view-product{:style => "display:none;"}
+        .quickview-overlay
+        .quick-view-product
+        #quickview-modal{:style => "display:none;"}
+          .block-quickview.primary_block.row
+            .product-left-column.col-xs-12.col-sm-4.col-md-4
+              .clearfix.image-block
+                %span.view_full_size
+                  %a.img-product{:href => "#!#", :title => ""}
+                    %img#product-featured-image-quickview.img-responsive.product-featured-image-quickview{:alt => "Quickview", :src => "./ap_rojo_files/productDefault.png"}/
+                .loading-imgquickview{:style => "display:none;"}
+              .more-view-wrapper.clearfix
+                #thumbs_list_quickview
+                  %ul#thumblist_quickview.product-photo-thumbs.quickview-more-views-owlslider.list-unstyled
+            .product-center-column.product-info.col-xs-12.col-sm-4.col-md-5
+              %h3.qwp-name  
+              .product-description.rte
+              %h5.brand
+              .availability
+            .product-right-column.product-item.col-xs-12.col-sm-4.col-md-3
+              %div
+                %form.variants.form-ajaxtocart{:action => "#!cart/add", :enctype => "multipart/form-data", :method => "post"}
+                  %span.prices
+                    %span.price.h2
+                  %span.price-product-detail
+                    %span.old-price.product-price.compare-price
+                  %select{:name => "id", :style => "display:none"}
+                  .clearfix
+                  .quantity_wanted_p
+                    %label.quantity-selector{:for => "quantity-detail"} Quantity
+                    .apQty
+                      %button.apQtyAdjust.apQtyAdjustMinus{"data-id" => "", "data-qty" => "0", :type => "button"} −
+                      %input#quantity-detail.apQtyNum{"aria-label" => "quantity", "data-id" => "", :min => "1", :name => "quantity", :pattern => "[0-9]*", :type => "text", :value => "1"}/
+                      %button.apQtyAdjust.apQtyAdjustPlus{"data-id" => "", "data-qty" => "11", :type => "button"} +
+                  .total-price
+                    %label Subtotal:
+                    %span
+                  %button.btn.add_to_cart_detail.ajax_addtocart{:name => "add", :type => "submit"}
+                    %span Add to Cart
+          %a.quickview-close.fancybox-close{:href => "javascript:;", :title => "Close"}
+  #popup-newletter.hide
+    .pa-header
+      %h3
+        NEWSLETTER SIGN UP
+      .pnewle-message
+        %span We promise we won't write to you often, only for the fun stuff.
+        %p You'll get first access to :
+        %ul
+          %li New product releases.
+          %li Sales.
+        %p.title-pnews Enter your Email:
+      .pnewle-form
+        %form{:action => "https://hvduc.us11.list-manage.com/subscribe/post?u=355ea7b2b4b03bc8640b8efdd&id=86fecc3357", :method => "post", :target => "_blank"}
+          %input.newsletter-input.form-control{"aria-label" => "Your email ...", :name => "EMAIL", :placeholder => "Your email ...", :type => "email", :value => ""}/
+          %input.button_mini.btn{:type => "submit", :value => "Subscribe"}/
+      .social-icons.block
+        .block_content
+          %ul.list-unstyled.clearfix
+            %li.facebook
+              %a.btn-tooltip{"data-original-title" => "Facebook", :href => "http://www.facebook.com/", :target => "_blank", :title => "Ap Rojo on Facebook"}
+                %i.fa.fa-facebook
+                %span Facebook
+            %li.twitter
+              %a.btn-tooltip{"data-original-title" => "Twitter", :href => "http://www.twitter.com/", :target => "_blank", :title => "Ap Rojo on Twitter"}
+                %i.fa.fa-twitter
+                %span Twitter
+            %li.rss
+              %a.btn-tooltip{"data-original-title" => "RSS", :href => "http://www.your-shop.com/feed/", :target => "_blank", :title => "Ap Rojo on RSS"}
+                %i.fa.fa-rss
+                %span RSS
+            %li.youtube
+              %a.btn-tooltip{"data-original-title" => "Youtube", :href => "https://www.youtube.com/", :target => "_blank", :title => "Ap Rojo on Youtube"}
+                %i.fa.fa-youtube
+                %span Youtube
+            %li.google-plus
+              %a.btn-tooltip{"data-original-title" => "Google Plus", :href => "https://plus.google.com/", :target => "_blank", :title => "Ap Rojo on Google Plus"}
+                %i.fa.fa-google-plus
+                %span Google Plus
+#mm-blocker.mm-slideout
+#AjaxifyModal.ajaxcart.ajaxcartModal
+  %button.ajaxcartClose{:title => "Close Cart", :type => "button"} Close Cart
+  #AjaxifyCart
+.ajaxcartOverlay

@@ -1,0 +1,14 @@
+- if spree_current_user
+  %li
+    = link_to spree.account_path do
+      %i.fa.fa-user
+      = Spree.t(:my_account)
+  %li
+    = link_to spree.logout_path do
+      %i.fa.fa-lock
+      = Spree.t(:logout)
+- else
+  %li#link-to-login
+    = link_to spree.login_path do
+      %i.fa.fa-unlock-alt
+      = Spree.t(:login)
