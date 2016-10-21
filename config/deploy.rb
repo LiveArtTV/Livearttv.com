@@ -44,6 +44,14 @@ task :compress_png do
   end
 end
 
+desc "Check for untracked or uncommitted files"
+task :git_status do
+  puts '======================== GIT STATUS ============================='
+  sh 'git status -s'
+  puts '================================================================='
+end
+
+before 'deploy:starting', 'git_status'
 after 'deploy:normalize_assets', 'compress_assets'
 after 'deploy:normalize_assets', 'compress_png'
 
