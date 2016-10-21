@@ -35,9 +35,9 @@
           .add-to-cart
             %br/
             .input-group
-              = number_field_tag :quantity, 1, class: 'title form-control', min: 1
+              = number_field_tag :quantity, 1, class: 'title form-control add-to-cart-detail-number', min: 1
               %span.input-group-btn
-                = button_tag class: 'btn btn-success', id: 'add-to-cart-button', type: :submit do
+                = button_tag class: 'btn btn-success add_to_cart_detail', id: 'add-to-cart-button', type: :submit do
                   = Spree.t(:add_to_cart)
     - else
       #product-price

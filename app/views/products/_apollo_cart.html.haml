@@ -1,0 +1,39 @@
+%form#AddToCartForm.form-ajaxtocart{:action => "/cart/add", :enctype => "multipart/form-data", :method => "post"}
+  .price.clearfix
+    %span#ProductPrice.h2.on-sale.sale-price{:itemprop => "price"}
+      %span.money{"data-currency" => "USD", "data-currency-usd" => @product.price}= @product.price
+    %span.price-product-detail
+      %span.old-price.product-price
+        %span.money{"data-currency" => "USD", "data-currency-usd" => @product.price}= @product.price
+  .proVariants.clearfix
+    .selector-wrapper{:style => "display: none;"}
+      %select#productSelect-option-0.single-option-selector{"data-option" => "option1"}
+        %option{:value => "Default Title"} Default Title
+    %select#productSelect.product-single__variants{:name => "id", :style => "display: none;"}
+      %option{:selected => "selected", :value => "22464901569"} Default Title
+    %style{:rel => "stylesheet", :type => "text/css"}
+      :cdata
+        \.proVariants .selector-wrapper:nth-child(1){display: none;}
+    .swatch.clearfix{"data-option-index" => "0", :style => "display: none;"}
+      .header Title
+      .swatch-element.default-title.available{"data-value" => "Default Title"}
+        %input#swatch-0-default-title{:checked => "checked", :name => "option-0", :type => "radio", :value => "Default Title"}/
+        %label{:for => "swatch-0-default-title"}
+          Default Title
+          %img.crossed-out{:alt => "", :src => "//cdn.shopify.com/s/files/1/1404/2671/t/6/assets/soldout.png?15387737236925855179"}/
+      :javascript
+        jQuery('.swatch[data-option-index="0"] .default-title').removeClass('soldout').addClass('available').find(':radio').removeAttr('disabled');
+  .total-price
+    %label Subtotal:
+    %span $10.00
+  -#= render partial: 'shared/social_share_item'
+  .line-product-top
+  .quantity_wanted_p
+    %label.quantity-selector{:for => "Quantity"} Quantity
+    .apQty
+      %button.apQtyAdjust.apQtyAdjustMinus{"data-id" => "", "data-qty" => "0", :type => "button"} -
+      %input#Quantity.apQtyNum{"aria-label" => "quantity", "data-id" => "", :min => "1", :name => "quantity", :pattern => "[0-9]*", :type => "text", :value => "1"}/
+      %button.apQtyAdjust.apQtyAdjustPlus{"data-id" => "", "data-qty" => "11", :type => "button"} +
+  %button#AddToCart.btn.add_to_cart_detail.ajax_addtocart{:name => "add", :type => "submit"}
+    %i.fa.fa-shopping-cart
+    %span#AddToCartText Add to Cart

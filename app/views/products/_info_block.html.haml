@@ -1,0 +1,90 @@
+.more_info_block
+  %ul.nav.nav-tabs.tab-info.page-product-heading
+    %li.active
+      %a{"data-toggle" => "tab", :href => "#idTab1"} More info
+    %li
+      %a{"data-toggle" => "tab", :href => "#idTab2"} Custom Tab 1
+    %li
+      %a{"data-toggle" => "tab", :href => "#idTab3"} Custom Tab 2
+    %li
+      %a{"data-toggle" => "tab", :href => "#idTab4"} Reviews
+  .tab-content
+    %section#idTab1.tab-pane.page-product-box.active
+      .rte
+        Claritas est etiam processus dynamicus, qui sequitur mutationem consuetudium lectorum. Mirum est notare quam littera gothica, quam nunc putamus parum claram, anteposuerit litterarum formas humanitatis per seacula quarta decima et quinta decima. Eodem modo typi, qui nunc nobis videntur parum clari, fiant sollemnes in futurum delenit augue duis dolore te feugait nulla facilisi.
+    %section#idTab2.tab-pane.page-product-box
+    %section#idTab3.tab-pane.page-product-box
+    %section#idTab4.tab-pane.page-product-box
+      #shopify-product-reviews{"data-id" => "7135968449"}
+        %style{:scoped => ""}
+          :cdata
+            \.spr-container {
+            padding: 24px;
+            border-color: #ECECEC;
+
+            }
+            \.spr-review, .spr-form {
+            border-color: #ECECEC;
+            }
+        .spr-container
+          .spr-header
+            %h2.spr-header-title Customer Reviews
+            .spr-summary{:itemscope => "", :itemtype => "http://data-vocabulary.org/Review-aggregate"}
+              %meta{:content => "", :itemprop => "itemreviewed"}/
+              %meta{:content => "0", :itemprop => "votes"}/
+              %span.spr-starrating.spr-summary-starrating{:itemprop => "rating", :itemscope => "", :itemtype => "http://data-vocabulary.org/Rating"}
+                %meta{:content => "0.0", :itemprop => "average"}/
+                %meta{:content => "5", :itemprop => "best"}/
+                %meta{:content => "1", :itemprop => "worst"}/
+                %i.spr-icon.spr-icon-star-empty{:style => ""}
+                %i.spr-icon.spr-icon-star-empty{:style => ""}
+                %i.spr-icon.spr-icon-star-empty{:style => ""}
+                %i.spr-icon.spr-icon-star-empty{:style => ""}
+                %i.spr-icon.spr-icon-star-empty{:style => ""}
+              %span.spr-summary-caption
+                No reviews yet
+              %span.spr-summary-actions
+                %a.spr-summary-actions-newreview{:href => "#", :onclick => "SPR.toggleForm(7135968449);return false"} Write a review
+
+
+          .spr-content
+            #form_7135968449.spr-form{:style => "display: none"}
+              %form#new-review-form_7135968449.new-review-form{:action => "//productreviews.shopifycdn.com/api/reviews/create", :method => "post", :onsubmit => "SPR.submitForm(this);return false;"}
+                %input{:name => "review[rating]", :type => "hidden"}/
+                %input{:name => "product_id", :type => "hidden", :value => "7135968449"}/
+                %h3.spr-form-title Write a review
+                %fieldset.spr-form-contact
+                  .spr-form-contact-name
+                    %label.spr-form-label{:for => "review_author_7135968449"} Name
+                    %input#review_author_7135968449.spr-form-input.spr-form-input-text{:name => "review[author]", :placeholder => "Enter your name", :type => "text", :value => ""}/
+                  .spr-form-contact-email
+                    %label.spr-form-label{:for => "review_email_7135968449"} Email
+                    %input#review_email_7135968449.spr-form-input.spr-form-input-email{:name => "review[email]", :placeholder => "john.smith@example.com", :type => "email", :value => ""}/
+
+                %fieldset.spr-form-review
+                  .spr-form-review-rating
+                    %label.spr-form-label{:for => "review[rating]"} Rating
+                    .spr-form-input.spr-starrating
+                      %a.spr-icon.spr-icon-star.spr-icon-star-empty{"data-value" => "1", :href => "#", :onclick => "SPR.setRating(this);return false;"}
+                      %a.spr-icon.spr-icon-star.spr-icon-star-empty{"data-value" => "2", :href => "#", :onclick => "SPR.setRating(this);return false;"}
+                      %a.spr-icon.spr-icon-star.spr-icon-star-empty{"data-value" => "3", :href => "#", :onclick => "SPR.setRating(this);return false;"}
+                      %a.spr-icon.spr-icon-star.spr-icon-star-empty{"data-value" => "4", :href => "#", :onclick => "SPR.setRating(this);return false;"}
+                      %a.spr-icon.spr-icon-star.spr-icon-star-empty{"data-value" => "5", :href => "#", :onclick => "SPR.setRating(this);return false;"}
+                    .spr-form-review-title
+                    %label.spr-form-label{:for => "review_title_7135968449"} Review Title
+                    %input#review_title_7135968449.spr-form-input.spr-form-input-text{:name => "review[title]", :placeholder => "Give your review a title", :type => "text", :value => ""}/
+                  .spr-form-review-body
+                    %label.spr-form-label{:for => "review_body_7135968449"}
+                      Body of Review
+                      %span.spr-form-review-body-charactersremaining (1500)
+                    .spr-form-input
+                      %textarea#review_body_7135968449.spr-form-input.spr-form-input-textarea{"data-product-id" => "7135968449", :name => "review[body]", :placeholder => "Write your comments here", :rows => "10"}
+                      -#:javascript
+                        function sprUpdateCount(e){
+                        var $el = SPR.$(e.currentTarget);
+                        SPR.$(".spr-form-review-body-charactersremaining").html('(' + (1500 - $el.val().length) + ')');
+                        }
+                        SPR.$("textarea[data-product-id=7135968449]").keyup(sprUpdateCount).trigger("keyup");
+                %fieldset.spr-form-actions
+                  %input.spr-button.spr-button-primary.button.button-primary.btn.btn-primary{:type => "submit", :value => "Submit Review"}/
+            #reviews_7135968449.spr-reviews{:style => "display: none"}

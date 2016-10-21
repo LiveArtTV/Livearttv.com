@@ -1,11 +1,10 @@
 - unless @product_properties.empty?
-  %h3.product-section-title= Spree.t('properties')
-  %table#product-properties.table.table-striped{"data-hook" => ""}
-    %tbody
+  #categories_block.block.sidebarCategories
+    %h4.title_block= Spree.t('properties')
+    .block_content#product-properties{"data-hook" => ""}
       - @product_properties.each do |product_property|
-        - css_class = cycle('even', 'odd', :name => "properties")
-        %tr{:class => css_class}
-          %td
+        .row
+          .col-sm-6
             %strong= product_property.property.presentation
-          %td= product_property.value
-      - reset_cycle('properties')
+          .col-sm-6
+            = product_property.value

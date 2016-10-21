@@ -1,0 +1,46 @@
+.sharing_social_product
+  %span.title_block_share share this items:
+  .socialsharing_product.no-print
+    %ul.social-sharing.list-unstyled
+      %li
+        %a.btn.social-sharing.btn-twitter{"data-type" => "twitter", :href => "javascript:void(0);"}
+          %i.fa.fa-twitter
+      %li
+        %a.btn.social-sharing.btn-facebook{"data-type" => "facebook", :href => "javascript:void(0);"}
+          %i.fa.fa-facebook
+      %li
+        %a.btn.social-sharing.btn-google-plus{"data-type" => "google-plus", :href => "javascript:void(0);"}
+          %i.fa.fa-google-plus
+      %li
+        %a.btn.social-sharing.btn-linkedin{"data-type" => "linkedin", :href => "javascript:void(0);"}
+          %i.fa.fa-linkedin
+      %li
+        %a.btn.social-sharing.btn-pinterest{"data-type" => "pinterest", :href => "javascript:void(0);"}
+          %i.fa.fa-pinterest-p
+  :javascript
+    $(document).ready(function(){
+            $('.btn.social-sharing').on('click', function(){
+                type = $(this).attr('data-type');
+                if (type.length)
+                {
+                    switch(type)
+                    {
+                        case 'twitter':
+                            window.open('https://twitter.com/intent/tweet?text=The%20Asbury%20Collection%20lef http%3A%2F%2Fap-rojo.myshopify.com/products/the-asbury-collection-lef', 'sharertwt', 'toolbar=0,status=0,width=640,height=445');
+                            break;
+                        case 'facebook':
+                            window.open('http://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2Fap-rojo.myshopify.com/products/the-asbury-collection-lef', 'sharer', 'toolbar=0,status=0,width=660,height=445');
+                            break;
+                        case 'google-plus':
+                            window.open('https://plus.google.com/share?url=//ap-rojo.myshopify.com/products/the-asbury-collection-lef', 'sharer', 'toolbar=0,status=0,width=660,height=445');
+                            break;
+                      case 'linkedin':
+                            window.open('http://www.linkedin.com/shareArticle?mini=true&url=//ap-rojo.myshopify.com/products/the-asbury-collection-lef&title=The%20Asbury%20Collection%20lef&source=http://ap-rojo.myshopify.com/products/the-asbury-collection-lef', 'sharerpinterest', 'toolbar=0,status=0,width=660,height=445');
+                            break;
+                        case 'pinterest':
+                            window.open('http://pinterest.com/pin/create/button/?url=//ap-rojo.myshopify.com/products/the-asbury-collection-lef&media=//cdn.shopify.com/s/files/1/1404/2671/products/26-min_large.jpg?v=1469508455', 'sharerpinterest', 'toolbar=0,status=0,width=660,height=445');
+                            break;
+                    }
+                }
+            });
+        });

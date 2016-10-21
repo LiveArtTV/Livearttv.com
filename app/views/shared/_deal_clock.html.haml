@@ -1,0 +1,24 @@
+.deal-clock.lof-clock-7135968449-detail
+  %ul.list-inline
+    %li.day
+      %b 02
+      %span Days
+    %li
+      %b 01
+      %span Hours
+    %li
+      %b 19
+      %span Mins
+    %li
+      %b 14
+      %span Secs
+:javascript
+  //<![CDATA[
+  jQuery(document).ready(function($){
+      $(".lof-clock-7135968449-detail").lofCountDown({
+          TargetDate:"@2016-10-24 00:00:00",
+          DisplayFormat:"<ul class='list-inline'><li class='day'>%%D%%<span>Days</span></li><li>%%H%%<span>Hours</span></li><li>%%M%%<span>Mins</span></li><li>%%S%%<span>Secs</span></li></ul>",
+          FinishMessage: "End Deal"
+      });
+  });
+  //]]>

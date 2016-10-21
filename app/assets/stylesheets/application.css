@@ -16,3 +16,10 @@
 div.spree-video-thumbnails{
     padding: 3px 0;
 }
+div#main-image {
+    border: none;
+}
+
+input.add-to-cart-detail-number {
+    height: 36px;
+}
