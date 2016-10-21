@@ -1,3 +1,4 @@
+require 'colorize'
 # config valid only for current version of Capistrano
 lock '3.6.1'
 
@@ -46,7 +47,7 @@ end
 
 desc "Check for untracked or uncommitted files"
 task :git_status do
-  puts '======================== GIT STATUS ============================='
+  puts "======================== #{'GIT STATUS'.yellow} ============================="
   sh 'git status -s'
   puts '================================================================='
 end
