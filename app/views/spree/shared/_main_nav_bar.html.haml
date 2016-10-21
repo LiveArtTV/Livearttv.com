@@ -29,44 +29,27 @@
         #apollo-top-menu.collapse.navbar-collapse.hidden-xs.hidden-sm
           %ul.nav.navbar-nav.megamenu
             %li.parent.dropdown.full-width
-              %a.dropdown-toggle.has-category{"data-toggle" => "dropdown", href: products_path, target: "_self", title: "Category"}
-                %span.menu-title Category
+              %a.dropdown-toggle.has-category{"data-toggle" => "dropdown", href: products_path, target: "_self", title: Spree.t('category')}
+                %span.menu-title #{Spree.t('category')}
                 %b.caret
               .dropdown-sub.dropdown-menu.sub-apmegamenu-1
                 .dropdown-menu-inner
                   .row
-                    .mega-col.col-sm-5
-                      .row
-                        .col-sm-6
-                          .mega-col-inner
-                            .menu-title
-                              %a{href: products_path, :title => "Collection"}
-                                Collection
-                            .widget-inner
-                              - @taxons = @taxon && @taxon.parent ? @taxon.parent.children : Spree::Taxon.roots
-                              %ul.nav-links
-                                - cache(cache_key_for_taxons) do
-                                  - @taxons.each do |taxon|
-                                    %li
-                                      = link_to taxon.name, seo_url(taxon)
-                        .col-sm-6
-                          .mega-col-inner
-                            .menu-title
-                              %a{:href => products_path, :title => "Product"}
-                                Product
-                            .widget-inner
-                              %ul.nav-links
-                                %li
-                                  %a{:href => "#!products/the-asbury-collection-1", :title => "Fullwidth"} Fullwidth
-                                %li
-                                  %a{:href => "#!products/the-asbury-collection-lef", :title => "Left Sidebar"}
-                                    Left
-                                    Sidebar
-                                %li
-                                  %a{:href => "#!products/the-asbury-collection", :title => "Right Sidebar"}
-                                    Right
-                                    Sidebar
-                    .mega-col.col-sm-4
+                    - taxon_roots = Spree::Taxon.roots
+                    - cache(["taxon-roots", taxon_roots.maximum(:updated_at).to_i].join('-')) do
+                      - taxon_roots.each do |taxon_root|
+                        .mega-col.col-sm-3
+                          .row
+                            .col-sm-12
+                              .mega-col-inner
+                                .menu-title
+                                  = link_to taxon_root.name, seo_url(taxon_root)
+                                .widget-inner
+                                  %ul.nav-links
+                                    - taxon_root.children.each do |taxon|
+                                      %li
+                                        = link_to taxon.name, seo_url(taxon)
+                    -#.mega-col.col-sm-4
                       .products_menu
                         .menu-title
                           Best Seller
@@ -116,7 +99,7 @@
                                   %span.money{"data-currency" => "USD", "data-currency-usd" => "$51.00"} $51.00
                                 %span.price.product-price
                                   %span.money{"data-currency" => "USD", "data-currency-usd" => "$35.00"} $35.00
-                    .mega-col.col-sm-3
+                    -#.mega-col.col-sm-3
                       .block-html
                         .menu-title HTML
                         .widget-inner
