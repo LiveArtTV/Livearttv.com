@@ -38,17 +38,14 @@
                     - taxon_roots = Spree::Taxon.roots
                     - cache(["taxon-roots", taxon_roots.maximum(:updated_at).to_i].join('-')) do
                       - taxon_roots.each do |taxon_root|
-                        .mega-col.col-sm-3
-                          .row
-                            .col-sm-12
-                              .mega-col-inner
-                                .menu-title
-                                  = link_to taxon_root.name, seo_url(taxon_root)
-                                .widget-inner
-                                  %ul.nav-links
-                                    - taxon_root.children.each do |taxon|
-                                      %li
-                                        = link_to taxon.name, seo_url(taxon)
+                        .mega-col.col-sm-3.mega-col-inner
+                          .menu-title
+                            = link_to taxon_root.name, seo_url(taxon_root)
+                          .widget-inner
+                            %ul.nav-links
+                              - taxon_root.children.each do |taxon|
+                                %li
+                                  = link_to taxon.name, seo_url(taxon)
                     -#.mega-col.col-sm-4
                       .products_menu
                         .menu-title
