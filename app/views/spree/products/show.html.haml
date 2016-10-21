@@ -31,7 +31,7 @@
         %aside
           #left_column.left_column.sidebar.col-sm-4.col-md-3.col-xs-12
             = render partial: 'spree/products/properties'
-            -#= render partial: '/products_best_sellers'
+            -#= render partial: '/shared/products_best_sellers'
         #center_column.center_column.col-xs-12.col-sm-8.col-md-9
           - url = spree.product_url(@product, taxon_id: @taxon.try(:id))
           %div{:itemscope => "", :itemtype => "http://schema.org/Product"}
@@ -92,11 +92,12 @@
                       = product_description(@product)
                   .product-right-column
                     %div{:itemprop => "offers", :itemscope => "", :itemtype => "http://schema.org/Offer"}
-                      %meta{:content => "USD", :itemprop => "priceCurrency"}/
+                      %meta{:content => @product.currency, :itemprop => "priceCurrency"}/
                       %link{:href => "http://schema.org/InStock", :itemprop => "availability"}/
                       -#= render partial: 'shared/deal_clock'
-                      .availability
-                        %p.available.instock Available
+                      - if @product.master.can_supply?
+                        .availability
+                          %p.available.instock Available
                       = render partial: 'cart_form'
                       -#= render partial: 'products/apollo_cart'
                     -#.wishlist
@@ -106,8 +107,8 @@
                     .line-product
                     #product-detail-image
                       .box_image_pd
-                        %img.img-responsive{:alt => " ", :src => "//cdn.shopify.com/s/files/1/1404/2671/t/6/assets/img_product_detail.png?15387737236925855179"}/
+                        = image_tag 'img_product_detail.png', class: 'img-responsive'
 
 
-              = render partial: 'products/info_block'
+              -#= render partial: 'products/info_block'
             -#= render partial: 'shared/products_related'
