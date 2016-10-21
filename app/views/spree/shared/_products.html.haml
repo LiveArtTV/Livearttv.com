@@ -8,124 +8,62 @@
   - elsif params.key?(:keywords)
     %div{"data-hook" => "products_search_results_heading_results_found"}
       %h6.search-results-title= Spree.t(:search_results, keywords: h(params[:keywords]))
-- if false && products.any?
+- if products.any?
   #products.row{"data-hook" => ""}
     - products.each do |product|
       - url = spree.product_url(product, taxon_id: @taxon.try(:id))
       .col-md-3.col-sm-6.col-xs-6.product-list-item{"data-hook" => "products_list_item", :id => "product_#{product.id}", :itemscope => "", :itemtype => "https://schema.org/Product"}
-        .panel.panel-default
-          - cache(@taxon.present? ? [I18n.locale, current_currency, @taxon, product] : cache_key_for_product(product)) do
-            .panel-body.text-center.product-body
-              = link_to url, itemprop: "url" do
-                = small_image(product, itemprop: "image")
-                %br/
-                = content_tag(:span, truncate(product.name, length: 50), class: 'info', itemprop: "name", title: product.name)
-              %br/
-            .panel-footer.text-center
-              %span{:itemprop => "offers", :itemscope => "", :itemtype => "https://schema.org/Offer"}
-                %span.price.selling.lead{:itemprop => "price"}= display_price(product)
-    - reset_cycle("classes")
-- if products.any?
-  .container
-    .row
-      #center_column.center_column.col-xs-12
-        .center_wrap
-          .row
-            .products_top.col-xs-12.col-sm-12
-              #products.products_block.exclusive.block
-                .block_content
-                  .product_list_owl.row
-                    .owl-carousel.slide.owl-theme.owl-loaded{:style => "opacity: 1; display: block;"}
-                      .owl-wrapper-outer
-                        .owl-wrapper{:style => "width: 4768px; left: 0px; display: block; transition: all 800ms ease; transform: translate3d(-1192px, 0px, 0px);"}
-                          - products.each do |product|
-                            - url = spree.product_url(product, taxon_id: @taxon.try(:id))
-                            .owl-item{:style => "width: 298px;"}
-                              .item
-                                .product_block.wow.fadeIn.animated{"data-wow-delay" => "0ms", :style => "visibility: visible; animation-delay: 0ms; animation-name: fadeIn;"}
-                                  - cache(@taxon.present? ? [I18n.locale, current_currency, @taxon, product] : cache_key_for_product(product)) do
-                                    .product-container.text-left.product-block{"data-hook" => "products_list_item", :id => "product_#{product.id}", :itemscope => "", :itemtype => "https://schema.org/Product"}
-                                      .product-image-container.image
-                                        %a.product_img_link{href: url}
-                                          -#%img.img-responsive{:alt => "Greenfield Walnut 5 Pc", :src => "./ap_rojo_files/3-min_large.jpg"}/
-                                          = small_image(product, itemprop: 'image', class: 'img-responsive')
-                                          %span.product-additional{"data-idproduct" => product.id}
-                                        %span.new-box
-                                          %span.label-new.label New
-                                        %span.sale-box
-                                          %span.label-sale.label Sale
-                                        .quickview
-                                          %a.quick-view.btn{"data-handle" => product.slug, href: url, title: "+ Quick View"}
-                                            %i.fa.fa-expand
-                                      .product-meta
-                                        %h5.name
-                                          %a.product-name{href: url, title: truncate(product.name, length: 50)}
-                                            = truncate(product.name, length: 50)
-                                        .product-desc
-                                          = truncate(product_description(product), length: 200)
-                                        .review
-                                          %span.spr-badge{"data-rating" => "5.0", id: "#spr_badge_#{product.id}"}
-                                            %span.spr-starrating.spr-badge-starrating
-                                              %i.spr-icon.spr-icon-star{:style => ""}
-                                              %i.spr-icon.spr-icon-star{:style => ""}
-                                              %i.spr-icon.spr-icon-star{:style => ""}
-                                              %i.spr-icon.spr-icon-star{:style => ""}
-                                              %i.spr-icon.spr-icon-star{:style => ""}
-                                            %span.spr-badge-caption
-                                              1 review
-                                        .content_price
-                                          %span.old-price.product-price
-                                            %span.money{"data-currency" => "USD", "data-currency-usd" => display_price(product)}= display_price(product)
-                                          %span.price.product-price.sale-price
-                                            %span.money{"data-currency" => "USD", "data-currency-usd" => display_price(product)}= display_price(product)
-                                        .functional-buttons.clearfix
-                                          .wishlist
-                                            %a.btn.btn-outline-inverse.btn-wishlist{:href => "#!account/login", :title => "Add to Wishlist"}
-                                              %i.fa.fa-heart
-                                              %span Add to Wishlist
-                                          .cart
-                                            .action
-                                              %form.form-ajaxtocart{:action => "#!cart/add", :enctype => "multipart/form-data", :method => "post"}
-                                                %input{name: :id, type: :hidden, value: product.id}/
-                                                %button.button.ajax_addtocart{:title => "Add to Cart", :type => "submit", :value => "Submit"}
-                                                  %span.fa.fa-shopping-cart
-                                                  %span Add to Cart
-                                          .view_detail
-                                            %a.btn.lnk_view{href: url, title: "View product"}
-                                              %i.fa.fa-retweet
-                                              %span View product
-                      .owl-controls.clickable
-                        .owl-pagination
-                          .owl-page
-                            %span
-                          .owl-page.active
-                            %span
-                        .owl-buttons
-                          .owl-prev Prev
-                          .owl-next Next
-              :javascript
-                $(document).ready(function () {
-                    if (false) {
-                        $('#products .owl-carousel').each(function () {
-                            $(this).owlCarousel({
-                                items: 4,
-                                lazyLoad: true,
-                                navigation: true,
-                                addClassActive: true,
-                                afterAction: SetOwlCarouselFirstLast,
-                                afterInit: OwlLoaded,
-                                autoPlay: 8000,
-                                itemsDesktop: [1199, 3],
-                                itemsDesktopSmall: [979, 2],
-                                itemsTablet: [768, 2],
-                                itemsTabletSmall: [480, 1],
-                                itemsMobile: [360, 1],
-                                navigationText: ["Prev", "Next"]
-                            });
-                        });
-                    }
-                });
-      .button_product_list.text-center
+        - cache(@taxon.present? ? [I18n.locale, current_currency, @taxon, product] : cache_key_for_product(product)) do
+          .product-container.text-left.product-block{"data-hook" => "products_list_item", :id => "product_#{product.id}", :itemscope => "", :itemtype => "https://schema.org/Product"}
+            .product-image-container.image
+              %a.product_img_link{href: url}
+                = small_image(product, itemprop: 'image', class: 'img-responsive')
+                %span.product-additional{"data-idproduct" => product.id}
+              %span.new-box
+                %span.label-new.label New
+              %span.sale-box
+                %span.label-sale.label Sale
+              .quickview
+                %a.quick-view.btn{"data-handle" => product.slug, href: url, title: "+ Quick View"}
+                  %i.fa.fa-expand
+            .product-meta
+              %h5.name
+                %a.product-name{href: url, title: truncate(product.name, length: 50)}
+                  = truncate(product.name, length: 50)
+              .product-desc
+                = truncate(product_description(product), length: 200)
+              .review
+                %span.spr-badge{"data-rating" => "5.0", id: "#spr_badge_#{product.id}"}
+                  %span.spr-starrating.spr-badge-starrating
+                    %i.spr-icon.spr-icon-star{:style => ""}
+                    %i.spr-icon.spr-icon-star{:style => ""}
+                    %i.spr-icon.spr-icon-star{:style => ""}
+                    %i.spr-icon.spr-icon-star{:style => ""}
+                    %i.spr-icon.spr-icon-star{:style => ""}
+                  %span.spr-badge-caption
+                    1 review
+              .content_price
+                %span.old-price.product-price
+                  %span.money{"data-currency" => "USD", "data-currency-usd" => display_price(product)}= display_price(product)
+                %span.price.product-price.sale-price
+                  %span.money{"data-currency" => "USD", "data-currency-usd" => display_price(product)}= display_price(product)
+              .functional-buttons.clearfix
+                .wishlist
+                  %a.btn.btn-outline-inverse.btn-wishlist{:href => "#!account/login", :title => "Add to Wishlist"}
+                    %i.fa.fa-heart
+                    %span Add to Wishlist
+                .cart
+                  .action
+                    %form.form-ajaxtocart{:action => "#!cart/add", :enctype => "multipart/form-data", :method => "post"}
+                      %input{name: :id, type: :hidden, value: product.id}/
+                      %button.button.ajax_addtocart{:title => "Add to Cart", :type => "submit", :value => "Submit"}
+                        %span.fa.fa-shopping-cart
+                        %span Add to Cart
+                .view_detail
+                  %a.btn.lnk_view{href: url, title: "View product"}
+                    %i.fa.fa-retweet
+                    %span View product
+      -#.button_product_list.text-center
         %a.btn_home_page.btn.btn-center{href: products_path}
           View all items
 - if products.respond_to?(:total_pages) && !%w(home).include?(controller_name)
