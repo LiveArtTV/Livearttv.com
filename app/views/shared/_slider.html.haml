@@ -36,11 +36,11 @@
               %img{:alt => "banner", :src => "./ap_rojo_files/bt_image_banner.jpg"}/
       :javascript
         $(document).ready(function () {
-            $('#sliderlayer').nivoSlider({
-                effect: 'random',
-                animSpeed: 500,
-                pauseTime: 8000
-            });
+            //$('#sliderlayer').nivoSlider({
+            //    effect: 'random',
+            //    animSpeed: 500,
+            //    pauseTime: 8000
+            //});
             $('#sliderlayer').on('swipeleft', function (e) {
                 $('a.nivo-nextNav').trigger('click');
                 e.stopPropagation();

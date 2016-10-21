@@ -8,7 +8,7 @@
   - elsif params.key?(:keywords)
     %div{"data-hook" => "products_search_results_heading_results_found"}
       %h6.search-results-title= Spree.t(:search_results, keywords: h(params[:keywords]))
-- if products.any?
+- if false && products.any?
   #products.row{"data-hook" => ""}
     - products.each do |product|
       - url = spree.product_url(product, taxon_id: @taxon.try(:id))
@@ -25,590 +25,108 @@
               %span{:itemprop => "offers", :itemscope => "", :itemtype => "https://schema.org/Offer"}
                 %span.price.selling.lead{:itemprop => "price"}= display_price(product)
     - reset_cycle("classes")
-
--#.container
-  .row
-    #center_column.center_column.col-xs-12
-      .center_wrap
-        .row
-          .products_top.col-xs-12.col-sm-12
-            #productlist1.products_block.exclusive.block
-              .block_content
-                .product_list_owl.row
-                  .owl-carousel.slide.owl-theme.owl-loaded{:style => "opacity: 1; display: block;"}
-                    .owl-wrapper-outer
-                      .owl-wrapper{:style => "width: 4768px; left: 0px; display: block; transition: all 800ms ease; transform: translate3d(-1192px, 0px, 0px);"}
-                        .owl-item{:style => "width: 298px;"}
-                          .item
-                            .product_block.wow.fadeIn.animated{"data-wow-delay" => "0ms", :style => "visibility: visible; animation-delay: 0ms; animation-name: fadeIn;"}
-                              .product-container.text-left.product-block
-                                .product-image-container.image
-                                  %a.product_img_link{:href => "#!products/greenfield-walnut-5-pc"}
-                                    %img.img-responsive{:alt => "Greenfield Walnut 5 Pc", :src => "./ap_rojo_files/3-min_large.jpg"}/
-                                    %span.product-additional{"data-idproduct" => "7135946433"}
-                                  %span.new-box
-                                    %span.label-new.label New
-                                  %span.sale-box
-                                    %span.label-sale.label Sale
-                                  .quickview
-                                    %a.quick-view.btn{"data-handle" => "greenfield-walnut-5-pc", :href => "#!#quick-view-product", :title => "+ Quick View"}
-                                      %i.fa.fa-expand
-                                .product-meta
-                                  %h5.name
-                                    %a.product-name{:href => "#!products/greenfield-walnut-5-pc", :title => "Greenfield Walnut 5 Pc"}
-                                      Greenfield
-                                      Walnut 5 Pc
-                                  .product-desc
-                                    Claritas est etiam processus dynamicus, qui sequitur mutationem consuetudium
-                                    lectorum. Mirum est notare quam littera gothica, quam nunc putamus parum...
-                                  .review
-                                    %span#spr_badge_7135946433.spr-badge{"data-rating" => "5.0"}
-                                      %span.spr-starrating.spr-badge-starrating
-                                        %i.spr-icon.spr-icon-star{:style => ""}
-                                        %i.spr-icon.spr-icon-star{:style => ""}
-                                        %i.spr-icon.spr-icon-star{:style => ""}
-                                        %i.spr-icon.spr-icon-star{:style => ""}
-                                        %i.spr-icon.spr-icon-star{:style => ""}
-                                      %span.spr-badge-caption
-                                        1 review
-                                  .content_price
-                                    %span.old-price.product-price
-                                      %span.money{"data-currency" => "USD", "data-currency-usd" => "$15.50"} $15.50
-                                    %span.price.product-price.sale-price
-                                      %span.money{"data-currency" => "USD", "data-currency-usd" => "$12.00"} $12.00
-                                  .functional-buttons.clearfix
-                                    .wishlist
-                                      %a.btn.btn-outline-inverse.btn-wishlist{:href => "#!account/login", :title => "Add to Wishlist"}
-                                        %i.fa.fa-heart
-                                        %span Add to Wishlist
-                                    .cart
-                                      .action
-                                        %form.form-ajaxtocart{:action => "#!cart/add", :enctype => "multipart/form-data", :method => "post"}
-                                          %input{:name => "id", :type => "hidden", :value => "22464795841"}/
-                                          %button.button.ajax_addtocart{:title => "Add to Cart", :type => "submit", :value => "Submit"}
-                                            %span.fa.fa-shopping-cart
-                                            %span Add to Cart
-                                    .view_detail
-                                      %a.btn.lnk_view{:href => "#!products/greenfield-walnut-5-pc", :title => "View product"}
-                                        %i.fa.fa-retweet
-                                        %span View product
-                        .owl-item{:style => "width: 298px;"}
-                          .item
-                            .product_block.wow.fadeIn.animated{"data-wow-delay" => "100ms", :style => "visibility: visible; animation-delay: 100ms; animation-name: fadeIn;"}
-                              .product-container.text-left.product-block
-                                .product-image-container.image
-                                  %a.product_img_link{:href => "#!products/the-kensington-collection-1"}
-                                    %img.img-responsive{:alt => "Kensington Collection globl", :src => "./ap_rojo_files/23-min_65a714af-1627-4a44-b561-1e0af9715dcc_large.jpg"}/
-                                    %span.product-additional{"data-idproduct" => "7135963841"}
-                                      %img.replace-2x.img-responsive{:alt => "Kensington Collection globl", :src => "./ap_rojo_files/24-min_ece71cb1-a7e3-4087-8b88-d9161695c325_large.jpg"}/
-                                  %span.new-box
-                                    %span.label-new.label New
-                                  %span.sale-box
-                                    %span.label-sale.label Sale
-                                  .quickview
-                                    %a.quick-view.btn{"data-handle" => "the-kensington-collection-1", :href => "#!#quick-view-product", :title => "+ Quick View"}
-                                      %i.fa.fa-expand
-                                .product-meta
-                                  %h5.name
-                                    %a.product-name{:href => "#!products/the-kensington-collection-1", :title => "Kensington Collection globl"}
-                                      Kensington
-                                      Collection globl
-                                  .product-desc
-                                    Claritas est etiam processus dynamicus, qui sequitur mutationem consuetudium
-                                    lectorum. Mirum est notare quam littera gothica, quam nunc putamus parum...
-                                  .review
-                                    %span#spr_badge_7135963841.spr-badge{"data-rating" => "0.0"}
-                                      %span.spr-starrating.spr-badge-starrating
-                                        %i.spr-icon.spr-icon-star-empty{:style => ""}
-                                        %i.spr-icon.spr-icon-star-empty{:style => ""}
-                                        %i.spr-icon.spr-icon-star-empty{:style => ""}
-                                        %i.spr-icon.spr-icon-star-empty{:style => ""}
-                                        %i.spr-icon.spr-icon-star-empty{:style => ""}
-                                      %span.spr-badge-caption
-                                        No reviews
-                                  .content_price
-                                    %span.old-price.product-price
-                                      %span.money{"data-currency" => "USD", "data-currency-usd" => "$25.00"} $25.00
-                                    %span.price.product-price.sale-price
-                                      %span.money{"data-currency" => "USD", "data-currency-usd" => "$24.00"} $24.00
-                                  .functional-buttons.clearfix
-                                    .wishlist
-                                      %a.btn.btn-outline-inverse.btn-wishlist{:href => "#!account/login", :title => "Add to Wishlist"}
-                                        %i.fa.fa-heart
-                                        %span Add to Wishlist
-                                    .cart
-                                      .action
-                                        %form.form-ajaxtocart{:action => "#!cart/add", :enctype => "multipart/form-data", :method => "post"}
-                                          %input{:name => "id", :type => "hidden", :value => "22464873345"}/
-                                          %button.button.ajax_addtocart{:title => "Add to Cart", :type => "submit", :value => "Submit"}
-                                            %span.fa.fa-shopping-cart
-                                            %span Add to Cart
-                                    .view_detail
-                                      %a.btn.lnk_view{:href => "#!products/the-kensington-collection-1", :title => "View product"}
-                                        %i.fa.fa-retweet
-                                        %span View product
-                                  .deal-clock.lof-clock-7135963841-detail
-                                    %ul.list-inline
-                                      %li.day
-                                        %b 04
-                                        %span Days
-                                      %li
-                                        %b 10
-                                        %span Hours
-                                      %li
-                                        %b 07
-                                        %span Mins
-                                      %li
-                                        %b 46
-                                        %span Secs
-                                  :javascript
-                                    //<![CDATA[
-                                    jQuery(document).ready(function ($) {
-                                        $(".lof-clock-7135963841-detail").lofCountDown({
-                                            TargetDate: "@2016-10-24 00:00:00",
-                                            DisplayFormat: "<ul class='list-inline'><li class='day'>%%D%%<span>Days</span></li><li>%%H%%<span>Hours</span></li><li>%%M%%<span>Mins</span></li><li>%%S%%<span>Secs</span></li></ul>",
-                                            FinishMessage: "End Deal"
-                                        });
-                                    });
-                                    //]]>
-                        .owl-item{:style => "width: 298px;"}
-                          .item
-                            .product_block.wow.fadeIn.animated{"data-wow-delay" => "200ms", :style => "visibility: visible; animation-delay: 200ms; animation-name: fadeIn;"}
-                              .product-container.text-left.product-block
-                                .product-image-container.image
-                                  %a.product_img_link{:href => "#!products/quam-nunc-putamus"}
-                                    %img.img-responsive{:alt => "Quam nunc putamus", :src => "./ap_rojo_files/1-min_large.jpg"}/
-                                    %span.product-additional{"data-idproduct" => "7135873025"}
-                                      %img.replace-2x.img-responsive{:alt => "Quam nunc putamus", :src => "./ap_rojo_files/2-min_large.jpg"}/
-                                  %span.new-box
-                                    %span.label-new.label New
-                                  %span.sale-box
-                                    %span.label-sale.label Sale
-                                  .quickview
-                                    %a.quick-view.btn{"data-handle" => "quam-nunc-putamus", :href => "#!#quick-view-product", :title => "+ Quick View"}
-                                      %i.fa.fa-expand
-                                .product-meta
-                                  %h5.name
-                                    %a.product-name{:href => "#!products/quam-nunc-putamus", :title => "Quam nunc putamus"}
-                                      Quam
-                                      nunc putamus
-                                  .product-desc
-                                    Claritas est etiam processus dynamicus, qui sequitur mutationem consuetudium
-                                    lectorum. Mirum est notare quam littera gothica, quam nunc putamus parum...
-                                  .review
-                                    %span#spr_badge_7135873025.spr-badge{"data-rating" => "0.0"}
-                                      %span.spr-starrating.spr-badge-starrating
-                                        %i.spr-icon.spr-icon-star-empty{:style => ""}
-                                        %i.spr-icon.spr-icon-star-empty{:style => ""}
-                                        %i.spr-icon.spr-icon-star-empty{:style => ""}
-                                        %i.spr-icon.spr-icon-star-empty{:style => ""}
-                                        %i.spr-icon.spr-icon-star-empty{:style => ""}
-                                      %span.spr-badge-caption
-                                        No reviews
-                                  .content_price
-                                    %span.old-price.product-price
-                                      %span.money{"data-currency" => "USD", "data-currency-usd" => "$51.00"} $51.00
-                                    %span.price.product-price.sale-price
-                                      %span.money{"data-currency" => "USD", "data-currency-usd" => "$35.00"} $35.00
-                                  .functional-buttons.clearfix
-                                    .wishlist
-                                      %a.btn.btn-outline-inverse.btn-wishlist{:href => "#!account/login", :title => "Add to Wishlist"}
-                                        %i.fa.fa-heart
-                                        %span Add to Wishlist
-                                    .cart
-                                      .action
-                                        %form.form-ajaxtocart{:action => "#!cart/add", :enctype => "multipart/form-data", :method => "post"}
-                                          %input{:name => "id", :type => "hidden", :value => "22464456833"}/
-                                          %button.button.ajax_addtocart{:title => "Add to Cart", :type => "submit", :value => "Submit"}
-                                            %span.fa.fa-shopping-cart
-                                            %span Add to Cart
-                                    .view_detail
-                                      %a.btn.lnk_view{:href => "#!products/quam-nunc-putamus", :title => "View product"}
-                                        %i.fa.fa-retweet
-                                        %span View product
-                        .owl-item{:style => "width: 298px;"}
-                          .item
-                            .product_block.wow.fadeIn.animated{"data-wow-delay" => "300ms", :style => "visibility: visible; animation-delay: 300ms; animation-name: fadeIn;"}
-                              .product-container.text-left.product-block
-                                .product-image-container.image
-                                  %a.product_img_link{:href => "#!products/the-asbury-collection-1"}
-                                    %img.img-responsive{:alt => "The Asbury Collection", :src => "./ap_rojo_files/4-min_large.jpg"}/
-                                    %span.product-additional{"data-idproduct" => "7135951489"}
-                                      %img.replace-2x.img-responsive{:alt => "The Asbury Collection", :src => "./ap_rojo_files/5-min_large.jpg"}/
-                                  %span.new-box
-                                    %span.label-new.label New
-                                  %span.sale-box
-                                    %span.label-sale.label Sale
-                                  .quickview
-                                    %a.quick-view.btn{"data-handle" => "the-asbury-collection-1", :href => "#!#quick-view-product", :title => "+ Quick View"}
-                                      %i.fa.fa-expand
-                                .product-meta
-                                  %h5.name
-                                    %a.product-name{:href => "#!products/the-asbury-collection-1", :title => "The Asbury Collection"}
-                                      The
-                                      Asbury Collection
-                                  .product-desc
-                                    Claritas est etiam processus dynamicus, qui sequitur mutationem consuetudium
-                                    lectorum. Mirum est notare quam littera gothica, quam nunc putamus parum...
-                                  .review
-                                    %span#spr_badge_7135951489.spr-badge{"data-rating" => "0.0"}
-                                      %span.spr-starrating.spr-badge-starrating
-                                        %i.spr-icon.spr-icon-star-empty{:style => ""}
-                                        %i.spr-icon.spr-icon-star-empty{:style => ""}
-                                        %i.spr-icon.spr-icon-star-empty{:style => ""}
-                                        %i.spr-icon.spr-icon-star-empty{:style => ""}
-                                        %i.spr-icon.spr-icon-star-empty{:style => ""}
-                                      %span.spr-badge-caption
-                                        No reviews
-                                  .content_price
-                                    %span.old-price.product-price
-                                      %span.money{"data-currency" => "USD", "data-currency-usd" => "$67.00"} $67.00
-                                    %span.price.product-price.sale-price
-                                      %span.money{"data-currency" => "USD", "data-currency-usd" => "$57.00"} $57.00
-                                  .functional-buttons.clearfix
-                                    .wishlist
-                                      %a.btn.btn-outline-inverse.btn-wishlist{:href => "#!account/login", :title => "Add to Wishlist"}
-                                        %i.fa.fa-heart
-                                        %span Add to Wishlist
-                                    .cart
-                                      .action
-                                        %form.form-ajaxtocart{:action => "#!cart/add", :enctype => "multipart/form-data", :method => "post"}
-                                          %input{:name => "id", :type => "hidden", :value => "22464818689"}/
-                                          %button.button.ajax_addtocart{:title => "Add to Cart", :type => "submit", :value => "Submit"}
-                                            %span.fa.fa-shopping-cart
-                                            %span Add to Cart
-                                    .view_detail
-                                      %a.btn.lnk_view{:href => "#!products/the-asbury-collection-1", :title => "View product"}
-                                        %i.fa.fa-retweet
-                                        %span View product
-                        .owl-item.active.first{:style => "width: 298px;"}
-                          .item
-                            .product_block.wow.fadeIn.animated{"data-wow-delay" => "400ms", :style => "visibility: visible; animation-delay: 400ms; animation-name: fadeIn;"}
-                              .product-container.text-left.product-block
-                                .product-image-container.image
-                                  %a.product_img_link{:href => "#!products/the-asbury-collection-lef"}
-                                    %img.img-responsive{:alt => "The Asbury Collection lef", :src => "./ap_rojo_files/26-min_large.jpg"}/
-                                    %span.product-additional{"data-idproduct" => "7135968449"}
-                                      %img.replace-2x.img-responsive{:alt => "The Asbury Collection lef", :src => "./ap_rojo_files/4-min_5d242438-626d-49fa-88b0-221254b6198a_large.jpg"}/
-                                  %span.new-box
-                                    %span.label-new.label New
-                                  %span.sale-box
-                                    %span.label-sale.label Sale
-                                  .quickview
-                                    %a.quick-view.btn{"data-handle" => "the-asbury-collection-lef", :href => "#!#quick-view-product", :title => "+ Quick View"}
-                                      %i.fa.fa-expand
-                                .product-meta
-                                  %h5.name
-                                    %a.product-name{:href => "#!products/the-asbury-collection-lef", :title => "The Asbury Collection lef"}
-                                      The
-                                      Asbury Collection lef
-                                  .product-desc
-                                    Claritas est etiam processus dynamicus, qui sequitur mutationem consuetudium
-                                    lectorum. Mirum est notare quam littera gothica, quam nunc putamus parum...
-                                  .review
-                                    %span#spr_badge_7135968449.spr-badge{"data-rating" => "0.0"}
-                                      %span.spr-starrating.spr-badge-starrating
-                                        %i.spr-icon.spr-icon-star-empty{:style => ""}
-                                        %i.spr-icon.spr-icon-star-empty{:style => ""}
-                                        %i.spr-icon.spr-icon-star-empty{:style => ""}
-                                        %i.spr-icon.spr-icon-star-empty{:style => ""}
-                                        %i.spr-icon.spr-icon-star-empty{:style => ""}
-                                      %span.spr-badge-caption
-                                        No reviews
-                                  .content_price
-                                    %span.old-price.product-price
-                                      %span.money{"data-currency" => "USD", "data-currency-usd" => "$11.00"} $11.00
-                                    %span.price.product-price.sale-price
-                                      %span.money{"data-currency" => "USD", "data-currency-usd" => "$10.00"} $10.00
-                                  .functional-buttons.clearfix
-                                    .wishlist
-                                      %a.btn.btn-outline-inverse.btn-wishlist{:href => "#!account/login", :title => "Add to Wishlist"}
-                                        %i.fa.fa-heart
-                                        %span Add to Wishlist
-                                    .cart
-                                      .action
-                                        %form.form-ajaxtocart{:action => "#!cart/add", :enctype => "multipart/form-data", :method => "post"}
-                                          %input{:name => "id", :type => "hidden", :value => "22464901569"}/
-                                          %button.button.ajax_addtocart{:title => "Add to Cart", :type => "submit", :value => "Submit"}
-                                            %span.fa.fa-shopping-cart
-                                            %span Add to Cart
-                                    .view_detail
-                                      %a.btn.lnk_view{:href => "#!products/the-asbury-collection-lef", :title => "View product"}
-                                        %i.fa.fa-retweet
-                                        %span View product
-                                  .deal-clock.lof-clock-7135968449-detail
-                                    %ul.list-inline
-                                      %li.day
-                                        %b 04
-                                        %span Days
-                                      %li
-                                        %b 10
-                                        %span Hours
-                                      %li
-                                        %b 07
-                                        %span Mins
-                                      %li
-                                        %b 46
-                                        %span Secs
-                                  :javascript
-                                    //<![CDATA[
-                                    jQuery(document).ready(function ($) {
-                                        $(".lof-clock-7135968449-detail").lofCountDown({
-                                            TargetDate: "@2016-10-24 00:00:00",
-                                            DisplayFormat: "<ul class='list-inline'><li class='day'>%%D%%<span>Days</span></li><li>%%H%%<span>Hours</span></li><li>%%M%%<span>Mins</span></li><li>%%S%%<span>Secs</span></li></ul>",
-                                            FinishMessage: "End Deal"
-                                        });
-                                    });
-                                    //]]>
-                        .owl-item.active{:style => "width: 298px;"}
-                          .item
-                            .product_block.wow.fadeIn.animated{"data-wow-delay" => "500ms", :style => "visibility: visible; animation-delay: 500ms; animation-name: fadeIn;"}
-                              .product-container.text-left.product-block
-                                .product-image-container.image
-                                  %a.product_img_link{:href => "#!products/the-asbury-collection"}
-                                    %img.img-responsive{:alt => "The Asbury Righ", :src => "./ap_rojo_files/20-min_59d8b735-2ed5-4f55-a5d2-97ee3eb7b433_large.jpg"}/
-                                    %span.product-additional{"data-idproduct" => "7135969217"}
-                                      %img.replace-2x.img-responsive{:alt => "The Asbury Righ", :src => "./ap_rojo_files/27-min_73204f3c-3080-4cc0-ae83-3df731ba7515_large.jpg"}/
-                                  %span.new-box
-                                    %span.label-new.label New
-                                  %span.sale-box
-                                    %span.label-sale.label Sale
-                                  .quickview
-                                    %a.quick-view.btn{"data-handle" => "the-asbury-collection", :href => "#!#quick-view-product", :title => "+ Quick View"}
-                                      %i.fa.fa-expand
-                                .product-meta
-                                  %h5.name
-                                    %a.product-name{:href => "#!products/the-asbury-collection", :title => "The Asbury Righ"}
-                                      The
-                                      Asbury Righ
-                                  .product-desc
-                                    Claritas est etiam processus dynamicus, qui sequitur mutationem consuetudium
-                                    lectorum. Mirum est notare quam littera gothica, quam nunc putamus parum...
-                                  .review
-                                    %span#spr_badge_7135969217.spr-badge{"data-rating" => "0.0"}
-                                      %span.spr-starrating.spr-badge-starrating
-                                        %i.spr-icon.spr-icon-star-empty{:style => ""}
-                                        %i.spr-icon.spr-icon-star-empty{:style => ""}
-                                        %i.spr-icon.spr-icon-star-empty{:style => ""}
-                                        %i.spr-icon.spr-icon-star-empty{:style => ""}
-                                        %i.spr-icon.spr-icon-star-empty{:style => ""}
-                                      %span.spr-badge-caption
-                                        No reviews
-                                  .content_price
-                                    %span.old-price.product-price
-                                      %span.money{"data-currency" => "USD", "data-currency-usd" => "$33.99"} $33.99
-                                    %span.price.product-price.sale-price
-                                      %span.money{"data-currency" => "USD", "data-currency-usd" => "$33.00"} $33.00
-                                  .functional-buttons.clearfix
-                                    .wishlist
-                                      %a.btn.btn-outline-inverse.btn-wishlist{:href => "#!account/login", :title => "Add to Wishlist"}
-                                        %i.fa.fa-heart
-                                        %span Add to Wishlist
-                                    .cart
-                                      .action
-                                        %form.form-ajaxtocart{:action => "#!cart/add", :enctype => "multipart/form-data", :method => "post"}
-                                          %input{:name => "id", :type => "hidden", :value => "22464903873"}/
-                                          %button.button.ajax_addtocart{:title => "Add to Cart", :type => "submit", :value => "Submit"}
-                                            %span.fa.fa-shopping-cart
-                                            %span Add to Cart
-                                    .view_detail
-                                      %a.btn.lnk_view{:href => "#!products/the-asbury-collection", :title => "View product"}
-                                        %i.fa.fa-retweet
-                                        %span View product
-                                  .deal-clock.lof-clock-7135969217-detail
-                                    %ul.list-inline
-                                      %li.day
-                                        %b 04
-                                        %span Days
-                                      %li
-                                        %b 10
-                                        %span Hours
-                                      %li
-                                        %b 07
-                                        %span Mins
-                                      %li
-                                        %b 46
-                                        %span Secs
-                                  :javascript
-                                    //<![CDATA[
-                                    jQuery(document).ready(function ($) {
-                                        $(".lof-clock-7135969217-detail").lofCountDown({
-                                            TargetDate: "@2016-10-24 00:00:00",
-                                            DisplayFormat: "<ul class='list-inline'><li class='day'>%%D%%<span>Days</span></li><li>%%H%%<span>Hours</span></li><li>%%M%%<span>Mins</span></li><li>%%S%%<span>Secs</span></li></ul>",
-                                            FinishMessage: "End Deal"
-                                        });
-                                    });
-                                    //]]>
-                        .owl-item.active{:style => "width: 298px;"}
-                          .item
-                            .product_block.wow.fadeIn.animated{"data-wow-delay" => "600ms", :style => "visibility: visible; animation-delay: 600ms; animation-name: fadeIn;"}
-                              .product-container.text-left.product-block
-                                .product-image-container.image
-                                  %a.product_img_link{:href => "#!products/the-costa-collection"}
-                                    %img.img-responsive{:alt => "The Costa Camel", :src => "./ap_rojo_files/1-min_c2a65848-5387-442a-837c-c973b660dc03_large.jpg"}/
-                                    %span.product-additional{"data-idproduct" => "7135974401"}
-                                      %img.replace-2x.img-responsive{:alt => "The Costa Camel", :src => "./ap_rojo_files/2-min_3cb5cc03-27b8-4c5f-8fc7-3457c88d7b59_large.jpg"}/
-                                  %span.new-box
-                                    %span.label-new.label New
-                                  %span.sale-box
-                                    %span.label-sale.label Sale
-                                  .quickview
-                                    %a.quick-view.btn{"data-handle" => "the-costa-collection", :href => "#!#quick-view-product", :title => "+ Quick View"}
-                                      %i.fa.fa-expand
-                                .product-meta
-                                  %h5.name
-                                    %a.product-name{:href => "#!products/the-costa-collection", :title => "The Costa Camel"}
-                                      The
-                                      Costa Camel
-                                  .product-desc
-                                    Claritas est etiam processus dynamicus, qui sequitur mutationem consuetudium
-                                    lectorum. Mirum est notare quam littera gothica, quam nunc putamus parum...
-                                  .review
-                                    %span#spr_badge_7135974401.spr-badge{"data-rating" => "0.0"}
-                                      %span.spr-starrating.spr-badge-starrating
-                                        %i.spr-icon.spr-icon-star-empty{:style => ""}
-                                        %i.spr-icon.spr-icon-star-empty{:style => ""}
-                                        %i.spr-icon.spr-icon-star-empty{:style => ""}
-                                        %i.spr-icon.spr-icon-star-empty{:style => ""}
-                                        %i.spr-icon.spr-icon-star-empty{:style => ""}
-                                      %span.spr-badge-caption
-                                        No reviews
-                                  .content_price
-                                    %span.old-price.product-price
-                                      %span.money{"data-currency" => "USD", "data-currency-usd" => "$11.00"} $11.00
-                                    %span.price.product-price.sale-price
-                                      %span.money{"data-currency" => "USD", "data-currency-usd" => "$10.00"} $10.00
-                                  .functional-buttons.clearfix
-                                    .wishlist
-                                      %a.btn.btn-outline-inverse.btn-wishlist{:href => "#!account/login", :title => "Add to Wishlist"}
-                                        %i.fa.fa-heart
-                                        %span Add to Wishlist
-                                    .cart
-                                      .action
-                                        %form.form-ajaxtocart{:action => "#!cart/add", :enctype => "multipart/form-data", :method => "post"}
-                                          %input{:name => "id", :type => "hidden", :value => "22464931265"}/
-                                          %button.button.ajax_addtocart{:title => "Add to Cart", :type => "submit", :value => "Submit"}
-                                            %span.fa.fa-shopping-cart
-                                            %span Add to Cart
-                                    .view_detail
-                                      %a.btn.lnk_view{:href => "#!products/the-costa-collection", :title => "View product"}
-                                        %i.fa.fa-retweet
-                                        %span View product
-                        .owl-item.active.last{:style => "width: 298px;"}
-                          .item
-                            .product_block.wow.fadeIn.animated{"data-wow-delay" => "700ms", :style => "visibility: visible; animation-delay: 700ms; animation-name: fadeIn;"}
-                              .product-container.text-left.product-block
-                                .product-image-container.image
-                                  %a.product_img_link{:href => "#!products/the-hartley-merlot-collection"}
-                                    %img.img-responsive{:alt => "The Hartley Merlot Collection", :src => "./ap_rojo_files/6-min_33be5056-13b3-4a5e-9c73-ba8f3ebf25b0_large.jpg"}/
-                                    %span.product-additional{"data-idproduct" => "7135972417"}
-                                      %img.replace-2x.img-responsive{:alt => "The Hartley Merlot Collection", :src => "./ap_rojo_files/25-min_large.jpg"}/
-                                  %span.new-box
-                                    %span.label-new.label New
-                                  .quickview
-                                    %a.quick-view.btn{"data-handle" => "the-hartley-merlot-collection", :href => "#!#quick-view-product", :title => "+ Quick View"}
-                                      %i.fa.fa-expand
-                                .product-meta
-                                  %h5.name
-                                    %a.product-name{:href => "#!products/the-hartley-merlot-collection", :title => "The Hartley Merlot Collection"}
-                                      The
-                                      Hartley Merlot Collection
-                                  .product-desc
-                                    Claritas est etiam processus dynamicus, qui sequitur mutationem consuetudium
-                                    lectorum. Mirum est notare quam littera gothica, quam nunc putamus parum...
-                                  .review
-                                    %span#spr_badge_7135972417.spr-badge{"data-rating" => "0.0"}
-                                      %span.spr-starrating.spr-badge-starrating
-                                        %i.spr-icon.spr-icon-star-empty{:style => ""}
-                                        %i.spr-icon.spr-icon-star-empty{:style => ""}
-                                        %i.spr-icon.spr-icon-star-empty{:style => ""}
-                                        %i.spr-icon.spr-icon-star-empty{:style => ""}
-                                        %i.spr-icon.spr-icon-star-empty{:style => ""}
-                                      %span.spr-badge-caption
-                                        No reviews
-                                  .content_price
-                                    %span.price.product-price
-                                      %span.money{"data-currency" => "USD", "data-currency-usd" => "$200.00"} $200.00
-                                  .functional-buttons.clearfix
-                                    .wishlist
-                                      %a.btn.btn-outline-inverse.btn-wishlist{:href => "#!account/login", :title => "Add to Wishlist"}
-                                        %i.fa.fa-heart
-                                        %span Add to Wishlist
-                                    .cart
-                                      .action
-                                        %form.form-ajaxtocart{:action => "#!cart/add", :enctype => "multipart/form-data", :method => "post"}
-                                          %input{:name => "id", :type => "hidden", :value => "22464916737"}/
-                                          %button.button.ajax_addtocart{:title => "Add to Cart", :type => "submit", :value => "Submit"}
-                                            %span.fa.fa-shopping-cart
-                                            %span Add to Cart
-                                    .view_detail
-                                      %a.btn.lnk_view{:href => "#!products/the-hartley-merlot-collection", :title => "View product"}
-                                        %i.fa.fa-retweet
-                                        %span View product
-                    .owl-controls.clickable
-                      .owl-pagination
-                        .owl-page
-                          %span
-                        .owl-page.active
-                          %span
-                      .owl-buttons
-                        .owl-prev Prev
-                        .owl-next Next
-            :javascript
-              $(document).ready(function () {
-
-                  if (1 === 1) {
-                      $('#productlist1 .owl-carousel').each(function () {
-                          $(this).owlCarousel({
-                              items: 4,
-                              lazyLoad: true,
-                              navigation: true,
-                              addClassActive: true,
-                              afterAction: SetOwlCarouselFirstLast,
-                              afterInit: OwlLoaded,
-
-                              autoPlay: 8000,
-
-
-                              itemsDesktop: [1199, 3],
-                              itemsDesktopSmall: [979, 2],
-                              itemsTablet: [768, 2],
-                              itemsTabletSmall: [480, 1],
-                              itemsMobile: [360, 1],
-
-                              navigationText: ["Prev", "Next"]
-                          });
-                      });
-                  }
-                  else {
-                      $('#productlist1 .owl-carousel').each(function () {
-                          $(this).owlCarousel({
-                              items: 4,
-                              lazyLoad: true,
-                              navigation: true,
-                              center: true,
-                              addClassActive: true,
-                              afterAction: SetOwlCarouselFirstLast,
-                              afterInit: OwlLoaded,
-
-                              autoPlay: 8000,
-
-
-                              itemsDesktop: [1199, 3],
-                              itemsDesktopSmall: [979, 2],
-                              itemsTablet: [768, 2],
-                              itemsTabletSmall: [480, 1],
-                              itemsMobile: [360, 1],
-
-                              navigationText: ["Prev", "Next"]
-                          });
-                      });
-                  }
-
-              });
-    .button_product_list.text-center
-      %a.btn_home_page.btn.btn-center{href: products_path}
-        View all items
-
-- if products.respond_to?(:total_pages)
+- if products.any?
+  .container
+    .row
+      #center_column.center_column.col-xs-12
+        .center_wrap
+          .row
+            .products_top.col-xs-12.col-sm-12
+              #products.products_block.exclusive.block
+                .block_content
+                  .product_list_owl.row
+                    .owl-carousel.slide.owl-theme.owl-loaded{:style => "opacity: 1; display: block;"}
+                      .owl-wrapper-outer
+                        .owl-wrapper{:style => "width: 4768px; left: 0px; display: block; transition: all 800ms ease; transform: translate3d(-1192px, 0px, 0px);"}
+                          - products.each do |product|
+                            - url = spree.product_url(product, taxon_id: @taxon.try(:id))
+                            .owl-item{:style => "width: 298px;"}
+                              .item
+                                .product_block.wow.fadeIn.animated{"data-wow-delay" => "0ms", :style => "visibility: visible; animation-delay: 0ms; animation-name: fadeIn;"}
+                                  - cache(@taxon.present? ? [I18n.locale, current_currency, @taxon, product] : cache_key_for_product(product)) do
+                                    .product-container.text-left.product-block{"data-hook" => "products_list_item", :id => "product_#{product.id}", :itemscope => "", :itemtype => "https://schema.org/Product"}
+                                      .product-image-container.image
+                                        %a.product_img_link{href: url}
+                                          -#%img.img-responsive{:alt => "Greenfield Walnut 5 Pc", :src => "./ap_rojo_files/3-min_large.jpg"}/
+                                          = small_image(product, itemprop: 'image', class: 'img-responsive')
+                                          %span.product-additional{"data-idproduct" => product.id}
+                                        %span.new-box
+                                          %span.label-new.label New
+                                        %span.sale-box
+                                          %span.label-sale.label Sale
+                                        .quickview
+                                          %a.quick-view.btn{"data-handle" => product.slug, href: url, title: "+ Quick View"}
+                                            %i.fa.fa-expand
+                                      .product-meta
+                                        %h5.name
+                                          %a.product-name{href: url, title: truncate(product.name, length: 50)}
+                                            = truncate(product.name, length: 50)
+                                        .product-desc
+                                          = truncate(product_description(product), length: 200)
+                                        .review
+                                          %span.spr-badge{"data-rating" => "5.0", id: "#spr_badge_#{product.id}"}
+                                            %span.spr-starrating.spr-badge-starrating
+                                              %i.spr-icon.spr-icon-star{:style => ""}
+                                              %i.spr-icon.spr-icon-star{:style => ""}
+                                              %i.spr-icon.spr-icon-star{:style => ""}
+                                              %i.spr-icon.spr-icon-star{:style => ""}
+                                              %i.spr-icon.spr-icon-star{:style => ""}
+                                            %span.spr-badge-caption
+                                              1 review
+                                        .content_price
+                                          %span.old-price.product-price
+                                            %span.money{"data-currency" => "USD", "data-currency-usd" => display_price(product)}= display_price(product)
+                                          %span.price.product-price.sale-price
+                                            %span.money{"data-currency" => "USD", "data-currency-usd" => display_price(product)}= display_price(product)
+                                        .functional-buttons.clearfix
+                                          .wishlist
+                                            %a.btn.btn-outline-inverse.btn-wishlist{:href => "#!account/login", :title => "Add to Wishlist"}
+                                              %i.fa.fa-heart
+                                              %span Add to Wishlist
+                                          .cart
+                                            .action
+                                              %form.form-ajaxtocart{:action => "#!cart/add", :enctype => "multipart/form-data", :method => "post"}
+                                                %input{name: :id, type: :hidden, value: product.id}/
+                                                %button.button.ajax_addtocart{:title => "Add to Cart", :type => "submit", :value => "Submit"}
+                                                  %span.fa.fa-shopping-cart
+                                                  %span Add to Cart
+                                          .view_detail
+                                            %a.btn.lnk_view{href: url, title: "View product"}
+                                              %i.fa.fa-retweet
+                                              %span View product
+                      .owl-controls.clickable
+                        .owl-pagination
+                          .owl-page
+                            %span
+                          .owl-page.active
+                            %span
+                        .owl-buttons
+                          .owl-prev Prev
+                          .owl-next Next
+              :javascript
+                $(document).ready(function () {
+                    if (false) {
+                        $('#products .owl-carousel').each(function () {
+                            $(this).owlCarousel({
+                                items: 4,
+                                lazyLoad: true,
+                                navigation: true,
+                                addClassActive: true,
+                                afterAction: SetOwlCarouselFirstLast,
+                                afterInit: OwlLoaded,
+                                autoPlay: 8000,
+                                itemsDesktop: [1199, 3],
+                                itemsDesktopSmall: [979, 2],
+                                itemsTablet: [768, 2],
+                                itemsTabletSmall: [480, 1],
+                                itemsMobile: [360, 1],
+                                navigationText: ["Prev", "Next"]
+                            });
+                        });
+                    }
+                });
+      .button_product_list.text-center
+        %a.btn_home_page.btn.btn-center{href: products_path}
+          View all items
+- if products.respond_to?(:total_pages) && !%w(home).include?(controller_name)
   = paginate products, theme: 'twitter-bootstrap-3'
