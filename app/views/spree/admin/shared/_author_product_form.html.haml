@@ -1,0 +1,5 @@
+%div{data: {hook: :admin_product_form_author}}
+  = f.field_container :author_id, class: ['form-group'] do
+    = f.label :author_id, Spree.t(:author_id)
+    = f.collection_select(:author_id, Spree::Author.all, :id, :name, { include_blank: Spree.t('match_choices.none') }, { class: 'select2', disabled: (cannot? :edit, Spree::Author) })
+    = f.error_message_on :author

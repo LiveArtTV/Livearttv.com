@@ -1,0 +1,25 @@
+---
+en:
+  activerecord:
+    attributes:
+      spree/author:
+        content: Content
+        foreign_link: "Foreign link (URL)"
+        layout: Layout
+        meta_description: "Meta Description"
+        meta_keywords: "Meta Keywords"
+        meta_title: "Meta Title"
+        render_layout_as_partial: "Render layout as partial"
+        show_in_header: "Show in header"
+        show_in_sidebar: "Show in sidebar"
+        slug: Slug
+        name: Name
+        visible: Visible
+    models:
+      spree/author:
+        one: Author
+        other: Authors
+  spree:
+    static_content:
+      link: Link
+      new_author: New author

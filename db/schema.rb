@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161020195462) do
+ActiveRecord::Schema.define(version: 20161025195926) do
 
   create_table "friendly_id_slugs", force: :cascade do |t|
     t.string   "slug",           limit: 255, null: false
@@ -90,6 +90,28 @@ ActiveRecord::Schema.define(version: 20161020195462) do
   add_index "spree_assets", ["position"], name: "index_spree_assets_on_position", using: :btree
   add_index "spree_assets", ["viewable_id"], name: "index_assets_on_viewable_id", using: :btree
   add_index "spree_assets", ["viewable_type", "type"], name: "index_assets_on_viewable_type_and_type", using: :btree
+
+  create_table "spree_authors", force: :cascade do |t|
+    t.string   "name",                     limit: 255
+    t.text     "content",                  limit: 65535
+    t.integer  "year_of_birth",            limit: 4
+    t.integer  "year_of_death",            limit: 4
+    t.integer  "category",                 limit: 4
+    t.string   "slug",                     limit: 255
+    t.string   "foreign_link",             limit: 255
+    t.boolean  "visible",                                default: true
+    t.string   "meta_title",               limit: 255
+    t.string   "meta_keywords",            limit: 255
+    t.string   "meta_description",         limit: 255
+    t.string   "layout",                   limit: 255
+    t.boolean  "render_layout_as_partial",               default: false
+    t.boolean  "show_in_sidebar",                        default: false, null: false
+    t.datetime "created_at",                                             null: false
+    t.datetime "updated_at",                                             null: false
+  end
+
+  add_index "spree_authors", ["category"], name: "index_spree_authors_on_category", using: :btree
+  add_index "spree_authors", ["slug"], name: "index_spree_authors_on_slug", using: :btree
 
   create_table "spree_calculators", force: :cascade do |t|
     t.string   "type",            limit: 255
@@ -466,8 +488,10 @@ ActiveRecord::Schema.define(version: 20161020195462) do
     t.datetime "updated_at",                                        null: false
     t.boolean  "promotionable",                      default: true
     t.string   "meta_title",           limit: 255
+    t.integer  "author_id",            limit: 4
   end
 
+  add_index "spree_products", ["author_id"], name: "index_spree_products_on_author_id", using: :btree
   add_index "spree_products", ["available_on"], name: "index_spree_products_on_available_on", using: :btree
   add_index "spree_products", ["deleted_at"], name: "index_spree_products_on_deleted_at", using: :btree
   add_index "spree_products", ["discontinue_on"], name: "index_spree_products_on_discontinue_on", using: :btree

@@ -1,0 +1,32 @@
+- content_for :page_title do
+  = plural_resource_name(Spree::Author)
+- content_for :page_actions do
+  = button_link_to Spree.t(:new_author, scope: :static_content), new_object_url, icon: 'plus', class: 'btn-primary', id: 'admin_new_author'
+
+- if @collection.any?
+  %table#listing_authors.table{"data-hook" => ""}
+    %colgroup
+      %col{style: 'width: 40%'}/
+      %col{style: 'width: 35%'}/
+      %col{style: 'width: 10%'}/
+      %col{style: 'width: 15%'}/
+    %thead
+      %tr{data: {hook: :admin_authors_index_headers}}
+        %th= Spree::Author.human_attribute_name(:name)
+        %th= Spree.t(:link, scope: :static_content)
+        %th.text-center= Spree::Author.human_attribute_name(:visible)
+        %th.actions{data: {hook: :admin_authors_index_header_actions}}
+    %tbody
+      - @collection.each do |author|
+        %tr{class: cycle('odd', 'even'), data: {hook: :admin_authors_index_rows}, id: dom_id(author)}
+          %td= author.name
+          %td= link_to author.link, author.link, target: '_blank'
+          %td.text-center= content_tag(:i, '', class: 'icon icon-ok') if author.visible
+          %td.actions.text-right{data: {hook: :admin_authors_index_row_actions}}
+            = link_to_edit author, no_text: true
+            = link_to_delete author, no_text: true
+- else
+  .alert.alert-warning.no-objects-found
+    = Spree.t(:no_resource_found, resource: Spree::Author.model_name.human)
+    ,
+    #{link_to Spree.t(:add_one), spree.new_admin_author_path}!
