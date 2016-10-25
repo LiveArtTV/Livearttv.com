@@ -25,90 +25,87 @@
         #taxon-crumbs.five{"data-hook" => "product_taxons"}
           = render :partial => 'taxons'
 - cache cache_key_for_product do
-  %section#columns.columns-container.product
-    .container
-      .row
-        %aside
-          #left_column.left_column.sidebar.col-sm-4.col-md-3.col-xs-12
-            = render partial: 'spree/products/properties'
-            -#= render partial: '/shared/products_best_sellers'
-        #center_column.center_column.col-xs-12.col-sm-8.col-md-9
-          - url = spree.product_url(@product, taxon_id: @taxon.try(:id))
-          %div{:itemscope => "", :itemtype => "http://schema.org/Product"}
-            %meta{:content => url, :itemprop => "url"}/
-            %meta{:content => @product.images.first.attachment.url(:product), :itemprop => "image"}/
-            .primary_block
-              .row
-                #product-images.product-left-column.col-xs-12.col-sm-12.col-md-5{"data-hook" => "product_images"}
-                  #main-image.panel.panel-default{"data-hook" => ""}
-                    .panel-body.text-center
-                      = render :partial => 'image'
-                  #thumbnails{"data-hook" => ""}
-                    = render :partial => 'thumbnails'
-                  -##image-block.clearfix
-                    %span#view_full_size
-                      .zoomWrapper{:style => "height:352px;width:352px;"}
-                        %img#proimage.img-responsive{:alt => "The Asbury Collection lef", "data-zoom-image" => "//cdn.shopify.com/s/files/1/1404/2671/products/26-min_1024x1024.jpg?v=1469508455", :itemprop => "image", :src => "//cdn.shopify.com/s/files/1/1404/2671/products/26-min_large.jpg?v=1469508455", :style => "position: absolute;"}/
-                  -##views_block.clearfix
-                    #thumbs_list
-                      .owl-thumblist
-                        .owl-carousel.owl-theme{:style => "opacity: 1; display: block;"}
-                          .owl-wrapper-outer
-                            .owl-wrapper{:style => "width: 912px; left: 0px; display: block;"}
-                              .owl-item{:style => "width: 76px;"}
-                                #thumbnail_1.thumb_item
-                                  %a{"data-image" => "//cdn.shopify.com/s/files/1/1404/2671/products/26-min_large.jpg?v=1469508455", "data-imageid" => "14625595137", "data-zoom-image" => "//cdn.shopify.com/s/files/1/1404/2671/products/26-min_1024x1024.jpg?v=1469508455", :href => "javascript:void(0)"}
-                                    %img#thumb_1.img-responsive{:alt => "The Asbury Collection lef", :itemprop => "image", :src => "//cdn.shopify.com/s/files/1/1404/2671/products/26-min_compact.jpg?v=1469508455"}/
-                              .owl-item{:style => "width: 76px;"}
-                                #thumbnail_2.thumb_item
-                                  %a{"data-image" => "//cdn.shopify.com/s/files/1/1404/2671/products/4-min_5d242438-626d-49fa-88b0-221254b6198a_large.jpg?v=1469508455", "data-imageid" => "14625594497", "data-zoom-image" => "//cdn.shopify.com/s/files/1/1404/2671/products/4-min_5d242438-626d-49fa-88b0-221254b6198a_1024x1024.jpg?v=1469508455", :href => "javascript:void(0)"}
-                                    %img#thumb_2.img-responsive{:alt => "The Asbury Collection lef", :itemprop => "image", :src => "//cdn.shopify.com/s/files/1/1404/2671/products/4-min_5d242438-626d-49fa-88b0-221254b6198a_compact.jpg?v=1469508455"}/
-                          .owl-controls.clickable
-                            .owl-pagination
-                              .owl-page.active
-                                %span
-                              .owl-page
-                                %span
-                            .owl-buttons
-                              .owl-prev prev
-                              .owl-next next
-                .col-xs-12.col-sm-12.col-md-7
-                  .product-center-column
-                    %h1{:itemprop => "name"}= @product.name
-                    .review
-                      %span#spr_badge_7135968449.spr-badge{"data-rating" => "0.0"}
-                        %span.spr-starrating.spr-badge-starrating
-                          %i.spr-icon.spr-icon-star-empty{:style => ""}
-                          %i.spr-icon.spr-icon-star-empty{:style => ""}
-                          %i.spr-icon.spr-icon-star-empty{:style => ""}
-                          %i.spr-icon.spr-icon-star-empty{:style => ""}
-                          %i.spr-icon.spr-icon-star-empty{:style => ""}
-                        %span.spr-badge-caption
-                          No reviews
-                    %h5.brand{:itemprop => "brand"}
-                      %span Vendor:
-                      %a{:href => "/products/vendors?q=", :title => ""}= product_property(@product_properties, :brand)
-                    .product-description.rte{:itemprop => "description"}
-                      = product_description(@product)
-                  .product-right-column
-                    %div{:itemprop => "offers", :itemscope => "", :itemtype => "http://schema.org/Offer"}
-                      %meta{:content => @product.currency, :itemprop => "priceCurrency"}/
-                      %link{:href => "http://schema.org/InStock", :itemprop => "availability"}/
-                      -#= render partial: 'shared/deal_clock'
-                      - if @product.master.can_supply?
-                        .availability
-                          %p.available.instock Available
-                      = render partial: 'cart_form'
-                      -#= render partial: 'products/apollo_cart'
-                    -#.wishlist
-                      %a.btn.btn-outline-inverse.btn-wishlist{:href => "/account/login", :title => "Add to Wishlist"}
-                        %i.fa.fa-heart
-                        %span Add to Wishlist
-                    .line-product
-                    #product-detail-image
-                      .box_image_pd
-                        = image_tag 'img_product_detail.png', class: 'img-responsive'
+  %aside
+    #left_column.left_column.sidebar.col-sm-4.col-md-3.col-xs-12
+      = render partial: 'spree/products/properties'
+      = render partial: '/shared/products_best_sellers'
+  #center_column.center_column.col-xs-12.col-sm-8.col-md-9
+    - url = spree.product_url(@product, taxon_id: @taxon.try(:id))
+    %div{:itemscope => "", :itemtype => "http://schema.org/Product"}
+      %meta{:content => url, :itemprop => "url"}/
+      %meta{:content => @product.images.first.attachment.url(:product), :itemprop => "image"}/
+      .primary_block
+        .row
+          #product-images.product-left-column.col-xs-12.col-sm-12.col-md-5{"data-hook" => "product_images"}
+            #main-image.panel.panel-default{"data-hook" => ""}
+              .panel-body.text-center
+                = render :partial => 'image'
+            #thumbnails{"data-hook" => ""}
+              = render :partial => 'thumbnails'
+            -##image-block.clearfix
+              %span#view_full_size
+                .zoomWrapper{:style => "height:352px;width:352px;"}
+                  %img#proimage.img-responsive{:alt => "The Asbury Collection lef", "data-zoom-image" => "//cdn.shopify.com/s/files/1/1404/2671/products/26-min_1024x1024.jpg?v=1469508455", :itemprop => "image", :src => "//cdn.shopify.com/s/files/1/1404/2671/products/26-min_large.jpg?v=1469508455", :style => "position: absolute;"}/
+            -##views_block.clearfix
+              #thumbs_list
+                .owl-thumblist
+                  .owl-carousel.owl-theme{:style => "opacity: 1; display: block;"}
+                    .owl-wrapper-outer
+                      .owl-wrapper{:style => "width: 912px; left: 0px; display: block;"}
+                        .owl-item{:style => "width: 76px;"}
+                          #thumbnail_1.thumb_item
+                            %a{"data-image" => "//cdn.shopify.com/s/files/1/1404/2671/products/26-min_large.jpg?v=1469508455", "data-imageid" => "14625595137", "data-zoom-image" => "//cdn.shopify.com/s/files/1/1404/2671/products/26-min_1024x1024.jpg?v=1469508455", :href => "javascript:void(0)"}
+                              %img#thumb_1.img-responsive{:alt => "The Asbury Collection lef", :itemprop => "image", :src => "//cdn.shopify.com/s/files/1/1404/2671/products/26-min_compact.jpg?v=1469508455"}/
+                        .owl-item{:style => "width: 76px;"}
+                          #thumbnail_2.thumb_item
+                            %a{"data-image" => "//cdn.shopify.com/s/files/1/1404/2671/products/4-min_5d242438-626d-49fa-88b0-221254b6198a_large.jpg?v=1469508455", "data-imageid" => "14625594497", "data-zoom-image" => "//cdn.shopify.com/s/files/1/1404/2671/products/4-min_5d242438-626d-49fa-88b0-221254b6198a_1024x1024.jpg?v=1469508455", :href => "javascript:void(0)"}
+                              %img#thumb_2.img-responsive{:alt => "The Asbury Collection lef", :itemprop => "image", :src => "//cdn.shopify.com/s/files/1/1404/2671/products/4-min_5d242438-626d-49fa-88b0-221254b6198a_compact.jpg?v=1469508455"}/
+                    .owl-controls.clickable
+                      .owl-pagination
+                        .owl-page.active
+                          %span
+                        .owl-page
+                          %span
+                      .owl-buttons
+                        .owl-prev prev
+                        .owl-next next
+          .col-xs-12.col-sm-12.col-md-7
+            .product-center-column
+              %h1{:itemprop => "name"}= @product.name
+              .review
+                %span#spr_badge_7135968449.spr-badge{"data-rating" => "0.0"}
+                  %span.spr-starrating.spr-badge-starrating
+                    %i.spr-icon.spr-icon-star-empty{:style => ""}
+                    %i.spr-icon.spr-icon-star-empty{:style => ""}
+                    %i.spr-icon.spr-icon-star-empty{:style => ""}
+                    %i.spr-icon.spr-icon-star-empty{:style => ""}
+                    %i.spr-icon.spr-icon-star-empty{:style => ""}
+                  %span.spr-badge-caption
+                    No reviews
+              %h5.brand{:itemprop => "brand"}
+                %span Vendor:
+                %a{:href => "/products/vendors?q=", :title => ""}= product_property(@product_properties, :brand)
+              .product-description.rte{:itemprop => "description"}
+                = product_description(@product)
+            .product-right-column
+              %div{:itemprop => "offers", :itemscope => "", :itemtype => "http://schema.org/Offer"}
+                %meta{:content => @product.currency, :itemprop => "priceCurrency"}/
+                %link{:href => "http://schema.org/InStock", :itemprop => "availability"}/
+                -#= render partial: 'shared/deal_clock'
+                - if @product.master.can_supply?
+                  .availability
+                    %p.available.instock Available
+                = render partial: 'cart_form'
+                -#= render partial: 'products/apollo_cart'
+              -#.wishlist
+                %a.btn.btn-outline-inverse.btn-wishlist{:href => "/account/login", :title => "Add to Wishlist"}
+                  %i.fa.fa-heart
+                  %span Add to Wishlist
+              .line-product
+              #product-detail-image
+                .box_image_pd
+                  = image_tag 'img_product_detail.png', class: 'img-responsive'
 
-
-              -#= render partial: 'products/info_block'
-            -#= render partial: 'shared/products_related'
+        = render 'video', product: @product
+        -#= render partial: 'products/info_block'
+      -#= render partial: 'shared/products_related'
