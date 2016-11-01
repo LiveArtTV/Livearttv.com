@@ -33,7 +33,7 @@
     - url = spree.product_url(@product, taxon_id: @taxon.try(:id))
     %div{:itemscope => "", :itemtype => "http://schema.org/Product"}
       %meta{:content => url, :itemprop => "url"}/
-      %meta{:content => @product.images.first.attachment.url(:product), :itemprop => "image"}/
+      %meta{:content => product_image_src(@product), :itemprop => "image"}/
       .primary_block
         .row
           #product-images.product-left-column.col-xs-12.col-sm-12.col-md-5{"data-hook" => "product_images"}
