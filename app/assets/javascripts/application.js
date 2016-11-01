@@ -23,10 +23,11 @@ $(document).ready(function(){
         closeEffect	: 'elastic',
         closeBtn    : true,
         closeClick  : true,
-        helpers : {
-            title : {
-                type : 'over'
-            }
-        }
+//        title       : false,
+//        helpers : {
+//            title : {
+//                type : 'over'
+//            }
+//        }
     });
 });

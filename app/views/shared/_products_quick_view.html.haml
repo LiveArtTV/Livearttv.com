@@ -1,0 +1,40 @@
+#quick-view-product{:style => "display:none;"}
+  .quickview-overlay
+  .quick-view-product
+    #quickview-modal
+      .block-quickview.primary_block.row
+        .product-left-column.col-xs-12.col-sm-4.col-md-4
+          .clearfix.image-block
+            %span.view_full_size
+              %a.img-product{:href => "javascript: return false;", :title => ""}
+                %img#product-featured-image-quickview.img-responsive.product-featured-image-quickview{:alt => "Quickview", :src => asset_path('product_default.png')}/
+            .loading-imgquickview{:style => "display:none;"}
+          .more-view-wrapper.clearfix
+            #thumbs_list_quickview
+              %ul#thumblist_quickview.product-photo-thumbs.quickview-more-views-owlslider.list-unstyled
+        .product-center-column.product-info.col-xs-12.col-sm-4.col-md-5
+          %h3.qwp-name  
+          .product-description.rte
+          %h5.brand
+          .availability
+        .product-right-column.product-item.col-xs-12.col-sm-4.col-md-3
+          %div
+            %form.variants.form-ajaxtocart{:action => "#!cart/add", :enctype => "multipart/form-data", :method => "post"}
+              %span.prices
+                %span.price.h2
+              %span.price-product-detail
+                %span.old-price.product-price.compare-price
+              %select{:name => "id", :style => "display:none"}
+              .clearfix
+              .quantity_wanted_p
+                %label.quantity-selector{:for => "quantity-detail"} Quantity
+                .apQty
+                  %button.apQtyAdjust.apQtyAdjustMinus{"data-id" => "", "data-qty" => "0", :type => "button"} −
+                  %input#quantity-detail.apQtyNum{"aria-label" => "quantity", "data-id" => "", :min => "1", :name => "quantity", :pattern => "[0-9]*", :type => "text", :value => "1"}/
+                  %button.apQtyAdjust.apQtyAdjustPlus{"data-id" => "", "data-qty" => "11", :type => "button"} +
+              .total-price
+                %label Subtotal:
+                %span
+              %button.btn.add_to_cart_detail.ajax_addtocart{:name => "add", :type => "submit"}
+                %span Add to Cart
+      %a.quickview-close.fancybox-close{:href => "javascript: Product.quickViewHide();", :title => "Close"}

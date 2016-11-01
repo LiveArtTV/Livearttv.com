@@ -256,7 +256,6 @@ function quickViewVariantsSwatch(t, quickview) {
     }
 }
 function addCheckedSwatch(){$('.swatch .color label').on('click', function () {$('.swatch .color').each(function(){$(this).find('label').removeClass('checkedBox');});$(this).addClass('checkedBox');});}
-$(document).on('click', '.quickview-close, #quick-view-product .quickview-overlay', function(e){$("#quick-view-product").fadeOut(500);});
 function initSelectors(){var numInputs=$('input[type="number"]');numInputs.length&&(numInputs.each(function(){var a=$(this),b=a.val(),c=a.attr("name"),d=a.attr("id"),e=b+1,f=b-1,g=b,h=$("#apQty").html(),i=Handlebars.compile(h),j={id:a.data("id"),itemQty:g,itemAdd:e,itemMinus:f,inputName:c,inputId:d};a.after(i(j)).remove()}),$(".apQtyAdjust").on("click",function(){var a=$(this),c=(a.data("id"),a.siblings(".apQtyNum")),d=parseInt(c.val().replace(/\D/g,"")),d=validateQty(d);a.hasClass("apQtyAdjustPlus")?d+=1:(d-=1,d<=1&&(d=1)),c.val(d),updatePricing()}),$(".apQtyNum").on("change",function(){updatePricing()}));}
 function productImage() {
 	$('#thumbs_list .owl-carousel').owlCarousel({navigation: true,items: 4,itemsDesktop: [1199, 4],itemsDesktopSmall: [979, 4],itemsTablet: [768, 4],itemsTabletSmall: [540, 4],itemsMobile: [360, 4]});

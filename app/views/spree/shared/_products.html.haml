@@ -19,12 +19,15 @@
               %a.product_img_link{href: url}
                 = small_image(product, itemprop: 'image', class: 'img-responsive')
                 %span.product-additional{"data-idproduct" => product.id}
-              %span.new-box
+              -#%span.new-box
                 %span.label-new.label New
-              %span.sale-box
+              -#%span.sale-box
                 %span.label-sale.label Sale
+              -#.quickview
+                %a.quick-view.product-quick-view.btn{href: 'javascript: return false;', title: '+ Quick View', data: {handle: product.slug, img_src: product_image_src(product)}}
+                  %i.fa.fa-expand
               .quickview
-                %a.quick-view.btn{"data-handle" => product.slug, href: url, title: "+ Quick View"}
+                %a.quick-view.btn.fancybox{rel: 'products-top-gallery', href: product_image_src(product), title: truncate(product.name, length: 50), data: {handle: product.slug, img_src: product_image_src(product)}}
                   %i.fa.fa-expand
             .product-meta
               %h5.name
@@ -47,7 +50,7 @@
                   %span.money{"data-currency" => "USD", "data-currency-usd" => display_price(product)}= display_price(product)
                 %span.price.product-price.sale-price
                   %span.money{"data-currency" => "USD", "data-currency-usd" => display_price(product)}= display_price(product)
-              .functional-buttons.clearfix
+              -#.functional-buttons.clearfix
                 .wishlist
                   %a.btn.btn-outline-inverse.btn-wishlist{:href => "#!account/login", :title => "Add to Wishlist"}
                     %i.fa.fa-heart
