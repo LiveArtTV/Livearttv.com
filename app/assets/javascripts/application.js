@@ -15,3 +15,18 @@
 //= require turbolinks
 //= require_tree .
 //= require store/spree_videos
+//= require fancybox
+
+$(document).ready(function(){
+    $(".fancybox").fancybox({
+        openEffect	: 'elastic',
+        closeEffect	: 'elastic',
+        closeBtn    : true,
+        closeClick  : true,
+        helpers : {
+            title : {
+                type : 'over'
+            }
+        }
+    });
+});
