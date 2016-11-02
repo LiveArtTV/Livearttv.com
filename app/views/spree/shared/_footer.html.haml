@@ -21,11 +21,11 @@
                 %h4.title_block get in touch
                 %ul.list-unstyled.block_content{:style => ""}
                   %li.address
-                    %span Warrent House, 221b Baker Street - London - United Kingdom
+                    %span #{Spree::Config[:company_address]}
                   %li.phone
-                    %span (+84). 123 456 789
+                    %span #{Spree::Config[:company_phone]}
                   %li.email
-                    %span info@eliteshopping.com
+                    %span #{Spree::Config[:company_email]}
             .col-md-2.col-sm-2.col-xs-12.col-sp-12
               #block_links_footer_1.block.footer-block.footerAccordion
                 %h4.title_block support

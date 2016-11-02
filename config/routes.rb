@@ -1,4 +1,7 @@
 Rails.application.routes.draw do
+  get  'pages/contact_us'
+  post 'pages/contact_us', controller: 'pages', action: 'contact_us_send'
+
   mount Spree::Core::Engine, at: '/'
 end
 

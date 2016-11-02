@@ -29,7 +29,7 @@
         #apollo-top-menu.collapse.navbar-collapse.hidden-xs.hidden-sm
           %ul.nav.navbar-nav.megamenu
             %li.parent.dropdown.full-width
-              %a.dropdown-toggle.has-category{"data-toggle" => "dropdown", href: products_path, target: "_self", title: Spree.t('category')}
+              %a.dropdown-toggle.has-category{"data-toggle" => "dropdown", href: spree.products_path, target: "_self", title: Spree.t('category')}
                 %span.menu-title #{Spree.t('category')}
                 %b.caret
               .dropdown-sub.dropdown-menu.sub-apmegamenu-1
@@ -47,7 +47,7 @@
                                 %li
                                   = link_to taxon.name, seo_url(taxon)
             %li
-              %a{href: products_path, target: "_self", title: "Shop"}
+              %a{href: spree.products_path, target: "_self", title: "Shop"}
                 %span Shop
             %li.parent.dropdown.full-width.active
               %a.dropdown-toggle.has-category{"data-toggle" => "dropdown", :href => "#!", :target => "_self", :title => "Blog"}
@@ -106,7 +106,7 @@
                           .product-container.clearfix
                             .image
                               %a.product_img_link{:href => "#!products/greenfield-walnut-5-pc", :title => "Greenfield Walnut 5 Pc"}
-                                %img.replace-2x.img-responsive{:alt => "Greenfield Walnut 5 Pc", :src => "./ap_rojo_files/3-min_compact.jpg"}/
+                                %img.replace-2x.img-responsive{:alt => "Greenfield Walnut 5 Pc", :src => "/ap_rojo_files/3-min_compact.jpg"}/
                             .product-meta
                               %h5.name
                                 %a.product-name{:href => "#!products/greenfield-walnut-5-pc", :title => "Greenfield Walnut 5 Pc"}
@@ -121,7 +121,7 @@
                           .product-container.clearfix
                             .image
                               %a.product_img_link{:href => "#!products/the-kensington-collection-1", :title => "Kensington Collection globl"}
-                                %img.replace-2x.img-responsive{:alt => "Kensington Collection globl", :src => "./ap_rojo_files/23-min_65a714af-1627-4a44-b561-1e0af9715dcc_compact.jpg"}/
+                                %img.replace-2x.img-responsive{:alt => "Kensington Collection globl", :src => "/ap_rojo_files/23-min_65a714af-1627-4a44-b561-1e0af9715dcc_compact.jpg"}/
                             .product-meta
                               %h5.name
                                 %a.product-name{:href => "#!products/the-kensington-collection-1", :title => "Kensington Collection globl"}
@@ -136,7 +136,7 @@
                           .product-container.clearfix
                             .image
                               %a.product_img_link{:href => "#!products/quam-nunc-putamus", :title => "Quam nunc putamus"}
-                                %img.replace-2x.img-responsive{:alt => "Quam nunc putamus", :src => "./ap_rojo_files/1-min_compact.jpg"}/
+                                %img.replace-2x.img-responsive{:alt => "Quam nunc putamus", :src => "/ap_rojo_files/1-min_compact.jpg"}/
                             .product-meta
                               %h5.name
                                 %a.product-name{:href => "#!products/quam-nunc-putamus", :title => "Quam nunc putamus"}
@@ -153,7 +153,7 @@
                         .menu-title HTML
                         .widget-inner
                           .box-image
-                            %img.img-responsive{:alt => "HTML", :src => "./ap_rojo_files/apmenuitem_ihtml_2.jpg"}/
+                            %img.img-responsive{:alt => "HTML", :src => "/ap_rojo_files/apmenuitem_ihtml_2.jpg"}/
             %li.parent.dropdown.active
               %a.dropdown-toggle.has-category{"data-toggle" => "dropdown", :href => "#!", :target => "_self", :title => "Features"}
                 %span Features
@@ -181,5 +181,5 @@
                         %a{:href => "https://www.youtube.com/watch?v=rMkkHkeTPLE", :title => "Video guide"}
                           %span Video guide
             %li.active
-              %a{:href => '/contacts', :target => "_self", :title => "Contact"}
+              %a{:href => 'pages/contact_us', :target => "_self", :title => "Contact"}
                 %span Contact
