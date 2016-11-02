@@ -17,7 +17,7 @@
           .product-container.text-left.product-block{"data-hook" => "products_list_item", :id => "product_#{product.id}", :itemscope => "", :itemtype => "https://schema.org/Product"}
             .product-image-container.image
               %a.product_img_link{href: url}
-                = small_image(product, itemprop: 'image', class: 'img-responsive')
+                = small_image(product, itemprop: 'image', class: 'img-responsive img-product-small')
                 %span.product-additional{"data-idproduct" => product.id}
               -#%span.new-box
                 %span.label-new.label New
