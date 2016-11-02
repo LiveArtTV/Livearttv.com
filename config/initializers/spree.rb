@@ -25,7 +25,7 @@ Spree.config do |config|
   config.company_title   = 'Elite Shopping'
   config.company_address = 'Warrent House, 221b Baker Street - London - United Kingdom'
   config.company_phone   = '(+84). 123 456 789'
-  config.company_email   = 'info@eliteshopping.com'
+  config.company_email   = 'v.makarov@sumatosoft.com'
 end
 
 Spree.user_class = "Spree::User"
