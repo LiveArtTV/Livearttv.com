@@ -181,5 +181,5 @@
                         %a{:href => "https://www.youtube.com/watch?v=rMkkHkeTPLE", :title => "Video guide"}
                           %span Video guide
             %li.active
-              %a{:href => 'pages/contact_us', :target => "_self", :title => "Contact"}
-                %span Contact
+              = link_to '/pages/contact_us', target: '_self', title: Spree::t('contact') do
+                %span= Spree::t('contact')
