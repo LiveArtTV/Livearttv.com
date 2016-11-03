@@ -15,6 +15,8 @@ class Spree::Author < ActiveRecord::Base
   validates :slug, uniqueness: true, if: :not_using_foreign_link?
   validates :foreign_link, uniqueness: true, allow_blank: true
 
+  has_many :products
+
   scope :visible, -> { where(visible: true) }
   scope :header_links, -> { where(show_in_header: true).visible }
   scope :sidebar_links, -> { where(show_in_sidebar: true).visible }

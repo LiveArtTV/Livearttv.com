@@ -1,0 +1,55 @@
+- url = spree.product_url(product, taxon_id: @taxon.try(:id))
+.product_block.wow.fadeInUp.col-xs-12.col-sp-12.animated{data: {hook: 'products_list_item', wow_delay: '0ms'}, :id => "product_#{product.id}", :itemscope => "", :itemtype => "https://schema.org/Product"}
+  - cache(@taxon.present? ? [I18n.locale, current_currency, @taxon, product] : cache_key_for_product(product)) do
+    .product-container.text-left.product-block
+      .row
+        .left-block.col-md-4.col-sm-5
+          .product-image-container.image
+            %a.product_img_link{href: url, title: product.name}
+              %img.replace-2x.img-responsive{alt: product.name, src: product_image_src(product)}/
+              %span.product-additional{data: {idproduct: product.id}}
+            -#%span.new-box
+              %span.label-new.label New
+            -#%span.sale-box
+              %span.label-sale.label Sale
+            .quickview
+              %a.quick-view.btn.fancybox{rel: 'products-top-gallery', href: product_image_src(product), title: truncate(product.name, length: 50), data: {handle: product.slug, img_src: product_image_src(product)}}
+                %i.fa.fa-expand
+        .right-block.col-md-8.col-sm-7
+          .product-meta
+            %h5.name
+              %a.product-name{href: url, title: product.name}
+                = truncate(product.name, length: 50)
+            .review
+              %span#spr_badge_7135946433.spr-badge{"data-rating" => "5.0"}
+                %span.spr-starrating.spr-badge-starrating
+                  %i.spr-icon.spr-icon-star{:style => ""}
+                  %i.spr-icon.spr-icon-star{:style => ""}
+                  %i.spr-icon.spr-icon-star{:style => ""}
+                  %i.spr-icon.spr-icon-star{:style => ""}
+                  %i.spr-icon.spr-icon-star{:style => ""}
+                %span.spr-badge-caption
+                  1 review
+            -#.content_price
+              %span.old-price.product-price
+                %span.money{"data-currency" => "USD", "data-currency-usd" => "$15.50"} $15.50
+              %span.price.product-price
+                %span.money{"data-currency" => "USD", "data-currency-usd" => "$12.00"} $12.00
+            .product-desc
+              = truncate(product_description(product), length: 200)
+            -#.functional-buttons.clearfix
+              .wishlist
+                %a.btn.btn-outline-inverse.btn-wishlist{:href => "/account/login", :title => "Add to Wishlist"}
+                  %i.fa.fa-heart
+                  %span Add to Wishlist
+              .cart
+                .action
+                  %form.form-ajaxtocart{:action => "/cart/add", :enctype => "multipart/form-data", :method => "post"}
+                    %input{:name => "id", :type => "hidden", :value => "22464795841"}/
+                    %button.button.ajax_addtocart{:title => "Add to Cart", :type => "submit", :value => "Submit"}
+                      %span.fa.fa-shopping-cart
+                      %span Add to Cart
+              .view_detail
+                %a.btn.lnk_view{:href => "/collections/dining-room/products/greenfield-walnut-5-pc", :title => "View product"}
+                  %i.fa.fa-retweet
+                  %span View product

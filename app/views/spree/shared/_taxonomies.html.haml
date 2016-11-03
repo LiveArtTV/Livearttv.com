@@ -2,8 +2,8 @@
 #categories_block.block.sidebarCategories
   - @taxonomies.each do |taxonomy|
     - cache [I18n.locale, taxonomy, max_level, @taxon] do
-      %h4.title_block.taxonomy-root= Spree.t(:shop_by_taxonomy, :taxonomy => taxonomy.name)
-      .block_content#product-properties{"data-hook" => ""}
+      %h4.title_block.taxonomy-root= Spree.t(taxonomy.name)
+      .block_content{"data-hook" => ""}
         = taxons_tree(taxonomy.root, @taxon, max_level)
     - unless @taxonomies.last == taxonomy
       %br

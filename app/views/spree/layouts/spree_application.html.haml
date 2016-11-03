@@ -21,9 +21,9 @@
     %section.columns-container#columns
       .container
         .row{"data-hook" => ""}
-          = render partial: 'spree/shared/sidebar' if content_for? :sidebar
           #content{:class => !content_for?(:sidebar) ? "col-sm-12" : "col-sm-8 col-md-9", "data-hook" => ""}
             = flash_messages
             = yield
+          = render partial: 'spree/shared/sidebar' if content_for? :sidebar
   = yield :templates
   = render partial: 'spree/shared/footer'

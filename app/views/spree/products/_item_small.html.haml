@@ -1,0 +1,58 @@
+- url = spree.product_url(product, taxon_id: @taxon.try(:id))
+.col-md-3.col-sm-6.col-xs-6.product-list-item{"data-hook" => "products_list_item", :id => "product_#{product.id}", :itemscope => "", :itemtype => "https://schema.org/Product"}
+  - cache(@taxon.present? ? [I18n.locale, current_currency, @taxon, product] : cache_key_for_product(product)) do
+    .product-container.text-left.product-block{"data-hook" => "products_list_item", :id => "product_#{product.id}", :itemscope => "", :itemtype => "https://schema.org/Product"}
+      .product-image-container.image
+        %a.product_img_link{href: url}
+          = small_image(product, itemprop: 'image', class: 'img-responsive img-product-small')
+          %span.product-additional{"data-idproduct" => product.id}
+        -#%span.new-box
+          %span.label-new.label New
+        -#%span.sale-box
+          %span.label-sale.label Sale
+        -#.quickview
+          %a.quick-view.product-quick-view.btn{href: 'javascript: return false;', title: '+ Quick View', data: {handle: product.slug, img_src: product_image_src(product)}}
+            %i.fa.fa-expand
+        .quickview
+          %a.quick-view.btn.fancybox{rel: 'products-top-gallery', href: product_image_src(product), title: truncate(product.name, length: 50), data: {handle: product.slug, img_src: product_image_src(product)}}
+            %i.fa.fa-expand
+      .product-meta
+        %h5.name
+          %a.product-name{href: url, title: truncate(product.name, length: 50)}
+            = truncate(product.name, length: 50)
+        .product-desc
+          = truncate(product_description(product), length: 200)
+        .review
+          %span.spr-badge{"data-rating" => "5.0", id: "#spr_badge_#{product.id}"}
+            %span.spr-starrating.spr-badge-starrating
+              %i.spr-icon.spr-icon-star{:style => ""}
+              %i.spr-icon.spr-icon-star{:style => ""}
+              %i.spr-icon.spr-icon-star{:style => ""}
+              %i.spr-icon.spr-icon-star{:style => ""}
+              %i.spr-icon.spr-icon-star{:style => ""}
+            %span.spr-badge-caption
+              1 review
+        -#.content_price
+          %span.old-price.product-price
+            %span.money{"data-currency" => "USD", "data-currency-usd" => display_price(product)}= display_price(product)
+          %span.price.product-price.sale-price
+            %span.money{"data-currency" => "USD", "data-currency-usd" => display_price(product)}= display_price(product)
+        -#.functional-buttons.clearfix
+          .wishlist
+            %a.btn.btn-outline-inverse.btn-wishlist{:href => "#!account/login", :title => "Add to Wishlist"}
+              %i.fa.fa-heart
+              %span Add to Wishlist
+          .cart
+            .action
+              %form.form-ajaxtocart{:action => "#!cart/add", :enctype => "multipart/form-data", :method => "post"}
+                %input{name: :id, type: :hidden, value: product.id}/
+                %button.button.ajax_addtocart{:title => "Add to Cart", :type => "submit", :value => "Submit"}
+                  %span.fa.fa-shopping-cart
+                  %span Add to Cart
+          .view_detail
+            %a.btn.lnk_view{href: url, title: "View product"}
+              %i.fa.fa-retweet
+              %span View product
+-#.button_product_list.text-center
+  %a.btn_home_page.btn.btn-center{href: products_path}
+    View all items
