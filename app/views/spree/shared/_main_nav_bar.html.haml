@@ -7,14 +7,14 @@
     .header-center.col-lg-6.col-md-6.col-sm-7.col-xs-12.col-sp-12
       = render partial: 'spree/shared/search'
     .header-right.col-lg-4.col-md-4.col-sm-5.col-xs-12.col-sp-12
-      #cart.blockcart_top.clearfix
+      -##cart.blockcart_top.clearfix
         .media.heading#link-to-cart
           %a#CartToggle{href: "/cart", title: Spree.t('cart')}
             .title-cart
               %span.fa.fa-shopping-cart
             .cart-inner.media-body
               %span.cart-title #{Spree.t('cart')}:
-      :javascript
+      -#:javascript
         Spree.fetch_cart();
 
 / Top Menu
@@ -113,7 +113,7 @@
                                   Greenfield Walnut 5 Pc
                               .product-desc
                                 Claritas est etiam processus dynamicus, qui...
-                              .content_price
+                              -#.content_price
                                 %span.old-price.product-price
                                   %span.money{"data-currency" => "USD", "data-currency-usd" => "$15.50"} $15.50
                                 %span.price.product-price
@@ -128,7 +128,7 @@
                                   Kensington Collection globl
                               .product-desc
                                 Claritas est etiam processus dynamicus, qui...
-                              .content_price
+                              -#.content_price
                                 %span.old-price.product-price
                                   %span.money{"data-currency" => "USD", "data-currency-usd" => "$25.00"} $25.00
                                 %span.price.product-price
@@ -143,7 +143,7 @@
                                   Quam nunc putamus
                               .product-desc
                                 Claritas est etiam processus dynamicus, qui...
-                              .content_price
+                              -#.content_price
                                 %span.old-price.product-price
                                   %span.money{"data-currency" => "USD", "data-currency-usd" => "$51.00"} $51.00
                                 %span.price.product-price

@@ -95,7 +95,7 @@
                 - if @product.master.can_supply?
                   .availability
                     %p.available.instock Available
-                = render partial: 'cart_form'
+                -#= render partial: 'cart_form'
                 -#= render partial: 'products/apollo_cart'
               -#.wishlist
                 %a.btn.btn-outline-inverse.btn-wishlist{:href => "/account/login", :title => "Add to Wishlist"}
