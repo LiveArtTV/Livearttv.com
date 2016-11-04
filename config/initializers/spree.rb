@@ -29,3 +29,8 @@ Spree.config do |config|
 end
 
 Spree.user_class = "Spree::User"
+
+Spree::Image.attachment_definitions[:attachment][:styles].merge!(
+    product476:  '476x476>',
+    product1024: '1024x1024>'
+)

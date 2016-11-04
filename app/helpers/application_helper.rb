@@ -12,11 +12,11 @@ module ApplicationHelper
     product_properties.select{|prop| prop.property.name.downcase == property.to_s }.first.try(:value)
   end
 
-  def product_image_src(product)
+  def product_image_src(product, style = nil)
     if product.images.empty?
       asset_path('product_default.png')
     else
-      product.images.first.attachment.url
+      product.images.first.attachment.url(style)
     end
   end
 end

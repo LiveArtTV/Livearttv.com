@@ -3,19 +3,19 @@
   - cache(@taxon.present? ? [I18n.locale, current_currency, @taxon, product] : cache_key_for_product(product)) do
     .product-container.text-left.product-block
       .row
-        .left-block.col-md-4.col-sm-5
+        .left-block.col-md-6.col-sm-7
           .product-image-container.image
             %a.product_img_link{href: url, title: product.name}
-              %img.replace-2x.img-responsive{alt: product.name, src: product_image_src(product)}/
+              %img.replace-2x.img-responsive{alt: product.name, src: product_image_src(product, :product476)}/
               %span.product-additional{data: {idproduct: product.id}}
             -#%span.new-box
               %span.label-new.label New
             -#%span.sale-box
               %span.label-sale.label Sale
             .quickview
-              %a.quick-view.btn.fancybox{rel: 'products-top-gallery', href: product_image_src(product), title: truncate(product.name, length: 50), data: {handle: product.slug, img_src: product_image_src(product)}}
+              %a.quick-view.btn.fancybox{rel: 'products-top-gallery', href: product_image_src(product, :product1024), title: truncate(product.name, length: 50), data: {handle: product.slug, img_src: product_image_src(product)}}
                 %i.fa.fa-expand
-        .right-block.col-md-8.col-sm-7
+        .right-block.col-md-6.col-sm-5
           .product-meta
             %h5.name
               %a.product-name{href: url, title: product.name}

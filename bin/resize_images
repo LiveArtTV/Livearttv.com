@@ -1,0 +1,14 @@
+#!/bin/bash
+
+DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
+cd $DIR/../public/spree/products
+
+for i in `ls */original/*`
+do
+    image_name=${i#*original\/}
+    dir_name=${i/\/original\/$image_name/}
+    mkdir $dir_name/product476/ $dir_name/product1024/
+    convert $i -resize '476x476'   $dir_name/product476/$image_name
+    convert $i -resize '1024x1024' $dir_name/product1024/$image_name
+    echo "created images for $i"
+done
