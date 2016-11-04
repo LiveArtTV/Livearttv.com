@@ -1,6 +1,6 @@
 - @body_id = 'product-details'
 - cache cache_key_for_product do
-  %aside
+  -#%aside
     #left_column.left_column.sidebar.col-sm-4.col-md-3.col-xs-12
       = render partial: 'spree/products/properties'
       = render partial: '/shared/products_best_sellers'
@@ -63,7 +63,7 @@
               .product-description.rte{:itemprop => "description"}
                 = product_description(@product)
             .product-right-column
-              %div{:itemprop => "offers", :itemscope => "", :itemtype => "http://schema.org/Offer"}
+              -#%div{:itemprop => "offers", :itemscope => "", :itemtype => "http://schema.org/Offer"}
                 %meta{:content => @product.currency, :itemprop => "priceCurrency"}/
                 %link{:href => "http://schema.org/InStock", :itemprop => "availability"}/
                 -#= render partial: 'shared/deal_clock'
@@ -76,8 +76,8 @@
                 %a.btn.btn-outline-inverse.btn-wishlist{:href => "/account/login", :title => "Add to Wishlist"}
                   %i.fa.fa-heart
                   %span Add to Wishlist
-              .line-product
-              #product-detail-image
+              -#.line-product
+              -##product-detail-image
                 .box_image_pd
                   = image_tag 'img_product_detail.png', class: 'img-responsive'
 
