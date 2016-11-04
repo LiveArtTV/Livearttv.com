@@ -10,8 +10,8 @@
     - if @products.empty?
       %h6.search-results-title= Spree.t(:no_products_found)
     - else
-      = render :partial => 'spree/shared/products', :locals => { :products => @products, :taxon => @taxon }
+      = render :partial => 'spree/shared/products_big', :locals => { :products => @products, :taxon => @taxon }
 - else
   %div{"data-hook" => "homepage_products"}
     - cache(cache_key_for_products) do
-      = render :partial => 'spree/shared/products', :locals => { :products => @products, :taxon => @taxon }
+      = render :partial => 'spree/shared/products_big', :locals => { :products => @products, :taxon => @taxon }
