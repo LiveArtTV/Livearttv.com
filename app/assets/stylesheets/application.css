@@ -28,3 +28,7 @@ input.add-to-cart-detail-number {
 .img-product-small {
     height: 100px;
 }
+
+div.breadcrumbs-wrap {
+    min-height: 253px;
+}

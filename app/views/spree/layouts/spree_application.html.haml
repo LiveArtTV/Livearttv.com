@@ -16,7 +16,7 @@
   %main.main-content
     = render partial: 'shared/slider' if store_block? && slider_block?
     %section#breadcrumbs
-      .container
+      .container.breadcrumbs-wrap
         = breadcrumbs(@taxon)
     %section.columns-container#columns
       .container
