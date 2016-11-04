@@ -322,8 +322,8 @@
     opacity: 0;
     visibility: hidden;
     border: 0 none;
-    width: 30px;
-    height: 30px;
+    width: 11px;
+    height: 11px;
     cursor: pointer;
     background-color: transparent;
     background-position: center center;
@@ -408,7 +408,7 @@
 
 @media screen and (max-width: 767px) {
     #cart-page {
-        text-align: center
+        text-align: center;
     }
 }
 
@@ -421,7 +421,7 @@
     text-transform: uppercase;
     font-size: 16px;
     margin: 0px;
-    text-align: center
+    text-align: center;
 }
 
 #cart-page .cart-empty-continue {
@@ -598,7 +598,7 @@
     padding: 0px 0px 5px 25px;
     margin: 10px 0px;
     font-family: Arimo;
-    font-size: 14px -1
+    font-size: 14px;
 }
 
 .rtl .box-contact-info ul > li {
@@ -1081,7 +1081,7 @@
     font-size: 14px;
     font-family: "FontAwesome";
     display: block;
-    text-align: center
+    text-align: center;
 }
 
 .block_collection .collection-meta h3 {
@@ -1271,7 +1271,7 @@
     over-flow: hidden;
     display: block;
     z-index: 3;
-    background: url(/assets/loading.gif) no-repeat center center #fff;
+    background: url("/assets/loading.gif") no-repeat center center #fff;
     -webkit-box-shadow: 0px 2px 8px 0px rgba(50, 50, 50, 0.5);
     box-shadow: 0px 2px 8px 0px rgba(50, 50, 50, 0.5)
 }
@@ -1292,7 +1292,7 @@
     width: 300px;
     height: 100%;
     position: fixed;
-    top: 0px;
+    top: 0;
     right: -320px;
     left: auto;
     z-index: 1050;
@@ -1398,7 +1398,7 @@
 
 .paneltool .group-input .float-control {
     width: 100%;
-    text-align: center
+    text-align: center;
 }
 
 .paneltool .group-input .layout-control {
@@ -1726,7 +1726,7 @@ a a:hover, a a:focus {
 }
 
 .effect {
-    text-align: center
+    text-align: center;
 }
 
 .effect > a {
@@ -2087,13 +2087,13 @@ body.layout-boxed-md #header.navbar-fixed-top {
 #header_logo a {
     margin: 0px auto;
     display: block;
-    max-width: 100%
-    text-align: center
+    max-width: 100%;
+    text-align: center;
 }
 
 @media screen and (min-width: 992px) {
     #header_logo a {
-        text-align: center
+        text-align: center;
     }
 }
 
@@ -4026,7 +4026,7 @@ body.layout-boxed-md #header.navbar-fixed-top {
 }
 
 #popup-newletter {
-    background: url(/assets/pnewletter_bg.png) no-repeat scroll bottom right #e6e6e6;
+    background: url("/assets/pnewletter_bg.png") no-repeat scroll bottom right #e6e6e6;
     text-align: left;
     padding: 20px;
     min-width: 624px;
@@ -4036,7 +4036,7 @@ body.layout-boxed-md #header.navbar-fixed-top {
 
 @media screen and (max-width: 480px) {
     #popup-newletter {
-        min-width: 0px
+        min-width: 0;
     }
 }
 
@@ -4363,7 +4363,7 @@ body.layout-boxed-md #header.navbar-fixed-top {
     font-size: 18px;
     margin: 0px 0px 10px;
     padding: 10px 0px;
-    text-align: center
+    text-align: center;
 }
 
 .instagram-block .block-content {
@@ -4451,14 +4451,14 @@ body.layout-boxed-md #header.navbar-fixed-top {
 }
 
 .page_404 {
-    background: url(/assets/404.jpg) no-repeat center center;
+    background: url("/assets/404.jpg") no-repeat center center;
     background-size: cover;
     min-height: 800px;
     padding-top: 60px
 }
 
 .loading_site {
-    background: url(/assets/loading.gif) no-repeat center center #fff;
+    background: url("/assets/loading.gif") no-repeat center center #fff;
     border: 1px solid rgba(0, 0, 0, 0.15);
     position: fixed;
     top: 50% !important;
@@ -4478,7 +4478,7 @@ body.layout-boxed-md #header.navbar-fixed-top {
 
 .aboutus {
     color: #000000;
-    background: url(/assets/bgaboutus.jpg) no-repeat center center #fff
+    background: url("/assets/bgaboutus.jpg") no-repeat center center #fff
 }
 
 .aboutus .rte {
@@ -4603,7 +4603,7 @@ body.layout-boxed-md #header.navbar-fixed-top {
     height: 13px;
     background-image: url("/assets/bg_title.png");
     background-repeat: no-repeat;
-    background-position: center 0
+    background-position: center 0;
 }
 
 .btn_home_page {
@@ -4881,7 +4881,7 @@ body.layout-boxed-md #header.navbar-fixed-top {
 
 @media screen and (max-width: 767px) {
     .footer-center-wrap .footer-block .block_content {
-        text-align: center
+        text-align: center;
     }
 }
 
@@ -4897,7 +4897,7 @@ body.layout-boxed-md #header.navbar-fixed-top {
 
 @media screen and (max-width: 480px) {
     .footer-nav {
-        text-align: center
+        text-align: center;
     }
 }
 
@@ -4924,7 +4924,7 @@ body.layout-boxed-md #header.navbar-fixed-top {
 }
 
 .testimonial-block {
-    background: url(/assets/bg-testimonial.jpg) no-repeat center;
+    background: url("/assets/bg-testimonial.jpg") no-repeat center;
     padding-top: 90px;
     padding-bottom: 100px;
     background-size: cover
@@ -4933,7 +4933,7 @@ body.layout-boxed-md #header.navbar-fixed-top {
 .testimonial-block .block {
     max-width: 925px;
     margin: 0 auto;
-    text-align: center
+    text-align: center;
 }
 
 .testimonial-block .block .block-content {
