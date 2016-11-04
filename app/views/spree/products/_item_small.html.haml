@@ -22,7 +22,7 @@
             = truncate(product.name, length: 50)
         .product-desc
           = truncate(product_description(product), length: 200)
-        .review
+        -#.review
           %span.spr-badge{"data-rating" => "5.0", id: "#spr_badge_#{product.id}"}
             %span.spr-starrating.spr-badge-starrating
               %i.spr-icon.spr-icon-star{:style => ""}
