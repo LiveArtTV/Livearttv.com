@@ -14,16 +14,20 @@
   = render partial: 'spree/shared/google_analytics.js'
   = render partial: 'spree/shared/header'
   %main.main-content
-    = render partial: 'shared/slider' if store_block? && slider_block?
-    %section#breadcrumbs
-      .container.breadcrumbs-wrap
-        = breadcrumbs(@taxon)
-    %section.columns-container#columns
-      .container
-        .row{"data-hook" => ""}
-          #content{:class => !content_for?(:sidebar) ? "col-sm-12" : "col-sm-8 col-md-9", "data-hook" => ""}
-            = flash_messages
-            = yield
-          = render partial: 'spree/shared/sidebar' if content_for? :sidebar
+    -#= render partial: 'shared/slider' if store_block? && slider_block?
+    - unless %w(home).include?(controller_name)
+      %section#breadcrumbs
+        .container.breadcrumbs-wrap
+          = breadcrumbs(@taxon)
+    - if controller_name == 'home'
+      = yield
+    - else
+      %section.columns-container#columns
+        .container
+          .row{"data-hook" => ""}
+            #content{:class => !content_for?(:sidebar) ? "col-sm-12" : "col-sm-8 col-md-9", "data-hook" => ""}
+              = flash_messages
+              = yield
+            = render partial: 'spree/shared/sidebar' if content_for? :sidebar
   = yield :templates
   = render partial: 'spree/shared/footer'

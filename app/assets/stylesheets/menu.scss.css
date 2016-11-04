@@ -6,16 +6,12 @@
     margin: 0px
 }
 
-@media screen and (max-width: 767px) {
-    #apollo-menu {
-        height: 0px
-    }
-}
-
 .apollo-megamenu ul, .apollo-megamenu ol {
     list-style: outside none none;
     margin: 0px;
-    padding: 0px
+    padding: 0px;
+    float: none;
+    display: inline-block
 }
 
 #apollo-top-menu {
@@ -40,10 +36,6 @@
 
 #apollo-menu .navbar-nav > li {
     margin: 0px
-}
-
-#apollo-menu .navbar-nav > li:first-child > a {
-    padding-left: 0
 }
 
 #apollo-menu .navbar-nav > li.full-width {
@@ -334,25 +326,12 @@
 }
 
 #apollo-menu .btn-menu-canvas {
-    background-color: #e2bd65;
+    background-color: #000;
     color: #fff;
-    border: 1px solid #e2bd65;
+    border: 1px solid #000;
     margin: 5px;
     -webkit-transition: all 0.35s ease 0s;
     transition: all 0.35s ease 0s
-}
-
-@media screen and (max-width: 991px) {
-    #apollo-menu .btn-menu-canvas {
-        float: left
-    }
-}
-
-@media screen and (max-width: 767px) {
-    #apollo-menu .btn-menu-canvas {
-        position: relative;
-        top: -81px
-    }
 }
 
 #apollo-menu .btn-menu-canvas:hover {
@@ -2773,11 +2752,5 @@ body.move-right-to-left .over-cover {
     .hide.drag-target-right, .hide.button-collapse-right {
         right: -100px;
         transition: all 0.6s ease 0s
-    }
-}
-
-@media (min-width: 768px) and (max-width: 991px) {
-    .apollo-megamenu {
-        background-color: #222222
     }
 }

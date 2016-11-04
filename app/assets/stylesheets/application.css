@@ -14,6 +14,15 @@
  *= require fancybox
  *= require_self
  */
+#header.logo {
+    align: center;
+}
+section.video {
+    background: #000
+}
+section.video-thumbnails {
+
+}
 div.spree-video-thumbnails{
     padding: 3px 0;
 }
