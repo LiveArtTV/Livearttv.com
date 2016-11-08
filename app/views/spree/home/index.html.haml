@@ -12,8 +12,9 @@
             .embed-responsive.embed-responsive-16by9.spree-embed-video= render 'spree/products/video_player', :video => @videos.first
           .col-md-1
 %section.video-thumbnails
-  .container
-    = render partial: 'spree/products/video_thumbnails', locals: { videos: @videos }
+  .text-center
+    .container
+      = render partial: 'spree/products/video_thumbnails', locals: { videos: @videos }
 %section.root-taxons
   .text-center
     .container
