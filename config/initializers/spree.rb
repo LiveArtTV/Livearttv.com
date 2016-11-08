@@ -34,3 +34,8 @@ Spree::Image.attachment_definitions[:attachment][:styles].merge!(
     product476:  '476x476>',
     product1024: '1024x1024>'
 )
+
+Spree::PermittedAttributes.taxon_attributes << [:show_on_home]
+Spree::Taxon.attachment_definitions[:icon][:styles].merge!(
+    home:  '270x170>'
+)

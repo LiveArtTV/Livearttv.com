@@ -1,0 +1,9 @@
+-#%div{data: {hook: :admin_product_form_author}}
+  = f.field_container :show_on_home, class: ['form-group'] do
+    = f.label :show_on_home, Spree.t(:show_on_home)
+    = f.checkbox
+    = f.error_message_on :author
+%div.checkbox
+  %label
+    = f.check_box :show_on_home
+    = Spree.t(:show_on_home)

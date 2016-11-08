@@ -2,33 +2,13 @@
   %h4.title_block_home.page-subheading browse categories
   .content_scene_cat
     .content_scene_cat_bg.clearfix.row
-      .img_category.col-md-4.col-sm-4
-        %a{:href => "https://ap-rojo.myshopify.com/collections/cut"}
-          %img.img-responsive{:alt => "Adv img_category_1_link", :src => "//cdn.shopify.com/s/files/1/1404/2671/t/6/assets/img_category_1.jpg?381533076572274600"}/
-        .title_img_category
-          %p wall decor
-      .img_category.col-md-4.col-sm-4
-        %a{:href => "https://ap-rojo.myshopify.com/collections/dining-room"}
-          %img.img-responsive{:alt => "Adv img_category_2_link", :src => "//cdn.shopify.com/s/files/1/1404/2671/t/6/assets/img_category_2.jpg?381533076572274600"}/
-        .title_img_category
-          %p office decor
-      .img_category.col-md-4.col-sm-4
-        %a{:href => "https://ap-rojo.myshopify.com/collections/classroom"}
-          %img.img-responsive{:alt => "Adv img_category_3_link", :src => "//cdn.shopify.com/s/files/1/1404/2671/t/6/assets/img_category_3.jpg?381533076572274600"}/
-        .title_img_category
-          %p chair & sofa
-      .img_category.col-md-4.col-sm-4
-        %a{:href => "https://ap-rojo.myshopify.com/collections/classroom"}
-          %img.img-responsive{:alt => "Adv img_category_3_link", :src => "//cdn.shopify.com/s/files/1/1404/2671/t/6/assets/img_category_3.jpg?381533076572274600"}/
-        .title_img_category
-          %p chair & sofa
-      .img_category.col-md-4.col-sm-4
-        %a{:href => "https://ap-rojo.myshopify.com/collections/dining-room"}
-          %img.img-responsive{:alt => "Adv img_category_2_link", :src => "//cdn.shopify.com/s/files/1/1404/2671/t/6/assets/img_category_2.jpg?381533076572274600"}/
-        .title_img_category
-          %p office decor
-      .img_category.col-md-4.col-sm-4
-        %a{:href => "https://ap-rojo.myshopify.com/collections/classroom"}
-          %img.img-responsive{:alt => "Adv img_category_3_link", :src => "//cdn.shopify.com/s/files/1/1404/2671/t/6/assets/img_category_3.jpg?381533076572274600"}/
-        .title_img_category
-          %p chair & sofa
+      - taxon_roots = Spree::Taxon.roots
+      - cache(["taxon-roots", taxon_roots.maximum(:updated_at).to_i].join('-')) do
+        - taxon_roots.each do |taxon_root|
+          -#= link_to taxon_root.name, seo_url(taxon_root)
+          - taxon_root.children.show_on_home.each do |taxon|
+            .img_category.col-md-4.col-sm-4
+              = link_to seo_url(taxon) do
+                %img.img-responsive{alt: taxon.name, src: taxon.icon.url(:home)}/
+              .title_img_category
+                %p= taxon.name

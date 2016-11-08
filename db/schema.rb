@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161025195926) do
+ActiveRecord::Schema.define(version: 20161108100000) do
 
   create_table "friendly_id_slugs", force: :cascade do |t|
     t.string   "slug",           limit: 255, null: false
@@ -1020,7 +1020,7 @@ ActiveRecord::Schema.define(version: 20161025195926) do
   create_table "spree_taxons", force: :cascade do |t|
     t.integer  "parent_id",         limit: 4
     t.integer  "position",          limit: 4,     default: 0
-    t.string   "name",              limit: 255,               null: false
+    t.string   "name",              limit: 255,                   null: false
     t.string   "permalink",         limit: 255
     t.integer  "taxonomy_id",       limit: 4
     t.integer  "lft",               limit: 4
@@ -1030,12 +1030,13 @@ ActiveRecord::Schema.define(version: 20161025195926) do
     t.integer  "icon_file_size",    limit: 4
     t.datetime "icon_updated_at"
     t.text     "description",       limit: 65535
-    t.datetime "created_at",                                  null: false
-    t.datetime "updated_at",                                  null: false
+    t.datetime "created_at",                                      null: false
+    t.datetime "updated_at",                                      null: false
     t.string   "meta_title",        limit: 255
     t.string   "meta_description",  limit: 255
     t.string   "meta_keywords",     limit: 255
     t.integer  "depth",             limit: 4
+    t.boolean  "show_on_home",                    default: false
   end
 
   add_index "spree_taxons", ["lft"], name: "index_spree_taxons_on_lft", using: :btree
@@ -1044,6 +1045,7 @@ ActiveRecord::Schema.define(version: 20161025195926) do
   add_index "spree_taxons", ["permalink"], name: "index_taxons_on_permalink", using: :btree
   add_index "spree_taxons", ["position"], name: "index_spree_taxons_on_position", using: :btree
   add_index "spree_taxons", ["rgt"], name: "index_spree_taxons_on_rgt", using: :btree
+  add_index "spree_taxons", ["show_on_home"], name: "index_spree_taxons_on_show_on_home", using: :btree
   add_index "spree_taxons", ["taxonomy_id"], name: "index_taxons_on_taxonomy_id", using: :btree
 
   create_table "spree_trackers", force: :cascade do |t|
