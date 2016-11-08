@@ -27,8 +27,8 @@ div.spree-video-thumbnails{
     padding: 3px 0;
 }
 div.spree-video-thumbnails a img {
-    width: 114px;
     height: 74px;
+    margin: 5px 5px;
 }
 div#main-image {
     border: none;
