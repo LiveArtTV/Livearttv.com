@@ -14,7 +14,8 @@
           #product-images.product-left-column.col-xs-12.col-sm-12.col-md-7{"data-hook" => "product_images"}
             #main-image2.panel.panel-default{"data-hook" => ""}
               .panel-body.text-center
-                %a.btn.fancybox.fancy-no-hide{href: product_image_src(product, :original), title: truncate(@product.name, length: 50), data: {handle: @product.slug, img_src: product_image_src(@product)}}
+                - product_image_orig = product_image_src(@product, :original)
+                %a.btn.fancybox.fancy-no-hide{title: @product.name, href: product_image_orig}
                   = render :partial => 'image'
             #thumbnails{"data-hook" => ""}
               = render :partial => 'thumbnails'
