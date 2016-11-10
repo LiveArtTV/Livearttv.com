@@ -12,9 +12,10 @@
       .primary_block
         .row
           #product-images.product-left-column.col-xs-12.col-sm-12.col-md-7{"data-hook" => "product_images"}
-            #main-image.panel.panel-default{"data-hook" => ""}
+            #main-image2.panel.panel-default{"data-hook" => ""}
               .panel-body.text-center
-                = render :partial => 'image'
+                %a.btn.fancybox.fancy-no-hide{href: product_image_src(product, :original), title: truncate(@product.name, length: 50), data: {handle: @product.slug, img_src: product_image_src(@product)}}
+                  = render :partial => 'image'
             #thumbnails{"data-hook" => ""}
               = render :partial => 'thumbnails'
           .col-xs-12.col-sm-12.col-md-5
@@ -24,7 +25,7 @@
                 %span Year:
                 %a{:href => "/products/years?q=", :title => ""}= product_property(@product_properties, :year)
               .product-description.rte{:itemprop => "description"}
-                = product_description(@product)
+                %p= product_description_short(@product)
               = render partial: 'products/info_block', locals: {product: @product}
             -#.product-right-column
               %div{:itemprop => "offers", :itemscope => "", :itemtype => "http://schema.org/Offer"}

@@ -22,3 +22,27 @@ $(document).ready(function(){
         });
     })
 })
+
+Spree.ready(function($) {
+    Spree.addImageHandlersPath = function() {
+        var thumbnails;
+        thumbnails = $('#product-images ul.thumbnails');
+        $('#main-image2').data('selectedThumb', $('#main-image2 img').attr('src'));
+        thumbnails.find('li').eq(0).addClass('selected');
+        thumbnails.find('a').on('click', function(event) {
+            $('#main-image2').data('selectedThumb', $(event.currentTarget).attr('href'));
+            $('#main-image2').data('selectedThumbId', ($(event.currentTarget)).parent().attr('id'));
+            thumbnails.find('li').removeClass('selected');
+            ($(event.currentTarget)).parent('li').addClass('selected');
+            return false;
+        });
+        thumbnails.find('li').on('mouseenter', function(event) {
+            $('#main-image2 img').attr('src', $(event.currentTarget).find('a').attr('href'));
+        });
+        thumbnails.find('li').on('mouseleave', function(event) {
+//            $('#main-image2 img').attr('src', $('#main-image2').data('selectedThumb'));
+        });
+    };
+
+    Spree.addImageHandlersPath();
+});

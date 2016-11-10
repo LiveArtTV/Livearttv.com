@@ -2,9 +2,9 @@
   %ul#product-thumbnails.thumbnails.list-inline{"data-hook" => ""}
     - @product.images.each do |i|
       %li{:class => "tmb-all tmb-#{i.viewable.id}"}
-        = link_to(image_tag(i.attachment.url(:mini), class: "thumbnail"), i.attachment.url(:product476))
+        = link_to(image_tag(i.attachment.url(:mini), class: "thumbnail product_img_link"), i.attachment.url(:product476), class: 'btn fancybox', rel: 'product-thumbnails-gallery', href1: product_image_src(@product), title: truncate(@product.name, length: 50), data: {handle: @product.slug, img_src: product_image_src(@product)})
     - if @product.has_variants?
       - @product.variant_images.each do |i|
         - next if @product.images.include?(i)
         %li{:class => "vtmb tmb-#{i.viewable.id}"}
-          = link_to(image_tag(i.attachment.url(:mini), class: "thumbnail"), i.attachment.url(:product476))
+          = link_to(image_tag(i.attachment.url(:mini), class: "thumbnail product_img_link"), i.attachment.url(:product476), class: 'btn fancybox', rel: 'product-thumbnails-gallery', href1: product_image_src(@product), title: truncate(@product.name, length: 50), data: {handle: @product.slug, img_src: product_image_src(@product)})

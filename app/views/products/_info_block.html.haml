@@ -8,12 +8,13 @@
   .tab-content
     %section#tab_product.tab-pane.page-product-box.active
       .product-description.rte
-        = product.description
+        %p= product.description
     %section#tab_author.tab-pane.page-product-box
       - if product.author
         .product-description.rte
-          %h5.brand= product.author.name
-          = product.author.content
+          %p
+            %h5.brand= product.author.name
+            = product.author.content
     -#%section#idTab4.tab-pane.page-product-box
       #shopify-product-reviews{"data-id" => "7135968449"}
         %style{:scoped => ""}

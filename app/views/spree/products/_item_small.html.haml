@@ -13,7 +13,7 @@
         -#.quickview
           %a.quick-view.product-quick-view.btn{href: 'javascript: return false;', title: '+ Quick View', data: {handle: product.slug, img_src: product_image_src(product)}}
             %i.fa.fa-expand
-        .quickview
+        -#.quickview
           %a.quick-view.btn.fancybox{rel: 'products-top-gallery', href: product_image_src(product), title: truncate(product.name, length: 50), data: {handle: product.slug, img_src: product_image_src(product)}}
             %i.fa.fa-expand
       .product-meta

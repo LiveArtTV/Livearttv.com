@@ -14,5 +14,12 @@ Spree::FrontendHelper.module_eval do
     content_tag(:nav, crumb_list, class: 'breadcrumbs', 'aria-label' => "breadcrumbs")
   end
 
-
+  def product_description_short(product)
+    description = if Spree::Config[:show_raw_product_description]
+                    product.description_short
+                  else
+                    product.description_short.to_s.gsub(/(.*?)\r?\n\r?\n/m, '<p>\1</p>')
+                  end
+    description.blank? ? Spree.t(:product_has_no_description) : raw(description)
+  end
 end

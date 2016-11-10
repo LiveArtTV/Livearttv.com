@@ -23,6 +23,9 @@ $(document).ready(function(){
         closeEffect	: 'elastic',
         closeBtn    : true,
         closeClick  : true,
+        afterClose: function() {
+            $("a.fancy-no-hide").show();
+        },
 //        title       : false,
 //        helpers : {
 //            title : {

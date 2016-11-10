@@ -1,0 +1,5 @@
+%div{data: {hook: ''}}
+  = f.field_container :description_short, class: ['form-group'] do
+    = f.label :description_short, Spree.t(:description_short)
+    = f.text_area :description_short, { rows: "5", class: 'form-control' }
+    = f.error_message_on :description_short

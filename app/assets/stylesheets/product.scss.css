@@ -1,9 +1,21 @@
-#main-image div img {
+#main-image2 div img {
     height: 476px;
 }
-#main-image div {
+#main-image2 div {
     overflow: hidden;
+    min-height: 520px;
 }
+#products .product-block {
+    background: #f3f3f3;
+}
+#products .product-meta {
+    background: #f3f3f3;
+}
+
+#products .product-image-container a img {
+    /*margin: 50px auto;*/
+}
+
 .product-price {
     font-family: Poppins;
     font-size: 16px;
