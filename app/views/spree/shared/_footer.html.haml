@@ -78,16 +78,7 @@
                     %li.item
                       %a{:href => "#!", :title => "Help"} Help
             .col-md-3.col-sm-3.col-xs-12.col-sp-12
-              #newsletter_block.block.footer-block.footerAccordion.inline
-                %h4.title_block
-                  Newsletter
-                .block_content{:style => ""}
-                  .des_newsletter
-                    Signup to receive our latest news and promotions. We never send spam!
-                  %form#mc-embedded-subscribe-form.form_newsletter{:action => "https://hvduc.us11.list-manage.com/subscribe/post?u=355ea7b2b4b03bc8640b8efdd&id=86fecc3357", :method => "post", :name => "mc-embedded-subscribe-form", :target => "_blank"}
-                    %input#mail.newsletter-input.form-control{"aria-label" => "Your email ...", :name => "EMAIL", :placeholder => "Your email ...", :type => "email", :value => ""}/
-                    %button#subscribe.button_mini.btn{:type => "submit"}
-                      %span Subscribe
+              = render partial: 'spree/shared/guest_subscription'
     %section#footernav.footer-nav
       .container
         #powered.powered.row.wow.animated{:style => "visibility: hidden; animation-name: none;"}

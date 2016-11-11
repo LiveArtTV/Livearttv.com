@@ -1,0 +1,12 @@
+- @subscriber ||= Spree::Chimpy::Subscriber.new
+#newsletter_block.block.footer-block.footerAccordion.inline
+  %h4.title_block
+    Newsletter
+  .block_content{:style => ""}
+    .des_newsletter
+      Signup to receive our latest news and promotions. We never send spam!
+      = Spree.t(:subscribe_title, scope: :chimpy)
+    = form_for @subscriber, id: 'mc-embedded-subscribe-form', class: 'form_newsletter', remote: true do |f|
+      = f.email_field :email, class: 'newsletter-input form-control', placeholder: Spree.t(:placeholder, scope: [:chimpy, :email]), aria: {label: 'Your email ...'}
+      = f.submit class: 'subscribe button_mini btn', id: 'subscribe' do
+        %span Subscribe
