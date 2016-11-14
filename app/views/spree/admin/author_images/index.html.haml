@@ -1,0 +1,28 @@
+= render partial: 'spree/admin/shared/author_tabs', locals: { current: :images }
+- content_for :page_actions do
+  = button_link_to(Spree.t(:new_image), spree.new_admin_author_image_url(@author), { class: "btn-success", icon: 'add', id: 'new_image_link' }) if can? :create, Spree::Image
+
+- return '' unless @author.try(:images)
+%table.table.sortable{"data-hook" => "images_table", "data-sortable-link" => update_positions_admin_author_images_url(@author)}
+  %thead
+    %tr{"data-hook" => "images_header"}
+      %th{:colspan => "2"}
+        = Spree.t(:thumbnail)
+      -#%th
+        = Spree::Author.model_name.human
+      %th
+        = Spree.t(:alt_text)
+      %th.actions
+  %tbody
+    - @author.images.each do |image|
+      %tr{"data-hook" => "images_row", :id => spree_dom_id(image)}
+        %td.move-handle.text-center
+          - if can? :edit, image
+            %span.icon.icon-move.handle
+        %td.image
+          = link_to image_tag(image.attachment.url(:mini)), image.attachment.url(:large), class: 'btn fancybox'
+        -#%td= options_text_for(image)
+        %td= image.alt
+        %td.actions.actions-2.text-right
+          = link_to_with_icon('edit', Spree.t(:edit), spree.edit_admin_author_image_url(@author, image), class: 'btn btn-primary btn-sm', no_text: true, data: { action: 'edit' }) if can? :edit, image
+          = link_to_delete(image, { url: spree.admin_author_image_url(@author, image), no_text: true }) if can? :destroy, image

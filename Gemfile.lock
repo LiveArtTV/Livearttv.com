@@ -1,6 +1,6 @@
 GIT
   remote: git://github.com/DynamoMTL/spree_chimpy.git
-  revision: 85b6140441a0755fbba6fd7dbc2c5d618352e11f
+  revision: e9699607c83bd1dec29e35cb69142c1d45145bd9
   branch: 3-stable
   specs:
     spree_chimpy (2.0.0.alpha)
@@ -69,7 +69,8 @@ GEM
       tzinfo (~> 1.1)
     acts_as_list (0.7.2)
       activerecord (>= 3.0)
-    addressable (2.4.0)
+    addressable (2.5.0)
+      public_suffix (~> 2.0, >= 2.0.2)
     airbrake (5.4.5)
       airbrake-ruby (~> 1.4)
     airbrake-ruby (1.4.6)
@@ -248,9 +249,10 @@ GEM
       coderay (~> 1.1.0)
       method_source (~> 0.8.1)
       slop (~> 3.4)
+    public_suffix (2.0.4)
     rabl (0.12.0)
       activesupport (>= 2.3.14)
-    rack (1.6.4)
+    rack (1.6.5)
     rack-test (0.6.3)
       rack (>= 1.0)
     rails (4.2.7.1)

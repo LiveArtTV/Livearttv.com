@@ -1,0 +1,12 @@
+- content_for :page_title do
+  = link_to Spree.t(:authors), admin_authors_path
+  \/
+  \#{@author.name}
+- content_for :sidebar do
+  %ul.nav.nav-pills.nav-stacked{"data-hook" => "admin_author_tabs"}
+    - if can?(:admin, Spree::Author)
+      %li{class: ('active' if current == :details)}
+        = link_to_with_icon 'edit', Spree.t(:details), edit_admin_author_url(@author)
+    - if can?(:admin, Spree::AuthorImage)
+      %li{class: ('active' if current == :images)}
+        = link_to_with_icon 'picture', Spree.t(:images), spree.admin_author_images_url(@author)

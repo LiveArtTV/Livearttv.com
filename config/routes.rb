@@ -7,6 +7,12 @@ end
 
 Spree::Core::Engine.routes.append do
   namespace :admin, path: Spree.admin_path do
-    resources :authors
+    resources :authors do
+      resources :images, controller: :author_images do
+        collection do
+          post :update_positions
+        end
+      end
+    end
   end
 end

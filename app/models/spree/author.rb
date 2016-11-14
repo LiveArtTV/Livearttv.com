@@ -16,6 +16,9 @@ class Spree::Author < ActiveRecord::Base
   validates :foreign_link, uniqueness: true, allow_blank: true
 
   has_many :products
+  has_many :author_images, -> { order 'position ASC' }, as: :viewable
+  delegate_belongs_to :author_images
+  alias_method :images, :author_images
 
   scope :visible, -> { where(visible: true) }
   scope :header_links, -> { where(show_in_header: true).visible }

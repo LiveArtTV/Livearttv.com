@@ -1,0 +1,18 @@
+= render partial: 'spree/admin/shared/author_tabs', locals: { current: :images }
+= render partial: 'spree/admin/shared/error_messages', locals: { target: @image }
+= form_for [:admin, @author_image], url:[:admin, @author_image.viewable] , html: { multipart: true } do |f|
+  .panel.panel-default{"data-hook" => "edit_image"}
+    .panel-heading
+      %h1.panel-title
+        = @author_image.attachment_file_name
+    .panel-body
+      .form-group
+        .col-md-3.text-center{"data-hook" => "thumbnail"}
+          -#= f.label Spree.t(:thumbnail)
+          = link_to image_tag(@author_image.attachment.url(:small)), @author_image.attachment.url(:large), title: @author_image.attachment_file_name, class: 'btn fancybox'
+        .col-md-9
+          = render partial: 'form', locals: { f: f }
+        .form-actions{"data-hook" => "buttons"}
+          = button Spree.t('actions.update'), 'save'
+          %span.or= Spree.t(:or)
+          = button_link_to Spree.t('actions.cancel'), spree.admin_author_images_url(@author), id: 'cancel_link', icon: 'delete'

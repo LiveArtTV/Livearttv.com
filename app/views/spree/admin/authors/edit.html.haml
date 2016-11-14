@@ -1,3 +1,7 @@
 - content_for :page_title do
   = Spree.t(:editing_resource, resource: Spree::Author.model_name.human)
+
+= render partial: 'spree/admin/shared/author_tabs', locals: {current: :details}
+= render partial: 'spree/admin/shared/error_messages', locals: { target: @author }
+
 = render 'form', resource: @author

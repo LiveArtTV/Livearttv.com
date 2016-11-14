@@ -6,20 +6,27 @@
 - if @collection.any?
   %table#listing_authors.table{"data-hook" => ""}
     %colgroup
-      %col{style: 'width: 40%'}/
-      %col{style: 'width: 35%'}/
+      %col{style: 'width: 30%'}/
       %col{style: 'width: 10%'}/
+      %col{style: 'width: 10%'}/
+      %col{style: 'width: 30%'}/
+      %col{style: 'width: 5%'}/
       %col{style: 'width: 15%'}/
     %thead
       %tr{data: {hook: :admin_authors_index_headers}}
         %th= Spree::Author.human_attribute_name(:name)
+        %th= Spree::Author.human_attribute_name(:year_of_birth)
+        %th= Spree::Author.human_attribute_name(:year_of_death)
         %th= Spree.t(:link, scope: :static_content)
-        %th.text-center= Spree::Author.human_attribute_name(:visible)
+        %th.text-center
+          = content_tag(:i, '', class: 'icon icon-eye-open', title: Spree::Author.human_attribute_name(:visible))
         %th.actions{data: {hook: :admin_authors_index_header_actions}}
     %tbody
       - @collection.each do |author|
         %tr{class: cycle('odd', 'even'), data: {hook: :admin_authors_index_rows}, id: dom_id(author)}
           %td= author.name
+          %td= author.year_of_birth
+          %td= author.year_of_death
           %td= link_to author.link, author.link, target: '_blank'
           %td.text-center= content_tag(:i, '', class: 'icon icon-ok') if author.visible
           %td.actions.text-right{data: {hook: :admin_authors_index_row_actions}}
