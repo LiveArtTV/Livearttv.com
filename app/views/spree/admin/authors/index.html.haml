@@ -23,11 +23,12 @@
         %th.actions{data: {hook: :admin_authors_index_header_actions}}
     %tbody
       - @collection.each do |author|
+        - url =  author_path(author.slug)
         %tr{class: cycle('odd', 'even'), data: {hook: :admin_authors_index_rows}, id: dom_id(author)}
           %td= author.name
           %td= author.year_of_birth
           %td= author.year_of_death
-          %td= link_to author.link, author.link, target: '_blank'
+          %td= link_to url, url, target: '_blank'
           %td.text-center= content_tag(:i, '', class: 'icon icon-ok') if author.visible
           %td.actions.text-right{data: {hook: :admin_authors_index_row_actions}}
             = link_to_edit author, no_text: true

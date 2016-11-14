@@ -1,0 +1,11 @@
+%div
+  - @authors.each do |author|
+    .row
+      .col-md-2
+        = link_to author.name, author_path(id: author.slug)
+      .col-md-10
+        %pre= author.inspect
+    - author.images do |image|
+      .row
+        .col-md-12
+          %pre= image

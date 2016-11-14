@@ -1,0 +1,13 @@
+%div
+  .row
+    .col-md-6
+      %p= @author.name
+      %p
+        = @author.year_of_birth
+        &nbsp;
+        = @author.year_of_death
+      %p= @author.content
+  .row
+    - @author.try(:images) && @author.images.each do |image|
+      .col-md-2
+        = link_to image_tag(image.attachment.url(:author)), image.attachment.url(:large), class: 'btn fancybox'
