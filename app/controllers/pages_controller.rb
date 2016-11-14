@@ -1,5 +1,7 @@
 class PagesController < Spree::StoreController
   layout Spree::Config.layout
+  include Spree::Core::ControllerHelpers
+  helper Spree::BaseHelper
   respond_to :html
 
   def contact_us
