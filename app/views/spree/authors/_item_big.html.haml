@@ -1,0 +1,22 @@
+- url = spree.author_url(id: author.slug)
+.product_block.wow.fadeInUp.col-xs-12.col-sp-12.animated{data: {hook: 'authors_list_item', wow_delay: '0ms'}, :id => "author_#{author.id}", :itemscope => "", :itemtype => "https://schema.org/author"}
+  -#- cache(cache_key_for_author(author)) do
+  .product-container.text-left.product-block
+    .row
+      .left-block.col-md-6.col-sm-7
+        .product-image-container.image
+          %a.product_img_link{href: url, title: author.name}
+            %img.replace-2x.img-responsive{alt: author.name, src: product_image_src(author, :author)}/
+            %span.product-additional{data: {idauthor: author.id}}
+          .quickview
+            %a.quick-view.btn.fancybox{rel: 'authors-top-gallery', href: product_image_src(author, :large), title: truncate(author.name, length: 50), data: {handle: author.slug, img_src: product_image_src(author)}}
+              %i.fa.fa-expand
+      .right-block.col-md-6.col-sm-5
+        .product-meta
+          %h5.name
+            %a.product-name{href: url, title: author.name}
+              = truncate(author.name, length: 50)
+          %h6
+            = author_dates(author)
+          .product-desc
+            = truncate(product_description(author), length: 200)

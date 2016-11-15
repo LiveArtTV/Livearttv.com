@@ -19,4 +19,10 @@ module ApplicationHelper
       product.images.first.attachment.url(style)
     end
   end
+
+  def author_dates(author)
+    res = author.year_of_birth
+    res += raw("&nbsp;-&nbsp;#{author.year_of_death}") if author.year_of_death
+    res
+  end
 end

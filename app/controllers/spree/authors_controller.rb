@@ -1,11 +1,13 @@
 module Spree
   class AuthorsController < Spree::StoreController
     before_action :load_author, only: :show
+    helper 'spree/products'
+    PER_PAGE = 20
 
     respond_to :html
 
     def index
-      @authors = Spree::Author.all.page(params[:page]).per(20)
+      @authors = Spree::Author.all.page(params[:page]).per(PER_PAGE)
     end
 
     def show

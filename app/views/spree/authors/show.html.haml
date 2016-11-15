@@ -1,13 +1,23 @@
-%div
+%div{data:{hook: 'author'}}
   .row
-    .col-md-6
-      %p= @author.name
-      %p
-        = @author.year_of_birth
-        &nbsp;
-        = @author.year_of_death
+    .left-block.col-md-4.col-sm-5.text-center
+      - if @author.try(:images)
+        - image = @author.images.first
+        = link_to image_tag(image.attachment.url(:author)), image.attachment.url(:large), class: 'btn fancybox'
+
+    .right-block.col-md-8.col-sm-7
+      %h1
+        = @author.name
+      %h5
+        = author_dates(@author)
       %p= @author.content
   .row
-    - @author.try(:images) && @author.images.each do |image|
-      .col-md-2
-        = link_to image_tag(image.attachment.url(:author)), image.attachment.url(:large), class: 'btn fancybox'
+    &nbsp;
+%section.home_product_list_2
+  .text-center
+    .container
+      %h4.title_block_home.page-subheading
+        #{@author.name} works
+      #products.row
+        - @author.products.each do |product|
+          = render partial: 'spree/products/item_small', locals: {product: product}

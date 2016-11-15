@@ -23,4 +23,7 @@ class Spree::Author < ActiveRecord::Base
   scope :header_links, -> { where(show_in_header: true).visible }
   scope :sidebar_links, -> { where(show_in_sidebar: true).visible }
 
+  def description
+    content
+  end
 end

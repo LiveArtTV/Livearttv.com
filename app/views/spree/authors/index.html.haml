@@ -1,11 +1,9 @@
-%div
-  - @authors.each do |author|
-    .row
-      .col-md-2
-        = link_to author.name, author_path(id: author.slug)
-      .col-md-10
-        %pre= author.inspect
-    - author.images do |image|
-      .row
-        .col-md-12
-          %pre= image
+%h1.taxon-title= Spree.t('Authors')
+- content_for :sidebar do
+  %div{"data-hook" => "taxon_sidebar_navigation"}
+    -#= render partial: 'spree/shared/taxonomies'
+    -#%br
+    = render partial: 'spree/shared/authors'
+    -#= render partial: 'spree/shared/filters' if @taxon.leaf?
+%div{"data-hook" => "authors_list"}
+  = render partial: 'spree/shared/authors_big', locals: { authors: @authors }
