@@ -21,8 +21,9 @@ module ApplicationHelper
   end
 
   def author_dates(author)
-    res = author.year_of_birth
-    res += raw("&nbsp;-&nbsp;#{author.year_of_death}") if author.year_of_death
-    res
+    res = []
+    res << "#{author.year_of_birth}" if author.year_of_birth
+    res << "#{author.year_of_death}" if author.year_of_death
+    res.join(' - ')
   end
 end
