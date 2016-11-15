@@ -15,12 +15,15 @@ class AbilityDecorator
       can :manage, Spree::Variant
       can :manage, [Spree::Author, Spree::AuthorImage]
       can :manage, Spree::Video
+      can :manage, Spree::Page
       # can :admin, [Spree::ReturnAuthorization,Spree::CustomerReturn]
       # can :admin, Spree::Admin::ReportsController
       # can :admin, Spree::Promotion
 
-      can :manage, Spree::Store.current
-      can :manage, Spree::Config
+      # can :manage, Spree::Store.current
+      # can :manage, Spree::Config
+      # can :manage, Spree::Admin::GeneralSettingsController
+      # can :manage, Spree::Role
       # can :manage, Spree::TaxCategory
       # can :manage, Spree::TaxRate
       # can :manage, Spree::Zone
