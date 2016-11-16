@@ -1,4 +1,4 @@
-%h1.taxon-title= @taxon.name
+%h1.taxon-title.text-upper= @taxon.name
 - content_for :sidebar do
   %div{"data-hook" => "taxon_sidebar_navigation"}
     = render partial: 'spree/shared/taxonomies'

@@ -5,6 +5,6 @@
     %ul.listSidebar.list-unstyled
       - authors.all.each do |author|
         %li
-          = link_to '#' do
+          = link_to author_path(id: author.slug) do
             = author.name
             %span.apolloQty.pull-right= author.products.count

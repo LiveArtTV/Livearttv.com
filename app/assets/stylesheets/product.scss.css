@@ -12,6 +12,14 @@
     background: #f3f3f3;
 }
 
+#products .left-block{
+    /*padding-left: 0;*/
+}
+
+#products .product-image-container{
+    padding: 20px 0;
+}
+
 #products .product-image-container a img {
     /*margin: 50px auto;*/
 }
