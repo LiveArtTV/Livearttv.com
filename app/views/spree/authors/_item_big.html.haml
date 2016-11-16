@@ -8,7 +8,7 @@
           %a.product_img_link{href: url, title: author.name}
             %img.replace-2x.img-responsive{alt: author.name, src: product_image_src(author, :author)}/
             %span.product-additional{data: {idauthor: author.id}}
-          .quickview
+          -#.quickview
             %a.quick-view.btn.fancybox{rel: 'authors-top-gallery', href: product_image_src(author, :large), title: truncate(author.name, length: 50), data: {handle: author.slug, img_src: product_image_src(author)}}
               %i.fa.fa-expand
       .right-block.col-md-6.col-sm-5

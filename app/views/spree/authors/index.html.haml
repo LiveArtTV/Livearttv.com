@@ -1,9 +1,19 @@
 %h1.taxon-title.text-upper= Spree.t('Authors')
-- content_for :sidebar do
+-#- content_for :sidebar do
   %div{"data-hook" => "taxon_sidebar_navigation"}
     -#= render partial: 'spree/shared/taxonomies'
     -#%br
     = render partial: 'spree/shared/authors'
     -#= render partial: 'spree/shared/filters' if @taxon.leaf?
-%div{"data-hook" => "authors_list"}
+-#%div{"data-hook" => "authors_list"}
   = render partial: 'spree/shared/authors_big', locals: { authors: @authors }
+- content_for :head do
+  - if @authors.respond_to?(:total_pages)
+    = rel_next_prev_link_tags @authors
+%div{"data-hook" => "authors_list"}
+- if @authors.any?
+  #authors.row{"data-hook" => ""}
+    - @authors.each do |author|
+      = render partial: 'spree/authors/item_small', locals: {author: author}
+- if @authors.respond_to?(:total_pages)
+  = paginate @authors, theme: 'twitter-bootstrap-3'
