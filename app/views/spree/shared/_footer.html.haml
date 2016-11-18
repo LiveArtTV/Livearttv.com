@@ -31,14 +31,14 @@
                 %h4.title_block support
                 .block_content{:style => ""}
                   %ul.toggle-footer.list-group.list-unstyled{:style => ""}
-                    %li.item
+                    -#%li.item
                       %a{:href => "#!", :title => "Returns"} Returns
                     %li.item
-                      %a{:href => "#!pages/faq", :title => "F.A.Q"} F.A.Q
-                    %li.item
+                      %a{:href => "/pages/faq", :title => "F.A.Q"} F.A.Q
+                    -#%li.item
                       %a{:href => "#!", :title => "Shaipping Policy"} Shaipping Policy
                     %li.item
-                      %a{:href => "#!pages/frontpage", :title => "Search Terms"} Search Terms
+                      %a{:href => "/pages/search_terms", :title => "Search Terms"} Search Terms
                     %li.item
                       %a{:href => "/pages/contact_us", :title => "Contact Us"} Contact Us
             .col-md-2.col-sm-2.col-xs-12.col-sp-12
@@ -47,20 +47,20 @@
                 .block_content{:style => ""}
                   %ul.toggle-footer.list-group.list-unstyled{:style => ""}
                     %li.item
-                      %a{:href => "#!pages/about-us", :title => "About Us "} About Us
+                      %a{:href => "/pages/about_us", :title => "About Us "} About Us
                     %li.item
                       %a{:href => "/pages/contact_us", :title => "Contact Us"} Contact Us
                     %li.item
-                      %a{:href => "#!pages/terms-conditions", :title => "Terms & Conditions"}
+                      %a{:href => "/pages/terms_conditions", :title => "Terms & Conditions"}
                         Terms &
                         Conditions
                     %li.item
-                      %a{:href => "#!pages/frontpage", :title => "Privacy Policy  "} Privacy Policy
-                    %li.item
-                      %a{:href => "#!pages/frontpage", :title => "Orders and Returns"}
+                      %a{:href => "/pages/privacy_policy", :title => "Privacy Policy  "} Privacy Policy
+                    -#%li.item
+                      %a{:href => "/pages/frontpage", :title => "Orders and Returns"}
                         Orders and
                         Returns
-                    %li.item
+                    -#%li.item
                       %a{:href => "#!", :title => "Site Map"} Site Map
             .col-md-2.col-sm-2.col-xs-12.col-sp-12
               #block_links_footer_3.block.footer-block.footerAccordion
@@ -68,15 +68,15 @@
                 .block_content{:style => ""}
                   %ul.toggle-footer.list-group.list-unstyled{:style => ""}
                     %li.item
-                      %a{:href => "#!account/login", :title => "Sign In"} Sign In
+                      %a{:href => "/login", :title => "Sign In"} Sign In
                     -#%li.item
                       %a{:href => "#!cart", :title => "View Cart"} View Cart
-                    %li.item
+                    -#%li.item
                       %a{:href => "#!pages/wish-list", :title => "My Wishlist"} My Wishlist
-                    %li.item
+                    -#%li.item
                       %a{:href => "#!", :title => "Track My Order"} Track My Order
                     %li.item
-                      %a{:href => "#!", :title => "Help"} Help
+                      %a{:href => "/pages/help", :title => "Help"} Help
             .col-md-3.col-sm-3.col-xs-12.col-sp-12
               = render partial: 'spree/shared/guest_subscription'
     %section#footernav.footer-nav
