@@ -1,6 +1,6 @@
 = render partial: 'spree/admin/shared/author_tabs', locals: { current: :images }
 = render partial: 'spree/admin/shared/error_messages', locals: { target: @image }
-= form_for [:admin, @author_image], url:[:admin, @author_image.viewable] , html: { multipart: true } do |f|
+= form_for [:admin, @author_image], url: admin_author_image_url(@author_image.viewable, @author_image), html: { multipart: true, method: :patch } do |f|
   .panel.panel-default{"data-hook" => "edit_image"}
     .panel-heading
       %h1.panel-title

@@ -6,6 +6,10 @@ module Spree
       create.before :set_viewable
       update.before :set_viewable
 
+      def show
+        redirect_to [:admin, @author, :images]
+      end
+
       private
 
       def location_after_destroy
@@ -13,6 +17,14 @@ module Spree
       end
 
       def location_after_save
+        admin_author_images_url(@author)
+      end
+
+      def location_create_save
+        admin_author_images_url(@author)
+      end
+
+      def location_update_save
         admin_author_images_url(@author)
       end
 

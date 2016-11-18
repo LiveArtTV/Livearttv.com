@@ -25,4 +25,4 @@
         %td= image.alt
         %td.actions.actions-2.text-right
           = link_to_with_icon('edit', Spree.t(:edit), spree.edit_admin_author_image_url(@author, image), class: 'btn btn-primary btn-sm', no_text: true, data: { action: 'edit' }) if can? :edit, image
-          = link_to_delete(image, { url: spree.admin_author_image_url(@author, image), no_text: true }) if can? :destroy, image
+          = link_to_delete(image, { url: spree.admin_author_image_url(@author, image), no_text: true, method: :delete }) if can? :destroy, image
