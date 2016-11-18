@@ -12,8 +12,8 @@
     %section#tab_author.tab-pane.page-product-box
       - if product.author
         .product-description.rte
+          %h5.brand= product.author.name
           %p
-            %h5.brand= product.author.name
             = product.author.content
     -#%section#idTab4.tab-pane.page-product-box
       #shopify-product-reviews{"data-id" => "7135968449"}
