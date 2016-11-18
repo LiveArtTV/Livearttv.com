@@ -5,6 +5,15 @@
     overflow: hidden;
     min-height: 520px;
 }
+
+#taxons .product-image-container{
+    padding: 20px 0;
+}
+
+#taxons .product-image-container a img {
+    /*margin: 50px auto;*/
+}
+
 #products .product-block {
     background: #f3f3f3;
 }
