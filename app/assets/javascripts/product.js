@@ -39,6 +39,8 @@ Spree.ready(function($) {
         thumbnails.find('li').on('mouseenter', function(event) {
             $('#main-image2 img').attr('src', $(event.currentTarget).find('a').attr('href'));
             $('#main-image2 a').attr('href', $(event.currentTarget).find('a').data('img-src'));
+            console.log('#main-image2 img', $('#main-image2 img').attr('src'), $(event.currentTarget).find('a').attr('href'))
+            console.log('#main-image2 a', $('#main-image2 a').attr('href'), $(event.currentTarget).find('a').data('img-src'))
         });
         thumbnails.find('li').on('mouseleave', function(event) {
 //            $('#main-image2 img').attr('src', $('#main-image2').data('selectedThumb'));
