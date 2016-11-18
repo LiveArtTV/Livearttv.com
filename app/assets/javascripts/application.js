@@ -25,7 +25,7 @@ $(document).ready(function(){
         closeClick  : true,
         afterClose: function() {
             $("a.fancy-no-hide").show();
-        },
+        }
 //        title       : false,
 //        helpers : {
 //            title : {
