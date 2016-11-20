@@ -1,0 +1,5 @@
+= f.field_container :youtube_ref, class: ['form-group'] do
+  = f.label :youtube_ref, raw(t('helpers.label.video.youtube_ref') + content_tag(:span, ' *', class: 'required'))
+  %br/
+  = f.text_field :youtube_ref, class: 'form-control title'
+  = f.error_message_on :youtube_ref

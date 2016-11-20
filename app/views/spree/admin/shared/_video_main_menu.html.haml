@@ -1,0 +1,3 @@
+- if can? :admin, Spree::Video
+  %ul.nav.nav-sidebar
+    = tab Spree::Video, url: spree.admin_videos_url, icon: 'user', label: plural_resource_name(Spree::Video)

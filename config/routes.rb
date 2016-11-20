@@ -14,6 +14,7 @@ Spree::Core::Engine.routes.append do
         end
       end
     end
+    resources :videos
   end
   resources :authors, only: [:index, :show]
 end
