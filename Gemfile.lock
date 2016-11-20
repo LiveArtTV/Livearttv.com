@@ -1,19 +1,19 @@
 GIT
-  remote: git://github.com/DynamoMTL/spree_chimpy.git
-  revision: e9699607c83bd1dec29e35cb69142c1d45145bd9
-  branch: 3-stable
-  specs:
-    spree_chimpy (2.0.0.alpha)
-      mailchimp-api (~> 2.0.5)
-      spree_core (~> 3.1)
-
-GIT
   remote: git://github.com/spree-contrib/spree_static_content.git
   revision: 818c9ecb65df2e845a40ca8d2053b2c7be2a2d75
   branch: master
   specs:
     spree_static_content (3.2.0.alpha)
       spree_core (>= 3.1.0, < 4.0)
+
+GIT
+  remote: https://github.com/clevertechru/spree_chimpy.git
+  revision: d9fdf52404cc428de574f907efbd95c3d7388a0e
+  branch: 3-stable
+  specs:
+    spree_chimpy (2.0.0.alpha)
+      gibbon (~> 2.2)
+      spree_core (~> 3.1)
 
 GIT
   remote: https://github.com/clevertechru/spree_videos.git
@@ -159,6 +159,9 @@ GEM
       railties (>= 3.2, < 5.1)
     friendly_id (5.1.0)
       activerecord (>= 4.0.0)
+    gibbon (2.2.4)
+      faraday (>= 0.9.1)
+      multi_json (>= 1.11.0)
     globalid (0.3.7)
       activesupport (>= 4.1.0)
     haml (4.0.7)
@@ -195,9 +198,6 @@ GEM
       nokogiri (>= 1.5.9)
     mail (2.6.4)
       mime-types (>= 1.16, < 4)
-    mailchimp-api (2.0.6)
-      excon (>= 0.16.0)
-      json (>= 1.7.7)
     method_source (0.8.2)
     mime-types (3.1)
       mime-types-data (~> 3.2015)

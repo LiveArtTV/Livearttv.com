@@ -3,7 +3,7 @@ Spree::Chimpy.config do |config|
   config.key = 'b6ccfb734764de0caa28e6e9084a9305-us14'
 
   # extra api options for the Mailchimp gem
-  config.api_options = { throws_exceptions: true, timeout: 3600 }
+  # config.api_options = { throws_exceptions: true, timeout: 3600 }
 
   # list_id of the list you want to use.
   # These ID's can be found by visiting your list in the Mailchimp admin,
@@ -36,3 +36,5 @@ Spree::Chimpy.config do |config|
     'EMAIL' => :email
   }
 end
+
+Gibbon::Request.debug = true if Rails.env.development?
