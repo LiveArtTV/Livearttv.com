@@ -1,7 +1,7 @@
 -#- content_for :sidebar do
   %div{"data-hook" => "homepage_sidebar_navigation"}
     = render :partial => 'spree/shared/taxonomies'
--#%section.video
+%section.video
   .container
     - cache %w(product-videos, all) do
       - if @videos
@@ -11,7 +11,7 @@
           .col-md-10#product-videos
             .embed-responsive.embed-responsive-16by9.spree-embed-video= render 'spree/products/video_player', :video => @videos.first
           .col-md-1
--#%section.video-thumbnails
+%section.video-thumbnails
   .text-center
     .container
       = render partial: 'spree/home/video_thumbnails', locals: { videos: @videos }
