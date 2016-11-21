@@ -1,0 +1,35 @@
+- return '' unless videos
+%section.video-streams-fixed
+  %button.btn.btn--style-primary.js--video-streams-trigger-open
+    View stream
+    %span.btn__treangle-icon.btn__treangle-icon--arrow-right
+  .js--video-streams-content.video-streams-content#product-videos
+    %span.zmdi.zmdi-hc-3x.zmdi-close-circle.js--video-streams-trigger-close{:title => "Close"}
+    .embed-responsive.embed-responsive-16by9.video-streams-frame.spree-embed-video= render 'spree/products/video_player', video: videos.first, html_options: {width: nil, height: nil}
+    - if videos.size > 1
+      %ul.list-unstyled.video-streams-menu.spree-video-thumbnails#video-thumbnails
+        - videos.map(&:youtube_data).each_with_index do |video, idx|
+          - product_video = videos.select{|v| v.youtube_ref == video.unique_id}.try(:first)
+          %li
+            = link_to (video.title ? video.title : "Stream #{idx > 0 ? idx : ''}"), video_path(id: product_video, youtube_ref: video.unique_id), title: video.title, class: ('active' if idx == 0), data: {'video-id' => video.unique_id, title: video.title}, remote: true
+:javascript
+  (function ($) {
+    var openTrigger = $('.js--video-streams-trigger-open');
+    var closeTrigger = $('.js--video-streams-trigger-close');
+    var videoContent = $('.js--video-streams-content');
+
+    openTrigger.on('click', function(){
+      videoContent.addClass('is-visible');
+    });
+
+    closeTrigger.on('click', function(){
+      videoContent.removeClass('is-visible');
+    });
+
+    $('#video-thumbnails li a').on('click', function(e){
+      $('#video-thumbnails li a').removeClass('active');
+      e.currentTarget.className += 'active';
+    })
+
+
+  }(jQuery));

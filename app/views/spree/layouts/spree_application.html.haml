@@ -21,6 +21,7 @@
           = breadcrumbs(@taxon)
     - if controller_name == 'home'
       = yield
+      = render partial: 'shared/youtube_popup', locals: {videos: @videos}
     - else
       %section.columns-container#columns
         .container
