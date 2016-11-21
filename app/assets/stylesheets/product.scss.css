@@ -113,6 +113,26 @@
     color: #000
 }
 
+.product-block .name2 {
+    text-transform: none;
+    margin: 0px;
+    padding: 0px;
+    min-height: 24px
+}
+
+.product-block .name2 a {
+    color: #666;
+    font-size: 14px;
+    font-family: Arimo;
+    font-weight: 700;
+    text-decoration: none;
+    line-height: 20px
+}
+
+.product-block .name2 a:hover {
+    color: #000
+}
+
 .product-block .image {
     position: relative;
     overflow: hidden;

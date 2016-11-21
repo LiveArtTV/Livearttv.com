@@ -5,7 +5,7 @@
         - image = @author.images.first
         = link_to image_tag(image.attachment.url(:author)), image.attachment.url(:large), class: 'btn fancybox'
 
-    .right-block.col-md-8.col-sm-7
+    .right-block.col-md-8.col-sm-7.rte
       %h1.text-upper
         = @author.name
       %h5
