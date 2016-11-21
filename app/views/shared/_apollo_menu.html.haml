@@ -135,7 +135,7 @@
                           .box-image
                             %img.img-responsive{:alt => "HTML", :src => "/ap_rojo_files/apmenuitem_ihtml_2.jpg"}/
             %li.parent.dropdown.active
-              %a.dropdown-toggle.has-category{"data-toggle" => "dropdown", :href => authors_path, :target => "_self", :title => Spree.t('menu.artists')}
+              %a.dropdown-toggle.has-category{"data-toggle" => "dropdown", :href => spree.authors_path, :target => "_self", :title => Spree.t('menu.artists')}
                 %span= Spree.t('menu.artists')
                 %b.caret
               .dropdown-menu.level1
@@ -144,7 +144,7 @@
                     %ul
                       - Spree::Author.last(5).each do |author|
                         %li
-                          %a{:href => author_path(id: author.slug), :title => author.name}
+                          %a{:href => spree.author_path(id: author.slug), :title => author.name}
                             %span #{author.name}
             %li.active
               = link_to '/pages/contact_us', target: '_self', title: Spree::t('contact') do
