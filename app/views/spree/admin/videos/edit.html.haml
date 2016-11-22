@@ -1,8 +1,0 @@
-= render :partial => 'spree/admin/shared/sub_menu/product'
--#= render :partial => 'spree/admin/shared/product_tabs', :locals => {:current => "Images"}
-= render "spree/shared/error_messages", :target => @image
-.row
-  .col-md-6
-    = form_for(:video, :url => admin_video_url(id: @video.id), :html => { :method => :put, :multipart => true }) do |f|
-      = render :partial => "form", :locals => { :f => f }
-      = render partial: 'spree/admin/shared/edit_resource_links', locals: {collection_url: admin_videos_url(id: @video.id)}

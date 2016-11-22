@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161110200000) do
+ActiveRecord::Schema.define(version: 20161121174855) do
 
   create_table "friendly_id_slugs", force: :cascade do |t|
     t.string   "slug",           limit: 255, null: false
@@ -1132,6 +1132,17 @@ ActiveRecord::Schema.define(version: 20161110200000) do
     t.datetime "updated_at"
     t.integer  "watchable_id",   limit: 4
     t.string   "watchable_type", limit: 255
+    t.string   "title",          limit: 1024, default: ""
+    t.string   "description",    limit: 4096, default: ""
+    t.integer  "duration",       limit: 4,    default: 0
+    t.integer  "views",          limit: 4,    default: 0
+    t.integer  "likes",          limit: 4,    default: 0
+    t.integer  "dislikes",       limit: 4,    default: 0
+    t.integer  "comments",       limit: 4,    default: 0
+    t.integer  "subscribers",    limit: 4,    default: 0
+    t.string   "thumbnail_url",  limit: 255,  default: ""
+    t.boolean  "show_on_home",                default: false
+    t.boolean  "stream",                      default: false
   end
 
   create_table "spree_zone_members", force: :cascade do |t|
