@@ -5,7 +5,7 @@
       = f.file_field :attachment
     .form-group{"data-hook" => "author"}
       = f.label :viewable_id, Spree::Author.model_name.human
-      = f.select :viewable_id, options_from_collection_for_select(Spree::Author.all, :id, :name), {}, {:class => 'select2'}
+      = f.select :viewable_id, options_from_collection_for_select(Spree::Author.all, :id, :name, @author.id), {}, {:class => 'select2'}
   .col-md-6{"data-hook" => "alt_text"}
     .form-group
       = f.label :alt, Spree.t(:alt_text)
