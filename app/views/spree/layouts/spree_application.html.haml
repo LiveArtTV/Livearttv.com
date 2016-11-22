@@ -21,7 +21,6 @@
           = breadcrumbs(@taxon)
     - if controller_name == 'home'
       = yield
-      = render partial: 'shared/youtube_popup', locals: {videos: @videos}
     - else
       %section.columns-container#columns
         .container
@@ -32,3 +31,4 @@
             = render partial: 'spree/shared/sidebar' if content_for? :sidebar
   = yield :templates
   = render partial: 'spree/shared/footer'
+  = render partial: 'shared/youtube_popup', locals: {videos: @videos}
