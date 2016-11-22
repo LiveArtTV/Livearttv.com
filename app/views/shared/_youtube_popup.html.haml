@@ -9,9 +9,9 @@
     - if videos.size > 1
       %ul.list-unstyled.video-streams-menu.spree-video-thumbnails#video-thumbnails
         - videos.map(&:youtube_data).each_with_index do |video, idx|
-          - product_video = videos.select{|v| v.youtube_ref == video.unique_id}.try(:first)
+          - product_video = videos.select{|v| v.youtube_ref == video.id}.try(:first)
           %li
-            = link_to (video.title ? video.title : "Stream #{idx > 0 ? idx : ''}"), video_path(id: product_video, youtube_ref: video.unique_id), title: video.title, class: ('active' if idx == 0), data: {'video-id' => video.unique_id, title: video.title}, remote: true
+            = link_to (video.title ? video.title[0..35] : "Stream #{idx > 0 ? idx : ''}"), video_path(id: product_video, youtube_ref: video.id), title: video.title, class: ('active' if idx == 0), data: {'video-id' => video.id, title: video.title}, remote: true
 :javascript
   (function ($) {
     var openTrigger = $('.js--video-streams-trigger-open');

@@ -15,12 +15,10 @@ GIT
       gibbon (~> 2.2)
       spree_core (~> 3.1)
 
-GIT
-  remote: https://github.com/clevertechru/spree_videos.git
-  revision: e5632a83b30ff641003f4c4cc38b0849c33afd76
-  branch: 3-1-stable
+PATH
+  remote: lib/gems/spree_videos
   specs:
-    spree_videos (3.1.0.3)
+    spree_videos (3.1.1.0)
       spree_core (~> 3.1)
       yt (~> 0.22.0)
 
