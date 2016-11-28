@@ -7,7 +7,7 @@ module Spree
       @searcher = build_searcher(params.merge(include_images: true))
       @products = @searcher.retrieve_products.includes(:possible_promotions)
       @taxonomies = Spree::Taxonomy.includes(root: :children)
-      @videos = Spree::Video.all
+      @videos = Spree::Video.stream_or_home_videos
     end
   end
 end

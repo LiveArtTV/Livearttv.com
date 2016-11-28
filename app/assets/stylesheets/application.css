@@ -30,6 +30,10 @@ div.spree-video-thumbnails a img {
     height: 74px;
     margin: 5px 5px;
 }
+div.spree-video-thumbnails-md a img {
+    height: 178px;
+    margin: 5px 5px;
+}
 div#main-image2 {
     border: none;
 }
