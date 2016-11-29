@@ -165,8 +165,8 @@
                           %a{:href => spree.video_path(id: video.id), title: video.title}
                             %span #{truncate(video.title, length: 22)}
             %li.parent.dropdown.full-width.active
-              %a.dropdown-toggle.has-category{"data-toggle" => "dropdown", href: spree.videos_path, target: "_self", title: Spree.t('menu.videos')}
-                %span.menu-title= Spree.t('menu.videos')
+              %a.dropdown-toggle.has-category{"data-toggle" => "dropdown", href: spree.videos_path, target: "_self", title: Spree.t('menu.library')}
+                %span.menu-title= Spree.t('menu.library')
                 %b.caret
               .dropdown-sub.dropdown-menu.sub-apmegamenu-2
                 .dropdown-menu-inner
