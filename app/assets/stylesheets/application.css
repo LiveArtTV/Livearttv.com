@@ -46,6 +46,10 @@ input.add-to-cart-detail-number {
     height: 100px;
 }
 
+.breadcrumb {
+    background-color: transparent !important;
+}
+
 div.breadcrumbs-wrap {
     min-height: 253px;
 }
