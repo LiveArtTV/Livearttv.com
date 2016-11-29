@@ -25,7 +25,7 @@
                             %ul.nav-links
                               - taxon_root.children.each do |taxon|
                                 %li
-                                  = link_to taxon.name, seo_url(taxon)
+                                  = link_to truncate(taxon.name, length: 22), seo_url(taxon)
             -#%li
               %a{href: spree.products_path, target: "_self", title: "Shop"}
                 %span Shop
@@ -147,8 +147,60 @@
                           %span View All
                       - Spree::Author.last(10).each do |author|
                         %li
-                          %a{:href => spree.author_path(id: author.slug), :title => author.name}
-                            %span #{author.name}
+                          %a{:href => spree.author_path(id: author.slug), title: author.name}
+                            %span #{truncate(author.name, length: 22)}
+            -#%li.parent.dropdown.active
+              %a.dropdown-toggle.has-category{"data-toggle" => "dropdown", href: spree.videos_path, target: "_self", title: Spree.t('menu.videos')}
+                %span= Spree.t('menu.videos')
+                %b.caret
+              .dropdown-menu.level1
+                .dropdown-menu-inner
+                  .mega-col-inner
+                    %ul
+                      %li
+                        %a{:href => spree.videos_path, title: 'Videos'}
+                          %span View All
+                      - Spree::Video.last(10).each do |video|
+                        %li
+                          %a{:href => spree.video_path(id: video.id), title: video.title}
+                            %span #{truncate(video.title, length: 22)}
+            %li.parent.dropdown.full-width.active
+              %a.dropdown-toggle.has-category{"data-toggle" => "dropdown", href: spree.videos_path, target: "_self", title: Spree.t('menu.videos')}
+                %span.menu-title= Spree.t('menu.videos')
+                %b.caret
+              .dropdown-sub.dropdown-menu.sub-apmegamenu-2
+                .dropdown-menu-inner
+                  .row
+                    .mega-col.col-sm-1
+                    .mega-col.col-sm-4
+                      .products_menu
+                        .menu-title
+                          Last video
+                        .product-block
+                          - Spree::Video.last(10).each do |video|
+                            .product-container.clearfix
+                              .image
+                                %a.product_img_link{href: spree.video_path(id: video.id), title: video.title}
+                                  %img.replace-2x.img-responsive{alt: video.title, src: video.thumbnail_url}/
+                              .product-meta
+                                %h5.name
+                                  %a.product-name{href: spree.video_path(id: video.id), title: video.title}
+                                    #{truncate(video.title, length: 75)}
+                                .product-desc
+                      .row
+                        .col-md-12.text-right
+                          %ul
+                            %li
+                              %a{:href => spree.videos_path, title: 'Videos'}
+                                %span View All Video
+                    .mega-col.col-sm-1
+                    .mega-col.col-sm-6
+                      .block-html
+                        .menu-title #{truncate(Spree::Video.last.title, length: 50)}
+                        .widget-inner
+                          .box-image
+                            != Spree::Video.last.embed_html
+                            -#%img.img-responsive{:alt => "HTML", :src => "/ap_rojo_files/apmenuitem_ihtml_2.jpg"}/
             %li.active
               = link_to '/pages/contact_us', target: '_self', title: Spree::t('contact') do
                 %span= Spree::t('contact')
