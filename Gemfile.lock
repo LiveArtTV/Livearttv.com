@@ -1,4 +1,12 @@
 GIT
+  remote: git://github.com/spree-contrib/spree_static_content.git
+  revision: 818c9ecb65df2e845a40ca8d2053b2c7be2a2d75
+  branch: master
+  specs:
+    spree_static_content (3.2.0.alpha)
+      spree_core (>= 3.1.0, < 4.0)
+
+GIT
   remote: https://github.com/clevertechru/spree_chimpy.git
   revision: d9fdf52404cc428de574f907efbd95c3d7388a0e
   branch: 3-stable
@@ -9,20 +17,12 @@ GIT
 
 GIT
   remote: https://github.com/clevertechru/spree_videos.git
-  revision: ce1f7e8458d2c6c4f2ae4a14c6d59ed702511604
+  revision: 42872faeaf6c97179e592bf5a96bf3485eace206
   branch: 3-1-stable
   specs:
-    spree_videos (3.1.1.0)
+    spree_videos (3.1.1.3)
       spree_core (~> 3.1)
       yt (~> 0.22.0)
-
-GIT
-  remote: https://github.com/spree-contrib/spree_static_content.git
-  revision: 818c9ecb65df2e845a40ca8d2053b2c7be2a2d75
-  branch: master
-  specs:
-    spree_static_content (3.2.0.alpha)
-      spree_core (>= 3.1.0, < 4.0)
 
 GEM
   remote: https://rubygems.org/
@@ -151,7 +151,7 @@ GEM
       devise (>= 2.1.0)
     erubis (2.7.0)
     execjs (2.7.0)
-    faraday (0.9.2)
+    faraday (0.10.0)
       multipart-post (>= 1.2, < 3)
     ffaker (2.2.0)
     font-awesome-rails (4.7.0.0)
