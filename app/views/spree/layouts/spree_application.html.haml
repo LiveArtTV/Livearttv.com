@@ -8,8 +8,8 @@
 
 %head{"data-hook" => "inside_head"}
   = render partial: 'spree/shared/head'
-  = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true
-  = javascript_include_tag 'application', 'data-turbolinks-track' => true
+  = stylesheet_link_tag    'application', media: 'all'
+  = javascript_include_tag 'application'
 %body{:class => body_class, "data-hook" => "body", :id => @body_id || 'default'}
   = render partial: 'spree/shared/google_analytics.js'
   = render partial: 'spree/shared/header'
