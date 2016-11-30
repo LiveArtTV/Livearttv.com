@@ -81,6 +81,11 @@ GEM
       execjs
     awesome_nested_set (3.0.3)
       activerecord (>= 4.0.0, < 5)
+    aws-sdk (1.66.0)
+      aws-sdk-v1 (= 1.66.0)
+    aws-sdk-v1 (1.66.0)
+      json (~> 1.4)
+      nokogiri (>= 1.4.4)
     bcrypt (3.1.11)
     better_errors (2.1.1)
       coderay (>= 1.0.0)
@@ -403,6 +408,7 @@ PLATFORMS
 
 DEPENDENCIES
   airbrake (~> 5.4.5)
+  aws-sdk (< 2.0)
   better_errors
   byebug
   capistrano (~> 3.6.1)

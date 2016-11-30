@@ -22,6 +22,7 @@ gem 'spree_videos', git: 'https://github.com/clevertechru/spree_videos.git', bra
 # gem 'spree_videos', path: 'lib/gems/spree_videos'
 gem 'spree_chimpy', git: 'https://github.com/clevertechru/spree_chimpy.git', branch: '3-stable'
 gem 'spree_static_content', github: 'spree-contrib/spree_static_content', branch: 'master'
+gem 'aws-sdk', '< 2.0'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
