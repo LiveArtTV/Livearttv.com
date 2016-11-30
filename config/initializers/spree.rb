@@ -57,7 +57,7 @@ attachment_config = {
 
 attachment_config.each do |key, value|
   Spree::Image.attachment_definitions[:attachment][key.to_sym] = value
-end if Rails.env.production?
+end unless Rails.env.development? || Rails.env.testing?
 
 Spree::Image.attachment_definitions[:attachment][:styles].merge!(
     product476:  '476x476>',
