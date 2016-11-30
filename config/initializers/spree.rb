@@ -41,7 +41,7 @@ attachment_config = {
     s3_headers:     { "Cache-Control" => "max-age=31557600" },
     s3_protocol:    'https',
     bucket:         Rails.application.secrets.aws['s3_bucket_name'],
-    url:            ':s3_domain_url'
+    url:            ':s3_domain_url',
     #
     # styles: {
     #     mini:     "48x48>",
@@ -50,9 +50,9 @@ attachment_config = {
     #     large:    "600x600>"
     # },
     #
-    # path:           "/:class/:id/:style/:basename.:extension",
-    # default_url:    "/:class/:id/:style/:basename.:extension",
-    # default_style:  "product"
+    path:           '/:class/:id/:style/:basename.:extension',
+    default_url:    '/:class/:id/:style/:basename.:extension',
+    default_style:  'product'
 }
 
 attachment_config.each do |key, value|
