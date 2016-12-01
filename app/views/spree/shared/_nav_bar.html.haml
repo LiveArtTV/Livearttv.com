@@ -68,4 +68,8 @@
         });
       .header_user_info.e-scale
         %ul.links.list-unstyled
+          %li
+            = render partial: 'spree/shared/link_to_cart'
+            :javascript
+              Spree.fetch_cart();
           = render partial: 'spree/shared/login_bar'

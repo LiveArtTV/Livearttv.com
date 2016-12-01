@@ -6,7 +6,7 @@
           = logo
     -#.header-center.col-lg-6.col-md-6.col-sm-7.col-xs-12.col-sp-12
       -#= render partial: 'spree/shared/search'
-    -#.header-right.col-lg-4.col-md-4.col-sm-5.col-xs-12.col-sp-12
+    .header-right.col-lg-4.col-md-4.col-sm-5.col-xs-12.col-sp-12
       -##cart.blockcart_top.clearfix
         .media.heading#link-to-cart
           %a#CartToggle{href: "/cart", title: Spree.t('cart')}
@@ -14,6 +14,7 @@
               %span.fa.fa-shopping-cart
             .cart-inner.media-body
               %span.cart-title #{Spree.t('cart')}:
+      -#= render partial: 'spree/shared/link_to_cart'
       -#:javascript
         Spree.fetch_cart();
     .header-bottom.col-lg-12.col-md-12.col-sm-6.col-xs-6.col-sp-6

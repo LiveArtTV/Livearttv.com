@@ -28,7 +28,7 @@
               .product-description.rte{:itemprop => "description"}
                 %p= product_description_short(@product)
               = render partial: 'products/info_block', locals: {product: @product}
-            -#.product-right-column
+            .product-right-column
               %div{:itemprop => "offers", :itemscope => "", :itemtype => "http://schema.org/Offer"}
                 %meta{:content => @product.currency, :itemprop => "priceCurrency"}/
                 %link{:href => "http://schema.org/InStock", :itemprop => "availability"}/
@@ -36,7 +36,7 @@
                 - if @product.master.can_supply?
                   .availability
                     %p.available.instock Available
-                -#= render partial: 'cart_form'
+                = render partial: 'cart_form'
                 -#= render partial: 'products/apollo_cart'
               .wishlist
                 %a.btn.btn-outline-inverse.btn-wishlist{:href => "/account/login", :title => "Add to Wishlist"}
