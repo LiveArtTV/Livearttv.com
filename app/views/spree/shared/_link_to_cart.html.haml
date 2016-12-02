@@ -1,4 +1,5 @@
 :ruby
+  return '' unless defined? simple_current_order
   if simple_current_order.nil? or simple_current_order.item_count.zero?
     text = "<span class='glyphicon glyphicon-shopping-cart'></span> #{Spree.t('cart')}: (#{Spree.t('empty')})"
     css_class = 'empty'
