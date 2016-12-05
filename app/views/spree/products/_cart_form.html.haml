@@ -33,12 +33,15 @@
             %span.out-of-stock= Spree.t(:out_of_stock)
         - if @product.can_supply?
           .line-product-top
-          -#.quantity_wanted_p
+          .quantity_wanted_p
             %label.quantity-selector{:for => "Quantity"} Quantity
             .apQty
               %button.apQtyAdjust.apQtyAdjustMinus{"data-id" => "", "data-qty" => "0", :type => "button"} −
               %input#Quantity.apQtyNum{"aria-label" => "quantity", "data-id" => "", :min => "1", :name => "quantity", :pattern => "[0-9]*", :type => "text", :value => "1"}/
               %button.apQtyAdjust.apQtyAdjustPlus{"data-id" => "", "data-qty" => "11", :type => "button"} +
+              %button#AddToCart.btn.add_to_cart_detail.ajax_addtocart{:name => "add", :type => "submit"}
+                %i.fa.fa-shopping-cart
+                %span#AddToCartText Add to Cart
           .add-to-cart.quantity_wanted_p.col-md-8
             .input-group
               = number_field_tag :quantity, 1, class: 'title form-control add-to-cart-detail-number', min: 1
