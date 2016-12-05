@@ -38,7 +38,7 @@
                     %p.available.instock Available
                 = render partial: 'cart_form'
                 -#= render partial: 'products/apollo_cart'
-              .wishlist
+              -#.wishlist
                 %a.btn.btn-outline-inverse.btn-wishlist{:href => "/account/login", :title => "Add to Wishlist"}
                   %i.fa.fa-heart
                   %span Add to Wishlist
