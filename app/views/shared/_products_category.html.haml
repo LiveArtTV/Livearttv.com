@@ -1,0 +1,47 @@
+.row
+  .productpage.col-xs-12.col-sm-12.col-md-12
+    .product_related
+      #productrelated.products_block.exclusive.block
+        %h4.title_block_home.text-center
+          %span Related Product
+        .block_content
+          -#- cache(cache_key_for_products) do
+          = render :partial => 'spree/shared/products', :locals => { :products => products.last(4) }
+          :javascript
+            if( $(window).width() > 1200 ){
+                  jQuery('.item-special-one').children().removeClass('col-md-4 col-xs-6 col-sp-12 ');
+                jQuery('.item-special-one').children().addClass('col-md-2');
+                jQuery('.item-special-three').children().removeClass('col-md-4 col-xs-6 col-sp-12 ');
+                jQuery('.item-special-three').children().addClass('col-md-2');
+                jQuery('.item-special-two').children().removeClass('col-md-4 col-xs-6 col-sp-12 ');
+                jQuery('.item-special-two').children().addClass('col-md-8');
+              var img_spec = jQuery('.img-special-product');
+              var meta_spec = jQuery('.meta-special-product');
+              jQuery('.item-special-two').find(img_spec).addClass("col-md-6");
+              jQuery('.item-special-two').find(meta_spec).addClass("col-md-6");
+            }
+            $(window).resize(function() {
+              if( $(window).width() > 1200 ){
+                jQuery('.item-special-one').children().removeClass('col-md-4 col-xs-6 col-sp-12 ');
+                jQuery('.item-special-one').children().addClass('col-md-2');
+                jQuery('.item-special-three').children().removeClass('col-md-4 col-xs-6 col-sp-12 ');
+                jQuery('.item-special-three').children().addClass('col-md-2');
+                jQuery('.item-special-two').children().removeClass('col-md-4 col-xs-6 col-sp-12 ');
+                jQuery('.item-special-two').children().addClass('col-md-8');
+              var img_spec = jQuery('.img-special-product');
+              var meta_spec = jQuery('.meta-special-product');
+              jQuery('.item-special-two').find(img_spec).addClass("col-md-6");
+              jQuery('.item-special-two').find(meta_spec).addClass("col-md-6");
+              }
+            });
+      :javascript
+        $(document).ready(function() {
+
+            $('#productrelated').each(function(){
+                $(this).carousel({
+                    pause: 'hover',
+                    interval: 8000
+                });
+            });
+
+        });
