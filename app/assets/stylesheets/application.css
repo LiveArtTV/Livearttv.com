@@ -64,3 +64,14 @@ section.home_product_list_2 .row .product-list-item .product-container .image {
 .no-bg {
     background: none !important;
 }
+
+
+.nav-tabs>li.active>a,
+.nav-tabs>li.active>a:hover,
+.nav-tabs>li.active>a:focus {
+    border-bottom: 2px solid #e2bd65;
+    color: #e2bd65;
+    border-top: 0;
+    border-left: 0;
+    border-right: 0;
+}
