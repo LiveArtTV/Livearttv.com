@@ -22,11 +22,12 @@
           .col-xs-12.col-sm-12.col-md-5
             .product-center-column
               %h1{:itemprop => "name"}= @product.name
-              %h5.brand{:itemprop => "brand"}
-                %span Year:
-                %a{:href => "/products/years?q=", :title => ""}= product_property(@product_properties, :year)
+              - if product_property(@product_properties, :year).present?
+                %h5.brand{:itemprop => "brand"}
+                  %span Year:
+                  %a{:href => "/products/years?q=", :title => ""}= product_property(@product_properties, :year)
               .product-description.rte{:itemprop => "description"}
-                %p= product_description_short(@product)
+                %p!= product_description_short(@product)
               = render partial: 'products/info_block', locals: {product: @product}
             .product-right-column
               %div{:itemprop => "offers", :itemscope => "", :itemtype => "http://schema.org/Offer"}

@@ -20,9 +20,10 @@
             %h5.name.text-upper
               %a.product-name{href: url, title: product.name}
                 = truncate(product.name, length: 50)
-            %h5.brand{:itemprop => "brand"}
-              %span Year:
-              %a{:href => "/products/years?q=", :title => ""}= product_property(@product_properties, :year)
+            - if product_property(@product_properties, :year).present?
+              %h5.brand{:itemprop => "brand"}
+                %span Year:
+                %a{:href => "/products/years?q=", :title => ""}= product_property(@product_properties, :year)
             -#.review
               %span#spr_badge_7135946433.spr-badge{"data-rating" => "5.0"}
                 %span.spr-starrating.spr-badge-starrating
@@ -39,7 +40,7 @@
               %span.price.product-price
                 %span.money{"data-currency" => "USD", "data-currency-usd" => "$12.00"} $12.00
             .product-desc
-              = truncate(product_description(product), length: 200)
+              != truncate(product_description(product), length: 200)
             -#.functional-buttons.clearfix
               .wishlist
                 %a.btn.btn-outline-inverse.btn-wishlist{:href => "/account/login", :title => "Add to Wishlist"}
