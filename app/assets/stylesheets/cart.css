@@ -1,0 +1,77 @@
+.btn--style-default {
+    background-color: #000;
+    color: #fff;
+    font-weight: bold;
+    padding: 5px 15px;
+    line-height: 30px;
+    text-transform: uppercase;
+    text-align: left;
+    -webkit-transition: all 0.5s ease 0s;
+    transition: all 0.5s ease 0s;
+}
+.btn--style-default:hover {
+    background-color: #fff;
+    border-color: #000;
+    color: #000;
+}
+
+.cart_table {
+
+}
+table.cart_table > tbody + tbody {
+    border: none;
+}
+table.cart_table thead th {
+    border-bottom-width: 1px;
+}
+
+table.cart_table > thead:first-child > tr:first-child > th {
+    border-top: solid 1px #ddd;
+}
+
+table.cart_table > thead > tr > th.cart-item-price-header,
+table.cart_table > thead > tr > th.cart-item-quantity-header,
+table.cart_table > thead > tr > th.cart-item-total-header {
+    text-align: center;
+}
+
+table.cart_table > tbody > tr > td {
+    border: none;
+}
+table.cart_table .cart-total td {
+    text-align: right;
+}
+
+.cart-item-price,
+.cart-item-total {
+    color: #e55e5e;
+    font-weight:  bold;
+}
+
+table.cart_table .cart-total .cart-total_sum {
+    margin: 0 0 0 5px;
+    color: #535353;
+    font-weight:  bold;
+}
+
+table.cart_table .cart-item-description h4 {
+    margin-top: 0;
+}
+table.cart_table .apQty {
+    margin-bottom: 0;
+}
+
+
+.cart_container {
+    margin-bottom: 20px;
+}
+.cart_container a,
+.cart_container a.delete {
+    color: #666;
+    -webkit-transition: all 0.2s ease 0s;
+    transition: all 0.2s ease 0s;
+}
+.cart_container a:hover,
+.cart_container a.delete:hover {
+    color: #e2bd65;
+}
