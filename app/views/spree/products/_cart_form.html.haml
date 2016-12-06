@@ -34,7 +34,7 @@
         - if @product.can_supply?
           .line-product-top
           .add-to-cart.quantity_wanted_p
-            .apQty
+            .apQty.js--cart-adjust
               %button.apQtyAdjust.apQtyAdjustMinus{"data-id" => "", "data-qty" => "0", :type => "button"} −
               = text_field_tag :quantity, 1, class: 'title form-control add-to-cart-detail-number', min: 1
               %button.apQtyAdjust.apQtyAdjustPlus{"data-id" => "", "data-qty" => "11", :type => "button"} +
@@ -50,16 +50,23 @@
 :javascript
   (function($){
     $(function(){
-      var minus = $('.apQtyAdjustMinus');
-      var plus = $('.apQtyAdjustPlus');
-      var field = $('.add-to-cart-detail-number');
-      plus.on('click', function(){
-        field[0].value = parseInt(field[0].value) + 1;
-      });
-      minus.on('click', function(){
-        if(parseInt(field[0].value) > 1) {
-          field[0].value = parseInt(field[0].value) - 1;
+      $('.js--cart-adjust').each(function(e, item){
+        $this = $(item);
+        if($this.data('action') != 'initialized') {
+          $this.data('action', 'initialized');
+          var minus = $('.apQtyAdjustMinus', $this);
+          var plus = $('.apQtyAdjustPlus', $this);
+          var field = $('.add-to-cart-detail-number', $this);
+          plus.on('click', function(){
+            field[0].value = parseInt(field[0].value) + 1;
+          });
+          minus.on('click', function(){
+            if(parseInt(field[0].value) > 1) {
+              field[0].value = parseInt(field[0].value) - 1;
+            }
+          });
         }
       });
     });
-  })(jQuery);
+    })(jQuery);
+
