@@ -3,7 +3,7 @@
     .product_related
       #productrelated.products_block.exclusive.block
         %h4.title_block_home.text-center
-          %span Related Product
+          %span Related Products
         .block_content
           -#- cache(cache_key_for_products) do
           = render :partial => 'spree/shared/products', :locals => { :products => products.last(4) }
