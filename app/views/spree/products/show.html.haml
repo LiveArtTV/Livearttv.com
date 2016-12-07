@@ -22,10 +22,10 @@
           .col-xs-12.col-sm-12.col-md-5
             .product-center-column
               %h1{:itemprop => "name"}= @product.name
-              - if product_property(@product_properties, :year).present?
+              - @product_properties.each do |prop|
                 %h5.brand{:itemprop => "brand"}
-                  %span Year:
-                  %a{:href => "/products/years?q=", :title => ""}= product_property(@product_properties, :year)
+                  %span #{prop.property.name}:
+                  = prop.value
               .product-description.rte{:itemprop => "description"}
                 %p!= product_description_short(@product)
               = render partial: 'products/info_block', locals: {product: @product}
