@@ -196,10 +196,10 @@
                     .mega-col.col-sm-1
                     .mega-col.col-sm-6
                       .block-html
-                        .menu-title #{truncate(Spree::Video.last.title, length: 50)}
+                        .menu-title -# {truncate(Spree::Video.last.title, length: 50)}
                         .widget-inner
                           .box-image
-                            != Spree::Video.last.embed_html
+                            != Spree::Video.last&.embed_html
                             -#%img.img-responsive{:alt => "HTML", :src => "/ap_rojo_files/apmenuitem_ihtml_2.jpg"}/
             %li.active
               = link_to '/pages/contact_us', target: '_self', title: Spree::t('contact') do
