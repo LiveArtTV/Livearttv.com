@@ -81,36 +81,36 @@
               = render partial: 'spree/shared/guest_subscription'
     %section#footernav.footer-nav
       .container
-        #powered.powered.row.wow.animated{:style => "visibility: hidden; animation-name: none;"}
-          .col-lg-6.col-md-6.col-sm-6.col-xs-6.col-sp-12
-            %p.text-center-1
+        #powered.powered.row.wow.animated{:style => "animation-name: none;"}
+          .col-xs-12
+            .text-center
               © Copyright 2016 EliteShopping.
               %a{:href => "//sumatosoft.com", :rel => "nofollow", :target => "_blank"} Powered by SumatoSoft
-          .col-lg-6.col-md-6.col-sm-6.col-xs-6.col-sp-12
-            .payment-block.footer-block
-              #block_links_footer_.footer-block.footerAccordion
-                %ul.list-unstyled
-                  %li.item.payment-item
-                    %a.icon-social.visa{:href => "#!#", :title => "Visa"}
-                      %span.fa.fa-cc-visa  
-                  %li.item.payment-item
-                    %a.icon-social.paypal{:href => "#!#", :title => "Paypal"}
-                      %span.fa.fa-cc-paypal  
-                  %li.item.payment-item
-                    %a.icon-social.mastercard{:href => "#!#", :title => "mastercard"}
-                      %span.fa.fa-cc-mastercard  
-                  %li.item.payment-item
-                    %a.icon-social.credit-card{:href => "#!#", :title => "credit card "}
-                      %span.fa.fa-cc-amex  
-                  %li.item.payment-item
-                    %a.icon-social.stripe{:href => "#!#", :title => "stripe"}
-                      %span.fa.fa-cc-stripe  
-                  %li.item.payment-item
-                    %a.icon-social.stripe{:href => "#!#", :title => "stripe"}
-                      %span.fa.fa-cc-discover  
-                  %li.item.payment-item
-                    %a.icon-social.stripe{:href => "#!#", :title => "stripe"}
-                      %span.fa.fa-cc  
+          / .col-lg-6.col-md-6.col-sm-6.col-xs-6.col-sp-12
+          /   .payment-block.footer-block
+          /     #block_links_footer_.footer-block.footerAccordion
+          /       %ul.list-unstyled
+          /         %li.item.payment-item
+          /           %a.icon-social.visa{:href => "#!#", :title => "Visa"}
+          /             %span.fa.fa-cc-visa  
+          /         %li.item.payment-item
+          /           %a.icon-social.paypal{:href => "#!#", :title => "Paypal"}
+          /             %span.fa.fa-cc-paypal  
+          /         %li.item.payment-item
+          /           %a.icon-social.mastercard{:href => "#!#", :title => "mastercard"}
+          /             %span.fa.fa-cc-mastercard  
+          /         %li.item.payment-item
+          /           %a.icon-social.credit-card{:href => "#!#", :title => "credit card "}
+          /             %span.fa.fa-cc-amex  
+          /         %li.item.payment-item
+          /           %a.icon-social.stripe{:href => "#!#", :title => "stripe"}
+          /             %span.fa.fa-cc-stripe  
+          /         %li.item.payment-item
+          /           %a.icon-social.stripe{:href => "#!#", :title => "stripe"}
+          /             %span.fa.fa-cc-discover  
+          /         %li.item.payment-item
+          /           %a.icon-social.stripe{:href => "#!#", :title => "stripe"}
+          /             %span.fa.fa-cc  
 
 
       #errorJs.modal.fade{:style => "display: none;"}

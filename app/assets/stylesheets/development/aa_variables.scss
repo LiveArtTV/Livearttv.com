@@ -2,6 +2,11 @@
 
 
 
+/*  Grid
+\*----------------------------------------------------------------------------*/
+$grid-gutter: 15px;
+
+
 /*  Colors
 \*----------------------------------------------------------------------------*/
 $color-base: #e2bd65;
@@ -10,6 +15,35 @@ $color-black: #000;
 $color-white: #fff;
 
 $color-gray-b: #666;
+$color-gray-c: #ccc;
 $color-gray-d: #ddd;
 $color-gray-e: #e4e4e4;
 
+
+
+/*  Typography
+\*----------------------------------------------------------------------------*/
+$font-size-base: 16px;
+$line-height-base: 22px;
+$weight-thin: 300;
+$weight-regular: 400;
+$weight-bold: 700;
+
+$font-face-poppins: "Poppins", sans-serif;
+
+$font-size-h1:            floor(($font-size-base * 2.25)) !default; // ~36px
+$font-size-h2:            floor(($font-size-base * 1.875)) !default; // ~30px
+$font-size-h3:            ceil(($font-size-base * 1.5)) !default; // ~24px
+$font-size-h4:            ceil(($font-size-base * 1.25)) !default; // ~20px
+$font-size-h5:            $font-size-base !default;
+$font-size-h6:            ceil(($font-size-base * 0.875)) !default; // ~12px
+
+
+
+/*  Spaces
+\*----------------------------------------------------------------------------*/
+$space: $line-height-base;
+$space-small: $space/2;
+$space-tiny: $space/4;
+$space-large: $space*2;
+$space-huge: $space*4;

@@ -54,3 +54,7 @@ group :staging, :production do
   gem 'airbrake', '~> 5.4.5'
 end
 
+
+source 'https://rails-assets.org' do
+  gem 'rails-assets-matchHeight', '~> 0.7.0'
+end

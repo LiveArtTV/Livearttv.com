@@ -15,6 +15,7 @@
 //= require_tree .
 //= require store/spree_videos
 //= require fancybox
+//= require matchHeight/jquery.matchHeight-min.js
 
 $(window).bind('page:change', function() {
     $.fancybox.init();

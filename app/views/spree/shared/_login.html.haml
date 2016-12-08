@@ -7,6 +7,6 @@
     .checkbox
       %label
         = f.check_box :remember_me
-        = f.label :remember_me, Spree.t(:remember_me)
+        = Spree.t(:remember_me)
     .form-group
-      = f.submit Spree.t(:login), class: 'btn btn-lg btn-success btn-block', tabindex: 3
+      = f.submit Spree.t(:login), class: 'btn btn--style-default', tabindex: 3

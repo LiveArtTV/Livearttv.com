@@ -27,5 +27,5 @@
             %td.order-shipment-state= Spree.t("shipment_states.#{order.shipment_state}").titleize if order.shipment_state
             %td.lead.text-primary.order-total= order.display_total
   - else
-    .alert.alert-info= Spree.t(:you_have_no_orders_yet)
+    .alert.alert-warning= Spree.t(:you_have_no_orders_yet)
   %br/

@@ -7,10 +7,8 @@
       - if @videos
         / 16:9 aspect ratio
         .row
-          .col-md-1
-          .col-md-10#product-videos
+          .col-md-12#product-videos
             .embed-responsive.embed-responsive-16by9.spree-embed-video= render 'spree/products/video_player', :video => @videos.first
-          .col-md-1
 %section.video-thumbnails
   .text-center
     .container

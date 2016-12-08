@@ -17,7 +17,7 @@
                 %i.fa.fa-expand
         .right-block.col-md-6.col-sm-5
           .product-meta
-            %h5.name.text-upper
+            %h5.name
               %a.product-name{href: url, title: product.name}
                 = truncate(product.name, length: 50)
             - if product_property(@product_properties, :year).present?

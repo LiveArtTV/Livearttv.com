@@ -1,14 +1,15 @@
 - @body_id = 'signup'
 = render :partial => 'spree/shared/error_messages', :locals => { :target => @user }
-.col-md-6.col-md-offset-3
-  .panel.panel-default
-    .panel-heading
-      %h3.panel-title= Spree.t(:new_customer)
-    #new-customer.panel-body{"data-hook" => "login"}
+#login-page.col-md-6.col-md-offset-3
+  .login-box
+    %h1= Spree.t(:new_customer)
+    #new-customer{"data-hook" => "login"}
       = form_for resource, :as => :spree_user, :url => spree.registration_path do |f|
         %div{"data-hook" => "signup_inside_form"}
+
           = render :partial => 'spree/shared/user_form', :locals => { :f => f }
-          %p= f.submit Spree.t(:create), :class => 'btn btn-lg btn-success btn-block'
+
+          .form-group= f.submit Spree.t(:create), :class => 'btn btn--style-default'
       .text-center
         = Spree.t(:or)
         = link_to Spree.t(:login_as_existing), spree.login_path

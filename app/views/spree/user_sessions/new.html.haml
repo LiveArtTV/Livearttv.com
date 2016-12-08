@@ -1,9 +1,10 @@
 - @body_id = 'login'
-%div{:class => "col-md-6 #{request.path == spree.login_path ? "col-md-offset-3" : ""}"}
-  .panel.panel-default
-    .panel-heading
-      %h3.panel-title= Spree.t(:login_as_existing)
-    #existing-customer.panel-body{"data-hook" => "login"}
+
+#login-page.col-md-6{:class => request.path == spree.login_path ? "col-md-offset-3" : ""}
+  .login-box
+    %h1= Spree.t(:login_as_existing)
+
+    #existing-customer{"data-hook" => "login"}
       - if flash[:alert]
         .alert.alert-danger= flash[:alert]
       = render :partial => 'spree/shared/login'
@@ -13,3 +14,4 @@
         |
         \#{link_to Spree.t(:forgot_password), spree.recover_password_path}
       %div{"data-hook" => "login_extras"}
+

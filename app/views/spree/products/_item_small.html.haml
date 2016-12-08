@@ -1,10 +1,10 @@
 - url = spree.product_url(product, taxon_id: @taxon.try(:id))
-.col-md-3.col-sm-6.col-xs-6.product-list-item{"data-hook" => "products_list_item", :id => "product_#{product.id}", :itemscope => "", :itemtype => "https://schema.org/Product"}
+.col-md-4.col-sm-6.col-xs-6.product-list-item{"data-hook" => "products_list_item", :id => "product_#{product.id}", :itemscope => "", :itemtype => "https://schema.org/Product"}
   - cache(@taxon.present? ? [I18n.locale, current_currency, @taxon, product] : cache_key_for_product(product)) do
-    .product-container.text-left.product-block{"data-hook" => "products_list_item", :id => "product_#{product.id}", :itemscope => "", :itemtype => "https://schema.org/Product"}
+    .product-container.text-left.product-block{"data-hook" => "products_list_item", :id => "product_#{product.id}", :itemscope => "", :itemtype => "https://schema.org/Product", "data-mh" => "products_list"}
       .product-image-container.image
         %a.product_img_link{href: url}
-          = small_image(product, itemprop: 'image', class: 'img-responsive img-product-small')
+          = product476_image(product, itemprop: 'image', class: 'img-responsive')
           %span.product-additional{"data-idproduct" => product.id}
         -#%span.new-box
           %span.label-new.label New
