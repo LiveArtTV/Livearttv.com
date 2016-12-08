@@ -1,0 +1,22 @@
+@charset "UTF-8";
+/*----------------------------------------------------------------------------*\
+  $LINKS
+\*----------------------------------------------------------------------------*/
+
+
+a {
+  color: $color-gray-b;
+  text-decoration: none;
+  -webkit-transition: color 0.2s ease 0s;
+  transition: color 0.2s ease 0s;
+
+  &:hover {
+    color: $color-base;
+    text-decoration: underline;
+  }
+
+  &:active {
+    color: $color-base;
+    text-decoration: none;
+  }
+}
