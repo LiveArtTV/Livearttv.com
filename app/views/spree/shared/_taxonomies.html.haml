@@ -6,5 +6,5 @@
       %h4.title_block.taxonomy-root= Spree.t(taxonomy.name)
       .block_content{"data-hook" => ""}
         = taxons_tree(taxonomy.root, @taxon, max_level)
-    - unless @taxonomies.last == taxonomy
-      %br
+    / - unless @taxonomies.last == taxonomy
+    /   %br

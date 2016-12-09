@@ -11,9 +11,100 @@
   - if @authors.respond_to?(:total_pages)
     = rel_next_prev_link_tags @authors
 %div{"data-hook" => "authors_list"}
-- if @authors.any?
-  #authors.row{"data-hook" => ""}
-    - @authors.each do |author|
-      = render partial: 'spree/authors/item_small', locals: {author: author}
-- if @authors.respond_to?(:total_pages)
-  = paginate @authors, theme: 'twitter-bootstrap-3'
+  - if @authors.any?
+    #authors.row{"data-hook" => ""}
+      - @authors.each do |author|
+        = render partial: 'spree/authors/item_small', locals: {author: author}
+  - if @authors.respond_to?(:total_pages)
+    %hr
+    = paginate @authors, theme: 'twitter-bootstrap-3'
+  #authors.row
+    #author_1.col-md-4.col-sm-6.col-xs-6.product-list-item
+      #author_1.product-container.text-left.product-block
+        .product-image-container.image
+          %a.product_img_link{:href => "#"}
+            %img.replace-2x.img-responsive{:src => "https://eliteshopping.demo.sumatosoft.com/spree/authors/11/author/author_img.png?1479732958"}
+            %span.product-additional
+        %h5.name2.text-center.text-upper
+          %a.product-name{:href => "#"}
+            Artist 1
+        %p.text-center
+          1945 - 2000
+    #author_1.col-md-4.col-sm-6.col-xs-6.product-list-item
+      #author_1.product-container.text-left.product-block
+        .product-image-container.image
+          %a.product_img_link{:href => "#"}
+            %img.replace-2x.img-responsive{:src => "https://eliteshopping.demo.sumatosoft.com/spree/authors/16/author/author_img.png?1479733285"}
+            %span.product-additional
+        %h5.name2.text-center.text-upper
+          %a.product-name{:href => "#"}
+            Artist 1
+        %p.text-center
+          1945 - 2000
+    #author_1.col-md-4.col-sm-6.col-xs-6.product-list-item
+      #author_1.product-container.text-left.product-block
+        .product-image-container.image
+          %a.product_img_link{:href => "#"}
+            %img.replace-2x.img-responsive{:src => "https://eliteshopping.demo.sumatosoft.com/spree/authors/19/author/author_img.png?1479733369"}
+            %span.product-additional
+        %h5.name2.text-center.text-upper
+          %a.product-name{:href => "#"}
+            Artist 1
+        %p.text-center
+          1945 - 2000
+    #author_1.col-md-4.col-sm-6.col-xs-6.product-list-item
+      #author_1.product-container.text-left.product-block
+        .product-image-container.image
+          %a.product_img_link{:href => "#"}
+            %img.replace-2x.img-responsive{:src => "https://eliteshopping.demo.sumatosoft.com/spree/authors/22/author/author_img.png?1479734393"}
+            %span.product-additional
+        %h5.name2.text-center.text-upper
+          %a.product-name{:href => "#"}
+            Artist 1
+        %p.text-center
+          1945 - 2000
+    #author_1.col-md-4.col-sm-6.col-xs-6.product-list-item
+      #author_1.product-container.text-left.product-block
+        .product-image-container.image
+          %a.product_img_link{:href => "#"}
+            %img.replace-2x.img-responsive{:src => "https://eliteshopping.demo.sumatosoft.com/spree/authors/23/author/author_img.png?1479734441"}
+            %span.product-additional
+        %h5.name2.text-center.text-upper
+          %a.product-name{:href => "#"}
+            Artist 1
+        %p.text-center
+          1945 - 2000
+    #author_1.col-md-4.col-sm-6.col-xs-6.product-list-item
+      #author_1.product-container.text-left.product-block
+        .product-image-container.image
+          %a.product_img_link{:href => "#"}
+            %img.replace-2x.img-responsive{:src => "https://eliteshopping.demo.sumatosoft.com/spree/authors/24/author/author_img.png?1479739084"}
+            %span.product-additional
+        %h5.name2.text-center.text-upper
+          %a.product-name{:href => "#"}
+            Artist 1
+        %p.text-center
+          1945 - 2000
+
+  %hr
+  %ul.pagination
+    %li.first
+      %a{:href => "/t/brand?page=2", :rel => "next"}
+        %i.fa.fa-backward
+        First
+    %li.prev
+      %a{:href => "/t/brand?page=2"}
+        %i.fa.fa-play.fa-rotate-180
+        Prev
+    %li.page.active
+      %a{:href => "/t/brand"} 1
+    %li.page
+      %a{:href => "/t/brand?page=2", :rel => "next"} 2
+    %li.next_page
+      %a{:href => "/t/brand?page=2", :rel => "next"}
+        Next
+        %i.fa.fa-play
+    %li.last.next
+      %a{:href => "/t/brand?page=2"}
+        Last
+        %i.fa.fa-forward

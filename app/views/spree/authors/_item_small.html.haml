@@ -1,5 +1,5 @@
 - url = spree.author_url(id: author.slug)
-.col-md-3.col-sm-6.col-xs-6.product-list-item{"data-hook" => "authors_list_item", :id => "author_#{author.id}", :itemscope => "", :itemtype => "https://schema.org/Author"}
+.col-md-4.col-sm-6.col-xs-6.product-list-item{"data-hook" => "authors_list_item", :id => "author_#{author.id}", :itemscope => "", :itemtype => "https://schema.org/Author"}
   .product-container.text-left.product-block{"data-hook" => "authors_list_item", :id => "author_#{author.id}", :itemscope => "", :itemtype => "https://schema.org/Author"}
     .product-image-container.image
       %a.product_img_link{href: url, title: author.name}

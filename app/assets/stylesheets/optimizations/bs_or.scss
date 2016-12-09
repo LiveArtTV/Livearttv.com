@@ -31,3 +31,53 @@ hr {
 .video .row {
   padding-bottom: 0;
 }
+
+
+/*  Pagination
+\*----------------------------------------------------------------------------*/
+.pagination {
+  display: block;
+  text-align: right;
+  background-color: $color-gray-g;
+  padding: $space-small;
+
+  > li {
+    > a,
+    > span {
+      display: inline-block;
+      float: none;
+      color: $color-black;
+      border: none;
+      background: none;
+      padding: $space-tiny $space-small;
+
+      &:hover,
+      &:focus {
+        background: none;
+        color: $color-black;
+      }
+
+      .fa {
+        font-size: $font-size-smaller;
+        margin: 0 $space-tiny;
+      }
+    }
+
+    > a:hover {
+      color: $color-base;
+    }
+
+    &.active {
+      > a,
+      > span,
+      > a:hover,
+      > span:hover,
+      > a:focus,
+      > span:focus {
+        color: $color-base;
+        font-weight: $weight-bold;
+        background: none;
+      }
+    }
+  }
+}
