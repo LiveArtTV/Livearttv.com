@@ -5,7 +5,7 @@
     - promotions.each do |promotion|
       .well.well-sm
         %h4= promotion.name
-        %p= promotion.description
+        != simple_format(promotion.description)
         - if promotion.products.any?
           %ul
             - promotion.products.each do |product|

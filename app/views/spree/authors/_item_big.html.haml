@@ -19,4 +19,4 @@
           %h6
             = author_dates(author)
           .product-desc
-            = truncate(product_description(author), length: 200)
+            = simple_format(truncate(product_description(author), length: 200))

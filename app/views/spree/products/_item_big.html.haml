@@ -40,7 +40,7 @@
               %span.price.product-price
                 %span.money{"data-currency" => "USD", "data-currency-usd" => "$12.00"} $12.00
             .product-desc
-              != truncate(product_description(product), length: 200)
+              != simple_format(truncate(product_description(product), length: 200))
             -#.functional-buttons.clearfix
               .wishlist
                 %a.btn.btn-outline-inverse.btn-wishlist{:href => "/account/login", :title => "Add to Wishlist"}

@@ -27,7 +27,7 @@
                   %span #{prop.property.name}:
                   = prop.value
               .product-description.rte{:itemprop => "description"}
-                %p!= product_description_short(@product)
+                != simple_format(product_description_short(@product))
               = render partial: 'products/info_block', locals: {product: @product}
             .product-right-column
               %div{:itemprop => "offers", :itemscope => "", :itemtype => "http://schema.org/Offer"}
