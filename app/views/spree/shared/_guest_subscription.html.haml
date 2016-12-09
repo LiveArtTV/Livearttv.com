@@ -3,11 +3,45 @@
   %h4.title_block
     Newsletter
   .block_content{:style => ""}
-    .des_newsletter
-      Sign up to receive our latest news and promotions. We never send spam!
-      = Spree.t(:subscribe_title, scope: :chimpy)
+    .subscribeWrap
+      .des_newsletter
+        Sign up to receive our latest news and promotions. We never send spam!
+        = Spree.t(:subscribe_title, scope: :chimpy)
+      #successSubscribe.alert.alert-success{style: 'display: none;'}
+        %p
+          %span.success-ico
+          Congratulations! You are subscribed to our news.
+      #failureSubscribe.alert.alert-error{style: 'display: none;'}
+        %p
+          %span.error-ico
+          Sorry. Please try later.
+      #incompleteSubscribe.alert.alert-warning{style: 'display: none;'}
+        %p Please, type email before sending
     = form_for @subscriber, url: spree.chimpy_subscribers_path, id: 'mc-embedded-subscribe-form', class: 'form_newsletter', remote: true do |f|
       = f.hidden_field :subscribed, value: true
       = f.email_field :email, class: 'newsletter-input form-control', placeholder: Spree.t(:placeholder, scope: [:chimpy, :email]), aria: {label: 'Your email ...'}
-      = f.submit class: 'subscribe button_mini btn', id: 'subscribe' do
-        %span Subscribe
+      = f.submit 'Subscribe', class: 'subscribe button_mini btn', id: 'subscribe'
+
+:javascript
+  $(document).on('click', '#subscribe', function(e) {
+
+    var subscribeForm  = $(e.currentTarget),
+        subscribeDelay = 2000,
+        emailValue = $('#chimpy_subscriber_email').val(),
+        re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;;
+
+    if ( !emailValue ) {
+        $('#incompleteSubscribe').fadeIn().delay(subscribeDelay).fadeOut();
+        //$('#chimpy_subscriber_email').fadeIn().delay(subscribeDelay).fadeOut();
+        $('.des_newsletter').fadeOut().delay(subscribeDelay).fadeIn();
+        //subscribeForm.fadeOut().delay(subscribeDelay).fadeIn();
+    } else if (re.test(emailValue)) {
+        $('#successSubscribe').fadeIn();
+        $('.des_newsletter').fadeOut()
+        subscribeForm.attr('disabled','disabled');
+    } else {
+      $('#incompleteSubscribe').fadeIn().delay(subscribeDelay).fadeOut();
+      //$('#chimpy_subscriber_email').fadeIn().delay(subscribeDelay).fadeOut();
+      $('.des_newsletter').fadeOut().delay(subscribeDelay).fadeIn();
+    }
+  })
