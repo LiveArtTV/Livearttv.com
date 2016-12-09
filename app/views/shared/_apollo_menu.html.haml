@@ -8,6 +8,9 @@
             %span.fa.fa-bars
         #apollo-top-menu.collapse.navbar-collapse.hidden-xs.hidden-sm
           %ul.nav.navbar-nav.megamenu
+            %li.active
+              = link_to spree.root_path, target: '_self', title: Spree::t('home') do
+                %span= Spree::t('home')
             %li.parent.dropdown.full-width
               %a.dropdown-toggle.has-category{"data-toggle" => "dropdown", href: spree.products_path, target: "_self", title: Spree.t('category')}
                 %span.menu-title #{Spree.t('category')}
@@ -29,7 +32,7 @@
             -#%li
               %a{href: spree.products_path, target: "_self", title: "Shop"}
                 %span Shop
-            %li.parent.dropdown.full-width.active
+            -#%li.parent.dropdown.full-width.active
               %a.dropdown-toggle.has-category{"data-toggle" => "dropdown", :href => "#!", :target => "_self", :title => "Blog"}
                 %span.menu-title Blog
                 %b.caret
