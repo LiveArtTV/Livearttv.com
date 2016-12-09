@@ -19,5 +19,7 @@
       %h4.title_block_home.page-subheading
         #{@author.name} works
       #products.row
+        - if @author.products.blank?
+          %p There are no works by this artist in stock at the moment
         - @author.products.each do |product|
           = render partial: 'spree/products/item_small', locals: {product: product}
