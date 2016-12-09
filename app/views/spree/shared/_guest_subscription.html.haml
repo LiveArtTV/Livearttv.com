@@ -4,7 +4,7 @@
     Newsletter
   .block_content{:style => ""}
     .des_newsletter
-      Signup to receive our latest news and promotions. We never send spam!
+      Sign up to receive our latest news and promotions. We never send spam!
       = Spree.t(:subscribe_title, scope: :chimpy)
     = form_for @subscriber, url: spree.chimpy_subscribers_path, id: 'mc-embedded-subscribe-form', class: 'form_newsletter', remote: true do |f|
       = f.hidden_field :subscribed, value: true
