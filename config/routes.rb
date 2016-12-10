@@ -16,4 +16,9 @@ Spree::Core::Engine.routes.append do
     end
   end
   resources :authors, only: [:index, :show]
+  resources :taxons do
+    collection do
+      get :products
+    end
+  end
 end

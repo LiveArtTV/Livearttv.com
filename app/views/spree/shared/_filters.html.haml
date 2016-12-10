@@ -1,12 +1,11 @@
 - filters = @taxon ? @taxon.applicable_filters : [Spree::Core::ProductFilters.all_taxons]
 - unless filters.empty?
-  %br
-  = form_tag '', :method => :get, :id => 'sidebar_products_search' do
-    = hidden_field_tag 'per_page', params[:per_page]
-    - filters.each do |filter|
-      - labels = filter[:labels] || filter[:conds].map {|m,c| [m,m]}
-      - next if labels.empty?
-      #categories_block.block.sidebarCategories.navigation{"data-hook" => "navigation"}
+  .block.sidebarCategories.navigation{"data-hook" => "navigation"}
+    = form_tag '', :method => :get, :id => 'sidebar_products_search' do
+      = hidden_field_tag 'per_page', params[:per_page]
+      - filters.each do |filter|
+        - labels = filter[:labels] || filter[:conds].map {|m,c| [m,m]}
+        - next if labels.empty?
         %h4.title_block.taxonomy-root= filter[:name]
         .block_content{"data-hook" => ""}
           %ul.listSidebar.list-unstyled
@@ -16,4 +15,9 @@
                 %input{id: label, type: :checkbox, name: "search[#{filter[:scope].to_s}][]", value: "#{val}", checked: params[:search].present? && params[:search][filter[:scope]] && params[:search][filter[:scope]].include?(val.to_s) ? :checked : false }
                 %label.nowrap{for: label} #{nm}
       %br
-    = submit_tag Spree.t(:search), name: nil, class: 'btn btn-primary'
+    = submit_tag Spree.t(:search), name: nil, class: 'btn btn--style-primary', id: 'sidebar_products_search_submit'
+
+:javascript
+  $(document).on('click', '#sidebar_products_search_submit', function(){
+    $('#sidebar_products_search').submit();
+  });

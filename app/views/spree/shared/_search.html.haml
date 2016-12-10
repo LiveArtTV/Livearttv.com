@@ -15,10 +15,28 @@
       - cache(cache_key_for_taxons) do
         = select_tag :taxon, options_for_select([[Spree.t(:all_categories), '']] + @taxons.map {|t| [t.name, t.id]},               |
           @taxon ? @taxon.id : params[:taxon]), 'aria-label' => 'Taxon', class: "filter-top-collection", id: 'collection-select-1' |
-      %input#search_query_top.search-query{aria_label: "#{Spree.t(:search)} ...", autocomplete: :off, name: :keywords, placeholder: "#{Spree.t(:search)} ...", type: :search, value: params[:keywords]}/
+      %input#search_query_top.search-query{aria_label: "#{Spree.t(:search)} ...", autocomplete: :off, name: :keywords, placeholder: "#{Spree.t(:search)} ...", type: :search, value: params[:keywords]}
       %button#search_button.btn.btn-sm{type: 'submit'}
         %span
           %i.fa.fa-search
         %span.fallback-text #{Spree.t(:search)}
   #ap-ajax-search.hidden-sm.hidden-xs
     %ul.list-unstyled.aps-results
+:javascript
+  $(document).ready(function(){
+
+    $(document).on('change','.filter-top-collection', function(e) {
+      console.log($(this));
+      update_search_query();
+    });
+
+    function update_search_query(){
+      var taxonId = $('.filter-top-collection').val();
+      var url = '/taxons/products.json/?id=' + taxonId;
+      console.log(url);
+      $.get(url, function(data){
+      console.log(data);
+          $(".search-query").typeahead({ source: data });
+      }, 'json');
+    };
+  });
