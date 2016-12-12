@@ -8,4 +8,5 @@
 - unless current_page.first?
   %li.first
     = link_to url, remote: remote do
+      %i.fa.fa-backward
       != t 'views.pagination.first'

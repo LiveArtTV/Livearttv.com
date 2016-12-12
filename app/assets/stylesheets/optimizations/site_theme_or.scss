@@ -20,11 +20,23 @@ body {
   }
 }
 
+.rte p {
+    text-align: inherit;
+}
+
 
 /*  Footer
 \*----------------------------------------------------------------------------*/
 .footer-nav {
   padding: $grid-gutter 0;
+}
+
+#newsletter_block .des_newsletter {
+  font-size: inherit;
+}
+
+.box-contact-info ul > li {
+  font-size: inherit;
 }
 
 
@@ -53,11 +65,33 @@ body {
     font-size: $font-size-base;
   }
 
+  .product-desc--visible {
+    padding: 5px 0;
+    color: $color-gray-b;
+  }
+
   .product-image-container {
     img {
       width: 100%;
     }
   }
+
+}
+
+.product-center-column {
+  font-size: inherit;
+
+  .product-description {
+    font-size: inherit;
+  }
+}
+
+.product-section-title {
+  text-transform: uppercase;
+}
+
+#main-image2 div img {
+  height: auto;
 }
 
 

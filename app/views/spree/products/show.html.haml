@@ -4,14 +4,15 @@
     #left_column.left_column.sidebar.col-sm-4.col-md-3.col-xs-12
       = render partial: 'spree/products/properties'
       = render partial: '/shared/products_best_sellers'
-  #center_column.center_column.col-xs-12.col-sm-12.col-md-12
+
+  #center_column.center_column.col-xs-12
     - url = spree.product_url(@product, taxon_id: @taxon.try(:id))
     %div{itemscope: '', itemtype: 'http://schema.org/Product'}
       %meta{content: url, itemprop: 'url'}/
       %meta{content: product_image_src(@product), itemprop: 'image'}/
       .primary_block
         .row
-          #product-images.product-left-column.col-xs-12.col-sm-12.col-md-7{"data-hook" => "product_images"}
+          #product-images.product-left-column.col-xs-12.col-sm-12.col-md-5{"data-hook" => "product_images"}
             #main-image2.panel.panel-default{"data-hook" => ""}
               .panel-body.text-center
                 - product_image_orig = product_image_src(@product, :original)
@@ -19,7 +20,7 @@
                   = render :partial => 'image'
             #thumbnails{"data-hook" => ""}
               = render :partial => 'thumbnails'
-          .col-xs-12.col-sm-12.col-md-5
+          .col-xs-12.col-sm-12.col-md-7
             .product-center-column
               %h1{:itemprop => "name"}= @product.name
               - @product_properties.each do |prop|

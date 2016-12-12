@@ -1,13 +1,13 @@
 - url = spree.author_url(id: author.slug)
 .col-md-4.col-sm-6.col-xs-6.product-list-item{"data-hook" => "authors_list_item", :id => "author_#{author.id}", :itemscope => "", :itemtype => "https://schema.org/Author"}
-  .product-container.text-left.product-block{"data-hook" => "authors_list_item", :id => "author_#{author.id}", :itemscope => "", :itemtype => "https://schema.org/Author"}
+  .product-container.text-left.product-block{
     .product-image-container.image
       %a.product_img_link{href: url, title: author.name}
-        %img.replace-2x.img-responsive{alt: author.name, src: product_image_src(author, :author)}
+        %img.replace-2x.img-responsive{alt: author.name, src: product476_image_src(author, :author)}
         %span.product-additional{data: {idproduct: author.id}}
-    -#.product-meta
-    %h5.name2.text-center.text-upper
-      %a.product-name{href: url, title: truncate(author.name, length: 50)}
-        = truncate(author.name, length: 50)
-    %p.text-center
-      = author_dates author
+    .product-meta
+      %h5.name2.text-center.text-upper
+        %a.product-name{href: url, title: truncate(author.name, length: 50)}
+          = truncate(author.name, length: 50)
+      .product-desc--visible.text-center
+        = author_dates author

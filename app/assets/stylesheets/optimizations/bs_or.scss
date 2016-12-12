@@ -25,6 +25,18 @@ hr {
 }
 
 
+/*  Type
+\*----------------------------------------------------------------------------*/
+h1, h2, h3, h4, h5, h6,
+.h1, .h2, .h3, .h4, .h5, .h6 {
+  font-family: $font-face-poppins;
+  font-weight: $weight-bold;
+  color: $color-black;
+}
+
+h1, .h1 { font-size: $font-size-h2; }
+
+
 /*  Grid
 \*----------------------------------------------------------------------------*/
 .footer-nav .row,
