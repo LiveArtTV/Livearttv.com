@@ -1,4 +1,5 @@
+- img_class ||= ''
 - if defined?(image) && image
-  = image_tag image.attachment.url(:product476), itemprop: 'image'
+  = image_tag image.attachment.url(:product476), itemprop: 'image', class: img_class
 - else
-  = product476_image(@product, itemprop: 'image')
+  = product476_image(@product, itemprop: 'image', class: img_class)
