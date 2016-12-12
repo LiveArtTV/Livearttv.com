@@ -26,13 +26,6 @@ input.add-to-cart-detail-number {
     height: 36px;
 }
 
-.breadcrumb {
-    background-color: transparent !important;
-}
-
-div.breadcrumbs-wrap {
-    min-height: 253px;
-}
 section.home_product_list_2 .row .product-list-item .product-container .image {
     min-height: 170px;
 }
@@ -43,41 +36,4 @@ section.home_product_list_2 .row .product-list-item .product-container .image {
 
 .no-bg {
     background: none !important;
-}
-
-
-.nav-tabs {
-  > li.active {
-    > a,
-    & > a:hover,
-    & > a:focus {
-      border-bottom: 2px solid #e2bd65;
-      color: #e2bd65;
-      border-top: 0;
-      border-left: 0;
-      border-right: 0;
-    }
-  }
-}
-
-
-
-
-
-#breadcrumbs {
-    background: url("/assets/bg_breadcrumb.jpg");
-    background-position: center center;
-    background-color: transparent;
-    background-repeat: no-repeat;
-    margin-bottom: 30px;
-    text-align: center
-}
-
-.breadcrumbs {
-  margin: 112px 0 0 0;
-  margin-bottom: 100px;
-
-  a {
-    color: $color-white;
-  }
 }

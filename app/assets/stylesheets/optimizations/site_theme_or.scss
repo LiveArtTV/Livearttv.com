@@ -40,7 +40,7 @@ body {
 }
 
 
-/*  Produncts
+/*  Products
 \*----------------------------------------------------------------------------*/
 .product-block {
 
@@ -92,6 +92,34 @@ body {
 
 #main-image2 div img {
   height: auto;
+}
+
+.more_info_block {
+  .nav-tabs {
+    a {
+      outline: none;
+    }
+    > li.active {
+      > a,
+      & > a:hover,
+      & > a:focus {
+        border-bottom: 2px solid #e2bd65;
+        color: #e2bd65;
+        border-top: 0;
+        border-left: 0;
+        border-right: 0;
+      }
+    }
+    > li {
+      > a:hover,
+      > a:focus {
+        background: none;
+      }
+      a:focus {
+        color: $color-gray-b;
+      }
+    }
+  }
 }
 
 

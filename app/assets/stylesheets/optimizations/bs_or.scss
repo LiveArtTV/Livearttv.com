@@ -45,6 +45,29 @@ h1, .h1 { font-size: $font-size-h2; }
 }
 
 
+/*  Breadcrumbs
+\*----------------------------------------------------------------------------*/
+.breadcrumbs-area {
+  background: $color-gray-e;
+  margin-bottom: $space*1.5 0;
+}
+.breadcrumb {
+  padding: $space*1.5 0;
+  margin: 0;
+  background: none;
+  border-radius: 0;
+  font-family: $font-face-poppins;
+  font-weight: $weight-bold;
+  color: $color-gray-b;
+  text-transform: uppercase;
+
+  > li + li:before {
+    color: $color-gray-b;
+    font-weight: $weight-regular;
+  }
+}
+
+
 /*  Pagination
 \*----------------------------------------------------------------------------*/
 .pagination {

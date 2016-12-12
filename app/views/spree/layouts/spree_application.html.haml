@@ -16,8 +16,8 @@
   %main.main-content
     -#= render partial: 'shared/slider' if store_block? && slider_block?
     - unless %w(home).include?(controller_name)
-      %section#breadcrumbs
-        .container.breadcrumbs-wrap
+      %section.breadcrumbs-area
+        .container
           = breadcrumbs(@taxon)
     - if controller_name == 'home'
       = yield

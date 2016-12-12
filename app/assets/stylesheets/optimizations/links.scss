@@ -15,6 +15,11 @@ a {
     text-decoration: underline;
   }
 
+  &:focus {
+    color: $color-base;
+    text-decoration: underline;
+  }
+
   &:active {
     color: $color-base;
     text-decoration: none;

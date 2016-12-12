@@ -17,7 +17,7 @@
               .panel-body.text-center
                 - product_image_orig = product_image_src(@product, :original)
                 %a.btn.fancybox.fancy-no-hide{title: @product.name, href: product_image_orig}
-                  = render :partial => 'image'
+                  = render :partial => 'image', locals: {img_class: 'img-responsive'}
             #thumbnails{"data-hook" => ""}
               = render :partial => 'thumbnails'
           .col-xs-12.col-sm-12.col-md-7
