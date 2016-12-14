@@ -16,6 +16,7 @@
 //= require store/spree_videos
 //= require fancybox
 //= require matchHeight/jquery.matchHeight-min.js
+//= require jquery.mmenu.all
 
 $(window).bind('page:change', function() {
     $.fancybox.init();
@@ -58,5 +59,11 @@ $(document).ready(function(){
                 $("#fancybox-frame").attr("allowfullscreen", "allowfullscreen")
             }
         });
+    });
+
+    $('#apollo_menucanvas').mmenu({
+        extensions: [ 'effect-slide', 'pageshadow' ],
+        header: true,
+        searchfield: true
     });
 });

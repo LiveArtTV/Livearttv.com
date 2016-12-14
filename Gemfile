@@ -9,6 +9,7 @@ gem 'jquery-rails'
 gem 'jbuilder', '~> 2.0'
 gem 'haml'
 gem 'haml-rails'
+gem 'mmenu-rails', '~> 5.5', '>= 5.5.3'
 
 # bundle exec rake doc:rails generates the API under doc/api.
 

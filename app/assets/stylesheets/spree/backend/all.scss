@@ -1,0 +1,41 @@
+/*
+ *= require jquery-ui/datepicker
+ *= require jquery-ui/autocomplete
+ *= require select2
+ *= require animate
+
+ *= require fancybox
+ */
+
+
+@import 'spree/backend/global/variables';
+
+@import 'optimizations/bs_variables';
+
+@import 'bootstrap-sprockets';
+@import 'bootstrap';
+
+
+
+@import 'spree/backend/components/sidebar';
+@import 'spree/backend/components/tables';
+@import 'spree/backend/components/labels';
+@import 'spree/backend/components/main';
+@import 'spree/backend/components/page_header';
+@import 'spree/backend/components/icons';
+@import 'spree/backend/components/buttons';
+@import 'spree/backend/components/wells';
+@import 'spree/backend/components/filters';
+@import 'spree/backend/components/panels';
+@import 'spree/backend/components/navigation';
+@import 'spree/backend/components/taxon_products_view';
+@import 'spree/backend/components/progress';
+@import 'spree/backend/components/spinner';
+
+@import 'spree/backend/sections/account';
+
+@import 'spree/backend/plugins/select2';
+@import 'spree/backend/plugins/jquery_ui';
+
+@import 'spree/backend/shared/base';
+@import 'spree/backend/shared/forms';

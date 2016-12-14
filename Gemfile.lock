@@ -209,6 +209,7 @@ GEM
     mimemagic (0.3.0)
     mini_portile2 (2.1.0)
     minitest (5.9.1)
+    mmenu-rails (5.5.3)
     monetize (1.4.0)
       money (~> 6.7)
     money (6.7.1)
@@ -423,6 +424,7 @@ DEPENDENCIES
   haml-rails
   jbuilder (~> 2.0)
   jquery-rails
+  mmenu-rails (~> 5.5, >= 5.5.3)
   mysql2
   pg
   pry

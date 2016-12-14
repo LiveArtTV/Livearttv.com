@@ -1,0 +1,115 @@
+@charset "UTF-8";
+/*----------------------------------------------------------------------------*\
+  $VIDEOS
+\*----------------------------------------------------------------------------*/
+
+
+
+/*  Section
+\*----------------------------------------------------------------------------*/
+section.video {
+    background: $color-black;
+}
+
+div.spree-video-thumbnails {
+  padding: 3px 0;
+
+  a {
+    img {
+      height: 74px;
+      margin: 5px 5px;
+    }
+  }
+
+  &.spree-video-thumbnails-md {
+    a {
+      img {
+        height: 178px;
+        margin: 5px 5px;
+      }
+    }
+  }
+}
+
+
+
+/*  Popups
+\*----------------------------------------------------------------------------*/
+.video-streams-fixed {
+  position: fixed;
+  right: 0;
+  bottom: 0;
+  z-index: 1;
+
+  .btn {
+    position: absolute;
+    bottom: 0;
+    right: 0
+  }
+}
+
+.video-streams-content {
+  background: $color-base;
+  padding: $space-small;
+  width: 278px;
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  opacity: 0;
+  -webkit-transition: opacity 0.5s ease 0s;
+  transition: opacity 0.5s ease 0s;
+  pointer-events: none;
+  color: $color-black;
+
+  &.is-visible {
+    opacity: 1;
+    pointer-events: auto;
+  }
+
+  .zmdi {
+    position: absolute;
+    right: 105%;
+    top: 0;
+    color: $color-base;
+    -webkit-transition: color 0.5s ease 0s;
+    transition: color 0.5s ease 0s;
+    cursor: pointer;
+
+    &:hover {
+      color: $color-black;
+    }
+  }
+}
+
+.video-streams-frame {
+  margin-bottom: $space-small;
+}
+
+.video-streams-menu {
+  margin: 0;
+
+  > li {
+    margin-bottom: $space-small;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+
+  a {
+    -webkit-transition: all 0.2s ease 0s;
+    transition: all 0.2s ease 0s;
+
+    &:hover {
+      color: $color-black;
+    }
+
+    &.active {
+      color: $color-white;
+      font-size: $font-size-small;
+      cursor: default;;
+      text-decoration: none;
+      font-weight: $weight-bold;
+    }
+  }
+}

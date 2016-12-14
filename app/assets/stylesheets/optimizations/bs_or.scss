@@ -49,8 +49,9 @@ h1, .h1 { font-size: $font-size-h2; }
 \*----------------------------------------------------------------------------*/
 .breadcrumbs-area {
   background: $color-gray-e;
-  margin-bottom: $space*1.5 0;
+  margin-bottom: $space*1.5;
 }
+
 .breadcrumb {
   padding: $space*1.5 0;
   margin: 0;

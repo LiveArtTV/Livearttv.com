@@ -1,6 +1,7 @@
 - @body_id = 'cart'
 %div.cart_container{"data-hook" => "cart_container"}
-  %h1.taxon-title.text-upper= Spree.t(:shopping_cart)
+  %h1.taxon-title.text-uppercase
+    = Spree.t(:shopping_cart)
   - if @order.line_items.empty?
     %div{"data-hook" => "empty_cart"}
       .alert.alert-warning= Spree.t(:your_cart_is_empty)

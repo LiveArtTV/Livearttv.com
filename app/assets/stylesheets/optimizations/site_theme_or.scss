@@ -9,19 +9,19 @@
 \*----------------------------------------------------------------------------*/
 body {
   font-size: $font-size-base;
-  line-height: $line-height-base;
+  line-height: $line-height-computed;
 }
 
 #login-page .login-box {
   min-height: 0;
 
   p {
-    margin-bottom: 10px;
+    margin-bottom: $space-small;
   }
 }
 
 .rte p {
-    text-align: inherit;
+  text-align: inherit;
 }
 
 
@@ -37,6 +37,49 @@ body {
 
 .box-contact-info ul > li {
   font-size: inherit;
+}
+
+.toggle-footer {
+  li {
+    a {
+      &:hover {
+        font-size: inherit;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .block .title_block:before {
+    top: $space-tiny;
+    font-size: 25px
+  }
+}
+
+
+/*  Header
+\*----------------------------------------------------------------------------*/
+.header-wrap {
+  padding: 0;
+}
+
+#header_logo {
+  padding: 20px 0px;
+
+  a {
+    text-align: left;
+  }
+}
+
+@media (max-width: $screen-md) {
+  #search_block_top {
+    right: 20%;
+    top: $space*1.5;
+  }
+}
+
+.header_user_info .links {
+   visibility: visible;
 }
 
 
@@ -75,7 +118,6 @@ body {
       width: 100%;
     }
   }
-
 }
 
 .product-center-column {
@@ -90,8 +132,14 @@ body {
   text-transform: uppercase;
 }
 
-#main-image2 div img {
-  height: auto;
+#main-image2 {
+  border: none;
+
+  div {
+    img {
+      height: auto;
+    }
+  }
 }
 
 .more_info_block {
@@ -119,6 +167,63 @@ body {
         color: $color-gray-b;
       }
     }
+  }
+}
+
+
+
+/*  Menu
+\*----------------------------------------------------------------------------*/
+#apollo-top-menu {
+  padding: 0;
+
+  .navbar-nav {
+    > li {
+      > a {
+        padding: $space;
+        font-size: inherit;
+      }
+
+      .caret:before {
+        top: $space;
+      }
+    }
+    > li:hover {
+      > a {
+        color: $color-base;
+      }
+    }
+  }
+}
+
+.apollo-megamenu {
+  ul,
+  ol {
+    vertical-align: top;
+  }
+}
+
+#apollo-menu {
+  .dropdown-menu {
+    font-size: inherit;
+
+    .menu-title {
+      font-size: inherit;
+    }
+
+    .nav-links {
+      font-family: $font-face-default;
+
+      li {
+        a {
+          font-size: inherit;
+        }
+      }
+    }
+  }
+
+  .btn-menu-canvas {
+    margin: $space-small*1.5 $space-tiny;
   }
 }
 
@@ -161,8 +266,4 @@ body {
       }
     }
   }
-}
-
-.subscribeWrap {
-  height: 100px;
 }

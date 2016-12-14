@@ -11,25 +11,26 @@
   = stylesheet_link_tag    'application', media: 'all'
   = javascript_include_tag 'application'
 %body{:class => body_class, "data-hook" => "body", :id => @body_id || 'default', style: 'padding: 0'}
-  = render partial: 'spree/shared/google_analytics.js'
-  = render partial: 'spree/shared/header'
-  = render partial: 'shared/apollo_menu_canvas'
-  %main.main-content
-    -#= render partial: 'shared/slider' if store_block? && slider_block?
-    - unless %w(home).include?(controller_name)
-      %section.breadcrumbs-area
-        .container
-          = breadcrumbs(@taxon)
-    - if controller_name == 'home'
-      = yield
-    - else
-      %section.columns-container#columns
-        .container
-          .row{"data-hook" => ""}
-            #content{:class => !content_for?(:sidebar) ? "col-sm-12" : "col-sm-8 col-md-9", "data-hook" => ""}
-              = flash_messages
-              = yield
-            = render partial: 'spree/shared/sidebar' if content_for? :sidebar
-      = render partial: 'shared/youtube_popup', locals: {videos: @videos || Spree::Video.streams}
-  = yield :templates
-  = render partial: 'spree/shared/footer'
+  #page
+    = render partial: 'spree/shared/google_analytics.js'
+    = render partial: 'spree/shared/header'
+    = render partial: 'shared/apollo_menu_canvas'
+    %main.main-content
+      -#= render partial: 'shared/slider' if store_block? && slider_block?
+      - unless %w(home).include?(controller_name)
+        %section.breadcrumbs-area
+          .container
+            = breadcrumbs(@taxon)
+      - if controller_name == 'home'
+        = yield
+      - else
+        %section.columns-container#columns
+          .container
+            .row{"data-hook" => ""}
+              #content{:class => !content_for?(:sidebar) ? "col-sm-12" : "col-sm-8 col-md-9", "data-hook" => ""}
+                = flash_messages
+                = yield
+              = render partial: 'spree/shared/sidebar' if content_for? :sidebar
+        = render partial: 'shared/youtube_popup', locals: {videos: @videos || Spree::Video.streams}
+    = yield :templates
+    = render partial: 'spree/shared/footer'

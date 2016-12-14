@@ -5,12 +5,17 @@
 /*  Grid
 \*----------------------------------------------------------------------------*/
 $grid-gutter: 15px;
+$screen-xs: 480px !default;
+$screen-sm: 768px !default;
+$screen-md: 992px !default;
+$screen-lg: 1200px !default;
 
 
 /*  Colors
 \*----------------------------------------------------------------------------*/
 $color-base: #e2bd65;
 $color-base-light: #fcf8e3;
+$color-red-light: #e55e5e;
 $color-black: #000;
 $color-white: #fff;
 
@@ -26,7 +31,9 @@ $color-gray-g: #f8f8f8;
 /*  Typography
 \*----------------------------------------------------------------------------*/
 $font-size-base: 16px;
-$line-height-base: 22px;
+$line-height-base: 1.375;
+$line-height-computed:    floor(($font-size-base * $line-height-base)) !default; // ~22px
+
 $font-size-large: ceil(($font-size-base * 1.25)) !default; // ~20px
 $font-size-small: ceil(($font-size-base * 0.875)) !default; // ~14px
 $font-size-smaller: ceil(($font-size-base * 0.75)) !default; // ~12px
@@ -43,13 +50,16 @@ $weight-regular: 400;
 $weight-bold: 700;
 
 $font-face-poppins: "Poppins", sans-serif;
+$font-face-default: "Helvetica Neue", Helvetica, Arial, sans-serif;
 
 
 
 /*  Spaces
 \*----------------------------------------------------------------------------*/
-$space: $line-height-base;
+$space: $line-height-computed;
 $space-small: $space/2;
 $space-tiny: $space/4;
 $space-large: $space*2;
 $space-huge: $space*4;
+
+

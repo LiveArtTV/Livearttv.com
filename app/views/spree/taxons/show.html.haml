@@ -1,4 +1,5 @@
-%h1.taxon-title.text-upper= @taxon.name
+%h1.taxon-title.text-uppercase
+  = @taxon.name
 - content_for :sidebar do
   = render partial: 'spree/shared/taxonomies'
   = render partial: 'spree/shared/authors'
