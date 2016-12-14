@@ -4,6 +4,7 @@
           $("#search-icon").click(function () {
               $("#searchbox").toggleClass("show");
               $(this).toggleClass("active");
+              $('#apollo-menu').toggleClass("is-disabled");
           });
       });
   });
@@ -26,16 +27,16 @@
   $(document).ready(function(){
 
     $(document).on('change','.filter-top-collection', function(e) {
-      console.log($(this));
+      /* console.log($(this));*/
       update_search_query();
     });
 
     function update_search_query(){
       var taxonId = $('.filter-top-collection').val();
       var url = '/taxons/products.json/?id=' + taxonId;
-      console.log(url);
+      /* console.log(url);*/
       $.get(url, function(data){
-      console.log(data);
+      /* console.log(data);*/
           $(".search-query").typeahead({ source: data });
       }, 'json');
     };

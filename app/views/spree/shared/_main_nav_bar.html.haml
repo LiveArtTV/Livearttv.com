@@ -1,6 +1,6 @@
 .container
   .header-wrap
-    .header-top.col-lg-12.col-md-12.col-sm-6.col-xs-6.col-sp-6
+    .header-top
       #header_logo
         %h1{:itemscope => "", :itemtype => "http://schema.org/Organization"}
           = logo
@@ -17,7 +17,7 @@
       -#= render partial: 'spree/shared/link_to_cart'
       -#:javascript
         Spree.fetch_cart();
-    .header-bottom.col-lg-12.col-md-12.col-sm-6.col-xs-6.col-sp-6
+    .header-bottom
       / Top Menu
       = render partial: 'shared/apollo_menu'
       = render partial: 'spree/shared/search'

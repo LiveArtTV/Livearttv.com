@@ -10,6 +10,7 @@
 body {
   font-size: $font-size-base;
   line-height: $line-height-computed;
+  font-family: $font-face-default;
 }
 
 #login-page .login-box {
@@ -22,6 +23,22 @@ body {
 
 .rte p {
   text-align: inherit;
+}
+
+
+/*  Blocks
+\*----------------------------------------------------------------------------*/
+@media screen and (max-width: $screen-sm - 1) {
+  .block .title_block:before {
+    top: $space-tiny;
+    font-size: 25px
+  }
+}
+
+.informBlock {
+  background-color: $color-gray-g;
+  padding: 20px;
+  margin-top: 20px;
 }
 
 
@@ -49,18 +66,17 @@ body {
   }
 }
 
-@media screen and (max-width: 767px) {
-  .block .title_block:before {
-    top: $space-tiny;
-    font-size: 25px
-  }
-}
-
 
 /*  Header
 \*----------------------------------------------------------------------------*/
 .header-wrap {
   padding: 0;
+}
+
+.header-top {
+  float: left;
+  position: relative;
+  z-index: 1;
 }
 
 #header_logo {
@@ -69,13 +85,29 @@ body {
   a {
     text-align: left;
   }
+
+  @media (min-width: $screen-md - 1) {
+    padding: 15px 0;
+  }
 }
 
-@media (max-width: $screen-md) {
+#search_block_top {
+  right: 10%;
+  top: $space*1.5;
+}
+
+@media (min-width: $screen-md - 1) {
   #search_block_top {
-    right: 20%;
-    top: $space*1.5;
+    top: $space*1.2;
   }
+}
+
+.group-leosearch {
+  background: $color-white;
+}
+
+#searchbox {
+
 }
 
 .header_user_info .links {
@@ -170,6 +202,12 @@ body {
   }
 }
 
+.product-right-column {
+  .quantity_wanted_p {
+    float: none;
+  }
+}
+
 
 
 /*  Menu
@@ -188,6 +226,7 @@ body {
         top: $space;
       }
     }
+
     > li:hover {
       > a {
         color: $color-base;
@@ -204,6 +243,10 @@ body {
 }
 
 #apollo-menu {
+  &.is-disabled {
+    pointer-events: none;
+  }
+
   .dropdown-menu {
     font-size: inherit;
 
@@ -225,6 +268,11 @@ body {
   .btn-menu-canvas {
     margin: $space-small*1.5 $space-tiny;
   }
+}
+
+.mm-title:hover,
+.mm-title:focus {
+  text-decoration: none;
 }
 
 
