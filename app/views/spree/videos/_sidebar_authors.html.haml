@@ -1,0 +1,10 @@
+- authors = Spree::Author.all
+#authors_sidebarcategories_block.block.sidebarCategories{"data-hook" => "taxon_sidebar_navigation"}
+  %h4.title_block.taxonomy-root= Spree.t('authors')
+  .block_content#product-author{"data-hook" => ""}
+    %ul.listSidebar.list-unstyled
+      - authors.all.each do |author|
+        %li
+          = link_to author_path(id: author.slug) do
+            = author.name
+            %span.apolloQty.pull-right= author.products.count

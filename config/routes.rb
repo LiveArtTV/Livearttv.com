@@ -21,4 +21,9 @@ Spree::Core::Engine.routes.append do
       get :products
     end
   end
+  resources :videos do
+    collection do
+      get :items
+    end
+  end
 end

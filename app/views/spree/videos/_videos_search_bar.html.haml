@@ -1,0 +1,34 @@
+#search_videos_block
+  = form_tag spree.videos_path, :method => :get, id: 'searchbox-videos', class: 'popup-content-1' do
+    .row
+      .col-md-2
+        = select_tag :category, options_for_select(%w(author title),               |
+          params[:category]), 'aria-label' => 'Taxon', class: "filter-videos-collection", id: 'collection-select-1' |
+      .col-md-8
+        %input#search_query_videos.search-videos-query{style: 'width: 100%;', aria_label: "#{Spree.t(:search)} ...", autocomplete: :off, name: :keywords, placeholder: "#{Spree.t(:search)} ...", type: :search, value: params[:keywords]}
+      .col-md-1
+        %button#search_button-1.btn.btn-sm{type: 'submit'}
+          %span
+            %i.fa.fa-search
+          %span.fallback-text #{Spree.t(:search)}
+      .col-md-1
+  -##ap-ajax-search
+    %ul.list-unstyled.aps-results
+:javascript
+  $(document).ready(function(){
+
+    $(document).on('change','.filter-videos-collection', function(e) {
+      console.log($(this));
+      update_search_query();
+    });
+
+    function update_search_query(){
+      var category = $('.filter-videos-collection').val();
+      var url = '/videos/items.json/?category=' + category;
+      console.log(url);
+      $.get(url, function(data){
+      console.log(data);
+          $(".search-videos-query").typeahead({ source: data });
+      }, 'json');
+    };
+  });
