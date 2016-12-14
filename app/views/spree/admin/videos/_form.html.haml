@@ -1,0 +1,33 @@
+= f.hidden_field :product_id, value: @product ? @product.slug : nil
+= f.field_container :youtube_ref, class: ['form-group'] do
+  = f.label :youtube_ref, raw(t('helpers.label.video.youtube_ref') + content_tag(:span, ' *', class: 'required'))
+  %br/
+  = f.text_field :youtube_ref, class: 'form-control title'
+  = f.error_message_on :youtube_ref
+= f.field_container :title, class: ['form-group'] do
+  = f.label :title, raw(t('helpers.label.video.title'))
+  %br/
+  = f.text_field :title, class: 'form-control title'
+  = f.error_message_on :title
+= f.field_container :starts_at_field, class: ['form-group'] do
+  = f.label :created_at
+  = f.text_field :created_at, value: datepicker_field_value(f.object.try(:created_at)), class: 'datepicker datepicker-from form-control', style: 'width: 150px;'
+- author_id = params[:author_id] || @video.watchable.try(:id)
+= f.field_container :author_field, class: ['form-group'] do
+  = f.label :author
+  = f.collection_select(:author_id, Spree::Author.all, :id, :name, { :include_blank => Spree.t('match_choices.none'), selected: author_id }, { :class => 'select2' })
+= f.field_container :show_on_home, class: ['checkbox'] do
+  = f.label :show_on_home do
+    = f.check_box :show_on_home, class: 'form-control'
+    &nbsp;
+    %br
+    != t('helpers.label.video.show_on_home')
+  = f.error_message_on :show_on_home
+= f.field_container :stream, class: ['checkbox'] do
+  = f.label :stream do
+    = f.check_box :stream, class: 'form-control'
+    &nbsp;
+    %br
+    != t('helpers.label.video.stream')
+  = f.error_message_on :stream
+%br

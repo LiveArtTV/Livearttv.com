@@ -13,6 +13,7 @@ Spree::Core::Engine.routes.append do
           post :update_positions
         end
       end
+      resources :videos
     end
   end
   resources :authors, only: [:index, :show]

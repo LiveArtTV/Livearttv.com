@@ -10,3 +10,6 @@
     - if can?(:admin, Spree::AuthorImage)
       %li{class: ('active' if current == :images)}
         = link_to_with_icon 'picture', Spree.t(:images), spree.admin_author_images_url(@author)
+    - if can?(:admin, Spree::Video)
+      %li{class: ('active' if current == :videos)}
+        = link_to_with_icon 'play', Spree.t(:videos), spree.admin_author_videos_url(@author)

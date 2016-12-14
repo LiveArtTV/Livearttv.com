@@ -52,10 +52,10 @@ module Spree
       if params[:category]
         @json = case params[:category]
           when 'author'
-            Author.all.map {|i| {id: i.id, name: i.name}}
+            Author.all.map {|i| i.name}
           when 'title'
-            Video.all.map {|i| {id: i.id, name: i.title}}
-                end
+            Video.all.map {|i| i.title}
+          end
       else
         @json = []
       end

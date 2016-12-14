@@ -19,6 +19,8 @@ class Spree::Author < ActiveRecord::Base
   delegate_belongs_to :author_images
   alias_method :images, :author_images
 
+  has_many :videos, -> { order 'position ASC' }, :as => :watchable
+
   scope :visible, -> { where(visible: true) }
   scope :header_links, -> { where(show_in_header: true).visible }
   scope :sidebar_links, -> { where(show_in_sidebar: true).visible }

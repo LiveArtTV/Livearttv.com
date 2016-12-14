@@ -18,7 +18,7 @@
   $(document).ready(function(){
 
     $(document).on('change','.filter-videos-collection', function(e) {
-      console.log($(this));
+      $(".search-videos-query").typeahead('destroy');
       update_search_query();
     });
 
@@ -27,8 +27,9 @@
       var url = '/videos/items.json/?category=' + category;
       console.log(url);
       $.get(url, function(data){
-      console.log(data);
-          $(".search-videos-query").typeahead({ source: data });
+        //console.log(data);
+        $(".search-videos-query").typeahead({ source: data });
       }, 'json');
     };
+    update_search_query();
   });
