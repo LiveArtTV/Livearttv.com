@@ -420,6 +420,7 @@ DEPENDENCIES
   capistrano-rails (~> 1.1.8)
   capistrano-rvm (= 0.1.2)
   coffee-rails (~> 4.1.0)
+  font-awesome-rails
   haml
   haml-rails
   jbuilder (~> 2.0)

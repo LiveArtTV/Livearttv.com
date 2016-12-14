@@ -17,6 +17,7 @@ gem 'mmenu-rails', '~> 5.5', '>= 5.5.3'
 # gem 'bcrypt', '~> 3.1.7'
 
 gem 'spree', '~> 3.1.0'
+gem 'font-awesome-rails'
 gem 'spree_auth_devise', '~> 3.1.0'
 gem 'spree_gateway', '~> 3.1.0'
 gem 'spree_videos', git: 'https://github.com/clevertechru/spree_videos.git', branch: '3-1-stable'
