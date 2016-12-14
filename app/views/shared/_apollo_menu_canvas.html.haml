@@ -1,0 +1,161 @@
+%section#apollo-menucanvas.mm-menu.mm-effect-slide.mm-pageshadow.mm-offcanvas.mm-hasheader.mm-hassearch
+  .mm-search
+    %input{:autocomplete => "off", :placeholder => "Search", :type => "text"}/
+  .mm-header
+    %a.mm-prev.mm-btn.mm-hidden
+    %a.mm-title Menu
+    %a.mm-next.mm-btn.mm-hidden
+  #mm-1.mm-panel.mm-opened.mm-current
+    .mm-noresultsmsg No results found.
+    %ul.mm-listview.mm-first.mm-last
+      %li.parent.active
+        %a.mm-next{"data-target" => "#mm-2", :href => "#mm-2"}
+        = link_to spree.root_path, target: '_self', title: Spree::t('home'), class: 'has-category' do
+          %span= Spree::t('home')
+      %li.parent
+        %a.mm-next{"data-target" => "#mm-3", :href => "#mm-3"}
+        %a.has-category{href: products_path, title: Spree.t('category')}
+          %span #{Spree.t('category')}
+      %li
+        %a{href: authors_path, target: '_self', title: Spree.t('menu.artists')}
+          %span #{Spree.t('menu.artists')}
+      %li.parent.active
+        %a.mm-next{"data-target" => "#mm-9", :href => "#mm-9"}
+        %a.has-category{href: videos_path, title: Spree.t('menu.library')}
+          %span #{Spree.t('menu.library')}
+      %li.active
+        %a{href: '/pages/contact_us', target: '_self', title: Spree::t('contact')}
+          %span #{Spree::t('contact')}
+  -##mm-2.mm-panel.mm-hidden
+    .mm-header
+      %a.mm-btn.mm-prev{"data-target" => "#mm-1", :href => "#mm-1"}
+      %a.mm-title
+        Home
+    %ul.mm-listview.mm-first.mm-last
+      %li
+        %a{:href => "http://ap-rojo.myshopify.com/?preview_theme_id=", :title => "Home 1"}
+          %span Home 1
+  #mm-3.mm-panel.mm-hidden
+    .mm-header
+      %a.mm-btn.mm-prev{"data-target" => "#mm-1", :href => "#mm-1"}
+      %a.mm-title
+        #{Spree.t('category')}
+    %ul.mm-listview.mm-first.mm-last
+      %li.parent
+        %a.mm-next{"data-target" => "#mm-4", :href => "#mm-4"}
+        %a{:href => "/collections", :title => "Collection"}
+          %span Collection
+      %li.parent
+        %a.mm-next{"data-target" => "#mm-5", :href => "#mm-5"}
+        %a{:href => "/collections/all", :title => "Product"}
+          %span Product
+  #mm-4.mm-panel.mm-hidden
+    .mm-header
+      %a.mm-btn.mm-prev{"data-target" => "#mm-3", :href => "#mm-3"}
+      %a.mm-title
+        Collection
+    %ul.mm-listview.mm-first.mm-last
+      %li
+        %a{:href => "/collections/comb", :title => "Left Sidebar Grid"}
+          %span Left Sidebar Grid
+      %li
+        %a{:href => "/collections/classroom", :title => "Right Sidebar Grid"}
+          %span Right Sidebar Grid
+      %li
+        %a{:href => "/collections/cut", :title => "Fullwidth Grid"}
+          %span Fullwidth Grid
+      %li
+        %a{:href => "/collections/office", :title => "Left Sidebar List"}
+          %span Left Sidebar List
+      %li
+        %a{:href => "/collections/play-room", :title => "Right Sidebar List"}
+          %span Right Sidebar List
+      %li
+        %a{:href => "/collections/dining-room", :title => "Fullwidth List"}
+          %span Fullwidth List
+  #mm-5.mm-panel.mm-hidden
+    .mm-header
+      %a.mm-btn.mm-prev{"data-target" => "#mm-3", :href => "#mm-3"}
+      %a.mm-title
+        Product
+    %ul.mm-listview.mm-first.mm-last
+      %li
+        %a{:href => "/products/the-asbury-collection-1", :title => "Fullwidth"}
+          %span Fullwidth
+      %li
+        %a{:href => "/products/the-asbury-collection-lef", :title => "Left Sidebar"}
+          %span Left Sidebar
+      %li
+        %a{:href => "/products/the-asbury-collection", :title => "Right Sidebar"}
+          %span Right Sidebar
+  #mm-6.mm-panel.mm-hidden
+    .mm-header
+      %a.mm-btn.mm-prev{"data-target" => "#mm-1", :href => "#mm-1"}
+      %a.mm-title
+        Blog
+    %ul.mm-listview.mm-first.mm-last
+      %li.parent.active
+        %a.mm-next{"data-target" => "#mm-7", :href => "#mm-7"}
+        %a{:href => "/", :title => "Blog Pages"}
+          %span Blog Pages
+      %li.parent.active
+        %a.mm-next{"data-target" => "#mm-8", :href => "#mm-8"}
+        %a{:href => "/", :title => "Detail Blog"}
+          %span Detail Blog
+  #mm-7.mm-panel.mm-hidden
+    .mm-header
+      %a.mm-btn.mm-prev{"data-target" => "#mm-6", :href => "#mm-6"}
+      %a.mm-title
+        Blog Pages
+    %ul.mm-listview.mm-first.mm-last
+      %li
+        %a{:href => "/blogs/blog-fullwidth", :title => "Blog Fullwidth"}
+          %span Blog Fullwidth
+      %li
+        %a{:href => "/blogs/blog-left", :title => "Blog Sidebar Left"}
+          %span Blog Sidebar Left
+      %li
+        %a{:href => "/blogs/news", :title => "Blog  Sidebar Right"}
+          %span Blog  Sidebar Right
+      %li
+        %a{:href => "/blogs/blog-masonry", :title => "Blog Masonry"}
+          %span Blog Masonry
+  #mm-8.mm-panel.mm-hidden
+    .mm-header
+      %a.mm-btn.mm-prev{"data-target" => "#mm-6", :href => "#mm-6"}
+      %a.mm-title
+        Detail Blog
+    %ul.mm-listview.mm-first.mm-last
+      %li
+        %a{:href => "https://ap-rojo.myshopify.com/blogs/news/this-is-your-store-s-blog-you-can-use-it-to-talk", :title => "Detail Blog Fullwidth"}
+          %span Detail Blog Fullwidth
+      %li
+        %a{:href => "https://ap-rojo.myshopify.com/blogs/blog-left/mi-vitae-magnis-fusce-laoreet-nibh-felis-porttitor-laoreet", :title => "Detail Blog Left"}
+          %span Detail Blog Left
+      %li
+        %a{:href => "https://ap-rojo.myshopify.com/blogs/blog-fullwidth/commodo-laoreet-semper-tincidunt-lorem-vestibulum-nunc", :title => "Detail Blog Right"}
+          %span Detail Blog Right
+  #mm-9.mm-panel.mm-hidden
+    .mm-header
+      %a.mm-btn.mm-prev{"data-target" => "#mm-1", :href => "#mm-1"}
+      %a.mm-title
+        Features
+    %ul.mm-listview.mm-first.mm-last
+      %li
+        %a{:href => "/pages/shortcode", :title => "Shortcode list"}
+          %span Shortcode list
+      %li
+        %a{:href => "/products/greenfield-walnut-5-pc", :title => "Product description"}
+          %span Product description
+      %li
+        %a{:href => "/blogs/blog-fullwidth", :title => "Shortcode in blog"}
+          %span Shortcode in blog
+      %li
+        %a{:href => "/pages/faq", :title => "Shortcode in page"}
+          %span Shortcode in page
+      %li
+        %a{:href => "/collections/comb", :title => "Shorcode in collection"}
+          %span Shorcode in collection
+      %li
+        %a{:href => "https://www.youtube.com/watch?v=rMkkHkeTPLE", :title => "Video guide"}
+          %span Video guide

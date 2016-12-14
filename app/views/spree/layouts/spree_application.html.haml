@@ -13,6 +13,7 @@
 %body{:class => body_class, "data-hook" => "body", :id => @body_id || 'default', style: 'padding: 0'}
   = render partial: 'spree/shared/google_analytics.js'
   = render partial: 'spree/shared/header'
+  = render partial: 'shared/apollo_menu_canvas'
   %main.main-content
     -#= render partial: 'shared/slider' if store_block? && slider_block?
     - unless %w(home).include?(controller_name)
