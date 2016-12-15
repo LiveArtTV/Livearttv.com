@@ -264,6 +264,7 @@ GEM
       railties (= 4.2.7.1)
       sprockets-rails
     rails-assets-matchHeight (0.7.0)
+    rails-assets-material-design-iconic-font (2.2.0)
     rails-deprecated_sanitizer (1.0.3)
       activesupport (>= 4.2.0.alpha)
     rails-dom-testing (1.0.7)
@@ -431,6 +432,7 @@ DEPENDENCIES
   pry
   rails (~> 4.2.7.1)
   rails-assets-matchHeight (~> 0.7.0)!
+  rails-assets-material-design-iconic-font!
   safety_mailer (~> 0.0.10)
   sass-rails (~> 5.0)
   spree (~> 3.1.0)

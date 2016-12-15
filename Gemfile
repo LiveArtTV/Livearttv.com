@@ -26,6 +26,10 @@ gem 'spree_chimpy', git: 'https://github.com/clevertechru/spree_chimpy.git', bra
 gem 'spree_static_content', github: 'spree-contrib/spree_static_content', branch: 'master'
 gem 'aws-sdk', '< 2.0'
 
+source 'https://rails-assets.org' do
+  gem 'rails-assets-material-design-iconic-font'
+end
+
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug'
