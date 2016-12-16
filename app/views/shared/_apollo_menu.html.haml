@@ -183,7 +183,7 @@
                           .product-container.clearfix
                             .image
                               %a.product_img_link{href: spree.video_path(id: video.id), title: video.title}
-                                %img.replace-2x.img-responsive{alt: video.title, src: video.thumbnail_url}/
+                                %img.replace-2x.img-responsive{alt: video.title, src: spree_video_thumb_uri(video)}/
                             .product-meta
                               %h5.name
                                 %a.product-name{href: spree.video_path(id: video.id), title: video.title}

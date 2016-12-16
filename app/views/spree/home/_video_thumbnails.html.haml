@@ -2,4 +2,4 @@
   = content_tag(:div, id: 'video-thumbnails', class: 'spree-video-thumbnails') do
     - videos.map(&:youtube_data).each do |video|
       - product_video = videos.select{|v| v.youtube_ref == video.id}.try(:first)
-      = link_to image_tag(asset_url(video.thumbnail_url)), video_path(id: product_video, youtube_ref: video.id), title: video.title, class: '', data: {'video-id' => video.id}, remote: true
+      = link_to image_tag(spree_video_thumb_uri(video)), video_path(id: product_video, youtube_ref: video.id), title: video.title, class: '', data: {'video-id' => video.id}, remote: true
