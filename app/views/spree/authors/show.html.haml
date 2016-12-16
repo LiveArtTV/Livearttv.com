@@ -23,3 +23,16 @@
           %p There are no works by this artist in stock at the moment
         - @author.products.each do |product|
           = render partial: 'spree/products/item_small', locals: {product: product}
+%section.home_product_list_2
+  .text-center
+    .container
+      %h4.title_block_home.page-subheading
+        #{@author.name} videos
+      #author_videos.row
+        - if @author.videos.blank?
+          %p There are no videos by this artist
+        = content_tag(:div, id: 'video-thumbnails', class: 'spree-video-thumbnails-md') do
+          - @author.videos.map(&:youtube_data).each do |video|
+            .col-sm-4
+              = link_to "https://www.youtube.com/watch?v=#{video.id}", title: video.title, class: 'fancyYoutube video-overview-thumbnail', target: '_blank', data: {'video-id' => video.id}, remote: false do
+                = image_tag(video.thumbnail_url, class: 'img-responsive')
