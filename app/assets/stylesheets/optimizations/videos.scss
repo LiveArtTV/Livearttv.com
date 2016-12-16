@@ -33,6 +33,29 @@ div.spree-video-thumbnails {
 
 
 
+/*  Overview
+\*----------------------------------------------------------------------------*/
+.video-overview-thumbnail {
+  display: block;
+  margin-bottom: $grid-gutter*2;
+  background: $color-black;
+
+  img {
+    width: 100%;
+    -webkit-transition: opacity 0.5s ease 0s;
+    transition: opacity 0.5s ease 0s;
+    opacity: 0.85;
+  }
+
+  &:hover {
+    img {
+      opacity: 1;
+    }
+  }
+}
+
+
+
 /*  Popups
 \*----------------------------------------------------------------------------*/
 .video-streams-fixed {
@@ -100,16 +123,15 @@ div.spree-video-thumbnails {
     -webkit-transition: all 0.2s ease 0s;
     transition: all 0.2s ease 0s;
 
-    &:hover {
+    &:hover,
+    &:focus {
       color: $color-black;
     }
 
     &.active {
       color: $color-white;
-      font-size: $font-size-small;
-      cursor: default;;
+      cursor: default;
       text-decoration: none;
-      font-weight: $weight-bold;
     }
   }
 }

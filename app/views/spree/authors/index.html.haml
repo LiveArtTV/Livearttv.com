@@ -12,10 +12,12 @@
   - if @authors.respond_to?(:total_pages)
     = rel_next_prev_link_tags @authors
 %div{"data-hook" => "authors_list"}
+  %hr
   - if @authors.any?
     #productlist1.row{"data-hook" => ""}
       - @authors.each do |author|
         = render partial: 'spree/authors/item_small', locals: {author: author}
+  - else
+    %h5.text-uppercase= Spree.t(:no_authors_found)
   - if @authors.respond_to?(:total_pages)
-    %hr
     = paginate @authors, theme: 'twitter-bootstrap-3'

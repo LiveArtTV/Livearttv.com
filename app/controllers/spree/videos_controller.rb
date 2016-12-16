@@ -1,7 +1,8 @@
 module Spree
   class VideosController < Spree::StoreController
     respond_to :html
-    
+    PER_PAGE = 20
+
     def index
       @videos = Video.all
       if params[:sortby]
@@ -30,6 +31,7 @@ module Spree
               @videos.where('title LIKE ?',"#{params[:keywords]}%")
           end
       end
+      @videos = @videos.page(params[:page]).per(PER_PAGE)
     end
 
     def product_index

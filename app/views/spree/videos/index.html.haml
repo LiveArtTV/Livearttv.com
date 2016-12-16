@@ -6,15 +6,17 @@
 - content_for :sidebar do
   = render partial: 'spree/videos/sidebar_videos_sort'
 %div{"data-hook" => "videos_list"}
-= render 'spree/videos/videos_search_bar'
-- if @videos && @videos.any?
-  #videos.row{"data-hook" => ""}
-    = content_tag(:div, id: 'video-thumbnails', class: 'spree-video-thumbnails-md') do
-      - @videos.map(&:youtube_data).each do |video|
-        .col-md-3
-          - product_video = @videos.select{|v| v.youtube_ref == video.id}.try(:first)
-          = link_to image_tag(video.thumbnail_url), "https://www.youtube.com/watch?v=#{video.id}", title: video.title, class: 'fancyYoutube', target: '_blank', data: {'video-id' => video.id}, remote: false
-- else
-  %h6.search-results-title= Spree.t(:no_videos_found)
-- if @videos.respond_to?(:total_pages)
-  = paginate @videos, theme: 'twitter-bootstrap-3'
+  = render 'spree/videos/videos_search_bar'
+  - if @videos && @videos.any?
+    #videos.row{"data-hook" => ""}
+      = content_tag(:div, id: 'video-thumbnails', class: 'spree-video-thumbnails-md') do
+        - @videos.map(&:youtube_data).each do |video|
+          .col-sm-4
+            - product_video = @videos.select{|v| v.youtube_ref == video.id}.try(:first)
+            = link_to "https://www.youtube.com/watch?v=#{video.id}", title: video.title, class: 'fancyYoutube video-overview-thumbnail', target: '_blank', data: {'video-id' => video.id}, remote: false do
+              = image_tag(video.thumbnail_url, class: 'img-responsive')
+
+  - else
+    %h5.text-uppercase= Spree.t(:no_videos_found)
+  - if @videos.respond_to?(:total_pages)
+    = paginate @videos, theme: 'twitter-bootstrap-3'

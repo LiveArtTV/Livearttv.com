@@ -24,7 +24,7 @@
                     %span #{Spree::Config[:company_address]}
                   %li.phone
                     %span #{Spree::Config[:company_phone]}
-                  %li.email
+                  %li.email.is-breakable
                     %span #{Spree::Config[:company_email]}
             .col-md-2.col-sm-2.col-xs-12.col-sp-12
               #block_links_footer_1.block.footer-block.footerAccordion
@@ -82,7 +82,7 @@
     %section#footernav.footer-nav
       .container
         #powered.powered.row.wow.animated{:style => "animation-name: none;"}
-          .col-xs-12
+          .col-xs-offset-3.col-xs-6.col-md-12.col-md-offset-0
             .text-center
               © Copyright 2016 EliteShopping.
               %a{:href => "//sumatosoft.com", :rel => "nofollow", :target => "_blank"} Powered by SumatoSoft

@@ -1,17 +1,17 @@
+%hr
 #search_videos_block
   = form_tag spree.videos_path, :method => :get, id: 'searchbox-videos', class: 'popup-content-1' do
-    .row
-      .col-md-2
-        = select_tag :category, options_for_select(%w(author title),               |
-          params[:category]), 'aria-label' => 'Taxon', class: "filter-videos-collection", id: 'collection-select-1' |
-      .col-md-8
-        %input#search_query_videos.search-videos-query{style: 'width: 100%;', aria_label: "#{Spree.t(:search)} ...", autocomplete: :off, name: :keywords, placeholder: "#{Spree.t(:search)} ...", type: :search, value: params[:keywords]}
-      .col-md-1
-        %button#search_button-1.btn.btn-sm{type: 'submit'}
-          %span
-            %i.fa.fa-search
-          %span.fallback-text #{Spree.t(:search)}
-      .col-md-1
+    .search_with_categories.clearfix
+      = select_tag :category, options_for_select(%w(author title),               |
+        params[:category]), 'aria-label' => 'Taxon', class: "category_search_dd", id: 'collection-select-1' |
+
+      %input#search_query_videos.category_search_text.search-videos-query{aria_label: "#{Spree.t(:search)} ...", autocomplete: :off, name: :keywords, placeholder: "#{Spree.t(:search)} ...", type: :search, value: params[:keywords]}
+
+      %button#search_button-1.btn.category_search_button{type: 'submit'}
+        %span
+          %i.fa.fa-search
+        %span.fallback-text #{Spree.t(:search)}
+
   -##ap-ajax-search
     %ul.list-unstyled.aps-results
 :javascript
@@ -25,7 +25,7 @@
     function update_search_query(){
       var category = $('.filter-videos-collection').val();
       var url = '/videos/items.json/?category=' + category;
-      console.log(url);
+      /*console.log(url);*/
       $.get(url, function(data){
         //console.log(data);
         $(".search-videos-query").typeahead({ source: data });
@@ -33,3 +33,4 @@
     };
     update_search_query();
   });
+%hr

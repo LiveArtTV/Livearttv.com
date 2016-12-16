@@ -5,7 +5,8 @@
     %span.btn__treangle-icon.btn__treangle-icon--arrow-right
   .js--video-streams-content.video-streams-content#product-videos
     %span.zmdi.zmdi-hc-3x.zmdi-close-circle.js--video-streams-trigger-close{:title => "Close"}
-    .embed-responsive.embed-responsive-16by9.video-streams-frame.spree-embed-video= render 'spree/products/video_player', video: videos.first, html_options: {width: nil, height: nil}
+    .video-streams-frame
+      .embed-responsive.embed-responsive-16by9.video-streams-frame.spree-embed-video= render 'spree/products/video_player', video: videos.first, html_options: {width: nil, height: nil}
     - if videos.size > 1
       %ul.list-unstyled.video-streams-menu.spree-video-thumbnails#video-thumbnails
         - videos.map(&:youtube_data).each_with_index do |video, idx|
