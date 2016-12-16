@@ -4,34 +4,34 @@ module Spree
     PER_PAGE = 20
 
     def index
-      @videos = Video.all
+      @videos = Video.joins(:author).all
       if params[:sortby]
         @videos =
           case params[:sortby]
-          when 'date'
-            @videos.orderby :created_at
-          when 'date_desc'
-            @videos.orderby [:created_at, :desc]
-          when 'author'
-            @videos.orderby :author
-          when 'author_desc'
-            @videos.orderby [:author, :desc]
-          when 'title'
-            @videos.orderby :title
-          when 'title_desc'
-            @videos.orderby [:title, :desc]
+            when 'date'
+              @videos.orderby :created_at
+            when 'date_desc'
+              @videos.orderby [:created_at, :desc]
+            when 'author'
+              @videos.orderby :author
+            when 'author_desc'
+              @videos.orderby [:author, :desc]
+            when 'title'
+              @videos.orderby :title
+            when 'title_desc'
+              @videos.orderby [:title, :desc]
         end
       end
       if params[:keywords] && params[:category].present?
         @videos =
           case params[:category]
-            # when 'author'
-            #   @videos.joins(:authors).where("#{Spree::Author.table_name.to_s}.name LIKE ?","#{params[:keywords]}%")
+            when 'author'
+              @videos.where("#{Spree::Author.table_name.to_s}.name LIKE ?","#{params[:keywords]}%")
             when 'title'
-              @videos.where('title LIKE ?',"#{params[:keywords]}%")
+              @videos.where("#{Spree::Video.table_name.to_s}.title LIKE ?","#{params[:keywords]}%")
           end
       end
-      @videos = @videos.page(params[:page]).per(PER_PAGE)
+      @videos = @videos.page(params[:page]).per(PER_PAGE) if @videos
     end
 
     def product_index
