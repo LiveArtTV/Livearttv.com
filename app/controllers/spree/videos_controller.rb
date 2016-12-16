@@ -22,7 +22,7 @@ module Spree
             @videos.orderby [:title, :desc]
         end
       end
-      if params[:keywords]
+      if params[:keywords] && params[:category].present?
         @videos =
           case params[:category]
             # when 'author'

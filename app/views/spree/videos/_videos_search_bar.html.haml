@@ -11,21 +11,18 @@
         %span
           %i.fa.fa-search
         %span.fallback-text #{Spree.t(:search)}
-
-  -##ap-ajax-search
-    %ul.list-unstyled.aps-results
 :javascript
   $(document).ready(function(){
 
-    $(document).on('change','.filter-videos-collection', function(e) {
+    $(document).on('change','.category_search_dd', function(e) {
       $(".search-videos-query").typeahead('destroy');
       update_search_query();
     });
 
     function update_search_query(){
-      var category = $('.filter-videos-collection').val();
+      var category = $('.category_search_dd').val();
       var url = '/videos/items.json/?category=' + category;
-      /*console.log(url);*/
+      console.log(url);
       $.get(url, function(data){
         //console.log(data);
         $(".search-videos-query").typeahead({ source: data });
