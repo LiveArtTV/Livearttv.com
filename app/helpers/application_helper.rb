@@ -27,8 +27,16 @@ module ApplicationHelper
     res.join(' - ')
   end
 
-  def spree_video_thumb_uri(video, size = '360x270')
-    thumb_file = 'thumb_not_found' + (%w(360x270 800x528).include?(size) ? "_#{size}" : '') + '.png'
-    video.thumbnail_url.include?('assets/thumb_not_found.png') ? asset_path(thumb_file) : video.thumbnail_url
+  # @size [:default | :medium | :high]
+  def spree_video_thumb_uri(video, size = :high)
+    thumb_yt_sizes = {
+        default: 'default',
+        medium:  'mqdefault',
+        high:    'hqdefault',
+        sd:      'sddefault',
+        orig:    'maxresdefault'
+    }
+    thumb_file = 'thumb_not_found' + ([:high].include?(size) ? "_#{size}" : '') + '.png'
+    video.thumbnail_url.include?('assets/thumb_not_found.png') ? asset_path(thumb_file) : video.thumbnail_url.sub('/default.',"/#{thumb_yt_sizes[size]}.")
   end
 end
