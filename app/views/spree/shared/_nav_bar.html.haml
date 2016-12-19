@@ -46,7 +46,7 @@
                 %img{:alt => "JPY", :src => "./ap_rojo_files/currencies_img_5.png"}/
                 JPY
       :javascript
-        $(document).ready(function () {
+        /*$(document).ready(function () {
             if ($(window).width() <= 991) {
                 $(".header_user_info").addClass('popup-over');
                 $(".header_user_info .links").addClass('dropdown-menu');
@@ -65,8 +65,12 @@
                     $(".header_user_info .links").removeClass('dropdown-menu');
                 }
             });
-        });
+        });*/
       .header_user_info.e-scale
+        / .popup-title.dropdown-toggle{'data-toggle'=> 'dropdown'}
+        /   %i.fa.fa-user
+        /   %span Account
+
         %ul.links.list-unstyled
           %li
             = render partial: 'spree/shared/link_to_cart'

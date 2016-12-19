@@ -1,55 +1,56 @@
-%section#columns.columns-container.product
-  .container
-    .row
-      %section#center_column.col-sm-12.col-md-12
-        .page-wrap
-          %h1.page-header.bottom-indent Contact us
-          #successMessage.alert.alert-success{style: 'display: none;'}
-            %p
-              %span.success-ico
-              Message Sent
-          #failureMessage.alert.alert-error{style: 'display: none;'}
-            %p
-              %span.error-ico
-              Sorry. Please try later.
-          #incompleteMessage.alert.alert-warning{style: 'display: none;'}
-            %p Please, fill all fields before sending
-          .page-content
-            .row
-              .col-md-9.col-sm-12.col-xs-12
-                -#%form#contact_form.contact-form{"accept-charset" => "UTF-8", :action => pages_contact_us_path, :method => "post"}
-                = form_tag(pages_contact_us_path, method: :post, remote: true, id: 'contactForm', class: 'contact-form') do
-                  %input{type: 'text', name: 'name', style: 'display: none;'}
-                  .contact-form-box
-                    %fieldset
-                      %h3.page-subheading send a message
-                      .row
-                        .col-xs-12.col-sm-4.col-md-4
-                          .form-group
-                            %label.label--hidden{:for => "ContactFormName"} Name
-                            %input#ContactFormName.form-control.grey{:autocapitalize => "words", :name => "contact[name]", :placeholder => "Name", :type => "text", :value => ""}/
-                        .col-xs-12.col-sm-4.col-md-4
-                          .form-group
-                            %label.label--hidden{:for => "ContactFormEmail"} Email
-                            %input#ContactFormEmail.form-control.grey{:autocapitalize => "off", :autocorrect => "off", :name => "contact[email]", :placeholder => "Email", :type => "email", :value => ""}/
-                        .col-xs-12.col-sm-4.col-md-4
-                          .form-group
-                            %label.label--hidden{:for => "ContactFormPhone"} Phone Number
-                            %input#ContactFormPhone.form-control.grey{:name => "contact[phone]", :pattern => "[0-9\\-]*", :placeholder => "Phone Number", :type => "tel", :value => ""}/
-                        .col-xs-12
-                          .form-group
-                            %label.label--hidden{:for => "ContactFormMessage"} Message
-                            %textarea#ContactFormMessage.form-control{:name => "contact[content]", :placeholder => "Message", :rows => "8"}
-                      .submit
-                        %input.btn.btn-outline{:type => "submit", :value => "Send"}/
-              .col-md-3.col-sm-12.col-xs-12
-                .box-contact-info.block
-                  .block_content
-                    .coninfo-des
-                    %ul.list-unstyled
-                      %li.address
-                        %span #{Spree::Config[:company_address]}
-                      %li.phone
-                        %span #{Spree::Config[:company_phone]}
-                      %li.email
-                        %span #{Spree::Config[:company_email]}
+
+%h1.text-uppercase Contact us
+
+#successMessage.alert.alert-success{style: 'display: none;'}
+  %p
+    %span.success-ico
+    Message Sent
+#failureMessage.alert.alert-error{style: 'display: none;'}
+  %p
+    %span.error-ico
+    Sorry. Please try later.
+#incompleteMessage.alert.alert-warning{style: 'display: none;'}
+  %p Please, fill all fields before sending
+
+.row
+  .col-md-9.col-sm-12.col-xs-12
+    -#%form#contact_form.contact-form{"accept-charset" => "UTF-8", :action => pages_contact_us_path, :method => "post"}
+    = form_tag(pages_contact_us_path, method: :post, remote: true, id: 'contactForm', class: 'contact-form') do
+      %input{type: 'text', name: 'name', style: 'display: none;'}
+      .contact-form-box
+        %fieldset
+          %h3.page-subheading send a message
+
+          .row
+            .col-xs-12.col-sm-4.col-md-4
+              .form-group
+                %label.label--hidden{:for => "ContactFormName"} Name
+                %input#ContactFormName.form-control.grey{:autocapitalize => "words", :name => "contact[name]", :placeholder => "Name", :type => "text", :value => ""}/
+            .col-xs-12.col-sm-4.col-md-4
+              .form-group
+                %label.label--hidden{:for => "ContactFormEmail"} Email
+                %input#ContactFormEmail.form-control.grey{:autocapitalize => "off", :autocorrect => "off", :name => "contact[email]", :placeholder => "Email", :type => "email", :value => ""}/
+            .col-xs-12.col-sm-4.col-md-4
+              .form-group
+                %label.label--hidden{:for => "ContactFormPhone"} Phone Number
+                %input#ContactFormPhone.form-control.grey{:name => "contact[phone]", :pattern => "[0-9\\-]*", :placeholder => "Phone Number", :type => "tel", :value => ""}/
+
+          .row
+            .col-xs-12
+              .form-group
+                %label.label--hidden{:for => "ContactFormMessage"} Message
+                %textarea#ContactFormMessage.form-control{:name => "contact[content]", :placeholder => "Message", :rows => "8"}
+
+          .submit
+            %input.btn.btn-outline{:type => "submit", :value => "Send"}/
+  .col-md-3.col-sm-12.col-xs-12
+    .box-contact-info.block
+      .block_content
+        .coninfo-des
+        %ul.list-unstyled
+          %li.address
+            %span #{Spree::Config[:company_address]}
+          %li.phone
+            %span #{Spree::Config[:company_phone]}
+          %li.email
+            %span #{Spree::Config[:company_email]}

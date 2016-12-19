@@ -246,6 +246,8 @@ body {
   border: none;
 
   div {
+    min-height: 0;
+
     img {
       height: auto;
     }
@@ -318,7 +320,12 @@ body {
   ol {
     vertical-align: top;
   }
+
+  .nav-links {
+    display: block;
+  }
 }
+
 
 #apollo-menu {
   &.is-disabled {
@@ -392,4 +399,11 @@ body {
       }
     }
   }
+}
+
+
+/*  Contact form
+\*----------------------------------------------------------------------------*/
+.contact-form-box .form-group {
+    margin-bottom: $grid-gutter;
 }

@@ -30,7 +30,9 @@
         #{@author.name} videos
       #author_videos.row
         - if @author.videos.blank?
-          %p There are no videos by this artist
+          %h5.text-uppercase There are no videos by this artist
+
+        - else
         = content_tag(:div, id: 'video-thumbnails', class: 'spree-video-thumbnails-md') do
           - @author.videos.map(&:youtube_data).each do |video|
             .col-sm-4

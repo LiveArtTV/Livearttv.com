@@ -11,8 +11,9 @@ section.video {
     background: $color-black;
 }
 
-div.spree-video-thumbnails {
+.spree-video-thumbnails {
   padding: 3px 0;
+  border-bottom: solid 1px $color-gray-e;
 
   a {
     img {
@@ -52,6 +53,14 @@ div.spree-video-thumbnails {
       opacity: 1;
     }
   }
+}
+
+
+
+/*  Detail page
+\*----------------------------------------------------------------------------*/
+.video-element {
+  margin-bottom: $space;
 }
 
 

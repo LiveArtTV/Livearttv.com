@@ -8,7 +8,7 @@
     .video-streams-frame
       .embed-responsive.embed-responsive-16by9.video-streams-frame.spree-embed-video= render 'spree/products/video_player', video: videos.first, html_options: {width: nil, height: nil}
     - if videos.size > 1
-      %ul.list-unstyled.video-streams-menu.spree-video-thumbnails#video-thumbnails
+      %ul.list-unstyled.video-streams-menu#video-thumbnails
         - videos.map(&:youtube_data).each_with_index do |video, idx|
           - product_video = videos.select{|v| v.youtube_ref == video.id}.try(:first)
           %li

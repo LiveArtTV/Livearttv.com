@@ -7,7 +7,7 @@
           %span.fa.fa-bars
       #apollo-top-menu.collapse.navbar-collapse.hidden-xs.hidden-sm
         %ul.nav.navbar-nav.megamenu
-          %li.active
+          %li
             = link_to spree.root_path, target: '_self', title: Spree::t('home') do
               %span= Spree::t('home')
           %li.parent.dropdown.full-width
@@ -31,7 +31,7 @@
           -#%li
             %a{href: spree.products_path, target: "_self", title: "Shop"}
               %span Shop
-          -#%li.parent.dropdown.full-width.active
+          -#%li.parent.dropdown.full-width
             %a.dropdown-toggle.has-category{"data-toggle" => "dropdown", :href => "#!", :target => "_self", :title => "Blog"}
               %span.menu-title Blog
               %b.caret
@@ -136,7 +136,7 @@
                       .widget-inner
                         .box-image
                           %img.img-responsive{:alt => "HTML", :src => "/ap_rojo_files/apmenuitem_ihtml_2.jpg"}/
-          %li.parent.dropdown.active
+          %li.parent.dropdown
             %a.dropdown-toggle.has-category{"data-toggle" => "dropdown", :href => spree.authors_path, :target => "_self", :title => Spree.t('menu.artists')}
               %span= Spree.t('menu.artists')
               %b.caret
@@ -151,7 +151,7 @@
                       %li
                         %a{:href => spree.author_path(id: author.slug), title: author.name}
                           %span #{truncate(author.name, length: 22)}
-          -#%li.parent.dropdown.active
+          -#%li.parent.dropdown
             %a.dropdown-toggle.has-category{"data-toggle" => "dropdown", href: spree.videos_path, target: "_self", title: Spree.t('menu.videos')}
               %span= Spree.t('menu.videos')
               %b.caret
@@ -166,15 +166,14 @@
                       %li
                         %a{:href => spree.video_path(id: video.id), title: video.title}
                           %span #{truncate(video.title, length: 22)}
-          %li.parent.dropdown.full-width.active
+          %li.parent.dropdown.full-width
             %a.dropdown-toggle.has-category{"data-toggle" => "dropdown", href: spree.videos_path, target: "_self", title: Spree.t('menu.library')}
               %span.menu-title= Spree.t('menu.library')
               %b.caret
             .dropdown-sub.dropdown-menu.sub-apmegamenu-2
               .dropdown-menu-inner
                 .row
-                  .mega-col.col-sm-1
-                  .mega-col.col-sm-4
+                  .mega-col.col-xs-5.col-xs-offset-1
                     .products_menu
                       .menu-title
                         Last video
@@ -188,22 +187,23 @@
                               %h5.name
                                 %a.product-name{href: spree.video_path(id: video.id), title: video.title}
                                   #{truncate(video.title, length: 75)}
-                              .product-desc
-                    .row
-                      .col-md-12.text-right
-                        %ul.nav-links
-                          %li
-                            %a{:href => spree.videos_path, title: 'Videos'}
-                              %span View All Videos
-                  .mega-col.col-sm-1
-                  .mega-col.col-sm-6
+
+                  .mega-col.col-xs-5
                     - if Spree::Video.last
                       .block-html
                         .menu-title #{truncate(Spree::Video.last.title, length: 50)}
                         .widget-inner
                           .box-image
-                            != Spree::Video.last.embed_html
-                            -#%img.img-responsive{:alt => "HTML", :src => "/ap_rojo_files/apmenuitem_ihtml_2.jpg"}/
-          %li.active
+                            .embed-responsive.embed-responsive-16by9
+                              != Spree::Video.last.embed_html
+                              -#%img.img-responsive{:alt => "HTML", :src => "/ap_rojo_files/apmenuitem_ihtml_2.jpg"}/
+                .row
+                  .col-xs-12.text-center
+                    %ul.nav-links
+                      %li
+                        %a{:href => spree.videos_path, title: 'Videos'}
+                          %span
+                            View All Videos
+          %li
             = link_to '/pages/contact_us', target: '_self', title: Spree::t('contact') do
               %span= Spree::t('contact')
