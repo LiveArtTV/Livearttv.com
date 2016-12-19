@@ -4,7 +4,7 @@ module Spree
     PER_PAGE = 20
 
     def index
-      @videos = Video.joins(:author).all
+      @videos = Video.all
       if params[:sortby]
         @videos =
           case params[:sortby]
@@ -26,11 +26,12 @@ module Spree
         @videos =
           case params[:category]
             when 'author'
-              @videos.where("#{Spree::Author.table_name.to_s}.name LIKE ?","#{params[:keywords]}%")
+              @videos.joins(:author).where("#{Spree::Author.table_name.to_s}.name LIKE ?","#{params[:keywords]}%")
             when 'title'
               @videos.where("#{Spree::Video.table_name.to_s}.title LIKE ?","#{params[:keywords]}%")
           end
       end
+
       @videos = @videos.page(params[:page]).per(PER_PAGE) if @videos
     end
 
