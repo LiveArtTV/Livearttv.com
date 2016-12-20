@@ -19,12 +19,16 @@ Spree::TaxonsController.class_eval do
     @searcher = build_searcher(params.merge(taxon: @taxon.id, include_images: true))
     @products = @searcher.retrieve_products
     @taxonomies = Spree::Taxonomy.includes(root: :children)
+
+    session[:taxons_view] = params[:view] if %w(list grid).include?(params[:view])
+    @taxons_view = session[:taxons_view] || params[:view] || 'list'
+
     respond_to do |format|
       format.html do
         render 'spree/taxons/show'
       end
       format.js do
-        if params[:view] == 'grid'
+        if @taxons_view == 'grid'
           render 'spree/taxons/grid', locals: { products: @products, taxon: @taxon }
         else
           render 'spree/taxons/list', locals: { products: @products, taxon: @taxon }
