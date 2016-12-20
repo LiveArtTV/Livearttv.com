@@ -1,0 +1,24 @@
+.category-heading.clearfix
+  .sortPagiBar.clearfix.row
+    .col-md-6.col-sm-6.col-xs-4
+      .collection-view
+        = link_to "#{seo_url(@taxon || @products)}?view=grid", class: 'change-view change-view--active', data: {view: 'grid', remote: 'true'}, title: 'Grid view', type: :button do
+          %span.icon-fallback-text
+            %span.fa.fa-th-large{aria: {hidden: true}}
+            %span.fallback-text Grid view
+        = link_to seo_url(@taxon || @products), class: 'change-view', data: {view: 'list', remote: 'true'}, title: 'List view', type: :button do
+          %span.icon-fallback-text
+            %span.fa.fa-list-ul{aria: {hidden: true}}
+            %span.fallback-text List view
+    -#.col-md-6.col-sm-6.col-xs-8
+      .form-horizontal
+        %label{:for => "SortBy"} Sort by
+        %select#SortBy{:name => "SortBy"}
+          %option{:value => "manual"} Featured
+          %option{:value => "best-selling"} Best Selling
+          %option{:value => "title-ascending"} Alphabetically, A-Z
+          %option{:value => "title-descending"} Alphabetically, Z-A
+          %option{:value => "price-ascending"} Price, low to high
+          %option{:value => "price-descending"} Price, high to low
+          %option{:value => "created-descending"} Date, new to old
+          %option{:value => "created-ascending"} Date, old to new

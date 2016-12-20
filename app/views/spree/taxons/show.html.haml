@@ -4,9 +4,10 @@
   = render partial: 'spree/shared/taxonomies'
   = render partial: 'spree/shared/authors'
   = render partial: 'spree/shared/filters' if @taxon.leaf?
-%div{"data-hook" => "taxon_products"}
+= render partial: 'spree/shared/products_sort_header'
+#taxon_products{"data-hook" => "taxon_products"}
   -#= render partial: 'spree/shared/products', locals: { products: @products, taxon: @taxon }
-  = render partial: 'spree/shared/products_big', locals: { products: @products, taxon: @taxon }
+  = render partial: params[:view] == 'grid' ? 'spree/shared/products' : 'spree/shared/products_big', locals: { products: @products, taxon: @taxon }
 
 - unless params[:keywords].present?
   /
