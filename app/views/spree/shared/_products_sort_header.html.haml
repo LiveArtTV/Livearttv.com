@@ -2,11 +2,12 @@
   .sortPagiBar.clearfix.row
     .col-md-6.col-sm-6.col-xs-4
       .collection-view
-        = link_to "#{seo_url(@taxon || @products)}?view=grid", class: 'change-view change-view--active', remote: true, data: {view: 'grid'}, title: 'Grid view' do
+        - class_view_active = 'change-view--active'
+        = link_to "#{seo_url(@taxon || @products)}?view=grid", class: "change-view #{@taxons_view == 'grid' ? class_view_active : ''}", remote: true, data: {view: 'grid'}, title: 'Grid view' do
           %span.icon-fallback-text
             %span.fa.fa-th-large{aria: {hidden: true}}
             %span.fallback-text Grid view
-        = link_to "#{seo_url(@taxon || @products)}?view=list", class: 'change-view', data: {view: 'list'}, remote: true, title: 'List view' do
+        = link_to "#{seo_url(@taxon || @products)}?view=list", class: "change-view #{@taxons_view != 'grid' ? class_view_active : ''}", data: {view: 'list'}, remote: true, title: 'List view' do
           %span.icon-fallback-text
             %span.fa.fa-list-ul{aria: {hidden: true}}
             %span.fallback-text List view
@@ -22,3 +23,10 @@
           %option{:value => "price-descending"} Price, high to low
           %option{:value => "created-descending"} Date, new to old
           %option{:value => "created-ascending"} Date, old to new
+:javascript
+  $(document).ready(function(){
+    $(document).on('click','.change-view', function(){
+      $('.change-view').removeClass('change-view--active');
+      $(this).addClass('change-view--active');
+    })
+  })
