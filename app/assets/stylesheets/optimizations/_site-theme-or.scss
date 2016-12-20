@@ -174,9 +174,16 @@ body {
   top: $space*1.5;
 }
 
-@media (min-width: $screen-md - 1) {
+@media (min-width: $screen-md) {
   #search_block_top {
     top: $space*1.2;
+    right: 0;
+  }
+}
+
+@media (min-width: $screen-lg) {
+  #search_block_top {
+    right: 10%;
   }
 }
 
@@ -405,5 +412,5 @@ body {
 /*  Contact form
 \*----------------------------------------------------------------------------*/
 .contact-form-box .form-group {
-    margin-bottom: $grid-gutter;
+  margin-bottom: $grid-gutter;
 }

@@ -2,11 +2,10 @@
   = render partial: 'spree/shared/google_checkout.js', locals: { order: @order, step_number: (@order.checkout_steps.index(@order.state) + 1) }
 #checkout{"data-hook" => ""}
   = render partial: 'spree/shared/error_messages', locals: { target: @order }
-  .row{"data-hook" => "checkout_header"}
-    .col-sm-3
-      %h1{"data-hook" => "checkout_title"}= Spree.t(:checkout)
-    .col-sm-9{"data-hook" => "checkout_progress"}
-      = checkout_progress
+  %h1{"data-hook" => "checkout_title"}= Spree.t(:checkout)
+  .sign.nav-steps-inactive
+    = checkout_progress
+
   .row{"data-hook" => "checkout_content"}
     %div{:class => if @order.state != 'confirm' then 'col-md-9' else 'col-md-12' end, "data-hook" => "checkout_form_wrapper"}
       = form_for @order, url: update_checkout_path(@order.state), html: { id: "checkout_form_#{@order.state}" } do |form|

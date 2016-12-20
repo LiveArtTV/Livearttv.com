@@ -1,8 +1,10 @@
-#login-page.col-md-6.col-md-offset-3
-  .login-box
-    %h1= Spree.t(:editing_user)
+.col-md-6.col-md-offset-3
+  .sitebox
+    .sitebox__title
+      %h1= Spree.t(:editing_user)
     = render :partial => 'spree/shared/error_messages', :locals => { :target => @user }
     = form_for Spree::User.new, :as => @user, :url => spree.user_path(@user), :method => :put do |f|
-      = render :partial => 'spree/shared/user_form', :locals => { :f => f }
+      .inputs-average
+        = render :partial => 'spree/shared/user_form', :locals => { :f => f }
       .form-group
         = f.submit Spree.t(:update), :class => 'btn btn--style-default'

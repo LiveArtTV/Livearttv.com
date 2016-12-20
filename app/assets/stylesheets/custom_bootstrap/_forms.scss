@@ -1,0 +1,20 @@
+@charset "UTF-8";
+
+@import "bootstrap/forms";
+
+
+
+input.form-control {
+  border-color: $color-gray-c;
+  border-radius: 0;
+
+  &:focus {
+    border-color: $color-base;
+  }
+}
+
+.inputs-average {
+  .form-control {
+    max-width: 350px;
+  }
+}

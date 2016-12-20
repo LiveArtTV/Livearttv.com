@@ -1,0 +1,21 @@
+@charset "UTF-8";
+
+@import "bootstrap/scaffolding";
+
+
+
+hr {
+  border-color: $color-gray-e;
+}
+
+
+
+a {
+  -webkit-transition: color 0.2s ease 0s;
+  transition: color 0.2s ease 0s;
+
+  &:active {
+    color: $link-hover-color;
+    text-decoration: none;
+  }
+}

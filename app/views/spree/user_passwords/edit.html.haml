@@ -1,14 +1,16 @@
 = render :partial => 'spree/shared/error_messages', :locals => { :target => @spree_user }
-#login-page.col-md-6.col-md-offset-3
-  .login-box
-    %h1= Spree.t(:change_your_password)
+.col-md-6.col-md-offset-3
+  .sitebox
+    .sitebox__title
+      %h1= Spree.t(:change_your_password)
     = form_for @spree_user, :as => :spree_user, :url => spree.update_password_path, :method => :put do |f|
-      .form-group
-        / = f.label :password, Spree.t(:password)
-        = f.password_field :password, :class => "form-control", placeholder: Spree.t(:password)
-      .form-group
-        / = f.label :password_confirmation, Spree.t(:confirm_password)
-        = f.password_field :password_confirmation, :class => "form-control", placeholder: Spree.t(:password_confirmation)
+      .inputs-average
+        .form-group
+          / = f.label :password, Spree.t(:password)
+          = f.password_field :password, :class => "form-control", placeholder: Spree.t(:password)
+        .form-group
+          / = f.label :password_confirmation, Spree.t(:confirm_password)
+          = f.password_field :password_confirmation, :class => "form-control", placeholder: Spree.t(:password_confirmation)
       = f.hidden_field :reset_password_token
       .form-group
         = f.submit Spree.t(:update), :class => 'btn btn--style-default'

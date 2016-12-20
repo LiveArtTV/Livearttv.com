@@ -1,13 +1,15 @@
 - @body_id = 'login'
 
-#login-page.col-md-6{:class => request.path == spree.login_path ? "col-md-offset-3" : ""}
-  .login-box
-    %h1= Spree.t(:login_as_existing)
+.col-md-6{:class => request.path == spree.login_path ? "col-md-offset-3" : ""}
+  .sitebox
+    .sitebox__title
+      %h1= Spree.t(:login_as_existing)
 
     #existing-customer{"data-hook" => "login"}
       - if flash[:alert]
         .alert.alert-danger= flash[:alert]
-      = render :partial => 'spree/shared/login'
+      .inputs-average
+        = render :partial => 'spree/shared/login'
       .text-center
         = Spree.t(:or)
         = link_to Spree.t(:create_a_new_account), spree.signup_path

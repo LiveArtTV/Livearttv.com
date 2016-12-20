@@ -1,0 +1,32 @@
+@charset "UTF-8";
+/*----------------------------------------------------------------------------*\
+  $SITEBOX
+\*----------------------------------------------------------------------------*/
+
+
+
+/*  Element
+\*----------------------------------------------------------------------------*/
+.sitebox {
+  margin-bottom: $space;
+  padding: $space;
+  border: solid 1px $color-gray-e;
+
+  &:last-child {
+    margin-bottom: 0;
+  }
+}
+
+  .sitebox__title {
+    border-bottom: solid 1px $color-gray-e;
+    margin-bottom: $space;
+
+    h1, h2, h3 {
+      margin: 0;
+      font-family: $font-face-default;
+      font-weight: $weight-regular;
+      font-size: $font-size-h4;
+      color: $color-gray-b;
+      padding-bottom: $space-tiny;
+    }
+  }

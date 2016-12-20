@@ -1,0 +1,38 @@
+@charset "UTF-8";
+/*----------------------------------------------------------------------------*\
+  $COMMON STYLES
+\*----------------------------------------------------------------------------*/
+
+
+%is-breakable,
+.is-breakable {
+  word-wrap: break-word;
+}
+
+
+.row--flatten {
+  padding-bottom: 0;
+}
+
+
+
+/* Vertical rhythm helpers
+\*----------------------------------------------------------------------------*/
+.flatten,
+.sign--flat {
+  margin-bottom: 0 !important;
+}
+/* half margin-bottom */
+.sign--half {
+  margin-bottom: $space-small;
+}
+/* margin-bottom */
+.sign {
+  margin-bottom: $space;
+}
+/* doubled up margin-bottom */
+.sign--large {
+  margin-bottom: $space-large;
+}
+
+

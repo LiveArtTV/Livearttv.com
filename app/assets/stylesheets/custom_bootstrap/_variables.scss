@@ -1,0 +1,30 @@
+@charset "UTF-8";
+
+//== Grid system
+//
+//## Define your custom responsive grid.
+
+// Navbar collapse
+//** Point at which the navbar becomes uncollapsed.
+$grid-float-breakpoint:     992px;
+//** Point at which the navbar begins collapsing.
+$grid-float-breakpoint-max: ($grid-float-breakpoint - 1);
+
+
+//== Typography
+//
+//## Font, line-height, and color for body text, headings, and more.
+$headings-font-family:    $font-face-poppins;
+$headings-font-weight:    $weight-bold;
+$headings-color:          $color-black;
+
+
+//== Scaffolding
+//
+//## Settings for some of the most global styles.
+$link-color:            $color-gray-b;
+$link-hover-color:      $brand-primary;
+
+
+
+@import "bootstrap/variables";

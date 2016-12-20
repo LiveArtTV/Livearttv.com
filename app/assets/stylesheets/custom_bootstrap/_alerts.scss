@@ -1,0 +1,9 @@
+@charset "UTF-8";
+
+@import "bootstrap/alerts";
+
+
+
+.alert-notice {
+  @extend .alert-success;
+}

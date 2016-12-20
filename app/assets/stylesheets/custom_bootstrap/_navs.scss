@@ -1,0 +1,30 @@
+@charset "UTF-8";
+
+@import "bootstrap/navs";
+
+
+
+// Pills
+// -------------------------
+.nav-steps-inactive {
+  .nav {
+    > li {
+      > a {
+        &:hover,
+        &:focus {
+          background: none;
+          color: $link-color;
+        }
+      }
+
+      &.active > a {
+        &,
+        &:hover,
+        &:focus {
+          color: $nav-pills-active-link-hover-color;
+          background-color: $nav-pills-active-link-hover-bg;
+        }
+      }
+    }
+  }
+}

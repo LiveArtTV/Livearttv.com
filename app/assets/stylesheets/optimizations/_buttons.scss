@@ -20,6 +20,7 @@
   line-height: 30px;
   text-transform: uppercase;
   text-align: left;
+  font-size: $font-size-small;
 }
 
 .btn--style-primary,
@@ -35,7 +36,9 @@ a.btn--style-primary {
 }
 
 .btn--style-default,
-a.btn--style-default {
+a.btn--style-default,
+.btn--style-default:focus,
+a.btn--style-default:focus {
   background-color: $color-black;
   color: $color-white;
 

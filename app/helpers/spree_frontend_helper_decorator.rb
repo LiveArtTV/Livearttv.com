@@ -33,4 +33,5 @@ Spree::FrontendHelper.module_eval do
                   end
     description.blank? ? Spree.t(:product_has_no_description) : raw(description)
   end
+
 end

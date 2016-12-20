@@ -1,11 +1,13 @@
 = render :partial => 'spree/shared/error_messages', :locals => { :target => @spree_user }
-#forgot-password.col-md-6.col-md-offset-3
-  #login-page
-    .login-box
+.col-md-6.col-md-offset-3
+  .sitebox
+    .sitebox__title
       %h1= Spree.t(:forgot_password)
-      %p= Spree.t(:instructions_to_reset_password)
-      = form_for Spree::User.new, :as => :spree_user, :url => spree.reset_password_path do |f|
+
+    %p= Spree.t(:instructions_to_reset_password)
+    = form_for Spree::User.new, :as => :spree_user, :url => spree.reset_password_path do |f|
+      .inputs-average
         .form-group
           = f.email_field :email, :class => "form-control", placeholder: Spree.t(:email)
-        .form-group
-          = f.submit Spree.t(:reset_password), :class => 'btn btn--style-default'
+      .form-group
+        = f.submit Spree.t(:reset_password), :class => 'btn btn--style-default'
