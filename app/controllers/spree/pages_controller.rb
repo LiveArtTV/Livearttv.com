@@ -3,7 +3,8 @@ module Spree
     respond_to :html
 
     def contact_us
-
+      title = Spree.t(:contact_us)
+      @breadcrumbs = OpenStruct.new(name: title, title: title)
     end
 
     def contact_us_send

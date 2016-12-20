@@ -1,14 +1,25 @@
 Spree::FrontendHelper.module_eval do
-  def breadcrumbs(taxon, separator="&nbsp;")
-    return "" if current_page?("/") || taxon.nil?
+  def breadcrumbs(model, separator="&nbsp;")
+    return "" if current_page?("/") || model.nil?
     separator = raw(separator)
     crumbs = [content_tag(:li, content_tag(:span, link_to(content_tag(:span, Spree.t(:home), itemprop: "name"), spree.root_path, itemprop: "url") + separator, itemprop: "item"), itemscope: "itemscope", itemtype: "https://schema.org/ListItem", itemprop: "itemListElement")]
-    if taxon
+
+    if model.is_a?(Spree::Taxon)
       # crumbs << content_tag(:li, content_tag(:span, link_to(content_tag(:span, Spree.t(:products), itemprop: "name"), spree.products_path, itemprop: "url") + separator, itemprop: "item"), itemscope: "itemscope", itemtype: "https://schema.org/ListItem", itemprop: "itemListElement")
-      crumbs << taxon.ancestors.collect { |ancestor| content_tag(:li, content_tag(:span, link_to(content_tag(:span, ancestor.name, itemprop: "name"), seo_url(ancestor), itemprop: "url") + separator, itemprop: "item"), itemscope: "itemscope", itemtype: "https://schema.org/ListItem", itemprop: "itemListElement") } unless taxon.ancestors.empty?
-      crumbs << content_tag(:li, content_tag(:span, link_to(content_tag(:span, taxon.name, itemprop: "name") , seo_url(taxon), itemprop: "url"), itemprop: "item"), class: 'active', itemscope: "itemscope", itemtype: "https://schema.org/ListItem", itemprop: "itemListElement")
-    else
+      crumbs << model.ancestors.collect { |ancestor| content_tag(:li, content_tag(:span, link_to(content_tag(:span, ancestor.name, itemprop: "name"), seo_url(ancestor), itemprop: "url") + separator, itemprop: "item"), itemscope: "itemscope", itemtype: "https://schema.org/ListItem", itemprop: "itemListElement") } unless model.ancestors.empty?
+      crumbs << content_tag(:li, content_tag(:span, link_to(content_tag(:span, model.name, itemprop: "name") , seo_url(model), itemprop: "url"), itemprop: "item"), class: 'active', itemscope: "itemscope", itemtype: "https://schema.org/ListItem", itemprop: "itemListElement")
+    elsif model.is_a?(Spree::Product)
       # crumbs << content_tag(:li, content_tag(:span, Spree.t(:products), itemprop: "item"), class: 'active', itemscope: "itemscope", itemtype: "https://schema.org/ListItem", itemprop: "itemListElement")
+    elsif model.to_s.include?(Spree::Author.to_s)
+      crumbs << content_tag(:li, content_tag(:span, link_to_if(!model.try(:count), content_tag(:span, Spree.t(:authors), itemprop: "name"), authors_path, itemprop: "url") + separator, itemprop: "item"), itemscope: "itemscope", itemtype: "https://schema.org/ListItem", itemprop: "itemListElement")
+      crumbs << content_tag(:li, content_tag(:span, model.name, itemprop: "item"), class: 'active', itemscope: "itemscope", itemtype: "https://schema.org/ListItem", itemprop: "itemListElement") unless model.try(:count)
+    elsif model.to_s.include?(Spree::Video.to_s)
+      crumbs << content_tag(:li, content_tag(:span, link_to_if(!model.try(:count), content_tag(:span, Spree.t(:videos), itemprop: "name"), videos_path, itemprop: "url") + separator, itemprop: "item"), itemscope: "itemscope", itemtype: "https://schema.org/ListItem", itemprop: "itemListElement")
+      crumbs << content_tag(:li, content_tag(:span, model.title, itemprop: "item"), class: 'active', itemscope: "itemscope", itemtype: "https://schema.org/ListItem", itemprop: "itemListElement") unless model.try(:count)
+    elsif model.is_a?(Spree::Page)
+      crumbs << content_tag(:li, content_tag(:span, model.title, itemprop: "item"), class: 'active', itemscope: "itemscope", itemtype: "https://schema.org/ListItem", itemprop: "itemListElement")
+    elsif model.is_a?(OpenStruct)
+      crumbs << content_tag(:li, content_tag(:span, model.title, itemprop: "item"), class: 'active', itemscope: "itemscope", itemtype: "https://schema.org/ListItem", itemprop: "itemListElement")
     end
     crumb_list = content_tag(:ol, raw(crumbs.flatten.map{|li| li.mb_chars}.join), class: 'breadcrumb', itemscope: "itemscope", itemtype: "https://schema.org/BreadcrumbList")
     content_tag(:nav, crumb_list, class: 'breadcrumbs', 'aria-label' => "breadcrumbs")

@@ -20,7 +20,7 @@
       - unless %w(home).include?(controller_name)
         %section.breadcrumbs-area
           .container
-            = breadcrumbs(@taxon)
+            = breadcrumbs(@taxon || @products || @product || @authors || @author || @videos || @video || @page || @breadcrumbs)
       - if controller_name == 'home'
         = yield
       - else
