@@ -1255,6 +1255,11 @@
     display: none
 }
 
+.collection-view .change-view--active {
+  pointer-events: none;
+  cursor: default;
+}
+
 .product_list.loading {
     position: relative
 }
