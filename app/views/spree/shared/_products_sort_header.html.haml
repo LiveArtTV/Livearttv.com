@@ -1,13 +1,14 @@
+- return '' unless @taxon
 .category-heading.clearfix
   .sortPagiBar.clearfix.row.row--flatten
     .col-md-6.col-sm-6.col-xs-4
       .collection-view
         - class_view_active = ' change-view--active'
-        = link_to "#{seo_url(@taxon || @products)}?view=grid", class: "change-view#{@taxons_view == 'grid' ? class_view_active : ''}", remote: true, data: {view: 'grid'}, title: 'Grid view' do
+        = link_to "#{seo_url(@taxon)}?view=grid", class: "change-view#{@taxons_view == 'grid' ? class_view_active : ''}", remote: true, data: {view: 'grid'}, title: 'Grid view' do
           %span.icon-fallback-text
             %span.fa.fa-2x.fa-th-large{aria: {hidden: true}}
             %span.fallback-text Grid view
-        = link_to "#{seo_url(@taxon || @products)}?view=list", class: "change-view#{@taxons_view != 'grid' ? class_view_active : ''}", remote: true, data: {view: 'list'}, title: 'List view' do
+        = link_to "#{seo_url(@taxon)}?view=list", class: "change-view#{@taxons_view != 'grid' ? class_view_active : ''}", remote: true, data: {view: 'list'}, title: 'List view' do
           %span.icon-fallback-text
             %span.fa.fa-2x.fa-list-ul{aria: {hidden: true}}
             %span.fallback-text List view
