@@ -295,6 +295,15 @@ body {
   }
 }
 
+.collection-view .change-view {
+  display: inline-block;
+  padding: $space-tiny/2 $space-tiny;
+
+  &.change-view--active {
+    cursor: default;
+  }
+}
+
 
 
 /*  Menu
