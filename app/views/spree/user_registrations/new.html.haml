@@ -4,13 +4,11 @@
   .sitebox
     .sitebox__title
       %h1= Spree.t(:new_customer)
-    #new-customer{"data-hook" => "login"}
-      = form_for resource, :as => :spree_user, :url => spree.registration_path do |f|
-        .inputs-average{"data-hook" => "signup_inside_form"}
-
-          = render :partial => 'spree/shared/user_form', :locals => { :f => f }
-
-          .form-group= f.submit Spree.t(:create), :class => 'btn btn--style-default'
+    = form_for resource, :as => :spree_user, :url => spree.registration_path do |f|
+      .inputs-average{"data-hook" => "signup_inside_form"}
+        = render :partial => 'spree/shared/user_form', :locals => { :f => f }
+        .form-group
+          = f.submit Spree.t(:create), :class => 'btn btn--style-default'
       .text-center
         = Spree.t(:or)
         = link_to Spree.t(:login_as_existing), spree.login_path

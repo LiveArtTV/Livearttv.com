@@ -1,3 +1,5 @@
+//= require jquery
+//= require jquery_ujs
 //= require fancybox
 
 $(document).ready(function(){
@@ -13,7 +15,7 @@ $(document).ready(function(){
     $('a.fancyYoutube').on('click', function(event) {
         event.preventDefault();
         $.fancybox({
-            'type'           : 'iframe',
+            'type'           : 'firame',
             // hide the related video suggestions and autoplay the video
             'href'           : this.href.replace(new RegExp('watch\\?v=', 'i'), 'embed/') + '?rel=0&autoplay=1',
             'padding'        : 0,
