@@ -1,5 +1,13 @@
 %h1= accurate_title
 .account-summary.well{"data-hook" => "account_summary"}
+  - if @user.first_name
+    %dl#user-info1
+      %dt= Spree.t(:first_name)
+      %dd= @user.first_name
+  - if @user.last_name
+    %dl#user-info2
+      %dt= Spree.t(:last_name)
+      %dd= @user.last_name
   %dl#user-info
     %dt= Spree.t(:email)
     %dd

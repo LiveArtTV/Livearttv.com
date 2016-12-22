@@ -65,6 +65,7 @@ Spree::Image.attachment_definitions[:attachment][:styles].merge!(
     product1024: '1024x1024>'
 )
 
+Spree::PermittedAttributes.user_attributes << [:first_name, :last_name]
 Spree::PermittedAttributes.taxon_attributes << [:show_on_home]
 Spree::PermittedAttributes.product_attributes << [:description_short]
 Spree::Taxon.attachment_definitions[:icon][:styles].merge!(

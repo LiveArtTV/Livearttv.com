@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161121174855) do
+ActiveRecord::Schema.define(version: 20161222141450) do
 
   create_table "friendly_id_slugs", force: :cascade do |t|
     t.string   "slug",           limit: 255, null: false
@@ -1089,6 +1089,8 @@ ActiveRecord::Schema.define(version: 20161121174855) do
     t.datetime "confirmed_at"
     t.datetime "confirmation_sent_at"
     t.boolean  "subscribed"
+    t.string   "first_name",             limit: 100
+    t.string   "last_name",              limit: 100
   end
 
   add_index "spree_users", ["bill_address_id"], name: "index_spree_users_on_bill_address_id", using: :btree

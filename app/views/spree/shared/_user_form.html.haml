@@ -1,0 +1,13 @@
+%fieldset#password-credentials
+  .form-group
+    = f.text_field :first_name, :class => 'form-control', :placeholder => Spree.t(:first_name), maxlength: 100
+  .form-group
+    = f.text_field :last_name, :class => 'form-control', :placeholder => Spree.t(:last_name), maxlength: 100
+  .form-group
+    = f.email_field :email, :class => 'form-control', :placeholder => Spree.t(:email)
+  %hr/
+  .form-group
+    = f.password_field :password, :class => 'form-control', :placeholder => Spree.t(:password)
+  .form-group
+    = f.password_field :password_confirmation, :class => 'form-control', :placeholder => Spree.t(:confirm_password)
+%div{"data-hook" => "signup_below_password_fields"}
