@@ -1,38 +1,14 @@
-- if Spree::Config[:address_requires_state]
-  %p.form-group{id: "#{address_id}state"}
-    - have_states = !address.country.states.empty?
-    = form.label :state do
-      = Spree.t(:state)
-      %abbr.required{id: "#{address_id}state-required", title: 'required'}*
-    :erb
-      <%= state_elements = [
-              form.collection_select(:state_id, address.country.states,
-                                     :id, :name,
-                                     {:include_blank => true},
-                                     {:class => have_states ? 'form-control required' : 'form-control hidden',
-                                      :disabled => !have_states}) +
-                      form.text_field(:state_name,
-                                      :class => !have_states ? 'form-control required' : 'form-control hidden',
-                                      :disabled => have_states)
-      ].join.gsub('"', "'").gsub("\n", "")
-      %>                                                                     |
-  %noscript
-    = form.text_field :state_name, :class => 'form-control required'
-%p.form-group{id: "#{address_id}zipcode"}
-  = form.label :zipcode do
-    = Spree.t(:zip)
-    - if address.require_zipcode?
-      %abbr.required{:title => "required"} *
-  = form.text_field :zipcode, :class => "form-control#{' required' if address.require_zipcode?}"
-%p.form-group{id: "#{address_id}phone"}
-  = form.label :phone do
-    = Spree.t(:phone)
-    - if address.require_phone?
-      %abbr.required{:title => "required"} *
-  = form.phone_field :phone, :class => "form-control#{' required' if address.require_phone?}"
-- if Spree::Config[:alternative_shipping_phone]
-  %p.form-group{id: "#{address_id}altphone"}
-    = form.label :alternative_phone, Spree.t(:alternative_phone)
-    = form.phone_field :alternative_phone, class: 'form-control'
-:html
-  </div>
+- source = payment.source
+- if source.is_a?(Spree::CreditCard)
+  %span.cc-type
+    - unless (cc_type = source.cc_type).blank?
+      = image_tag "credit_cards/icons/#{cc_type}.png"
+    - if source.last_digits
+      = Spree.t(:ending_in)
+      = source.last_digits
+  %br/
+  %span.full-name= source.name
+- else
+  = content_tag(:span, payment.payment_method.name)
+%span.payment-amount
+  (#{payment.display_amount})
