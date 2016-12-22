@@ -21,7 +21,7 @@
     %td.cart-item-quantity{"data-hook" => "cart_item_quantity", :valign => "center"}
       .apQty.js--cart-adjust
         %button.apQtyAdjust.apQtyAdjustMinus{"data-id" => "", "data-qty" => "0", :type => "button"} −
-        = item_form.text_field :quantity, min: 0, class: "title form-control add-to-cart-detail-number", size: 5
+        = item_form.text_field :quantity, min: 0, class: "title form-control add-to-cart-detail-number line_item_quantity", size: 5
         %button.apQtyAdjust.apQtyAdjustPlus{"data-id" => "", "data-qty" => "11", :type => "button"} +
     %td.lead.text-primary.cart-item-total{"data-hook" => "cart_item_total"}
       = line_item.display_amount.to_html unless line_item.quantity.nil?
