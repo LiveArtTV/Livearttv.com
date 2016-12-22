@@ -38,8 +38,7 @@
       - have_states = !address.country.states.empty?
       = form.label :state do
         = Spree.t(:state)
-        %abbr.required{id: "#{address_id}state-required", title: 'required'}*
-      :erb
+        %abbr.required{id: "#{address_id}state-required", title: 'required'}*      :erb
         <%== state_elements = [
            form.collection_select(:state_id, address.country.states,
                               :id, :name,

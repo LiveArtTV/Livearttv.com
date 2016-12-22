@@ -1,4 +1,4 @@
-.well.clearfix
+.clearfix
   = image_tag 'credit_cards/credit_card.gif', :id => 'credit-card-image', :class => 'pull-right', :width => '170', :height => '28'
   - param_prefix = "payment_source[#{payment_method.id}]"
   %p.field
@@ -12,7 +12,6 @@
       %abbr.required{:title => "required"} *
     - options_hash = Rails.env.production? ? {:autocomplete => 'off'} : {}
     = text_field_tag "#{param_prefix}[number]", '', options_hash.merge(:id => 'card_number', :class => 'form-control required cardNumber', :size => 19, :maxlength => 19, :autocomplete => "off")
-    \ 
     %span#card_type{:style => "display:none;"}
       (
       %span#looks_like
@@ -20,7 +19,7 @@
         %span#type
       %span#unrecognized= Spree.t(:unrecognized_card_type)
       )
-  .row
+  .row.row--flatten
     .col-md-8.field{"data-hook" => "card_expiration"}
       = label_tag "card_expiry" do
         = Spree.t(:expiration)
