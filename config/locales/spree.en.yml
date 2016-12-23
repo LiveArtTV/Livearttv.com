@@ -23,3 +23,8 @@ en:
     static_content:
       link: Link
       new_author: New author
+    breadcrumbs:
+      orders_edit: 'Cart'
+      checkout_edit: 'Checkout'
+      users_edit: 'Account'
+      users_show: 'Account'

@@ -1,6 +1,6 @@
 Spree::FrontendHelper.module_eval do
   def breadcrumbs(model, separator="&nbsp;")
-    return "" if current_page?("/") || model.nil?
+    return "" if current_page?("/")
     separator = raw(separator)
     crumbs = [content_tag(:li, content_tag(:span, link_to(content_tag(:span, Spree.t(:home), itemprop: "name"), spree.root_path, itemprop: "url") + separator, itemprop: "item"), itemscope: "itemscope", itemtype: "https://schema.org/ListItem", itemprop: "itemListElement")]
 
@@ -20,6 +20,8 @@ Spree::FrontendHelper.module_eval do
       crumbs << content_tag(:li, content_tag(:span, model.title, itemprop: "item"), class: 'active', itemscope: "itemscope", itemtype: "https://schema.org/ListItem", itemprop: "itemListElement")
     elsif model.is_a?(OpenStruct)
       crumbs << content_tag(:li, content_tag(:span, model.title, itemprop: "item"), class: 'active', itemscope: "itemscope", itemtype: "https://schema.org/ListItem", itemprop: "itemListElement")
+    else
+      crumbs << content_tag(:li, content_tag(:span, Spree.t("breadcrumbs.#{controller_name}_#{action_name}"), itemprop: "item"), class: 'active', itemscope: "itemscope", itemtype: "https://schema.org/ListItem", itemprop: "itemListElement")
     end
     crumb_list = content_tag(:ol, raw(crumbs.flatten.map{|li| li.mb_chars}.join), class: 'breadcrumb', itemscope: "itemscope", itemtype: "https://schema.org/BreadcrumbList")
     content_tag(:nav, crumb_list, class: 'breadcrumbs', 'aria-label' => "breadcrumbs")
