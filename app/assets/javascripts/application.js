@@ -13,6 +13,14 @@
 //= require jquery
 //= require jquery_ujs
 //= require spree/frontend
+//= require bootstrap3-typeahead.min
+//= require countdown.min
+//= require jquery.elevatezoom.min
+//= require jquery.history
+//= require jquery.nivo.slider.pack
+//= require jquery.serial.scroll.min
+//= require owl.carousel.min
+//= require wow.min
 //= require_tree .
 //= require store/spree_videos
 //= require fancybox
