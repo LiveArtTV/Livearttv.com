@@ -1,5 +1,6 @@
 //= require jquery
 //= require jquery_ujs
+//= require spree/frontend
 //= require fancybox
 
 $(document).ready(function(){
