@@ -5,8 +5,10 @@
     .left-block.col-md-4.col-sm-5.text-center
       - if @author.try(:images)
         - image = @author.images.first
-        = link_to image_tag(image.attachment.url(:author)), image.attachment.url(:large), class: 'btn fancybox'
-
+        - if image
+          = link_to image_tag(image.attachment.url(:author)), image.attachment.url(:large), class: 'btn fancybox'
+        - else
+          = image_tag asset_path('product_default.png')
     .right-block.col-md-8.col-sm-7.rte
       %h1.text-uppercase
         = @author.name
