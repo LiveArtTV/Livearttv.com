@@ -17,8 +17,8 @@ en:
         visible: Visible
     models:
       spree/author:
-        one: Author
-        other: Authors
+        one: Artist
+        other: Artists
   spree:
     static_content:
       link: Link
