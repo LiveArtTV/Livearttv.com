@@ -21,7 +21,6 @@
 //= require jquery.serial.scroll.min
 //= require owl.carousel.min
 //= require wow.min
-//= require_tree .
 //= require store/spree_videos
 //= require fancybox
 //= require matchHeight/jquery.matchHeight-min.js
