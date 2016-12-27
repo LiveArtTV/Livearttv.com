@@ -29,3 +29,4 @@ en:
       users_edit: 'Account'
       users_show: 'Account'
       authors_show: 'Authors'
+    password_confirmation: Password Confirmation
