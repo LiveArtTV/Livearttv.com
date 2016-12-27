@@ -1,6 +1,6 @@
 module Spree
   class VideosController < Spree::StoreController
-    respond_to :html
+    respond_to :html, :js
     PER_PAGE = 20
 
     def index
