@@ -25,7 +25,7 @@ function submitForm() {
 
     if ( !$('#ContactFormName').val() || !$('#ContactFormEmail').val() || !$('#ContactFormMessage').val() ) {
         $('#incompleteMessage').fadeIn().delay(messageDelay).fadeOut();
-        contactForm.fadeOut().delay(messageDelay).fadeIn();
+//        contactForm.fadeOut().delay(messageDelay).fadeIn();
     } else {
         $('#sendingMessage').fadeIn();
         contactForm.fadeOut();

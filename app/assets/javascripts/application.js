@@ -25,6 +25,9 @@
 //= require fancybox
 //= require matchHeight/jquery.matchHeight-min.js
 //= require jquery.mmenu.all
+//= require master
+//= require contact_us
+//= require product
 
 $(window).bind('page:change', function() {
     $.fancybox.init();
