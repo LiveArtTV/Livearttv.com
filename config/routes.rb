@@ -19,8 +19,9 @@ Spree::Core::Engine.routes.append do
       get :products
     end
   end
-  resources :videos do
+  resources :library, controller: 'videos' do
     collection do
+      get :all, action: 'index'
       get :items
     end
   end
