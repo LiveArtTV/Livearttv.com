@@ -4,7 +4,7 @@ end
 
 Spree::Core::Engine.routes.append do
   namespace :admin, path: Spree.admin_path do
-    resources :authors do
+    resources :authors, path: 'artists' do
       resources :images, controller: :author_images do
         collection do
           post :update_positions
@@ -13,7 +13,7 @@ Spree::Core::Engine.routes.append do
       resources :videos
     end
   end
-  resources :authors, only: [:index, :show]
+  resources :authors, only: [:index, :show], path: 'artists'
   resources :taxons do
     collection do
       get :products
