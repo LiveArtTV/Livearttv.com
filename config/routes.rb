@@ -19,7 +19,7 @@ Spree::Core::Engine.routes.append do
       get :products
     end
   end
-  resources :videos do
+  resources :videos, path: 'library' do
     collection do
       get :items
     end
