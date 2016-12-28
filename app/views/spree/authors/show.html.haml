@@ -34,7 +34,7 @@
         #{@author.name} videos
       #author_videos.row
         - if @author.videos.blank?
-          %h5.text-uppercase There are no videos by this artist
+          %p There are no videos by this artist
 
         - else
         = content_tag(:div, id: 'video-thumbnails', class: 'spree-video-thumbnails-md') do
