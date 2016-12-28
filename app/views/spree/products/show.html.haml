@@ -51,4 +51,3 @@
 
         = render 'video', product: @product
       = render partial: 'shared/products_category', locals: { products: taxon_preview(@taxon), taxon: @taxon }  if @taxon && taxon_preview(@taxon).present?
-      -#= render partial: 'shared/products_related'

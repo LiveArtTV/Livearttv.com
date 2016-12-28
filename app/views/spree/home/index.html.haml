@@ -52,10 +52,6 @@
     .container
       %h4.title_block_home.page-subheading
         Recently Added Items
-      -#.block_des_home
-        %p.des_productlist.block_des_home
-          Claritas est etiam processus dynamicus, qui sequitur mutationem
-          consuetudium lectorum. Mirum est notare quam littera gothica putamus panteposuerit litterarum formas
-          humanitatis
       - cache(cache_key_for_products) do
-        = render :partial => 'spree/shared/products', :locals => { :products => @products.last(4) }
+        = render :partial => 'spree/shared/products', :locals => {slider: true, products: @products.last(40) }
+

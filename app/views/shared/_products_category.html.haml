@@ -6,7 +6,7 @@
           %span Related Products
         .block_content
           -#- cache(cache_key_for_products) do
-          = render :partial => 'spree/shared/products', :locals => { :products => products.last(4) }
+          = render :partial => 'spree/shared/products', :locals => { slider: true, products: products.last(40) }
           :javascript
             if( $(window).width() > 1200 ){
                   jQuery('.item-special-one').children().removeClass('col-md-4 col-xs-6 col-sp-12 ');
