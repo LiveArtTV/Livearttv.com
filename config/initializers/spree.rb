@@ -27,6 +27,7 @@ Spree.config do |config|
   config.company_phone   = '(+84). 123 456 789'
   config.company_email   = 'v.makarov@sumatosoft.com'
   config.show_raw_product_description = true
+  config.checkout_zone   = 'United States'
 end
 
 Spree.user_class = "Spree::User"
