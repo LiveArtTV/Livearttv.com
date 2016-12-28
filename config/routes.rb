@@ -10,7 +10,7 @@ Spree::Core::Engine.routes.append do
           post :update_positions
         end
       end
-      resources :videos
+      resources :videos, path: 'library'
     end
   end
   resources :authors, only: [:index, :show], path: 'artists'
