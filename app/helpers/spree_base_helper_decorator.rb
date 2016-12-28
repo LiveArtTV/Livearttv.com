@@ -1,6 +1,6 @@
 Spree::BaseHelper.module_eval do
   def taxons_tree(root_taxon, current_taxon, max_level = 1)
-    return '' if max_level < 1 || root_taxon.leaf?
+    return '' if max_level < 1 || root_taxon.try(:leaf?)
     content_tag :ul, class: 'listSidebar list-unstyled' do
       taxons = root_taxon.children.map do |taxon|
         css_class = (current_taxon && current_taxon.self_and_ancestors.include?(taxon)) ? 'active' : ''
