@@ -21,7 +21,7 @@
 
     function update_search_query(){
       var category = $('.category_search_dd').val();
-      var url = '/videos/items.json/?category=' + category;
+      var url = '#{items_videos_path(category: '_category_')}'.replace('_category_', category);
       //console.log(url);
       $.get(url, function(data){
         //console.log(data);
