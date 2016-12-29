@@ -1382,7 +1382,7 @@ span.view_scroll_spacer {
 
 @media screen and (max-width: 991px) {
     .home_product_list_2 {
-        display: none
+        /*display: none*/
     }
 }
 
