@@ -1,6 +1,6 @@
 - authors = Spree::Author.all
 #authors_sidebarcategories_block.block.sidebarCategories{"data-hook" => "taxon_sidebar_navigation"}
-  %h4.title_block.taxonomy-root= Spree.t('authors')
+  %h4.title_block.taxonomy-root= link_to Spree.t('authors'), authors_path
   .block_content#product-author{"data-hook" => ""}
     %ul.listSidebar.list-unstyled
       - authors.all.each do |author|
