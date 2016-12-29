@@ -19,6 +19,12 @@ en:
       spree/author:
         one: Artist
         other: Artists
+    errors:
+      models:
+        spree/video:
+          attributes:
+            youtube_ref:
+              incorrect_link: Incorrect link
   spree:
     artist:  Artist
     artists: Artists
