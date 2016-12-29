@@ -20,6 +20,11 @@ en:
         one: Artist
         other: Artists
   spree:
+    artist:  Artist
+    artists: Artists
+    library: Library
+    authors: Authors
+    author:  Author
     static_content:
       link: Link
       new_author: New author
