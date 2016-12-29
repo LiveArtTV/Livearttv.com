@@ -27,7 +27,8 @@ en:
     author:  Author
     static_content:
       link: Link
-      new_author: New author
+      new_author: New Author
+      new_artist: New Artist
     breadcrumbs:
       orders_edit: 'Cart'
       checkout_edit: 'Checkout'
