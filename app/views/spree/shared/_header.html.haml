@@ -3,9 +3,10 @@
     #topbar
       = render partial: 'spree/shared/nav_bar'
     #header-main
-      - if store_block? && store_menu?
+      = render :partial => 'spree/shared/main_nav_bar'
+      -#- if store_block? && store_menu?
         = render :partial => 'spree/shared/main_nav_bar'
-      - else
+      -#- else
         .container
           .header-wrap
             .header-top.col-lg-2.col-md-2.col-sm-12.col-xs-12.col-sp-12
