@@ -5,7 +5,7 @@ Spree::BaseHelper.module_eval do
       taxons = root_taxon.children.map do |taxon|
         css_class = (current_taxon && current_taxon.self_and_ancestors.include?(taxon)) ? 'active' : ''
         content_tag :li, class: css_class do
-          link_to("#{taxon.name} #{content_tag :span, taxon.products.count, class: 'apolloQty pull-right'}".html_safe, seo_url(taxon), class: css_class, title: taxon.name) + taxons_tree(taxon, current_taxon, max_level - 1)
+          link_to("#{taxon.name} #{content_tag :span, taxon.products.active.count, class: 'apolloQty pull-right'}".html_safe, seo_url(taxon), class: css_class, title: taxon.name) + taxons_tree(taxon, current_taxon, max_level - 1)
         end
       end
       safe_join(taxons, "\n")
