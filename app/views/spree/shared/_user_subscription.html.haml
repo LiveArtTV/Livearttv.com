@@ -1,5 +1,6 @@
 -# this override view from spree_chimpy gem
--##user-subscribe-container
-  %p
-    = f.check_box :subscribed
-    = f.label :subscribed, Spree.t(:subscribed_label, scope: :chimpy)
+- if "#{controller_name}_#{action_name}" == 'users_edit'
+  #user-subscribe-container
+    %p
+      = f.check_box :subscribed
+      = f.label :subscribed, Spree.t(:subscribed_label, scope: :chimpy)

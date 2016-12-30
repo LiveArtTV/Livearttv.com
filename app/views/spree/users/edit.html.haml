@@ -3,7 +3,7 @@
     .sitebox__title
       %h1= Spree.t(:editing_user)
     = render :partial => 'spree/shared/error_messages', :locals => { :target => @user }
-    = form_for Spree::User.new, :as => @user, :url => spree.user_path(@user), :method => :put do |f|
+    = form_for Spree::User.new, :as => @user, :url => spree.user_path(@user), :method => :put, id: spree_dom_id(Spree::User.new), class: spree_dom_id(Spree::User.new) do |f|
       .inputs-average
         = render :partial => 'spree/shared/user_form', :locals => { :f => f }
       .form-group
