@@ -38,11 +38,11 @@
   %col{:halign => "center", :valign => "middle", :width => "5%"}/
   %col{:halign => "center", :valign => "middle", :width => "5%"}/
   %thead{"data-hook" => ""}
-    %tr.active{"data-hook" => "order_details_line_items_headers"}
-      %th{:colspan => "2"}= Spree.t(:item)
-      %th.price= Spree.t(:price)
-      %th.qty= Spree.t(:qty)
-      %th.total
+    %tr.cart_items_headers{"data-hook" => "order_details_line_items_headers"}
+      %th.cart-item-description-header{:colspan => "2"}= Spree.t(:item)
+      %th.cart-item-price-header= Spree.t(:price)
+      %th.cart-item-quantity-header= Spree.t(:qty)
+      %th.cart-item-total-header
         %span= Spree.t(:total)
   %tbody{"data-hook" => ""}
     - order.line_items.each do |item|
@@ -56,10 +56,10 @@
           %h4= item.variant.product.name
           = truncated_product_description(item.variant.product)
           = "(" + item.variant.options_text + ")" unless item.variant.option_values.empty?
-        %td.lead.text-primary.price{"data-hook" => "order_item_price"}
+        %td.lead.text-primary.cart-item-price{"data-hook" => "order_item_price"}
           %span= item.single_money.to_html
-        %td.order-qty{"data-hook" => "order_item_qty"}= item.quantity
-        %td.lead.text-primary.total{"data-hook" => "order_item_total"}
+        %td.text-center.order-qty{"data-hook" => "order_item_qty"}= item.quantity
+        %td.lead.text-primary.cart-item-total{"data-hook" => "order_item_total"}
           %span= item.display_amount.to_html
   %tfoot#order-total{"data-hook" => "order_details_total"}
     %tr.warning.total
@@ -68,25 +68,25 @@
           = Spree.t(:order_total)
           \:
       %td.total
-        %span#order_total.lead.text-primary= order.display_total.to_html
+        %span#order_total.lead.text-primary.cart-item-total= order.display_total.to_html
   %tfoot#subtotal{"data-hook" => "order_details_subtotal"}
     %tr#subtotal-row.total
       %td{:colspan => "4"}
         %b
           = Spree.t(:subtotal)
           \:
-      %td.total
+      %td.total.text-right
         %span= order.display_item_total.to_html
   - if order.line_item_adjustments.exists?
     - if order.line_item_adjustments.promotion.eligible.exists?
       %tfoot#price-adjustments{"data-hook" => "order_details_price_adjustments"}
         - order.line_item_adjustments.promotion.eligible.group_by(&:label).each do |label, adjustments|
-          %tr.total
+          %tr.total.text-right
             %td{:colspan => "4"}
               = Spree.t(:promotion)
               \:
               %strong= label
-            %td.total
+            %td.total.text-right
               %span= Spree::Money.new(adjustments.sum(&:amount), currency: order.currency)
   %tfoot#shipment-total
     - order.shipments.group_by { |s| s.selected_shipping_rate.name }.each do |name, shipments|
@@ -95,7 +95,7 @@
           = Spree.t(:shipping)
           \:
           %strong= name
-        %td.total
+        %td.total.text-right
           %span= Spree::Money.new(shipments.sum(&:discounted_cost), currency: order.currency).to_html
   - if order.all_adjustments.tax.exists?
     %tfoot#tax-adjustments{"data-hook" => "order_details_tax_adjustments"}
@@ -105,7 +105,7 @@
             = Spree.t(:tax)
             \:
             %strong= label
-          %td.total
+          %td.total.text-right
             %span= Spree::Money.new(adjustments.sum(&:amount), currency: order.currency)
   %tfoot#order-charges{"data-hook" => "order_details_adjustments"}
     - order.adjustments.eligible.each do |adjustment|
@@ -113,5 +113,5 @@
       %tr.total
         %td{:align => "right", :colspan => "4"}
           %strong= adjustment.label
-        %td.total
+        %td.total.text-right
           %span= adjustment.display_amount.to_html

@@ -4,6 +4,6 @@
   .panel-body
     = render :partial => 'spree/shared/order_details', :locals => { :order => @order }
 .well.text-right.form-buttons{"data-hook" => "buttons"}
-  = submit_tag Spree.t(:place_order), :class => 'btn btn-lg btn-success'
+  = submit_tag Spree.t(:place_order), :class => 'btn btn-lg btn--style-primary'
   :javascript
     Spree.disableSaveOnClick();
