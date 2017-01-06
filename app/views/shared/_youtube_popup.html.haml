@@ -6,7 +6,7 @@
   .js--video-streams-content.video-streams-content#product-videos
     %span.zmdi.zmdi-hc-3x.zmdi-close-circle.js--video-streams-trigger-close{:title => "Close"}
     .video-streams-frame
-      .embed-responsive.embed-responsive-16by9.video-streams-frame.spree-embed-video= render 'spree/products/video_player', video: videos.first, html_options: {width: nil, height: nil}
+      .embed-responsive.embed-responsive-16by9.video-streams-frame.spree-embed-video= render 'spree/products/video_player', video: videos.first, youtube_url_params: {enablejsapi: 1}, html_options: {width: nil, height: nil}
     - if videos.size > 1
       %ul.list-unstyled.video-streams-menu#video-thumbnails
         - videos.map(&:youtube_data).each_with_index do |video, idx|
@@ -24,6 +24,7 @@
     });
 
     closeTrigger.on('click', function(){
+      videoContent.find('iframe')[0].contentWindow.postMessage('{"event":"command","func":"pauseVideo","args":""}', '*');
       videoContent.removeClass('is-visible');
     });
 

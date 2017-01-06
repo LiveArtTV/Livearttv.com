@@ -5,23 +5,23 @@ module Spree
 
     def index
       @videos = Video.all
-      if params[:sortby]
-        @videos =
-          case params[:sortby]
-            when 'date'
-              @videos.orderby :created_at
-            when 'date_desc'
-              @videos.orderby [:created_at, :desc]
-            when 'author'
-              @videos.orderby :author
-            when 'author_desc'
-              @videos.orderby [:author, :desc]
-            when 'title'
-              @videos.orderby :title
-            when 'title_desc'
-              @videos.orderby [:title, :desc]
+      @videos =
+        case params[:sortby]
+        when 'date'
+          @videos.orderby :created_at
+        when 'date_desc'
+          @videos.orderby [:created_at, :desc]
+        when 'artist'
+          @videos.includes(:author).orderby('spree_authors.name')
+        when 'artist_desc'
+          @videos.includes(:author).orderby('spree_authors.name desc')
+        when 'title'
+          @videos.orderby :title
+        when 'title_desc'
+          @videos.orderby [:title, :desc]
+        else
+          @videos.orderby [:created_at, :desc]
         end
-      end
       if params[:keywords] && params[:category].present?
         @videos =
           case params[:category]

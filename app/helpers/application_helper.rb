@@ -39,4 +39,8 @@ module ApplicationHelper
     thumb_file = 'thumb_not_found' + ([:high].include?(size) ? "_#{size}" : '') + '.png'
     video.thumbnail_url.include?('assets/thumb_not_found.png') ? asset_path(thumb_file) : video.thumbnail_url.sub('/default.',"/#{thumb_yt_sizes[size]}.")
   end
+
+  def arrow(sort_by)
+    sort_by.end_with?('_desc') ? 'fa-long-arrow-up' : 'fa-long-arrow-down'
+  end
 end

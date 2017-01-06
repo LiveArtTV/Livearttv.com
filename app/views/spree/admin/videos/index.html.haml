@@ -1,72 +1,78 @@
+- content_for :page_title do
+  = plural_resource_name(Spree::Video)
+- content_for :page_actions do
+  = link_to icon('icon icon-plus') + ' ' + t('new_video'), (@product ? new_admin_product_video_url(@product) : new_admin_video_url), id: 'new_video_link', class: 'btn btn-success'
 = render :partial => 'spree/admin/shared/sub_menu/product'
 - if @product
   = render :partial => 'spree/admin/shared/product_tabs', :locals => {current: 'Videos'}
   %table.table.index.sortable
-    %tr
-      %th= t("youtube_ref")
-      %th Home
-      %th Stream
-      %th.actions
-    - @product.videos.each do |video|
-      %tr{:id => dom_id(video)}
-        %td
-          = link_to (video.title.present? ? video.title : video.youtube_link), video.youtube_link, class: 'fancyYoutube'
-        %td
-          - if video.show_on_home
-            %i.icon.icon-ok
-        %td
-          - if video.stream
-            %i.icon.icon-ok
-        %td.actions.actions-2.text-right
-          = link_to_edit 'edit', { url: edit_admin_product_video_url(@product, video), no_text: true }
-          = link_to_delete video, { url: admin_product_video_url(@product, video), no_text: true, method: :delete }
+    %thead
+      %tr
+        %th= t("youtube_ref")
+        %th Home
+        %th Stream
+        %th.actions
+    %tbody
+      - @product.videos.each do |video|
+        %tr{:id => dom_id(video)}
+          %td
+            = link_to (video.title.present? ? video.title : video.youtube_link), video.youtube_link, class: 'fancyYoutube'
+          %td
+            - if video.show_on_home
+              %i.icon.icon-ok
+          %td
+            - if video.stream
+              %i.icon.icon-ok
+          %td.actions.actions-2.text-right
+            = link_to_edit 'edit', { url: edit_admin_product_video_url(@product, video), no_text: true }
+            = link_to_delete video, { url: admin_product_video_url(@product, video), no_text: true, method: :delete }
 - elsif @author
   = render :partial => 'spree/admin/shared/author_tabs', :locals => {current: 'Videos'}
   %table.table.index.sortable
-    %tr
-      %th= t("youtube_ref")
-      %th Home
-      %th Stream
-      %th.actions
-    - @author.videos.each do |video|
-      %tr{:id => dom_id(video)}
-        %td
-          = link_to (video.title.present? ? video.title : video.youtube_link), video.youtube_link, class: 'fancyYoutube'
-        %td
-          - if video.show_on_home
-            %i.icon.icon-ok
-        %td
-          - if video.stream
-            %i.icon.icon-ok
-        %td.actions.actions-2.text-right
-          = link_to_edit 'edit', { url: edit_admin_author_video_url(@author, video), no_text: true }
-          = link_to_delete video, { url: admin_author_video_url(@author, video), no_text: true, method: :delete }
+    %thead
+      %tr
+        %th= t("youtube_ref")
+        %th Home
+        %th Stream
+        %th.actions
+    %tbody
+      - @author.videos.each do |video|
+        %tr{:id => dom_id(video)}
+          %td
+            = link_to (video.title.present? ? video.title : video.youtube_link), video.youtube_link, class: 'fancyYoutube'
+          %td
+            - if video.show_on_home
+              %i.icon.icon-ok
+          %td
+            - if video.stream
+              %i.icon.icon-ok
+          %td.actions.actions-2.text-right
+            = link_to_edit 'edit', { url: edit_admin_author_video_url(@author, video), no_text: true }
+            = link_to_delete video, { url: admin_author_video_url(@author, video), no_text: true, method: :delete }
 - else
   %table.table.index.sortable
-    %tr
-      %th= t("youtube_ref")
-      %th
-      %th Home
-      %th Stream
-      %th.actions
-    - @videos.each do |video|
-      %tr{:id => dom_id(video)}
-        %td
-          = link_to (video.title.blank? ? video.youtube_link : video.title), video.youtube_link, class: 'fancyYoutube'
-        %td
-          = link_to video.watchable.name, [:admin, video.watchable, :videos], target: '_blank' if video.watchable
-        %td
-          - if video.show_on_home
-            %i.icon.icon-ok
-        %td
-          - if video.stream
-            %i.icon.icon-ok
-        %td.actions.actions-2.text-right
-          = link_to_edit 'edit', { url: edit_admin_video_url(video), no_text: true }
-          = link_to_delete video, { url: admin_video_url(video), no_text: true, method: :delete }
+    %thead
+      %tr
+        %th= t("youtube_ref")
+        %th
+        %th Home
+        %th Stream
+        %th.actions
+    %tbody
+      - @videos.each do |video|
+        %tr{:id => dom_id(video)}
+          %td
+            = link_to (video.title.blank? ? video.youtube_link : video.title), video.youtube_link, class: 'fancyYoutube'
+          %td
+            = link_to video.watchable.name, [:admin, video.watchable, :videos], target: '_blank' if video.watchable
+          %td
+            - if video.show_on_home
+              %i.icon.icon-ok
+          %td
+            - if video.stream
+              %i.icon.icon-ok
+          %td.actions.actions-2.text-right
+            = link_to_edit 'edit', { url: edit_admin_video_url(video), no_text: true }
+            = link_to_delete video, { url: admin_video_url(video), no_text: true, method: :delete }
 
 #video
-%br/
-%p
-  = link_to icon('icon icon-plus') + ' ' + t("new_video"), (@product ? new_admin_product_video_url(@product) : new_admin_video_url), id: 'new_video_link', class: 'btn btn-success'
-
