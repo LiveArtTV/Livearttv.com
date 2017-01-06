@@ -21,7 +21,7 @@ Spree.config do |config|
   # Example:
   # Uncomment to stop tracking inventory levels in the application
   # config.track_inventory_levels = false
-  config.logo = 'logo.svg'
+  config.logo = 'logo_main.png'
   config.company_title   = 'Elite Shopping'
   config.company_address = 'Warrent House, 221b Baker Street - London - United Kingdom'
   config.company_phone   = '(+84). 123 456 789'
