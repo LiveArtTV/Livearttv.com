@@ -20,9 +20,9 @@ gem 'spree', '~> 3.1.0'
 gem 'font-awesome-rails'
 gem 'spree_auth_devise', '~> 3.1.0'
 gem 'spree_gateway', '~> 3.1.0'
-gem 'spree_videos', git: 'https://github.com/clevertechru/spree_videos.git', branch: '3-1-stable'
+gem 'spree_videos', git: 'https://github.com/vladimir-shidlovsky/spree_videos.git', branch: '3-1-stable'
 # gem 'spree_videos', path: 'lib/gems/spree_videos'
-gem 'spree_chimpy', git: 'https://github.com/clevertechru/spree_chimpy.git', branch: '3-stable'
+gem 'spree_chimpy', git: 'https://github.com/vladimir-shidlovsky/spree_chimpy.git', branch: '3-stable'
 gem 'spree_static_content', github: 'spree-contrib/spree_static_content', branch: 'master'
 gem 'aws-sdk', '< 2.0'
 
@@ -33,7 +33,6 @@ end
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug'
-  gem 'mysql2'
 end
 
 group :development, :staging do
@@ -54,6 +53,7 @@ group :development do
   gem 'capistrano-bundler', '~> 1.1.2', require: false
   gem 'capistrano-rvm', '0.1.2', require: false
   gem 'capistrano-passenger', '~> 0.2', require: false
+  gem 'annotate'
 end
 
 group :staging, :production do

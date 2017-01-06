@@ -4,5 +4,7 @@
     %ul.listSidebar.list-unstyled
       - %w(date artist title).each do |item|
         %li
-          - item = params[:sortby] && params[:sortby] == item ? item + '_desc' : item
-          = link_to item, spree.videos_path(sortby: item)
+          - sort_by = params[:sortby] == item ? item + '_desc' : item
+          = link_to spree.videos_path(sortby: sort_by) do
+            %i.fa{class: arrow(sort_by)}
+              = item

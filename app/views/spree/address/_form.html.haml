@@ -41,7 +41,7 @@
         %abbr.required{id: "#{address_id}state-required", title: 'required'}*
       :erb
         <%== state_elements = [
-           form.collection_select(:state_id, address.country.states,
+           form.collection_select(:state_id, address.country.states.order(:name),
                               :id, :name,
                               {:include_blank => true},
                               {:class => have_states ? 'form-control required' : 'form-control hidden',

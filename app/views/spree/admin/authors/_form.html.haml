@@ -11,7 +11,7 @@
       .form-group
         = f.label :slug
         %span.required *
-        = f.text_field :slug, class: 'form-control'
+        = f.text_field :slug, class: 'form-control', disabled: true
         = f.error_message_on :slug
       .form-group
         = f.label :category

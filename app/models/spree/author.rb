@@ -1,3 +1,26 @@
+# == Schema Information
+#
+# Table name: spree_authors
+#
+#  id                       :integer          not null, primary key
+#  name                     :string
+#  content                  :text
+#  year_of_birth            :integer
+#  year_of_death            :integer
+#  category                 :integer
+#  slug                     :string
+#  foreign_link             :string
+#  visible                  :boolean          default(TRUE)
+#  meta_title               :string
+#  meta_keywords            :string
+#  meta_description         :string
+#  layout                   :string
+#  render_layout_as_partial :boolean          default(FALSE)
+#  show_in_sidebar          :boolean          default(FALSE), not null
+#  created_at               :datetime         not null
+#  updated_at               :datetime         not null
+#
+
 class Spree::Author < ActiveRecord::Base
 
   CATEGORY_ARTIST   = 1
@@ -9,6 +32,7 @@ class Spree::Author < ActiveRecord::Base
   }
 
   validates :name, presence: true
+  validates :name, uniqueness: true
   validates :category, presence: true
   validates :slug, :content, presence: true
   validates :slug, uniqueness: true
@@ -25,7 +49,13 @@ class Spree::Author < ActiveRecord::Base
   scope :header_links, -> { where(show_in_header: true).visible }
   scope :sidebar_links, -> { where(show_in_sidebar: true).visible }
 
+  before_validation :fill_slug
+
   def description
     content
+  end
+
+  def fill_slug
+    self.slug = name.gsub(/\s+/, '_').underscore
   end
 end
