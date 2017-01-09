@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170105144611) do
+ActiveRecord::Schema.define(version: 20170109103709) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -909,59 +909,6 @@ ActiveRecord::Schema.define(version: 20170105144611) do
   add_index "spree_stock_transfers", ["destination_location_id"], name: "index_spree_stock_transfers_on_destination_location_id", using: :btree
   add_index "spree_stock_transfers", ["number"], name: "index_spree_stock_transfers_on_number", using: :btree
   add_index "spree_stock_transfers", ["source_location_id"], name: "index_spree_stock_transfers_on_source_location_id", using: :btree
-
-  create_table "spree_store_credit_categories", force: :cascade do |t|
-    t.string   "name"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
-  create_table "spree_store_credit_events", force: :cascade do |t|
-    t.integer  "store_credit_id",                                          null: false
-    t.string   "action",                                                   null: false
-    t.decimal  "amount",             precision: 8, scale: 2
-    t.string   "authorization_code",                                       null: false
-    t.decimal  "user_total_amount",  precision: 8, scale: 2, default: 0.0, null: false
-    t.integer  "originator_id"
-    t.string   "originator_type"
-    t.datetime "deleted_at"
-    t.datetime "created_at",                                               null: false
-    t.datetime "updated_at",                                               null: false
-  end
-
-  add_index "spree_store_credit_events", ["originator_id", "originator_type"], name: "spree_store_credit_events_originator", using: :btree
-  add_index "spree_store_credit_events", ["store_credit_id"], name: "index_spree_store_credit_events_on_store_credit_id", using: :btree
-
-  create_table "spree_store_credit_types", force: :cascade do |t|
-    t.string   "name"
-    t.integer  "priority"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
-  add_index "spree_store_credit_types", ["priority"], name: "index_spree_store_credit_types_on_priority", using: :btree
-
-  create_table "spree_store_credits", force: :cascade do |t|
-    t.integer  "user_id"
-    t.integer  "category_id"
-    t.integer  "created_by_id"
-    t.decimal  "amount",            precision: 8, scale: 2, default: 0.0, null: false
-    t.decimal  "amount_used",       precision: 8, scale: 2, default: 0.0, null: false
-    t.text     "memo"
-    t.datetime "deleted_at"
-    t.string   "currency"
-    t.decimal  "amount_authorized", precision: 8, scale: 2, default: 0.0, null: false
-    t.integer  "originator_id"
-    t.string   "originator_type"
-    t.integer  "type_id"
-    t.datetime "created_at",                                              null: false
-    t.datetime "updated_at",                                              null: false
-  end
-
-  add_index "spree_store_credits", ["deleted_at"], name: "index_spree_store_credits_on_deleted_at", using: :btree
-  add_index "spree_store_credits", ["originator_id", "originator_type"], name: "spree_store_credits_originator", using: :btree
-  add_index "spree_store_credits", ["type_id"], name: "index_spree_store_credits_on_type_id", using: :btree
-  add_index "spree_store_credits", ["user_id"], name: "index_spree_store_credits_on_user_id", using: :btree
 
   create_table "spree_stores", force: :cascade do |t|
     t.string   "name"

@@ -23,7 +23,6 @@
                   \/ #{card.year}
                 %td
                   = radio_button_tag "order[existing_card]", card.id, (card == @payment_sources.first), { class: "existing-cc-radio" }
-    = render partial: 'spree/checkout/payment/storecredit'
     %ul#payment-method-fields.list-group{"data-hook" => ""}
       - @order.available_payment_methods.each do |method|
         %li.list-group-item

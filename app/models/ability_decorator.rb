@@ -42,6 +42,9 @@ class AbilityDecorator
 
       # can :manage, Spree.user_class
     end
+    if user.admin?
+      cannot :manage, Spree::StoreCreditCategory
+    end
   end
 end
 
