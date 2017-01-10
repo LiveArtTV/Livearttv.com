@@ -9,9 +9,9 @@
   %br/
   = f.text_field :title, class: 'form-control title'
   = f.error_message_on :title
-= f.field_container :starts_at_field, class: ['form-group'] do
-  = f.label :created_at
-  = f.text_field :created_at, value: datepicker_field_value(f.object.try(:created_at)), class: 'datepicker datepicker-from form-control', style: 'width: 150px;'
+-#= f.field_container :starts_at_field, class: ['form-group'] do
+-#  = f.label :created_at
+-#  = f.text_field :created_at, value: datepicker_field_value(f.object.try(:created_at)), class: 'datepicker datepicker-from form-control', style: 'width: 150px;'
 - author_id = params[:author_id] || @video.watchable.try(:id)
 = f.field_container :author_field, class: ['form-group'] do
   = f.label :author
