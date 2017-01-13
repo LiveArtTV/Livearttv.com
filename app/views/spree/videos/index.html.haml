@@ -3,8 +3,6 @@
 - content_for :head do
   - if @videos.respond_to?(:total_pages)
     = rel_next_prev_link_tags @videos
-- content_for :sidebar do
-  = render partial: 'spree/videos/sidebar_videos_sort'
 %div{"data-hook" => "videos_list"}
   = render 'spree/videos/videos_search_bar'
   - if @videos && @videos.any?

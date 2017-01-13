@@ -27,7 +27,7 @@
                           %ul.nav-links
                             - taxon_root.children.each do |taxon|
                               %li
-                                = link_to truncate(taxon.name, length: 22), seo_url(taxon)
+                                = link_to truncate(taxon.name, length: 22), "#{seo_url(taxon)}?view=grid"
           -#%li
             %a{href: spree.products_path, target: "_self", title: "Shop"}
               %span Shop

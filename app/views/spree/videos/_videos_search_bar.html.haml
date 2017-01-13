@@ -11,8 +11,26 @@
         %span
           %i.fa.fa-search
         %span.fallback-text #{Spree.t(:search)}
+  .form-horizontal
+    %label{:for => "SortBy"} Sort by
+    %select#video-sort-by{:name => "SortBy"}
+      %option{value: 'date_desc'} Date, new to old
+      %option{value: 'date'} Date, old to new
+      %option{value: 'artist'} Artist, A-Z
+      %option{value: 'artist_desc'} Artist, Z-A
+      %option{value: 'title'} Title, A-Z
+      %option{value: 'title_desc'} Title, Z-A
 :javascript
   $(document).ready(function(){
+    var sortByValue = window.location.search.substring(1).split('sortby=')[1];
+    if(sortByValue) {
+      $("#video-sort-by").val(sortByValue);
+    }
+
+    $(document).on('change','#video-sort-by', function(e) {
+      var url = '/library?sortby=' + $(this).val()
+      window.location = url
+    });
 
     $(document).on('change','.category_search_dd', function(e) {
       $(".search-videos-query").typeahead('destroy');
