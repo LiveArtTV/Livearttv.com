@@ -9,10 +9,13 @@
         .row
           .col-md-12#product-videos
             .embed-responsive.embed-responsive-16by9.spree-embed-video= render 'spree/products/video_player', :video => @videos.first
-%section.video-thumbnails
-  .text-center
-    .container
-      = render partial: 'spree/home/video_thumbnails', locals: { videos: @videos }
+
+/Uncomment, when would be necessary to add video thumbnails below video
+/ %section.video-thumbnails
+/   .text-center
+/     .container
+/       = render partial: 'spree/home/video_thumbnails', locals: { videos: @videos }
+
 %section.root-taxons
   .text-center
     .container
