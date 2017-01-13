@@ -23,6 +23,16 @@ body {
 
 .rte p {
   text-align: inherit;
+  margin: $space 0;
+  padding: 0;
+
+  &:first-child {
+    margin-top: 0;
+  }
+
+  &:last-child {
+    margin-bottom: 0;
+  }
 }
 
 
@@ -122,6 +132,10 @@ body {
 
 /*  Footer
 \*----------------------------------------------------------------------------*/
+.footer-center-wrap .footer-block .title_block {
+  cursor: default;
+}
+
 .footer-nav {
   padding: $grid-gutter 0;
 }
@@ -210,6 +224,10 @@ body {
     min-height: 0;
     margin-bottom: 1em;
 
+    .megamenu & {
+      text-transform: none;
+    }
+
     a {
       font-size: $font-size-base;
       color: $color-black;
@@ -231,9 +249,41 @@ body {
   }
 
   .product-image-container {
-    img {
-      width: 100%;
+    padding: 100% 0 0 0;
+    background-color: $color-gray-e;
+
+    #products & {
+      padding: 100% 0 0 0;
     }
+
+    img {
+      left: 50%;
+      top: 50%;
+      transform: translate(-50%, -50%);
+      position: absolute;
+      max-height: 100%;
+      -webkit-transition: opacity 0.5s ease 0s;
+      transition: opacity 0.5s ease 0s;
+      opacity: 0.9;
+    }
+
+    a:hover {
+      img {
+        opacity: 1;
+      }
+    }
+  }
+
+  .product-meta {
+    border: none;
+
+    #products & {
+      background: none;
+    }
+  }
+
+  #products & {
+    background: none;
   }
 }
 
@@ -243,6 +293,11 @@ body {
   .product-description {
     font-size: inherit;
   }
+}
+
+.tab-content .product-description:last-child {
+  padding-bottom: 0;
+  margin-bottom: 0;
 }
 
 .product-section-title {
@@ -302,6 +357,19 @@ body {
   &.change-view--active {
     cursor: default;
   }
+}
+
+.product-center-column .brand {
+  font-family: $font-face-default;
+}
+
+.more_info_block {
+    margin-top: $space;
+}
+
+.price {
+  font-size: $font-size-large;
+  font-family: $font-face-poppins;
 }
 
 
@@ -387,8 +455,13 @@ body {
     color: $color-white;
     font-weight: $weight-bold;
     background: $color-black;
+    padding-top: 62.96%;
 
     img {
+      max-width: none;
+      position: absolute;
+      left: 0;
+      top: 0;
       width: 100%;
       -webkit-transition: opacity 0.5s ease 0s;
       transition: opacity 0.5s ease 0s;
@@ -407,6 +480,7 @@ body {
       font-size: $font-size-h2;
       line-height: 1;
       font-family: $font-face-poppins;
+      text-transform: uppercase;
     }
 
     &:hover {

@@ -5,7 +5,7 @@
       = render partial: 'spree/products/properties'
       = render partial: '/shared/products_best_sellers'
 
-  #center_column.center_column.col-xs-12
+  #center_column.center_column
     - url = spree.product_url(@product, taxon_id: @taxon.try(:id))
     %div{itemscope: '', itemtype: 'http://schema.org/Product'}
       %meta{content: url, itemprop: 'url'}/
@@ -16,7 +16,7 @@
             #main-image2.panel.panel-default{"data-hook" => ""}
               .panel-body.text-center
                 - product_image_orig = product_image_src(@product, :original)
-                %a.btn.fancybox.fancy-no-hide{title: @product.name, href: product_image_orig}
+                %a.fancybox.fancy-no-hide{title: @product.name, href: product_image_orig}
                   = render :partial => 'image', locals: {img_class: 'img-responsive'}
             #thumbnails{"data-hook" => ""}
               = render :partial => 'thumbnails'

@@ -12,5 +12,5 @@
             .img_category.col-sm-4
               = link_to seo_url(taxon), class: 'img_category_link' do
                 %img.img-responsive{alt: taxon.name, src: taxon.icon.url(:home)}/
-                .title_img_category.text-uppercase
+                .title_img_category
                   = taxon.name

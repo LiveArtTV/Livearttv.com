@@ -191,7 +191,7 @@
                   .mega-col.col-xs-5
                     - if Spree::Video.last
                       .block-html
-                        .menu-title #{truncate(Spree::Video.last.title, length: 50)}
+                        .menu-title.is-ellipsed= Spree::Video.last.title
                         .widget-inner
                           .box-image
                             .embed-responsive.embed-responsive-16by9
