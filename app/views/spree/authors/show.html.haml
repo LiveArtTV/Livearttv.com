@@ -1,44 +1,52 @@
 - return Spree.t(:author_not_found) unless @author
 
-%div{data:{hook: 'author'}}
-  .row
-    .left-block.col-md-4.col-sm-5.text-center
-      - if @author.try(:images)
-        - image = @author.images.first
-        - if image
-          = link_to image_tag(image.attachment.url(:author)), image.attachment.url(:large), class: 'btn fancybox'
-        - else
-          = image_tag asset_path('product_default.png')
-    .right-block.col-md-8.col-sm-7.rte
-      %h1.text-uppercase
-        = @author.name
-      %h5
-        = author_dates(@author)
-      %p= @author.content
-  .row
-    &nbsp;
-%section.home_product_list_2
-  .text-center
-    .container
-      %h4.title_block_home.page-subheading
-        #{@author.name} works
-      #products.row
-        - if @author.products.blank?
-          %p There are no works by this artist in stock at the moment
-        - @author.products.each do |product|
-          = render partial: 'spree/products/item_small', locals: {product: product}
-%section.home_product_list_2
-  .text-center
-    .container
-      %h4.title_block_home.page-subheading
-        #{@author.name} videos
-      #author_videos.row
-        - if @author.videos.blank?
-          %p There are no videos by this artist
+#center_column.center_column
+  %div{data:{hook: 'author'}}
+    .primary_block
+      .row
+        .product-left-column.col-xs-12.col-sm-12.col-md-5
+          #main-image2.panel.panel-default
+            .panel-body.text-center
+              - if @author.try(:images)
+                - image = @author.images.first
+                - if image
+                  = link_to image_tag(image.attachment.url(:original), class: 'img-responsive'), image.attachment.url(:original), class: 'fancybox'
+                - else
+                  = image_tag asset_path('product_default.png')
+        .col-xs-12.col-sm-12.col-md-7
+          .product-center-column
+            .product-meta
+              %h1= @author.name
+            %h5.brand= author_dates(@author)
+            .product-description.rte
+              %p.is-breakable
+                = @author.content
+    %hr
 
-        - else
-        = content_tag(:div, id: 'video-thumbnails', class: 'spree-video-thumbnails-md') do
-          - @author.videos.map(&:youtube_data).each do |video|
-            .col-sm-4
-              = link_to "https://www.youtube.com/watch?v=#{video.id}", title: video.title, class: 'fancyYoutube video-overview-thumbnail', target: '_blank', data: {'video-id' => video.id}, remote: false do
-                = image_tag(spree_video_thumb_uri(video), class: 'img-responsive')
+    %section.home_product_list_2
+      .text-center
+        %h4.title_block_home.page-subheading
+          #{@author.name} works
+        #products.row
+          - if @author.products.blank?
+            %p There are no works by this artist in stock at the moment
+          - else
+            - @author.products.each do |product|
+              = render partial: 'spree/products/item_small', locals: {product: product}
+
+    %hr
+
+    %section.home_product_list_2
+      .text-center
+        %h4.title_block_home.page-subheading
+          #{@author.name} videos
+        #author_videos.row
+          - if @author.videos.blank?
+            %p There are no videos by this artist
+
+          - else
+            = content_tag(:div, id: 'video-thumbnails', class: 'spree-video-thumbnails-md') do
+              - @author.videos.map(&:youtube_data).each do |video|
+                .col-sm-4
+                  = link_to "https://www.youtube.com/watch?v=#{video.id}", title: video.title, class: 'fancyYoutube video-overview-thumbnail', target: '_blank', data: {'video-id' => video.id}, remote: false do
+                    = image_tag(spree_video_thumb_uri(video), class: 'img-responsive')
