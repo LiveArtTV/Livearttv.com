@@ -1,6 +1,18 @@
 %hr
-#search_videos_block
-  = form_tag spree.videos_path, :method => :get, id: 'searchbox-videos', class: 'popup-content-1' do
+#search_videos_block.clearfix
+  .filter-sorter
+    .form-horizontal
+      %label.sorter-label{:for => "video-sort-by"} Sort by
+      .sorter-field-wrapper
+        %select#video-sort-by.sorter-dd{:name => "SortBy"}
+          %option{value: 'date_desc'} Date, new to old
+          %option{value: 'date'} Date, old to new
+          %option{value: 'artist'} Artist, A-Z
+          %option{value: 'artist_desc'} Artist, Z-A
+          %option{value: 'title'} Title, A-Z
+          %option{value: 'title_desc'} Title, Z-A
+
+  = form_tag spree.videos_path, :method => :get, id: 'searchbox-videos', class: 'popup-content-1 search-form_with_categories' do
     .search_with_categories.clearfix
       = select_tag :category, options_for_select(%w(author title),               |
         params[:category]), 'aria-label' => 'Taxon', class: "category_search_dd", id: 'collection-select-1' |
@@ -11,15 +23,6 @@
         %span
           %i.fa.fa-search
         %span.fallback-text #{Spree.t(:search)}
-  .form-horizontal
-    %label{:for => "SortBy"} Sort by
-    %select#video-sort-by{:name => "SortBy"}
-      %option{value: 'date_desc'} Date, new to old
-      %option{value: 'date'} Date, old to new
-      %option{value: 'artist'} Artist, A-Z
-      %option{value: 'artist_desc'} Artist, Z-A
-      %option{value: 'title'} Title, A-Z
-      %option{value: 'title_desc'} Title, Z-A
 :javascript
   $(document).ready(function(){
     var sortByValue = window.location.search.substring(1).split('sortby=')[1];

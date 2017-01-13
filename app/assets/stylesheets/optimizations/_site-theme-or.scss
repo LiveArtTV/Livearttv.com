@@ -37,8 +37,49 @@ body {
 
 
 
+/*  Sort elements insert in filter
+\*----------------------------------------------------------------------------*/
+.filter-sorter {
+  margin-bottom: $space-small;
+
+  .sorter-field-wrapper {
+    border: 1px solid $color-gray-e;
+    padding: 5px 10px;
+    display: inline-block;
+  }
+
+  .sorter-dd {
+    width: 100%;
+    border: none;
+    padding-right: 10px;
+  }
+
+  @media (min-width: $screen-sm) {
+    margin-bottom: 0;
+    float: right;
+    margin-left: $space-large;
+  }
+  @media (max-width: $screen-sm) {
+    .sorter-label {
+      width: 25%;
+    }
+
+    .sorter-field-wrapper {
+      width: 73%;
+    }
+  }
+}
+
+
+
 /*  Search with categories field
 \*----------------------------------------------------------------------------*/
+.search-form_with_categories {
+  .filter-sorter + & {
+    overflow: hidden;
+  }
+}
+
 .search_with_categories {
   border: 1px solid $color-gray-e;
   position: relative;
@@ -75,6 +116,10 @@ body {
   box-shadow: none !important;
   width: 74%;
   margin: 0 0 0 -2px;
+
+  @media screen and (max-width: 440px) {
+    width: 59%;
+  }
 }
 
 %category_search_button {
