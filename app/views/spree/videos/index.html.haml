@@ -9,10 +9,16 @@
     #videos.row{"data-hook" => ""}
       = content_tag(:div, id: 'video-thumbnails', class: 'spree-video-thumbnails-md') do
         - @videos.map(&:youtube_data).each do |video|
-          .col-sm-4
+          .col-sm-4{"data-mh" => "video_overview_item"}
             - product_video = @videos.select{|v| v.youtube_ref == video.id}.try(:first)
-            = link_to "https://www.youtube.com/watch?v=#{video.id}", title: video.title, class: 'fancyYoutube video-overview-thumbnail', target: '_blank', data: {'video-id' => video.id}, remote: false do
-              = image_tag(spree_video_thumb_uri(video, :high), class: 'img-responsive')
+            .product-block
+              .product-image-container.product-videoimage-container.image
+                = link_to "https://www.youtube.com/watch?v=#{video.id}", title: video.title, class: 'fancyYoutube', target: '_blank', data: {'video-id' => video.id}, remote: false do
+                  = image_tag(spree_video_thumb_uri(video, :high), class: 'img-responsive')
+              .product-meta
+                %h5.name.no-upper
+                  = link_to "https://www.youtube.com/watch?v=#{video.id}", title: video.title, class: 'fancyYoutube product-name', target: '_blank', data: {'video-id' => video.id}, remote: false do
+                    = video.title
 
   - else
     %h5.text-uppercase= Spree.t(:no_videos_found)
