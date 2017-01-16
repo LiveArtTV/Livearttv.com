@@ -7,6 +7,7 @@
         = radio_button_tag 'use_existing_card', 'yes', true
         %label.flatten{:for => "use_existing_card_yes"}
           = Spree.t(:use_existing_cc)
+        %br
         = radio_button_tag 'use_existing_card', 'no'
         %label{:for => "use_existing_card_no"}
           = Spree.t(:use_new_cc_or_payment_method)
@@ -16,13 +17,13 @@
           %tbody
             - @payment_sources.each do |card|
               %tr{:class => cycle('even', 'odd'), :id => dom_id(card,'spree')}
+                %td
+                  = radio_button_tag "order[existing_card]", card.id, (card == @payment_sources.first), { class: "existing-cc-radio" }
                 %td= card.name
                 %td= card.display_number
                 %td
                   = card.month
                   \/ #{card.year}
-                %td
-                  = radio_button_tag "order[existing_card]", card.id, (card == @payment_sources.first), { class: "existing-cc-radio" }
     %ul#payment-method-fields.list-group{"data-hook" => ""}
       - @order.available_payment_methods.each do |method|
         %li.list-group-item

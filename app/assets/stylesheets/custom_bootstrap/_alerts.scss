@@ -4,6 +4,10 @@
 
 
 
+.alert {
+  text-align: center;
+}
+
 .alert-notice {
   @extend .alert-success;
 }
