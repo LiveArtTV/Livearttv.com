@@ -53,6 +53,7 @@ table.cart_table {
       margin: 0 0 0 5px;
       color: $color-red-light;
       font-weight:  $weight-bold;
+      font-family: $font-face-poppins;
     }
   }
 
@@ -71,8 +72,9 @@ table.cart_table {
 .cart-item-price,
 .cart-item-total {
   color: $color-red-light;
-  font-weight:  $weight-bold;
+  font-weight: $weight-bold;
   text-align: right;
+  font-family: $font-face-poppins;
 }
 
 .cart_container {
@@ -81,4 +83,17 @@ table.cart_table {
 
 .cart-item-quantity {
   text-align: right;
+}
+
+
+/*  Checkout
+\*----------------------------------------------------------------------------*/
+.progress-steps {
+  background: $color-gray-e;
+}
+
+.shipment {
+  h5 {
+    font-family: $font-face-default;
+  }
 }

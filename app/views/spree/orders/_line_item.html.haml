@@ -7,7 +7,7 @@
       - else
         = link_to image_tag(variant.images.first.attachment.url(:small)), variant.product
     %td.cart-item-description{"data-hook" => "cart_item_description"}
-      %h4= link_to line_item.name, product_path(variant.product)
+      %h6.text-uppercase= link_to line_item.name, product_path(variant.product)
       = variant.options_text
       - if line_item.insufficient_stock?
         %span.out-of-stock

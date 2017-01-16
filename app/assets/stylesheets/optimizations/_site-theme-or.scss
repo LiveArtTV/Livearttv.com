@@ -422,8 +422,12 @@ body {
 }
 
 .price {
-  font-size: $font-size-large;
   font-family: $font-face-poppins;
+  font-weight: $weight-bold;
+}
+
+.product-thumbs {
+  margin-top: $space-small;
 }
 
 
@@ -550,4 +554,16 @@ body {
 \*----------------------------------------------------------------------------*/
 .contact-form-box .form-group {
   margin-bottom: $grid-gutter;
+}
+
+
+/*  Forms
+\*----------------------------------------------------------------------------*/
+label,
+span.or {
+  text-transform: none;
+  letter-spacing: 0;
+  font-weight: $weight-bold;
+  font-size: $font-size-base;
+  color: inherit;
 }

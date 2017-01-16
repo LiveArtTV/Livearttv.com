@@ -23,10 +23,10 @@
 
     h1, h2, h3 {
       margin: 0;
-      font-family: $font-face-default;
+      /* font-family: $font-face-default;
       font-weight: $weight-regular;
+      color: $color-gray-b; */
       font-size: $font-size-h4;
-      color: $color-gray-b;
       padding-bottom: $space-tiny;
     }
   }

@@ -5,8 +5,8 @@
     .primary_block
       .row
         .product-left-column.col-xs-12.col-sm-12.col-md-5
-          #main-image2.panel.panel-default
-            .panel-body.text-center
+          #main-image2.product-block
+            .product-image-container.image
               - if @author.try(:images)
                 - image = @author.images.first
                 - if image

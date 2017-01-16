@@ -1,18 +1,18 @@
 .row.steps-data
   - if order.has_step?("address")
     .col-md-3.col-sm-3.col-xs-6{"data-hook" => "order-bill-address"}
-      %h4
+      %h6.text-uppercase
         = Spree.t(:billing_address)
         = link_to "(#{Spree.t(:edit)})", checkout_state_path(:address) unless order.completed?
       = render 'spree/shared/address', address: order.bill_address
     - if order.has_step?("delivery")
       .col-md-3.col-sm-3.col-xs-6{"data-hook" => "order-ship-address"}
-        %h4
+        %h6.text-uppercase
           = Spree.t(:shipping_address)
           = link_to "(#{Spree.t(:edit)})", checkout_state_path(:address) unless order.completed?
         = render 'spree/shared/address', address: order.ship_address
       .col-md-3.col-sm-3.col-xs-6{"data-hook" => "order-shipment"}
-        %h4
+        %h6.text-uppercase
           = Spree.t(:shipments)
           = link_to "(#{Spree.t(:edit)})", checkout_state_path(:delivery) unless order.completed?
         .delivery
@@ -23,7 +23,7 @@
         = render 'spree/shared/shipment_tracking', order: order if order.shipped?
   - if order.has_step?("payment")
     .col-md-3.col-sm-3.col-xs-6{"data-hook" => "order-payment"}
-      %h4
+      %h6.text-uppercase
         = Spree.t(:payment_information)
         = link_to "(#{Spree.t(:edit)})", checkout_state_path(:payment) unless order.completed?
       .payment-info
@@ -53,7 +53,7 @@
           - else
             = link_to image_tag(item.variant.images.first.attachment.url(:small)), item.variant.product
         %td{"data-hook" => "order_item_description"}
-          %h4= item.variant.product.name
+          %h6.text-uppercase= item.variant.product.name
           = truncated_product_description(item.variant.product)
           = "(" + item.variant.options_text + ")" unless item.variant.option_values.empty?
         %td.lead.text-primary.cart-item-price{"data-hook" => "order_item_price"}
