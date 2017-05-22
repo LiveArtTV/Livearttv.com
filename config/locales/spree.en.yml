@@ -41,4 +41,5 @@ en:
       users_edit: 'Account'
       users_show: 'Account'
       authors_show: 'Authors'
+      price_variation: 'Price Variation'
     password_confirmation: Password Confirmation

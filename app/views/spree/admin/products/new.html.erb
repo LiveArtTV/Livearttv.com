@@ -34,7 +34,7 @@
 
       <div data-hook="new_product_price_variation" class="col-md-4">
         <%= f.field_container :price_type, :class => ['form-group'] do %>
-          <%= f.label 'Price variation' %> <span class="required">*</span> <p>
+          <%= f.label :price_variation, Spree.t(:price_variation)  %> <span class="required">*</span>
           <%= f.select(:price_type, options_for_select([['Real price', 'real_price'], ['Not Sale', 'not_sale'], ['Request Price', 'request_price']]), {}, :class => 'form-control') %>
           <%= f.error_message_on :price_type %>
         <% end %>
