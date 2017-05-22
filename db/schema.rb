@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170109103709) do
+ActiveRecord::Schema.define(version: 20170519095152) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -493,6 +493,7 @@ ActiveRecord::Schema.define(version: 20170109103709) do
     t.datetime "discontinue_on"
     t.integer  "author_id"
     t.string   "description_short",    default: ""
+    t.integer  "price_type"
   end
 
   add_index "spree_products", ["author_id"], name: "index_spree_products_on_author_id", using: :btree
