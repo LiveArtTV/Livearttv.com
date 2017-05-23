@@ -10,7 +10,7 @@
       %h6.search-results-title= Spree.t(:search_results, keywords: h(params[:keywords]))
 - if products.any?
   #product_list.product_list.list{"data-hook" => ""}
-    #taxons.row
+    #taxons
       - products.each do |product|
         = render partial: 'spree/products/item_big', locals: {product: product}
 - if products.respond_to?(:total_pages) && !%w(home).include?(controller_name)
