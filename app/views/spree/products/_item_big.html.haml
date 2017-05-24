@@ -14,16 +14,15 @@
           %a.quick-view.btn.fancybox{rel: 'products-top-gallery', href: product_image_src(product, :product1024), title: truncate(product.name, length: 50), data: {handle: product.slug, img_src: product_image_src(product)}}
             %i.fa.fa-expand
       .product-meta
-        %h5.name
-          %a.product-name{href: url, title: product.name}
+        .name
+          %a.product-name.product-name-title{href: url, title: product.name}
             = truncate(product.name, length: 50)
-        %h6
-          .product-desc
-            = truncate(product.description_short, length: 50)
-        - if product_property(@product_properties, :year).present?
-          %h5.brand{:itemprop => "brand"}
-            %span Year:
-            %a{:href => "/products/years?q=", :title => ""}= product_property(@product_properties, :year)
+        .product-desc
+          = truncate(product.description_short, length: 50)
+      - if product_property(@product_properties, :year).present?
+        %h5.brand{:itemprop => "brand"}
+          %span Year:
+          %a{:href => "/products/years?q=", :title => ""}= product_property(@product_properties, :year)
         -#.review
           %span#spr_badge_7135946433.spr-badge{"data-rating" => "5.0"}
             %span.spr-starrating.spr-badge-starrating
