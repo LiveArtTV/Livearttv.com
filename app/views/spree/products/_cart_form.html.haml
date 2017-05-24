@@ -24,11 +24,11 @@
           %h6.product-section-title= Spree.t(:price)
           %div
             %span.lead.price.selling{:itemprop => "price"}
-              - if @product.price_type == 'real_price'
+              - if @product.real_price?
                 = display_price(@product)
-              - if @product.price_type == 'not_sale'
+              - if @product.not_sale?
                 = Spree.t(:not_for_sale)
-              - if @product.price_type == 'request_price'
+              - if @product.request_price?
                 = link_to Spree.t(:price_by_request), pages_contact_us_path
             %span{:content => @product.currency, :itemprop => "priceCurrency"}
           - if @product.master.can_supply?
@@ -36,7 +36,7 @@
           - elsif @product.variants.empty?
             %br/
             %span.out-of-stock= Spree.t(:out_of_stock)
-        - if @product.can_supply? && @product.price_type == 'real_price'
+        - if @product.can_supply? && @product.real_price?
           .line-product-top
           .add-to-cart.quantity_wanted_p
             .apQty.js--cart-adjust
