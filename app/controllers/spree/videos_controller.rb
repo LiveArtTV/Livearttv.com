@@ -4,7 +4,7 @@ module Spree
     PER_PAGE = 20
 
     def index
-      @videos = Video.all
+      @videos = Video.order('stream desc').all
       @videos =
         case params[:sortby]
         when 'date'

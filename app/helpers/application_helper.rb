@@ -43,4 +43,12 @@ module ApplicationHelper
   def arrow(sort_by)
     sort_by.end_with?('_desc') ? 'fa-long-arrow-up' : 'fa-long-arrow-down'
   end
+
+  def video_link
+    if @videos.find_by stream: true
+       @videos.find_by stream: true
+    else
+      @videos.find_by show_on_home: true
+    end
+  end
 end
