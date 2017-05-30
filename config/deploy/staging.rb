@@ -5,7 +5,7 @@
 
 # server 'example.com', user: 'deploy', roles: %w{app db web}, my_property: :my_value
 # server 'example.com', user: 'deploy', roles: %w{app web}, other_property: :other_value
-server '54.190.30.5', user: 'app', roles: %w{app db web}
+server '54.214.124.255', user: 'app', roles: %w{app db web}
 set :branch, ENV['BRANCH'] || 'master'
 set :deploy_to, '/var/www/apps/eliteshopping_staging'
 

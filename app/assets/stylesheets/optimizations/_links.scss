@@ -12,12 +12,12 @@ a {
 
   &:hover {
     color: $color-base;
-    text-decoration: underline;
+    text-decoration: none;
   }
 
   &:focus {
     color: $color-base;
-    text-decoration: underline;
+    text-decoration: none;
   }
 
   &:active {

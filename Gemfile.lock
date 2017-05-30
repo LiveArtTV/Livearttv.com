@@ -1,5 +1,5 @@
 GIT
-  remote: https://github.com/spree-contrib/spree_static_content.git
+  remote: git://github.com/spree-contrib/spree_static_content.git
   revision: 41ea4c079bf97caef83f2f36fb9f683757468a14
   branch: master
   specs:
