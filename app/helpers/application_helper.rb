@@ -45,8 +45,9 @@ module ApplicationHelper
   end
 
   def video_link
-    if @videos.find_by stream: true
-       @videos.find_by stream: true
+    search_stream = @videos.find_by stream: true
+    if search_stream
+       search_stream
     else
       @videos.find_by show_on_home: true
     end
