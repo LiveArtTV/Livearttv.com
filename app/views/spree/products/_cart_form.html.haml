@@ -24,14 +24,14 @@
           %h6.product-section-title= Spree.t(:price)
           %div
             %span.lead.price.selling{:itemprop => "price"}
-              = display_price(@product)
+              = product_price_variations
             %span{:content => @product.currency, :itemprop => "priceCurrency"}
           - if @product.master.can_supply?
             %link{:href => "https://schema.org/InStock", :itemprop => "availability"}/
           - elsif @product.variants.empty?
             %br/
             %span.out-of-stock= Spree.t(:out_of_stock)
-        - if @product.can_supply?
+        - if @product.can_supply? && @product.real_price?
           .line-product-top
           .add-to-cart.quantity_wanted_p
             .apQty.js--cart-adjust

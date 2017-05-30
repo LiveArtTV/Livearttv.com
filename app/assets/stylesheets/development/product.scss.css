@@ -1505,3 +1505,22 @@ span.view_scroll_spacer {
         padding-top: 3px
     }
 }
+
+#taxons {
+    column-count: 3;
+    -moz-column-count: 3;
+    -webkit-column-count: 3;
+    column-gap: 20px;
+}
+
+.product_block {
+    width: 280px;
+    display: inline-block;
+}
+
+a.product-name.product-name-title {
+    font-family: Merriweather;
+    font-size: 22px;
+    font-weight: bold;
+    font-style: italic;
+}

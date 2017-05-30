@@ -41,4 +41,7 @@ en:
       users_edit: 'Account'
       users_show: 'Account'
       authors_show: 'Authors'
+      price_variation: 'Price Variation'
+      not_for_sale: 'Not for sale'
+      price_by_request: 'Price by request'
     password_confirmation: Password Confirmation

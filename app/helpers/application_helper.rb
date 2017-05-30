@@ -44,6 +44,7 @@ module ApplicationHelper
     sort_by.end_with?('_desc') ? 'fa-long-arrow-up' : 'fa-long-arrow-down'
   end
 
+
   def video_link
     search_stream = @videos.find_by stream: true
     if search_stream
@@ -51,5 +52,19 @@ module ApplicationHelper
     else
       @videos.find_by show_on_home: true
     end
+  end
+  
+  def product_price_variations
+    result = nil
+    if @product.real_price?
+      result = display_price(@product)
+    end
+    if @product.not_sale?
+      result = Spree.t(:not_for_sale)
+    end
+    if @product.request_price?
+      result = link_to Spree.t(:price_by_request), pages_contact_us_path
+    end
+   result
   end
 end
