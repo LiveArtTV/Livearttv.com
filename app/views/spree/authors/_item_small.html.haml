@@ -7,8 +7,7 @@
         %span.product-additional{data: {idproduct: author.id}}
     .product-meta
       %h5.name.flatten
-        .artist-name
-          %a.product-name{href: url, title: truncate(author.name, length: 50)}
-            = truncate(author.name, length: 50)
+        %a.product-name{href: url, title: truncate(author.name, length: 50)}
+          = truncate(author.name, length: 50)
       .product-desc--visible.text-center
         = author_dates author

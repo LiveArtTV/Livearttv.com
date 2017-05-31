@@ -1525,14 +1525,6 @@ a.product-name.product-name-title {
     font-style: italic;
 }
 
-#sd {
-    column-count: 5;
-    -moz-column-count: 5;
-    -webkit-column-count: 5;
-    column-gap: 20px; 
-}
-
-
 .col-xs-five,
 .col-sm-five,
 .col-md-five,
