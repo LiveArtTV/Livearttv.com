@@ -47,3 +47,5 @@ en:
       price_by_request: 'Price by request'
       discount: 'Discount'
     password_confirmation: Password Confirmation
+    chimpy:
+      subscribe_title: Subscribe by Email
