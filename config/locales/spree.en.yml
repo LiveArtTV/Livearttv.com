@@ -31,6 +31,7 @@ en:
     library: Library
     authors: Authors
     author:  Author
+    about_us: About Us
     static_content:
       link: Link
       new_author: New Author

@@ -18,6 +18,11 @@ module Spree
       end
     end
 
+     def about_us
+      title = Spree.t(:about_us)
+      @breadcrumbs = OpenStruct.new(name: title, title: title)
+    end
+
     private
 
     def msg_params
