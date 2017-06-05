@@ -1,39 +1,50 @@
 $(function () {
-	var price = parseFloat($('#product_price_before_discount').data('value'));
+  var priceBeforeDiscountInput = $('#product_price_before_discount');
+  var priceBeforeDiscount = parseFloat(priceBeforeDiscountInput.data('value'));
 
-	var moneyInput = $('#product_discount')
-	var percentInput = $('#discount')
-	var money = parseFloat(moneyInput.data('value'));
+  var discountInput = $('#product_discount')
+  var percentInput = $('#discount')
+  var discount = parseFloat(discountInput.data('value'));
+  percentInput.val(Math.round(discount / priceBeforeDiscount * 10000) / 100)
+  
+  priceBeforeDiscountInput.on('keyup', function (e) {
+    priceBeforeDiscount = parseFloat(priceBeforeDiscountInput.val());
+    priceBeforeDiscountInput.data('value', priceBeforeDiscount)
+    $('#product_price').val(priceBeforeDiscount - discount)
+  })
 
-	percentInput.val(Math.round(money / price * 10000) / 100)
-	moneyInput.on('keyup', function (e) {
-		var money = +moneyInput.val()
-		var percent = +moneyInput.val()
+  discountInput.on('keyup', function (e) {
+    var priceBeforeDiscount = parseFloat(priceBeforeDiscountInput.data('value'));
+    var discount = +discountInput.val()
+    var percent = +discountInput.val()
 
-		if (money > price) {
-			moneyInput.val(price) 
-			money = price
-		}
-		if (money < 0) {
-			moneyInput.val(0)
-			money = 0
-		}
+    if (discount > priceBeforeDiscount) {
+      discountInput.val(priceBeforeDiscount) 
+      discount = priceBeforeDiscount
+    }
+    if (discount < 0) {
+      discountInput.val(0)
+      discount = 0
+    }
+    percentInput.val(Math.round(discount / priceBeforeDiscount * 10000) / 100)
+    $('#product_price').val(priceBeforeDiscount - discount)
 
-		percentInput.val(Math.round(money / price * 10000) / 100)
-	})
+  })
 
-	percentInput.on('keyup', function (e) {
-		var percent = +percentInput.val()
+  percentInput.on('keyup', function (e) {
+    var priceBeforeDiscount = parseFloat(priceBeforeDiscountInput.data('value'));
+    var percent = +percentInput.val()
 
-		if (percent > 100) {
-			percentInput.val(100) 
-			percent = 100
-		}
-		if (percent < 0) {
-			percentInput.val(0) 
-			percent = 0
-		}
-		moneyInput.val(percent / 100 * price)
-	})
+    if (percent > 100) {
+      percentInput.val(100) 
+      percent = 100
+    }
+    if (percent < 0) {
+      percentInput.val(0) 
+      percent = 0
+    }
+    discountInput.val(percent / 100 * priceBeforeDiscount)
+    $('#product_price').val(priceBeforeDiscount - discountInput.val())
+  })
 })
-	
+  
