@@ -19,8 +19,9 @@
           = render partial: 'spree/products/item_small', locals: {product: product}
   - else
     #productlist1.row{"data-hook" => ""}
-      - products.each do |product|
-        = render partial: 'spree/products/item_small', locals: {product: product}
+      #taxons
+        - products.each do |product|
+          = render partial: 'spree/products/item_big', locals: {product: product}
 
 - if products.respond_to?(:total_pages) && !%w(home).include?(controller_name)
   = paginate products, theme: 'twitter-bootstrap-3'

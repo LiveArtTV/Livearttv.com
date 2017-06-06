@@ -26,6 +26,16 @@
                     %span #{Spree::Config[:company_phone]}
                   %li.email.is-breakable
                     %span #{Spree::Config[:company_email]}
+                  %li.social_network
+                    %span.facebook.icon
+                      = link_to "#" do
+                        = image_tag('fb.svg', size: "45x45", alt: "facebook")
+                    %span.twitter.icon
+                      = link_to "#" do
+                        = image_tag('tw.svg', size: "45x45", alt: "twitter")
+                    %span.instagram.icon
+                      = link_to "#" do
+                        = image_tag('inst.svg', size: "45x45", alt: "instagram")
             .col-md-2.col-sm-2.col-xs-12.col-sp-12
               #block_links_footer_1.block.footer-block.footerAccordion
                 %h4.title_block support
