@@ -1,5 +1,5 @@
 - url = spree.product_url(product, taxon_id: @taxon.try(:id))
-.product_block.wow.fadeInUp.animated{data: {hook: 'products_list_item', wow_delay: '0ms'}, :id => "product_#{product.id}", :itemscope => "", :itemtype => "https://schema.org/Product"}
+.product_block{data: {hook: 'products_list_item'}, :id => "product_#{product.id}", :itemscope => "", :itemtype => "https://schema.org/Product"}
   - cache(@taxon.present? ? [I18n.locale, current_currency, @taxon, product] : cache_key_for_product(product)) do
     .product-container.left-block
       .product-image-container.image
