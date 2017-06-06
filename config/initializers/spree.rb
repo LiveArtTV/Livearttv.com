@@ -23,8 +23,8 @@ Spree.config do |config|
   # config.track_inventory_levels = false
   config.logo = 'logo_main.png'
   config.company_title   = 'Elite Shopping'
-  config.company_address = 'Warrent House, 221b Baker Street - London - United Kingdom'
-  config.company_phone   = '(+84). 123 456 789'
+  config.company_address = '157 Kimbles Road, Hawley, PA 18428'
+  config.company_phone   = '(516)507-9973'
   config.company_email   = 'info@eliteshopping.tv'
   config.show_raw_product_description = true
   config.checkout_zone   = 'United States'

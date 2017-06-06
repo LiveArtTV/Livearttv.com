@@ -1560,3 +1560,20 @@ a.product-name.product-name-title {
         float: left;
     }
 }
+
+
+.price-before-discount {
+    color: #000000;
+    font-weight: 700;
+    text-decoration: line-through;
+}
+
+.price_with_discount {
+    color: red;
+    font-weight: 700
+}
+
+.price_only {
+    color: #000000;
+    font-weight: 700;
+}

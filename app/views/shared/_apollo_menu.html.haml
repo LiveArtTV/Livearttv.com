@@ -204,6 +204,10 @@
                         %a{:href => spree.videos_path, title: 'Videos'}
                           %span
                             View All Videos
+
+          %li
+            = link_to '/pages/about_us', target: '_self', title: Spree::t('about_us') do
+              %span= Spree::t('about_us')
           %li
             = link_to '/pages/contact_us', target: '_self', title: Spree::t('contact') do
               %span= Spree::t('contact')

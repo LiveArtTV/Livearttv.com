@@ -31,6 +31,7 @@ en:
     library: Library
     authors: Authors
     author:  Author
+    about_us: About Us
     static_content:
       link: Link
       new_author: New Author
@@ -44,4 +45,7 @@ en:
       price_variation: 'Price Variation'
       not_for_sale: 'Not for sale'
       price_by_request: 'Price by request'
+      discount: 'Discount'
     password_confirmation: Password Confirmation
+    chimpy:
+      subscribe_title: Subscribe by Email

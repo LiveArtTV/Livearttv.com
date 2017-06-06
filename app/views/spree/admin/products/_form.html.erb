@@ -39,10 +39,37 @@
         <% end %>
       </div>
 
+      <div data-hook="admin_product_form_price_before_discount" id='price_for_discount'>
+        <%= f.field_container :price_before_discount, class: ['form-group'] do %>
+          <%= f.label :price_before_discount, raw(Spree.t(:master_price) + content_tag(:span, ' *', class: "required")) %>
+          <%= f.text_field :price_before_discount, value: number_to_currency(@product.price_before_discount, unit: ''), class: 'form-control', disabled: (cannot? :update, Spree::Price), data: {value: @product.price_before_discount} %>
+          <%= f.error_message_on :price_before_discount %>
+        <% end %>
+      </div>
+
+      <div data-hook="admin_product_form_discount_numer">
+        <div class="row">
+          <div class="col-xs-6" id='discout_number'>
+        <%= f.field_container :discount, class: ['form-group'] do %>
+          <%= f.label :discount, raw(Spree.t(:discount) + content_tag(:span, ' (sum)', class: "required")) %>
+          <%= f.number_field :discount, value: number_to_currency(@product.discount, unit: ''), class: 'form-control', data: {value: @product.discount}, step: :any %>
+          <%= f.error_message_on :discount %>
+        <% end %>
+         </div>
+          <div class="col-xs-6" id='discout_percent'>
+        <%= f.field_container :discount, class: ['form-group'] do %>
+          <%= f.label :discount, raw(Spree.t(:discount) + content_tag(:span, ' (%)', class: "required")) %>
+          <%= number_field_tag :discount, 0, class: 'form-control', step: :any %>
+          <%= f.error_message_on :discount %>
+        <% end %>
+          </div>
+        </div>
+      </div>
+
       <div data-hook="admin_product_form_price">
         <%= f.field_container :price, class: ['form-group'] do %>
-          <%= f.label :price, raw(Spree.t(:master_price) + content_tag(:span, ' *', class: "required")) %>
-          <%= f.text_field :price, value: number_to_currency(@product.price, unit: ''), class: 'form-control', disabled: (cannot? :update, Spree::Price) %>
+          <%- f.label :price, raw(Spree.t(:master_price) + content_tag(:span, ' *', class: "required")) %>
+          <%= f.hidden_field :price, value: number_to_currency(@product.price, unit: ''), class: 'form-control', disabled: (cannot? :update, Spree::Price) %>
           <%= f.error_message_on :price %>
         <% end %>
       </div>

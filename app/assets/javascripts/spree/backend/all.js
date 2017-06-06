@@ -2,6 +2,7 @@
 //= require jquery_ujs
 //= require spree/backend
 //= require fancybox
+//= require discount
 
 $(document).ready(function(){
     $(".fancybox").fancybox({
