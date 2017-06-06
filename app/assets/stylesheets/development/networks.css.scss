@@ -1,0 +1,29 @@
+.facebook {
+  padding: 10px;
+  display: inline-block;
+}
+
+.twitter {
+  padding: 10px;
+  display: inline-block;
+}
+
+.instagram {
+  padding: 10px;
+  display: inline-block;
+}
+
+.facebook:hover {
+  background: url(assets/images/fb_hover.svg);
+}
+.social_network {
+  a {
+    text-decoration: none;
+  }
+  .icon {
+    opacity: 0.7;
+    &:hover {
+      opacity: 1;
+    }
+  }
+}
