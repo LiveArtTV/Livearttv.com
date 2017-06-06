@@ -24,7 +24,7 @@ gem 'spree_gateway', '~> 3.1.0'
 gem 'spree_videos', git: 'https://github.com/vladimir-shidlovsky/spree_videos.git', branch: '3-1-stable'
 # gem 'spree_videos', path: 'lib/gems/spree_videos'
 gem 'spree_chimpy', git: 'https://github.com/vladimir-shidlovsky/spree_chimpy.git', branch: '3-stable'
-gem 'spree_static_content', github: 'spree-contrib/spree_static_content', branch: 'master'
+gem 'spree_static_content', git: 'https://github.com/spree-contrib/spree_static_content.git', branch: 'master'
 gem 'aws-sdk', '< 2.0'
 
 source 'https://rails-assets.org' do
