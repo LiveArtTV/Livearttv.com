@@ -18,7 +18,7 @@
             %i.fa.fa-expand
       .product-meta
         %h5.name
-          %a.product-name{href: url, title: truncate(product.name, length: 50)}
+          %a.product-name.product-name-title{href: url, title: truncate(product.name, length: 50)}
             = truncate(product.name, length: 50)
         .product-desc
           != simple_format(truncate(product_description(product), length: 200))
