@@ -229,7 +229,7 @@ body {
 }
 
 #search_block_top {
-  right: 10%;
+  right: 8%;
   top: $space*1.5;
 }
 
@@ -242,7 +242,7 @@ body {
 
 @media (min-width: $screen-lg) {
   #search_block_top {
-    right: 10%;
+    right: 8%;
   }
 }
 
@@ -310,7 +310,7 @@ body {
     }
 
     img {
-      padding: 20px;
+      width: 100%;
       -webkit-transition: opacity 0.5s ease 0s;
       transition: opacity 0.5s ease 0s;
       opacity: 0.9;
@@ -425,6 +425,9 @@ body {
   margin-top: $space-small;
 }
 
+.img-authors {
+  padding: 20px;
+}
 
 
 /*  Menu
