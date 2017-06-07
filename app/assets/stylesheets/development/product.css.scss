@@ -1519,6 +1519,18 @@ span.view_scroll_spacer {
     display: inline-block;
 }
 
+.product-block .name a.product-name.product-name-title {
+    font-family: Merriweather;
+    font-size: 20px;
+    font-weight: bold;
+    font-style: italic;
+    color: #666;
+}
+
+.product-block .name a.product-name.product-name-title:hover {
+    text-decoration: underline;
+}
+
 a.product-name.product-name-title {
     font-family: Merriweather;
     font-size: 22px;
