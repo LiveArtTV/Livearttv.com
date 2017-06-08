@@ -27,8 +27,8 @@
       .text-center
         %h4.title_block_home.page-subheading
           #{@author.name} works
-        #products-columns
-          #products
+        %div
+          #products.transitions-enabled.clearfix
             - if @author.products.blank?
               %p There are no works by this artist in stock at the moment
             - else
