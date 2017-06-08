@@ -45,6 +45,13 @@ $(document).ready(function(){
         }
       });
 
+    $('#products').masonry({
+        itemSelector: '.product-list-item',
+        columnWidth: function( containerWidth ) {
+          return (containerWidth / 3);
+        }
+      });
+
     $(".fancybox").fancybox({
         parent      : 'body',
         openEffect	: 'elastic',

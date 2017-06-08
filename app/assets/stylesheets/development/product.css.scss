@@ -1514,12 +1514,12 @@ span.view_scroll_spacer {
     column-gap: 20px;
 }
 
-#products-columns {
+/*#products-columns {
     column-count: 3;
     -moz-column-count: 3;
     -webkit-column-count: 3;
     column-gap: 20px;
-}
+}*/
 
 #artists-list {
     column-count: 5;
@@ -1622,6 +1622,14 @@ a.product-name.product-name-title {
   clear: both;
   .product-list-item {
     width: 20%;
+    padding: 10px;
+  }
+}
+
+#products {
+  clear: both;
+  .product-list-item {
+    width: 33%;
     padding: 10px;
   }
 }
