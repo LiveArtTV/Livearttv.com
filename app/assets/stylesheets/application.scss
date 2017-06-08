@@ -18,6 +18,12 @@
  *= require slick
  *= require font-awesome
  *= require material-design-iconic-font
+ *= require masonry/basic
+ *= require masonry/centered
+ *= require masonry/fluid
+ *= require masonry/gutters
+ *= require masonry/infinitescroll
+ *= require masonry/transitions
  *= require_self
  */
 
@@ -29,4 +35,3 @@
 @import 'optimizations/cart';
 @import 'optimizations/site-theme-or';
 @import 'optimizations/sitebox';
-

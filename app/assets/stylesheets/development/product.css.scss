@@ -1618,3 +1618,10 @@ a.product-name.product-name-title {
     padding: 20px;
 }
 
+#productlist1 {
+  clear: both;
+  .product-list-item {
+    width: 20%;
+    padding: 10px;
+  }
+}

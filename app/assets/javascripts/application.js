@@ -29,12 +29,22 @@
 //= require master
 //= require contact_us
 //= require product
+//= require masonry/jquery.masonry
+//= require masonry/box-maker
+//= require masonry/jquery.loremimages.min
 
 $(window).bind('page:change', function() {
     $.fancybox.init();
 });
 
 $(document).ready(function(){
+    $('#productlist1').masonry({
+        itemSelector: '.product-list-item',
+        columnWidth: function( containerWidth ) {
+          return (containerWidth / 5);
+        }
+      });
+
     $(".fancybox").fancybox({
         parent      : 'body',
         openEffect	: 'elastic',
