@@ -6,7 +6,7 @@
       .row
         .product-left-column.col-xs-12.col-sm-12.col-md-5
           #main-image2.product-block
-            .product-image-container.image
+            .product-image-container.image.artist-img
               - if @author.try(:images)
                 - image = @author.images.first
                 - if image
@@ -27,12 +27,13 @@
       .text-center
         %h4.title_block_home.page-subheading
           #{@author.name} works
-        #products.row
-          - if @author.products.blank?
-            %p There are no works by this artist in stock at the moment
-          - else
-            - @author.products.each do |product|
-              = render partial: 'spree/products/item_small', locals: {product: product}
+        #products-columns
+          #products
+            - if @author.products.blank?
+              %p There are no works by this artist in stock at the moment
+            - else
+              - @author.products.each do |product|
+                = render partial: 'spree/products/item_small', locals: {product: product}
 
     %hr
 

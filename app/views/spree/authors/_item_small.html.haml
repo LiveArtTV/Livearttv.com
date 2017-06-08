@@ -1,5 +1,5 @@
 - url = spree.author_url(id: author.slug)
-.col-md-five.product-list-item{"data-hook" => "authors_list_item", :id => "author_#{author.id}", :itemscope => "", :itemtype => "https://schema.org/Author"}
+.product-list-item{"data-hook" => "authors_list_item", :id => "author_#{author.id}", :itemscope => "", :itemtype => "https://schema.org/Author"}
   .product-container.text-left.product-block{"data-mh"=> "products_list"}
     .product-image-container.image
       %a.product_img_link{href: url, title: author.name}
