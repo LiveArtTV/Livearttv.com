@@ -19,7 +19,6 @@ gem 'to_xls'
 # gem 'bcrypt', '~> 3.1.7'
 
 gem 'spree', '~> 3.1.0'
-gem 'bugsnag'
 gem 'font-awesome-rails'
 gem 'spree_auth_devise', '~> 3.1.0'
 gem 'spree_gateway', '~> 3.1.0'
