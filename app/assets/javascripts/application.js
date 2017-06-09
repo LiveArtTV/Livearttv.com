@@ -45,8 +45,7 @@ $(document).ready(function(){
           return (containerWidth / 5);
         }
       }).imagesLoaded(function() {
-      $('#productlist1').masonry('reload');
-      });
+      $('.product-list-item').masonry('reload');
       });
 
     $('#products').masonry({
@@ -55,9 +54,9 @@ $(document).ready(function(){
           return (containerWidth / 3);
         }
       }).imagesLoaded(function() {
-      $('#productlist1').masonry('reload');
+      $('.product-list-item').masonry('reload');
       });
-      });
+
 
     $(".fancybox").fancybox({
         parent      : 'body',
