@@ -1621,7 +1621,7 @@ a.product-name.product-name-title {
 #productlist1 {
   clear: both;
   opacity: 0;
-  transition: opacity 5s ease-out 0s;
+  transition: opacity 0.5s ease-out 0s;
   .product-list-item {
     width: 20%;
     padding: 10px;
@@ -1634,8 +1634,28 @@ a.product-name.product-name-title {
 
 #products {
   clear: both;
+  opacity: 0;
+  transition: opacity 0.5s ease-out 0s;
   .product-list-item {
     width: 33%;
     padding: 10px;
   }
+}
+
+#products.loaded {
+    opacity: 1;
+}
+
+#taxons {
+  clear: both;
+  opacity: 0;
+  transition: opacity 0.5s ease-out 0s;
+  .product-container {
+    width: 33%;
+    padding: 10px;
+  }
+}
+
+#taxons.loaded {
+    opacity: 1;
 }

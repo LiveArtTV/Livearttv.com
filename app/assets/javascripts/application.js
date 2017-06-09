@@ -51,14 +51,27 @@ $(document).ready(function(){
         $container.addClass('loaded');
     });
 
-    $('#products').masonry({
-        itemSelector: '.product-list-item',
-        columnWidth: function( containerWidth ) {
-          return (containerWidth / 3);
-        }
-      }).imagesLoaded(function() {
-      $('.product-list-item').masonry('reload');
-      });
+    var $container1 = $('#products');
+    $container1.imagesLoaded( function() {
+        $container1.masonry({
+            itemSelector: '.product-list-item',
+            columnWidth: function( containerWidth ) {
+              return (containerWidth / 3);
+            }
+        });
+        $container1.addClass('loaded');
+    });
+
+    var $container2 = $('#taxons');
+    $container2.imagesLoaded( function() {
+        $container2.masonry({
+            itemSelector: '.product-container',
+            columnWidth: function( containerWidth ) {
+              return (containerWidth / 3);
+            }
+        });
+        $container2.addClass('loaded');
+    });
 
     $(".fancybox").fancybox({
         parent      : 'body',
