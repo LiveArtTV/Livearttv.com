@@ -43,14 +43,14 @@ $(document).ready(function(){
         columnWidth: function( containerWidth ) {
           return (containerWidth / 5);
         }
-      });
+      }).masonry('reload');
 
     $('#products').masonry({
         itemSelector: '.product-list-item',
         columnWidth: function( containerWidth ) {
           return (containerWidth / 3);
         }
-      });
+      }).masonry('reload');
 
     $(".fancybox").fancybox({
         parent      : 'body',
