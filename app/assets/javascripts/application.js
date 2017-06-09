@@ -39,14 +39,17 @@ $(window).bind('page:change', function() {
 });
 
 $(document).ready(function(){
-    $('#productlist1').masonry({
-        itemSelector: '.product-list-item',
-        columnWidth: function( containerWidth ) {
-          return (containerWidth / 5);
-        }
-      }).imagesLoaded(function() {
-      $('.product-list-item').masonry('reload');
-      });
+
+    var $container = $('#productlist1');
+    $container.imagesLoaded( function() {
+        $container.masonry({
+            itemSelector: '.product-list-item',
+            columnWidth: function( containerWidth ) {
+              return (containerWidth / 5);
+            }
+        });
+        $container.addClass('loaded');
+    });
 
     $('#products').masonry({
         itemSelector: '.product-list-item',
@@ -56,7 +59,6 @@ $(document).ready(function(){
       }).imagesLoaded(function() {
       $('.product-list-item').masonry('reload');
       });
-
 
     $(".fancybox").fancybox({
         parent      : 'body',
