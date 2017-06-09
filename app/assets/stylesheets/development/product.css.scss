@@ -1620,10 +1620,16 @@ a.product-name.product-name-title {
 
 #productlist1 {
   clear: both;
+  opacity: 0;
+  transition: opacity 5s ease-out 0s;
   .product-list-item {
     width: 20%;
     padding: 10px;
   }
+}
+
+#productlist1.loaded {
+    opacity: 1;
 }
 
 #products {
