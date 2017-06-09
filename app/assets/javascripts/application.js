@@ -32,6 +32,7 @@
 //= require masonry/jquery.masonry
 //= require masonry/box-maker
 //= require masonry/jquery.loremimages.min
+//= require masonry/jquery.imagesloaded.min
 
 $(window).bind('page:change', function() {
     $.fancybox.init();
@@ -43,14 +44,20 @@ $(document).ready(function(){
         columnWidth: function( containerWidth ) {
           return (containerWidth / 5);
         }
-      }).masonry('reload');
+      }).imagesLoaded(function() {
+      $('#productlist1').masonry('reload');
+      });
+      });
 
     $('#products').masonry({
         itemSelector: '.product-list-item',
         columnWidth: function( containerWidth ) {
           return (containerWidth / 3);
         }
-      }).masonry('reload');
+      }).imagesLoaded(function() {
+      $('#productlist1').masonry('reload');
+      });
+      });
 
     $(".fancybox").fancybox({
         parent      : 'body',
