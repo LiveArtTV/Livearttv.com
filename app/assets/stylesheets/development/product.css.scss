@@ -1598,7 +1598,7 @@ a.product-name.product-name-title {
     padding: 20px;
 }
 
-#productlist1 {
+#list-artist-5-col {
   clear: both;
   opacity: 0;
   transition: opacity 0.5s ease-out 0s;
@@ -1608,7 +1608,7 @@ a.product-name.product-name-title {
   }
 }
 
-#productlist1.loaded {
+#list-artist-5-col.loaded {
     opacity: 1;
 }
 

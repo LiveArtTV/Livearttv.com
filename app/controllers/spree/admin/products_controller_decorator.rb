@@ -1,6 +1,7 @@
 Spree::Admin::ProductsController.class_eval do
 
   def index
+    Mime::Type.register "application/vnd.ms-excel", :xls
     respond_to do |format|
       format.html { render :index }
       format.xls do
@@ -9,4 +10,4 @@ Spree::Admin::ProductsController.class_eval do
       end
     end
   end
-end 
+end

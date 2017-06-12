@@ -40,7 +40,7 @@ $(window).bind('page:change', function() {
 
 $(document).ready(function(){
 
-    var $container = $('#productlist1');
+    var $container = $('#list-artist-5-col');
     $container.imagesLoaded( function() {
         $container.masonry({
             itemSelector: '.product-list-item',

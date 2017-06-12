@@ -16,8 +16,9 @@
   - if @authors.any?
     %div
       #productlist1.transitions-enabled.clearfix{"data-hook" => ""}
-        - @authors.each do |author|
-          = render partial: 'spree/authors/item_small', locals: {author: author}
+        #list-artist-5-col
+          - @authors.each do |author|
+            = render partial: 'spree/authors/item_small', locals: {author: author}
   - else
     %h5.text-uppercase= Spree.t(:no_authors_found)
   - if @authors.respond_to?(:total_pages)
