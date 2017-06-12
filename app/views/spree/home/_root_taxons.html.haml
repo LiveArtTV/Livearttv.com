@@ -5,8 +5,6 @@
       - taxon_roots = Spree::Taxon.all
       - cache(["taxon-roots", taxon_roots.maximum(:updated_at).to_i].join('-')) do
         - taxon_roots.each do |taxon_root|
-          -#= link_to taxon_root.name, seo_url(taxon_root)
-          -# taxon_root.children.show_on_home.each do |taxon|
           - if taxon_root.show_on_home
             .img_category.col-sm-4
               = link_to seo_url(taxon_root), class: 'img_category_link' do
