@@ -27,12 +27,12 @@
               - if @product.not_sale? || @product.request_price?
                 = product_price_variations
               - if @product.real_price?
-                - if @product.discount > 0 
+                - if @product.discount > 0
                   .price-before-discount
                     = @product.price_before_discount
                   .price_with_discount
                     = @product.price
-                - else 
+                - else
                   .price_only
                     = @product.price
             %span{:content => @product.currency, :itemprop => "priceCurrency"}
@@ -57,4 +57,3 @@
         %div
           %span.price.selling{:itemprop => "price"}
             = Spree.t('product_not_available_in_this_currency')
-
