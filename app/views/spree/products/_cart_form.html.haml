@@ -35,6 +35,8 @@
                 - else
                   .price_only
                     = @product.price
+                    = button_to "INQUIRE", pages_contact_us_path, method: :get, :form_class => "btn btn-info"
+
             %span{:content => @product.currency, :itemprop => "priceCurrency"}
           - if @product.master.can_supply?
             %link{:href => "https://schema.org/InStock", :itemprop => "availability"}/

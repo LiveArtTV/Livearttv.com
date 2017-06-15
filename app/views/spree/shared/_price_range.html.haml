@@ -1,0 +1,24 @@
+%form#sidebar_products_search{"accept-charset" => "UTF-8", :action => "", :method => "get"}
+  %input{:name => "utf8", :type => "hidden", :value => "✓"}/
+  %input#per_page{:name => "per_page", :type => "hidden"}/
+  .block.sidebarCategories.navigation.informBlock{"data-hook" => "navigation"}
+    %h4.title_block.taxonomy-root Price Range
+    .block_content{"data-hook" => "", :style => ""}
+      %ul.listSidebar.list-unstyled
+        %li
+          %input{:id => "Price_Range_Under_$10.00", :name => "search[price_range_any][]", :type => "checkbox", :value => "Under $10.00"}/
+          %label.nowrap{:for => "Price_Range_Under_$10.00"} Under $10.00
+        %li
+          %input{:id => "Price_Range_$10.00_-_$15.00", :name => "search[price_range_any][]", :type => "checkbox", :value => "$10.00 - $15.00"}/
+          %label.nowrap{:for => "Price_Range_$10.00_-_$15.00"} $10.00 - $15.00
+        %li
+          %input{:id => "Price_Range_$15.00_-_$18.00", :name => "search[price_range_any][]", :type => "checkbox", :value => "$15.00 - $18.00"}/
+          %label.nowrap{:for => "Price_Range_$15.00_-_$18.00"} $15.00 - $18.00
+        %li
+          %input{:id => "Price_Range_$18.00_-_$20.00", :name => "search[price_range_any][]", :type => "checkbox", :value => "$18.00 - $20.00"}/
+          %label.nowrap{:for => "Price_Range_$18.00_-_$20.00"} $18.00 - $20.00
+        %li
+          %input{:id => "Price_Range_$20.00_or_over", :name => "search[price_range_any][]", :type => "checkbox", :value => "$20.00 or over"}/
+          %label.nowrap{:for => "Price_Range_$20.00_or_over"} $20.00 or over
+%br
+%input#sidebar_products_search_submit.btn.btn--style-primary{:type => "submit", :value => "Search"}/

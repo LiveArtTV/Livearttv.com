@@ -15,19 +15,25 @@ Spree::AppConfiguration.class_eval do
   preference :company_address, :string, default: ''
   preference :company_phone,   :string, default: ''
   preference :company_email,   :string, default: ''
+  preference :facebook, :string, default: ''
+  preference :twitter, :string, default: ''
+  preference :instagram, :string, default: ''
 end
 
 Spree.config do |config|
   # Example:
   # Uncomment to stop tracking inventory levels in the application
   # config.track_inventory_levels = false
-  config.logo = 'logo_main.png'
+  config.logo = 'logo02.png'
   config.company_title   = 'Elite Shopping'
   config.company_address = '157 Kimbles Road, Hawley, PA 18428'
-  config.company_phone   = '(516)507-9973'
+  config.company_phone   = '(516) 507-9973'
   config.company_email   = 'info@eliteshopping.tv'
   config.show_raw_product_description = true
   config.checkout_zone   = 'United States'
+  config.facebook = 'https://www.facebook.com/EliteArtTV'
+  config.twitter = 'https://twitter.com/info_livearttv'
+  config.instagram = 'https://www.instagram.com/eliteart4954'
 end
 
 Spree.user_class = "Spree::User"
