@@ -23,20 +23,23 @@
         #product-price
           %h6.product-section-title= Spree.t(:price)
           %div
-            %span.lead.price.selling{:itemprop => "price"}
-              - if @product.not_sale? || @product.request_price?
-                = product_price_variations
-              - if @product.real_price?
-                - if @product.discount > 0
-                  .price-before-discount
-                    = @product.price_before_discount
-                  .price_with_discount
-                    = @product.price
-                - else
-                  .price_only
-                    = @product.price
-                    = button_to "INQUIRE", pages_contact_us_path, method: :get, :form_class => "btn btn-info"
-
+            .row
+              .col-md-6
+                %span.lead.price.selling{:itemprop => "price"}
+                  - if @product.not_sale? || @product.request_price?
+                    = product_price_variations
+                  - if @product.real_price?
+                    - if @product.discount > 0
+                      .price-before-discount
+                        = @product.price_before_discount
+                      .price_with_discount
+                        = @product.price
+                    - else
+                      .price_only
+                        = @product.price
+              .col-md-6
+                = link_to Spree.t(:inquire), pages_contact_us_path, class: 'btn btn-info'
+                = link_to Spree.t(:make_an_offer), pages_contact_us_path, class: 'btn btn-info'
             %span{:content => @product.currency, :itemprop => "priceCurrency"}
           - if @product.master.can_supply?
             %link{:href => "https://schema.org/InStock", :itemprop => "availability"}/

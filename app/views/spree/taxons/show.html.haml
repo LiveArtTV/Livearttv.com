@@ -3,7 +3,6 @@
 - content_for :sidebar do
   = render partial: 'spree/shared/taxonomies'
   = render partial: 'spree/shared/authors'
-  = render partial: 'spree/shared/price_range'
   = render partial: 'spree/shared/filters' if @taxon.leaf?
 = render partial: 'spree/shared/products_sort_header'
 #taxon_products{"data-hook" => "taxon_products"}

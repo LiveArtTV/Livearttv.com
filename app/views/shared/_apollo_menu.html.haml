@@ -17,9 +17,9 @@
             .dropdown-sub.dropdown-menu.sub-apmegamenu-1
               .dropdown-menu-inner
                 .row
-                  - taxon_roots = Spree::Taxon.roots
+                  - taxon_roots = Spree::Taxon.roots.unscoped.where(parent_id: nil)
                   - cache(["taxon-roots", taxon_roots.maximum(:updated_at).to_i].join('-')) do
-                    - taxon_roots.each do |taxon_root|
+                    - taxon_roots.joins(:taxonomy).order('spree_taxonomies.position asc').each do |taxon_root|
                       .mega-col.col-sm-3.mega-col-inner
                         .menu-title
                           = link_to taxon_root.name, seo_url(taxon_root)
