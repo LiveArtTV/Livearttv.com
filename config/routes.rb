@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  match '/', to: 'spree/landings#index', via: 'get'
   mount Spree::Core::Engine, at: '/'
 end
 
