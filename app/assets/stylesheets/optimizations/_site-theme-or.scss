@@ -300,7 +300,7 @@ body {
 
   .product-image-container {
     background-color: #FFFFFF;
-    
+
     &.product-videoimage-container {
       padding: 75% 0 0 0;
     }
@@ -564,4 +564,10 @@ span.or {
   font-weight: $weight-bold;
   font-size: $font-size-base;
   color: inherit;
+}
+
+.text-center.text-footer {
+  font-size: 13px;
+  line-height: $line-height-computed;
+  font-family: $font-face-default;
 }
