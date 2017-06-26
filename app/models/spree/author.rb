@@ -58,4 +58,9 @@ class Spree::Author < ActiveRecord::Base
   def fill_slug
     self.slug = name.gsub(/\s+/, '_').underscore
   end
+
+  protected
+  def ransackable_attributes(auth_object = nil)
+    super & %w(name)
+  end
 end
