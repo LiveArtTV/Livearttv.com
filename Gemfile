@@ -12,6 +12,8 @@ gem 'haml-rails'
 gem 'mmenu-rails', '~> 5.5', '>= 5.5.3'
 gem 'masonry-rails'
 gem 'to_xls'
+gem 'datashift'
+gem 'datashift_spree'
 
 # bundle exec rake doc:rails generates the API under doc/api.
 
