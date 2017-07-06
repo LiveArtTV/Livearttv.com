@@ -1,6 +1,7 @@
 GIT
-  remote: git://github.com/spree-contrib/spree_active_shipping.git
+  remote: https://github.com/spree-contrib/spree_active_shipping.git
   revision: c076952d2dc7de4c42b70a2385d0da86b2a5fe2a
+  branch: master
   specs:
     spree_active_shipping (3.2.0.alpha)
       active_shipping (~> 1.4)

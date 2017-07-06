@@ -27,7 +27,7 @@ gem 'spree_videos', git: 'https://github.com/vladimir-shidlovsky/spree_videos.gi
 gem 'spree_chimpy', git: 'https://github.com/vladimir-shidlovsky/spree_chimpy.git', branch: '3-stable'
 gem 'spree_static_content', git: 'https://github.com/spree-contrib/spree_static_content.git', branch: 'master'
 gem 'aws-sdk', '< 2.0'
-gem 'spree_active_shipping', github: 'spree-contrib/spree_active_shipping'
+gem 'spree_active_shipping', git: 'https://github.com/spree-contrib/spree_active_shipping.git', branch: 'master'
 
 source 'https://rails-assets.org' do
   gem 'rails-assets-material-design-iconic-font'
