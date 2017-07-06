@@ -15,10 +15,10 @@
           .inside_cart_form_actions.clearfix{"data-hook" => "cart_buttons"}
             .pull-left
               #clear_cart_link{"data-hook" => ""}
-                = submit_tag Spree.t(:empty_cart), class: 'btn btn--style-default', data: {url: spree.empty_cart_path, name: 'clear_cart_btn'}
-                - if Spree::Taxon.roots.try(:first)
+                -#= submit_tag Spree.t(:empty_cart), class: 'btn btn--style-default', data: {url: spree.empty_cart_path, name: 'clear_cart_btn'}
+                -#- if Spree::Taxon.roots.try(:first)
                   = Spree.t(:or)
-                  = link_to Spree.t(:continue_shopping), seo_url(Spree::Taxon.roots.first), class: 'btn btn--style-default'
+                = link_to Spree.t(:continue_shopping), seo_url(Spree::Taxon.roots.first), class: 'btn btn--style-default'
             .pull-right
               %button#update-button.btn.btn--style-default{:name => "button", :type => "submit"}= Spree.t(:update)
               %button#checkout-link.btn.btn--style-default{:name => "checkout", :type => "submit"}= Spree.t(:checkout)

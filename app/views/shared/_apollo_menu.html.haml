@@ -206,6 +206,9 @@
                             View All Videos
 
           %li
+            = link_to '/pages/auctions', target: '_self', title: Spree::t('auctions') do
+              %span= Spree::t('auctions')
+          %li
             = link_to '/pages/about_us', target: '_self', title: Spree::t('about_us') do
               %span= Spree::t('about_us')
           %li

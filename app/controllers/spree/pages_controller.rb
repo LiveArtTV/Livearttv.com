@@ -7,6 +7,11 @@ module Spree
       @breadcrumbs = OpenStruct.new(name: title, title: title)
     end
 
+    def auctions
+      title = Spree.t(:auctions)
+      @breadcrumbs = OpenStruct.new(name: title, title: title)
+    end
+
     def contact_us_send
       if params[:name].blank? # check bot. This params must be empty =)
         MailingMailer.feedback(msg_params)

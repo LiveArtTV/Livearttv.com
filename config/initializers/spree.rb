@@ -34,6 +34,10 @@ Spree.config do |config|
   config.facebook = 'https://www.facebook.com/EliteArtTV'
   config.twitter = 'https://twitter.com/info_livearttv'
   config.instagram = 'https://www.instagram.com/eliteart4954'
+
+  Spree::ActiveShipping::Config[:ups_login]
+  Spree::ActiveShipping::Config[:ups_password]
+  Spree::ActiveShipping::Config[:ups_key]
 end
 
 Spree.user_class = "Spree::User"
