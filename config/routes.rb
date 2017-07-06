@@ -29,5 +29,6 @@ Spree::Core::Engine.routes.append do
   end
   get  'pages/contact_us'
   get  'pages/about_us', controller: 'pages', action: 'about_us'
+  get  'pages/auctions', controller: 'pages', action: 'auctions'
   post 'pages/contact_us', controller: 'pages', action: 'contact_us_send'
 end
