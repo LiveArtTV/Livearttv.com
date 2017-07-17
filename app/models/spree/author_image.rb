@@ -47,6 +47,14 @@ module Spree
       attachment.url(:mini, false)
     end
 
+    def original_url
+      attachment.url(:original, false)
+    end
+
+    def url_with_host_author
+      "#{ActionController::Base.asset_host}#{original_url}"
+    end
+
     def find_dimensions
       temporary = attachment.queued_for_write[:original]
       filename = temporary.path unless temporary.nil?

@@ -1,10 +1,15 @@
 - url = spree.author_url(id: author.slug)
+- image = author.images.first
 .product-list-item{"data-hook" => "authors_list_item", :id => "author_#{author.id}", :itemscope => "", :itemtype => "https://schema.org/Author"}
   .product-container.text-left.product-block{"data-mh"=> "products_list"}
     .product-image-container.image
-      %a.product_img_link{href: url, title: author.name}
-        %img.replace-2x.img-responsive.img-authors{alt: author.name, src: product_image_src(author, :original)}
-        %span.product-additional{data: {idproduct: author.id}}
+      - if image
+        %a.product_img_link{href: url, title: author.name}
+          %img.replace-2x.img-responsive.img-authors{alt: author.name, src: image.url_with_host_author}
+          %span.product-additional{data: {idproduct: author.id}}
+      - else
+        .img-authors
+          = image_tag asset_path('product_default.png')
     .product-meta
       %h5.name.flatten
         %a.product-name{href: url, title: truncate(author.name, length: 50)}
