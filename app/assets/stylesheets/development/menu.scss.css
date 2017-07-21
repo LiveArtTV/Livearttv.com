@@ -115,7 +115,7 @@
     left: 0px;
     display: block;
     visibility: hidden;
-    height: auto;
+    height: 100vh;
     font-weight: 300;
     opacity: 0;
     filter: alpha(opacity=0);

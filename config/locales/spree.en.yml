@@ -29,13 +29,14 @@ en:
     artist:  Artist
     artists: Artists
     library: Library
+    videos: Videos
     authors: Authors
     author:  Author
     about_us: About Us
     auctions: Auctions
     show_at_home: Pin to home page
     inquire: INQUIRE
-    :make_an_offer: MAKE AN OFFER
+    make_an_offer: MAKE AN OFFER
     static_content:
       link: Link
       new_author: New Author
@@ -53,3 +54,5 @@ en:
     password_confirmation: Password Confirmation
     chimpy:
       subscribe_title: Subscribe by Email
+    validation:
+      must_be_int: only 1 item

@@ -53,7 +53,7 @@ module ApplicationHelper
       @videos.find_by show_on_home: true
     end
   end
-  
+
   def product_price_variations
     result = nil
     if @product.real_price?

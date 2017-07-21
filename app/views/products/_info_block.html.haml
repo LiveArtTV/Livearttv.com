@@ -13,5 +13,5 @@
       - if product.author
         .product-description.rte
           %h5.brand= product.author.name
-          .is-breakable
+          .is-breakable.artist-description
             != simple_format(product.author.content)

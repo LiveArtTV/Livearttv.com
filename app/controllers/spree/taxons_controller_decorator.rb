@@ -8,14 +8,13 @@ Spree::TaxonsController.class_eval do
     @searcher = build_searcher(params.merge(taxon: taxon.id, include_images: false))
     @products = @searcher.retrieve_products
     # @products = taxon.products.ransack(params[:q]).result
-    # @products = @products.page(params[:page]).per(500 || params[:per_page])
+    #@products = @products.page(params[:page]).per(50 || params[:per_page])
     # render "spree/api/products/index"
   end
 
   def show
     @taxon = Spree::Taxon.friendly.find(params[:id])
     return unless @taxon
-
     @searcher = build_searcher(params.merge(taxon: @taxon.id, include_images: true))
     @products = @searcher.retrieve_products
     @taxonomies = Spree::Taxonomy.includes(root: :children)
