@@ -24,38 +24,34 @@
           %h6.product-section-title= Spree.t(:price)
           %div
             .row
-              .col-md-6
+              .col-md-4
                 %span.lead.price.selling{:itemprop => "price"}
                   - if @product.not_sale? || @product.request_price?
                     = product_price_variations
                   - if @product.real_price?
                     - if @product.discount > 0
                       .price-before-discount
-                        = @product.price_before_discount
+                        = number_to_currency(@product.price_before_discount, :precision => 0)
                       .price_with_discount
-                        = @product.price
+                        = number_to_currency(@product.price, :precision => 0)
                     - else
                       .price_only
-                        = @product.price
-              .col-md-6
-                = link_to Spree.t(:inquire), pages_contact_us_path, class: 'btn btn-info'
-                = link_to Spree.t(:make_an_offer), pages_contact_us_path, class: 'btn btn-info'
-            %span{:content => @product.currency, :itemprop => "priceCurrency"}
+                        = number_to_currency(@product.price, :precision => 0)
+                %span{:content => @product.currency, :itemprop => "priceCurrency"}
+                
+              .col-md-4
+                - if @product.can_supply? && @product.real_price?
+                  .add-to-cart.quantity_wanted_p
+                    .apQty.js--cart-adjust
+                      = hidden_field_tag :quantity, 1
+                    %span.input-group-btn
+                      = button_tag class: 'btn btn-success add_to_cart_detail', id: 'add-to-cart-button', type: :submit do
+                        = Spree.t(:add_to_cart)
           - if @product.master.can_supply?
             %link{:href => "https://schema.org/InStock", :itemprop => "availability"}/
           - elsif @product.variants.empty?
-            %br/
             %span.out-of-stock= Spree.t(:out_of_stock)
-        - if @product.can_supply? && @product.real_price?
-          .line-product-top
-          .add-to-cart.quantity_wanted_p
-            .apQty.js--cart-adjust
-              %button.apQtyAdjust.apQtyAdjustMinus{"data-id" => "", "data-qty" => "0", :type => "button"} −
-              = text_field_tag :quantity, 1, class: 'title form-control add-to-cart-detail-number', min: 1
-              %button.apQtyAdjust.apQtyAdjustPlus{"data-id" => "", "data-qty" => "11", :type => "button"} +
-            %span.input-group-btn
-              = button_tag class: 'btn btn-success add_to_cart_detail', id: 'add-to-cart-button', type: :submit do
-                = Spree.t(:add_to_cart)
+
     - else
       #product-price
         %br/

@@ -63,8 +63,10 @@ attachment_config = {
     default_style:  'product'
 }
 
-attachment_config.each do |key, value|
-  Spree::Image.attachment_definitions[:attachment][key.to_sym] = value
+[Spree::Image, Spree::AuthorImage].each do |model|
+  attachment_config.each do |key, value|
+    model.attachment_definitions[:attachment][key.to_sym] = value
+  end
 end unless Rails.env.development? || Rails.env.testing?
 
 Spree::Image.attachment_definitions[:attachment][:styles].merge!(
@@ -78,3 +80,7 @@ Spree::PermittedAttributes.product_attributes << [:description_short]
 Spree::Taxon.attachment_definitions[:icon][:styles].merge!(
     home:  '270x170#'
 )
+
+Spree.config do |config|
+  config.products_per_page = 50
+end
