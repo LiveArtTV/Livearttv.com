@@ -17,7 +17,7 @@
         .name
           %a.product-name.product-name-title{href: url, title: product.name}
             = truncate(product.name, length: 50)
-        .product-desc
+        .product-desc.desc-short
           = product.description_short
       - if product_property(@product_properties, :year).present?
         %h5.brand{:itemprop => "brand"}

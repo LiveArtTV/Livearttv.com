@@ -44,6 +44,7 @@ class Spree::Author < ActiveRecord::Base
   alias_method :images, :author_images
 
   has_many :videos, -> { order 'position ASC' }, :as => :watchable
+  has_many :taxons, through: :products
 
   scope :visible, -> { where(visible: true) }
   scope :header_links, -> { where(show_in_header: true).visible }

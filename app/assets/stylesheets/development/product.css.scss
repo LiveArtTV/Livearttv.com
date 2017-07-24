@@ -1514,11 +1514,10 @@ span.view_scroll_spacer {
 }
 
 .product-block .name a.product-name.product-name-title {
-    font-family: Merriweather;
-    font-size: 20px;
+    font-family: Poppins;
+    font-size: 16px;
     font-weight: bold;
-    font-style: italic;
-    color: #666;
+    color: black;
 }
 
 .product-block .name a.product-name.product-name-title:hover {
@@ -1526,10 +1525,11 @@ span.view_scroll_spacer {
 }
 
 a.product-name.product-name-title {
-    font-family: Merriweather;
-    font-size: 22px;
+    font-family: Poppins;
+    font-size: 16px;
     font-weight: bold;
-    font-style: italic;
+    color: black;
+
 }
 
 
@@ -1650,4 +1650,8 @@ a.product-name.product-name-title {
 
 .is-breakable.artist-description {
   padding-right: 20px;
+}
+
+.product-desc.desc-short {
+  font-size: 14px;
 }
