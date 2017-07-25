@@ -31,4 +31,7 @@ Spree::Core::Engine.routes.append do
   get  'pages/about_us', controller: 'pages', action: 'about_us'
   get  'pages/auctions', controller: 'pages', action: 'auctions'
   post 'pages/contact_us', controller: 'pages', action: 'contact_us_send'
+  match '/404', to: 'errors#not_found', via: :all
+  match '/500', to: 'errors#internal_server_error', via: :all
+  match '/422', to: 'errors#unprocessable_entity', via: :all
 end

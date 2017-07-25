@@ -31,7 +31,7 @@ Spree.config do |config|
   config.company_email   = 'info@eliteshopping.tv'
   config.show_raw_product_description = true
   config.checkout_zone   = 'United States'
-  config.facebook = 'https://www.facebook.com/EliteArtTV'
+  config.facebook = 'https://www.facebook.com/Live-Art-TV'
   config.twitter = 'https://twitter.com/info_livearttv'
   config.instagram = 'https://www.instagram.com/eliteart4954'
 end

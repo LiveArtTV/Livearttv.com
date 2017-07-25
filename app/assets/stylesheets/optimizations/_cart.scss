@@ -97,3 +97,34 @@ table.cart_table {
     font-family: $font-face-default;
   }
 }
+
+
+.pop-up {
+position: fixed;
+margin: 5% auto;
+z-index: 2;
+top: 50%; /* Отступ в процентах от верхнего края окна */
+left: 50%; /* Отступ в процентах от левого края окна */
+position: absolute; /* Абсолютное позиционирование блока */
+margin-top: -225px; /* Отрицательный отступ от верхнего края страницы, должен равняться половине высоты блока со знаком минус */
+margin-left: -225px; /* Отрицательный отступ от левого края страницы, должен равняться половине высоты блока со знаком минус */
+}
+
+.box {
+background-color: whitesmoke;
+text-align: center;
+width: 250px; /* Ширина блока */
+height: auto; /* Высота блока */
+margin-left: auto;
+margin-right: auto;
+margin-top: 10%;
+position: relative;
+-webkit-box-shadow: 0px 4px 6px 0px rgba(0,0,0,0.1);
+-moz-box-shadow: 0px 4px 6px 0px rgba(0,0,0,0.1);
+box-shadow: 0px 4px 6px 0px rgba(0,0,0,0.1);
+}
+
+a.close-button {
+  cursor: pointer;
+
+}
