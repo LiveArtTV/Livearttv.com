@@ -1,0 +1,14 @@
+.overlay
+  .pop-up_overlay
+  %div.row.pop-up
+    %div.box.small-6.large-centered
+      %div.close-popup
+        %a.close-button X
+      %h4 Become a member & receive 10% off your entire order!
+      = link_to spree.signup_path do
+        %i.fa.fa-unlock-alt
+        = Spree.t(:signup)
+      or
+      = link_to spree.login_path do
+        %i.fa.fa-unlock-alt
+        = Spree.t(:login)

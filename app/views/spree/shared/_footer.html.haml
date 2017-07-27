@@ -20,27 +20,22 @@
               .block.footer-block.footerAccordion.box-contact-info
                 %h4.title_block get in touch
                 %ul.list-unstyled.block_content{:style => ""}
-                  %li.address
-                    %span #{Spree::Config[:company_address]}
+                  %li.phone
+                    %span #{Spree::Config[:company_phone_tol]}
                   %li.phone
                     %span #{Spree::Config[:company_phone]}
+                  %li.address
+                    %span #{Spree::Config[:company_address]}
                   %li.email.is-breakable
                     %span #{Spree::Config[:company_email]}
-                  %li.social_network
-                    %span.facebook.icon
-                      = link_to(Spree::Config[:facebook], target: "_blank")  do
-                        = image_tag('fb.svg', size: "45x45", alt: "facebook")
-                    %span.twitter.icon
-                      = link_to(Spree::Config[:twitter], target: "_blank") do
-                        = image_tag('tw.svg', size: "45x45", alt: "twitter")
-                    %span.instagram.icon
-                      = link_to(Spree::Config[:instagram], target: "_blank") do
-                        = image_tag('inst.svg', size: "45x45", alt: "instagram")
-            .col-md-2.col-sm-2.col-xs-12.col-sp-12
+                  %li.item
+                    %a{:href => "#", :title => "Careers "} Careers
+
+            -#.col-md-2.col-sm-2.col-xs-12.col-sp-12
               #block_links_footer_1.block.footer-block.footerAccordion
                 %h4.title_block support
                 .block_content{:style => ""}
-                  %ul.toggle-footer.list-group.list-unstyled{:style => ""}
+                  -#%ul.toggle-footer.list-group.list-unstyled{:style => ""}
                     -#%li.item
                       %a{:href => "#!", :title => "Returns"} Returns
                     -#%li.item
@@ -55,16 +50,24 @@
               #block_links_footer_2.block.footer-block.footerAccordion
                 %h4.title_block information
                 .block_content{:style => ""}
-                  %ul.toggle-footer.list-group.list-unstyled{:style => ""}
-                    -#%li.item
+                  %ul.list-group.list-unstyled{:style => ""}
+                    %li.item
                       %a{:href => "/pages/about_us", :title => "About Us "} About Us
                     %li.item
-                      %a{:href => "/pages/terms_conditions", :title => "Terms & Conditions"}
+                      %a{:href => "/pages/contact_us", :title => "Contact Us"} Contact Us
+                    %li.item
+                      %a{:href => "#", :title => "Privacy Policy  "} Privacy Policy
+                    %li.item
+                      %a{:href => "#", :title => "Terms & Conditions"}
                         Terms &
                         Conditions
                     %li.item
-                      %a{:href => "/pages/privacy_policy", :title => "Privacy Policy  "} Privacy Policy
+                      %a{:href => "#", :title => "Ordering  "} Ordering
                     %li.item
+                      %a{:href => "#", :title => "Shipping & Delivery"}
+                        Shipping &
+                        Delivery
+                    -#%li.item
                       %a{:href => "/pages/help", :title => "Help"} Help
                     -#%li.item
                       %a{:href => "/pages/frontpage", :title => "Orders and Returns"}
@@ -72,13 +75,15 @@
                         Returns
                     -#%li.item
                       %a{:href => "#!", :title => "Site Map"} Site Map
-            -#.col-md-2.col-sm-2.col-xs-12.col-sp-12
+            .col-md-2.col-sm-2.col-xs-12.col-sp-12
               #block_links_footer_3.block.footer-block.footerAccordion
-                %h4.title_block account
+                %h4.title_block my account
                 .block_content{:style => ""}
-                  %ul.toggle-footer.list-group.list-unstyled{:style => ""}
+                  %ul.list-group.list-unstyled{:style => ""}
                     %li.item
-                      %a{:href => "/login", :title => "Sign In"} Sign In
+                      %a{:href => "/signup", :title => "Create New Account"} Create New Account
+                    %li.item
+                      %a{:href => "/login", :title => "Access My Account"} Access My Account
                     -#%li.item
                       %a{:href => "#!cart", :title => "View Cart"} View Cart
                     -#%li.item
@@ -86,9 +91,24 @@
                     -#%li.item
                       %a{:href => "#!", :title => "Track My Order"} Track My Order
                     %li.item
-                      %a{:href => "/pages/help", :title => "Help"} Help
-            .col-md-3.col-sm-3.col-xs-12.col-sp-12
+                      %a{:href => "#", :title => "Track My Order"} Track My Order
+            -#.col-md-3.col-sm-3.col-xs-12.col-sp-12
               = render partial: 'spree/shared/guest_subscription'
+            .col-md-3.col-sm-3.col-xs-12.col-sp-12
+              #block_links_footer_3.block.footer-block.footerAccordion
+                %h4.title_block follow us
+                .block_content{:style => ""}
+                  %ul.toggle-footer.list-group.list-unstyled{:style => ""}
+                    %li.social_network
+                      %span.facebook.icon
+                        = link_to(Spree::Config[:facebook], target: "_blank")  do
+                          = image_tag('fb.svg', size: "45x45", alt: "facebook")
+                      %span.twitter.icon
+                        = link_to(Spree::Config[:twitter], target: "_blank") do
+                          = image_tag('tw.svg', size: "45x45", alt: "twitter")
+                      %span.instagram.icon
+                        = link_to(Spree::Config[:instagram], target: "_blank") do
+                          = image_tag('inst.svg', size: "45x45", alt: "instagram")
     %section#footernav.footer-nav
       .container
         #powered.powered.row.wow.animated{:style => "animation-name: none;"}

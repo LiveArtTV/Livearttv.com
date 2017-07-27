@@ -264,7 +264,7 @@ body {
 .product-block {
 
   .name {
-    text-transform: uppercase;
+    text-transform: none;
     font-family: $font-face-poppins;
     min-height: 0;
     margin-bottom: 1em;
@@ -572,4 +572,13 @@ span.or {
   font-size: 13px;
   line-height: $line-height-computed;
   font-family: $font-face-default;
+}
+
+.img_category.img-taxons {
+  padding: 0px;
+}
+
+.tax-container {
+  margin-left: 0px;
+  margin-right: 0px;
 }

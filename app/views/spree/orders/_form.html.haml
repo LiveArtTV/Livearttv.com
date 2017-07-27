@@ -1,10 +1,12 @@
 = render partial: 'spree/shared/error_messages', locals: { target: @order }
+- if !spree_current_user
+  = render partial: 'spree/shared/popup'
 %table#cart-detail.table.cart_table{"data-hook" => ""}
   %thead
     %tr{"data-hook" => "cart_items_headers"}
       %th.cart-item-description-header{:colspan => "2"}= Spree.t(:item)
       %th.cart-item-price-header= Spree.t(:price)
-      %th.cart-item-quantity-header= Spree.t(:qty)
+      %th
       %th.cart-item-total-header= Spree.t(:total)
       %th.cart-item-delete-header
   %tbody#line_items{"data-hook" => ""}= render partial: 'spree/orders/line_item', collection: order_form.object.line_items, locals: { order_form: order_form }
