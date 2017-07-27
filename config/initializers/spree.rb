@@ -14,6 +14,7 @@ Spree::AppConfiguration.class_eval do
   preference :company_title,   :string, default: ''
   preference :company_address, :string, default: ''
   preference :company_phone,   :string, default: ''
+  preference :company_phone_tol,   :string, default: ''
   preference :company_email,   :string, default: ''
   preference :facebook, :string, default: ''
   preference :twitter, :string, default: ''
@@ -27,7 +28,8 @@ Spree.config do |config|
   config.logo = 'logo02.png'
   config.company_title   = 'Elite Shopping'
   config.company_address = '157 Kimbles Road, Hawley, PA 18428'
-  config.company_phone   = '(516) 507-9973'
+  config.company_phone   = 'Office: 1-570-390-7800'
+  config.company_phone_tol   = 'Toll Free 1-855-983-ELITE'
   config.company_email   = 'info@eliteshopping.tv'
   config.show_raw_product_description = true
   config.checkout_zone   = 'United States'

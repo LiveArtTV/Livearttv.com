@@ -595,8 +595,8 @@
 
 .box-contact-info ul > li {
     position: relative;
-    padding: 0px 0px 5px 25px;
-    margin: 10px 0px;
+    padding: 0px 0px 0px 0px;
+    margin: 0px 0px;
     font-family: Arimo;
     font-size: 14px;
 }
@@ -623,15 +623,15 @@
 }
 
 .box-contact-info ul > li.address:before {
-    content: "\f015"
+    //content: "\f015"
 }
 
 .box-contact-info ul > li.phone:before {
-    content: "\f095"
+    //content: "\f095"
 }
 
 .box-contact-info ul > li.email:before {
-    content: "\f0e0"
+    //content: "\f0e0"
 }
 
 .box-contact-info ul > li.website:before {
@@ -1904,7 +1904,7 @@ a a:hover, a a:focus {
     color: #000;
     text-transform: uppercase;
     margin: 0px;
-    padding: 10px 0px 22px
+    padding: 0px 0px 0px
 }
 
 @media screen and (max-width: 767px) {
@@ -5020,4 +5020,23 @@ body.layout-boxed-md #header.navbar-fixed-top {
 
 .landing_image {
   padding-left: 220px;
+}
+
+li.item a {
+  font-size: 14px;
+}
+
+.list-unstyled.block_content li {
+  font-size: 14px;
+  //margin: 0px;
+}
+
+.list-unstyled.block_content li .address {
+  padding-top: 5px;
+  margin: 0px;
+}
+
+.footer-hover:hover {
+    color: #e2bd65;
+    font-size: 15px
 }

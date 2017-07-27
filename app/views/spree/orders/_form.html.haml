@@ -1,16 +1,6 @@
 = render partial: 'spree/shared/error_messages', locals: { target: @order }
-- if spree_current_user
-  %div.row.pop-up
-    %div.box.small-6.large-centered
-      %a.close-button X
-      %h4 DiscountDiscount!!
-      = link_to spree.signup_path do
-        %i.fa.fa-unlock-alt
-        = Spree.t(:signup)
-      or
-      = link_to spree.login_path do
-        %i.fa.fa-unlock-alt
-        = Spree.t(:login)
+- if !spree_current_user
+  = render partial: 'spree/shared/popup'
 %table#cart-detail.table.cart_table{"data-hook" => ""}
   %thead
     %tr{"data-hook" => "cart_items_headers"}
