@@ -38,7 +38,7 @@
                       .price_only
                         = number_to_currency(@product.price, :precision => 0)
                 %span{:content => @product.currency, :itemprop => "priceCurrency"}
-                
+
               .col-md-4
                 - if @product.can_supply? && @product.real_price?
                   .add-to-cart.quantity_wanted_p
