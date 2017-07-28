@@ -1,5 +1,8 @@
 class ApplicationController < ActionController::Base
   before_action :redirect_to_landing
+  # For APIs, you may want to use :null_session instead.
+  protect_from_forgery with: :exception
+  include Globals::ErrorPages
 
   def redirect_to_landing
     return unless Rails.env.production?
@@ -10,7 +13,4 @@ class ApplicationController < ActionController::Base
       end
     end
   end
-  # For APIs, you may want to use :null_session instead.
-  protect_from_forgery with: :exception
-  include Globals::ErrorPages
 end
