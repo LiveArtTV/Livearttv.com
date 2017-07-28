@@ -228,21 +228,24 @@ body {
   }
 }
 
+.header-search-wrapper {
+  position: relative;
+}
+
 #search_block_top {
-  right: 2%;
-  top: $space*1.5;
+  right: $space*2.5;
+  bottom: $space*2.54;
 }
 
 @media (min-width: $screen-md) {
   #search_block_top {
-    top: $space*1.2;
+    bottom: $space*2.45;
     right: 0;
   }
 }
 
 @media (min-width: $screen-lg) {
   #search_block_top {
-    right: 2%;
   }
 }
 
@@ -442,6 +445,10 @@ body {
       > a {
         padding: $space;
         font-size: inherit;
+
+        @media (min-width: $screen-md) and (max-width: $screen-lg) {
+          padding: $space ($space-small - 1px);
+        }
       }
 
       .caret:before {
