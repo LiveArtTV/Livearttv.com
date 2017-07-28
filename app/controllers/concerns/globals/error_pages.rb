@@ -2,7 +2,7 @@ module Globals
   module ErrorPages
     extend ActiveSupport::Concern
     included do
-      unless Rails.env.development?
+      #unless Rails.env.development?
         rescue_from ActiveRecord::DeleteRestrictionError,
                     ActiveRecord::RecordInvalid,
                     ActionView::MissingTemplate do |exception|
@@ -22,7 +22,7 @@ module Globals
             render template: 'errors/not_found', layout: 'error', status: 404
           end
         end
-      end
+      #end
     end
   end
 end

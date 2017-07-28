@@ -146,16 +146,18 @@
                   %a{:href => spree.authors_path, title: 'Artists'}
                     %span View All
                 .row
-                  - Spree::Author.all.each do |author|
+                  - Spree::Taxon.all.each do |tax|
                     .mega-col.col-sm-3.mega-col-inner
                       .menu-title
-                        %a{:href => spree.author_path(id: author.slug), title: author.name}
-                          %span #{truncate(author.name, length: 22)}
-                        .widget-inner
-                          %ul.nav-links
-                            - author.taxons.uniq.each do |tax|
-                              %li
-                                = link_to tax.name, "#{seo_url(tax)}?view=grid"
+                        = link_to tax.name, "#{seo_url(tax)}?view=grid"
+                      .widget-inner
+                        %ul.nav-links
+                          - authors = tax.authors
+                          - if authors.present?
+                            - authors.uniq.each do |aut|
+                              %li.menu-author-name
+                                %a{:href => spree.author_path(id: aut.slug), title: aut.name}
+                                  %span #{truncate(aut.name, length: 22)}
 
 
 

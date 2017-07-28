@@ -1,6 +1,5 @@
 class ErrorsController < ApplicationController
   #layout 'error'
-
   respond_to :js, :html
 
   def not_found
