@@ -16,18 +16,19 @@
               %b.caret
             .dropdown-sub.dropdown-menu.sub-apmegamenu-1
               .dropdown-menu-inner
-                .row
-                  - taxon_roots = Spree::Taxon.roots.unscoped.where(parent_id: nil)
-                  - cache(["taxon-roots", taxon_roots.maximum(:updated_at).to_i].join('-')) do
-                    - taxon_roots.joins(:taxonomy).order('spree_taxonomies.position asc').each do |taxon_root|
-                      .mega-col.col-sm-3.mega-col-inner
-                        .menu-title
-                          = link_to taxon_root.name, seo_url(taxon_root)
-                        .widget-inner
-                          %ul.nav-links
-                            - taxon_root.children.each do |taxon|
-                              %li
-                                = link_to truncate(taxon.name, length: 22), "#{seo_url(taxon)}?view=grid"
+                .container
+                  .row
+                    - taxon_roots = Spree::Taxon.roots.unscoped.where(parent_id: nil)
+                    - cache(["taxon-roots", taxon_roots.maximum(:updated_at).to_i].join('-')) do
+                      - taxon_roots.joins(:taxonomy).order('spree_taxonomies.position asc').each do |taxon_root|
+                        .mega-col.col-sm-3.mega-col-inner
+                          .menu-title
+                            = link_to taxon_root.name, seo_url(taxon_root)
+                          .widget-inner
+                            %ul.nav-links
+                              - taxon_root.children.each do |taxon|
+                                %li
+                                  = link_to truncate(taxon.name, length: 22), "#{seo_url(taxon)}?view=grid"
           -#%li
             %a{href: spree.products_path, target: "_self", title: "Shop"}
               %span Shop
@@ -37,129 +38,129 @@
               %b.caret
             .dropdown-sub.dropdown-menu.sub-apmegamenu-2
               .dropdown-menu-inner
-                .row
-                  .mega-col.col-sm-5
-                    .row
-                      .col-sm-6
-                        .mega-col-inner
-                          .menu-title
-                            %a{:href => "#!", :title => "Blog Pages"}
-                              Blog Pages
-                          .widget-inner
-                            %ul.nav-links
-                              %li
-                                %a{:href => "#!blogs/blog-fullwidth", :title => "Blog Fullwidth"}
-                                  Blog
-                                  Fullwidth
-                              %li
-                                %a{:href => "#!blogs/blog-left", :title => "Blog Sidebar Left"}
-                                  Blog Sidebar
-                                  Left
-                              %li
-                                %a{:href => "#!blogs/news", :title => "Blog  Sidebar Right"}
-                                  Blog Sidebar
-                                  Right
-                              %li
-                                %a{:href => "#!blogs/blog-masonry", :title => "Blog Masonry"} Blog Masonry
-                      .col-sm-6
-                        .mega-col-inner
-                          .menu-title
-                            %a{:href => "#!", :title => "Detail Blog"}
-                              Detail Blog
-                          .widget-inner
-                            %ul.nav-links
-                              %li
-                                %a{:href => "#!blogs/news/this-is-your-store-s-blog-you-can-use-it-to-talk", :title => "Detail Blog Fullwidth"}
-                                  Detail
-                                  Blog Fullwidth
-                              %li
-                                %a{:href => "#!blogs/blog-left/mi-vitae-magnis-fusce-laoreet-nibh-felis-porttitor-laoreet", :title => "Detail Blog Left"}
-                                  Detail
-                                  Blog Left
-                              %li
-                                %a{:href => "#!blogs/blog-fullwidth/commodo-laoreet-semper-tincidunt-lorem-vestibulum-nunc", :title => "Detail Blog Right"}
-                                  Detail
-                                  Blog Right
-                  .mega-col.col-sm-4
-                    .products_menu
-                      .menu-title
-                        Best Seller
-                      .product-block
-                        .product-container.clearfix
-                          .image
-                            %a.product_img_link{:href => "#!products/greenfield-walnut-5-pc", :title => "Greenfield Walnut 5 Pc"}
-                              %img.replace-2x.img-responsive{:alt => "Greenfield Walnut 5 Pc", :src => "/ap_rojo_files/3-min_compact.jpg"}/
-                          .product-meta
-                            %h5.name
-                              %a.product-name{:href => "#!products/greenfield-walnut-5-pc", :title => "Greenfield Walnut 5 Pc"}
-                                Greenfield Walnut 5 Pc
-                            .product-desc
-                              Claritas est etiam processus dynamicus, qui...
-                            -#.content_price
-                              %span.old-price.product-price
-                                %span.money{"data-currency" => "USD", "data-currency-usd" => "$15.50"} $15.50
-                              %span.price.product-price
-                                %span.money{"data-currency" => "USD", "data-currency-usd" => "$12.00"} $12.00
-                        .product-container.clearfix
-                          .image
-                            %a.product_img_link{:href => "#!products/the-kensington-collection-1", :title => "Kensington Collection globl"}
-                              %img.replace-2x.img-responsive{:alt => "Kensington Collection globl", :src => "/ap_rojo_files/23-min_65a714af-1627-4a44-b561-1e0af9715dcc_compact.jpg"}/
-                          .product-meta
-                            %h5.name
-                              %a.product-name{:href => "#!products/the-kensington-collection-1", :title => "Kensington Collection globl"}
-                                Kensington Collection globl
-                            .product-desc
-                              Claritas est etiam processus dynamicus, qui...
-                            -#.content_price
-                              %span.old-price.product-price
-                                %span.money{"data-currency" => "USD", "data-currency-usd" => "$25.00"} $25.00
-                              %span.price.product-price
-                                %span.money{"data-currency" => "USD", "data-currency-usd" => "$24.00"} $24.00
-                        .product-container.clearfix
-                          .image
-                            %a.product_img_link{:href => "#!products/quam-nunc-putamus", :title => "Quam nunc putamus"}
-                              %img.replace-2x.img-responsive{:alt => "Quam nunc putamus", :src => "/ap_rojo_files/1-min_compact.jpg"}/
-                          .product-meta
-                            %h5.name
-                              %a.product-name{:href => "#!products/quam-nunc-putamus", :title => "Quam nunc putamus"}
-                                Quam nunc putamus
-                            .product-desc
-                              Claritas est etiam processus dynamicus, qui...
-                            -#.content_price
-                              %span.old-price.product-price
-                                %span.money{"data-currency" => "USD", "data-currency-usd" => "$51.00"} $51.00
-                              %span.price.product-price
-                                %span.money{"data-currency" => "USD", "data-currency-usd" => "$35.00"} $35.00
-                  .mega-col.col-sm-3
-                    .block-html
-                      .menu-title HTML
-                      .widget-inner
-                        .box-image
-                          %img.img-responsive{:alt => "HTML", :src => "/ap_rojo_files/apmenuitem_ihtml_2.jpg"}/
+                .container
+                  .row
+                    .mega-col.col-sm-5
+                      .row
+                        .col-sm-6
+                          .mega-col-inner
+                            .menu-title
+                              %a{:href => "#!", :title => "Blog Pages"}
+                                Blog Pages
+                            .widget-inner
+                              %ul.nav-links
+                                %li
+                                  %a{:href => "#!blogs/blog-fullwidth", :title => "Blog Fullwidth"}
+                                    Blog
+                                    Fullwidth
+                                %li
+                                  %a{:href => "#!blogs/blog-left", :title => "Blog Sidebar Left"}
+                                    Blog Sidebar
+                                    Left
+                                %li
+                                  %a{:href => "#!blogs/news", :title => "Blog  Sidebar Right"}
+                                    Blog Sidebar
+                                    Right
+                                %li
+                                  %a{:href => "#!blogs/blog-masonry", :title => "Blog Masonry"} Blog Masonry
+                        .col-sm-6
+                          .mega-col-inner
+                            .menu-title
+                              %a{:href => "#!", :title => "Detail Blog"}
+                                Detail Blog
+                            .widget-inner
+                              %ul.nav-links
+                                %li
+                                  %a{:href => "#!blogs/news/this-is-your-store-s-blog-you-can-use-it-to-talk", :title => "Detail Blog Fullwidth"}
+                                    Detail
+                                    Blog Fullwidth
+                                %li
+                                  %a{:href => "#!blogs/blog-left/mi-vitae-magnis-fusce-laoreet-nibh-felis-porttitor-laoreet", :title => "Detail Blog Left"}
+                                    Detail
+                                    Blog Left
+                                %li
+                                  %a{:href => "#!blogs/blog-fullwidth/commodo-laoreet-semper-tincidunt-lorem-vestibulum-nunc", :title => "Detail Blog Right"}
+                                    Detail
+                                    Blog Right
+                    .mega-col.col-sm-4
+                      .products_menu
+                        .menu-title
+                          Best Seller
+                        .product-block
+                          .product-container.clearfix
+                            .image
+                              %a.product_img_link{:href => "#!products/greenfield-walnut-5-pc", :title => "Greenfield Walnut 5 Pc"}
+                                %img.replace-2x.img-responsive{:alt => "Greenfield Walnut 5 Pc", :src => "/ap_rojo_files/3-min_compact.jpg"}/
+                            .product-meta
+                              %h5.name
+                                %a.product-name{:href => "#!products/greenfield-walnut-5-pc", :title => "Greenfield Walnut 5 Pc"}
+                                  Greenfield Walnut 5 Pc
+                              .product-desc
+                                Claritas est etiam processus dynamicus, qui...
+                              -#.content_price
+                                %span.old-price.product-price
+                                  %span.money{"data-currency" => "USD", "data-currency-usd" => "$15.50"} $15.50
+                                %span.price.product-price
+                                  %span.money{"data-currency" => "USD", "data-currency-usd" => "$12.00"} $12.00
+                          .product-container.clearfix
+                            .image
+                              %a.product_img_link{:href => "#!products/the-kensington-collection-1", :title => "Kensington Collection globl"}
+                                %img.replace-2x.img-responsive{:alt => "Kensington Collection globl", :src => "/ap_rojo_files/23-min_65a714af-1627-4a44-b561-1e0af9715dcc_compact.jpg"}/
+                            .product-meta
+                              %h5.name
+                                %a.product-name{:href => "#!products/the-kensington-collection-1", :title => "Kensington Collection globl"}
+                                  Kensington Collection globl
+                              .product-desc
+                                Claritas est etiam processus dynamicus, qui...
+                              -#.content_price
+                                %span.old-price.product-price
+                                  %span.money{"data-currency" => "USD", "data-currency-usd" => "$25.00"} $25.00
+                                %span.price.product-price
+                                  %span.money{"data-currency" => "USD", "data-currency-usd" => "$24.00"} $24.00
+                          .product-container.clearfix
+                            .image
+                              %a.product_img_link{:href => "#!products/quam-nunc-putamus", :title => "Quam nunc putamus"}
+                                %img.replace-2x.img-responsive{:alt => "Quam nunc putamus", :src => "/ap_rojo_files/1-min_compact.jpg"}/
+                            .product-meta
+                              %h5.name
+                                %a.product-name{:href => "#!products/quam-nunc-putamus", :title => "Quam nunc putamus"}
+                                  Quam nunc putamus
+                              .product-desc
+                                Claritas est etiam processus dynamicus, qui...
+                              -#.content_price
+                                %span.old-price.product-price
+                                  %span.money{"data-currency" => "USD", "data-currency-usd" => "$51.00"} $51.00
+                                %span.price.product-price
+                                  %span.money{"data-currency" => "USD", "data-currency-usd" => "$35.00"} $35.00
+                    .mega-col.col-sm-3
+                      .block-html
+                        .menu-title HTML
+                        .widget-inner
+                          .box-image
+                            %img.img-responsive{:alt => "HTML", :src => "/ap_rojo_files/apmenuitem_ihtml_2.jpg"}/
           %li.parent.dropdown.full-width
             %a.dropdown-toggle.has-category{"data-toggle" => "dropdown", :href => spree.authors_path, :target => "_self", :title => Spree.t('artists')}
               %span= Spree.t('artists')
               %b.caret
             .dropdown-sub.dropdown-menu.sub-apmegamenu-1
               .dropdown-menu-inner
-                .artists-center-link
-                  %a{:href => spree.authors_path, title: 'Artists'}
-                    %span View All
-                .row
-                  - Spree::Taxon.all.each do |tax|
-                    .mega-col.col-sm-3.mega-col-inner
-                      .menu-title
-                        = link_to tax.name, "#{seo_url(tax)}?view=grid"
-                      .widget-inner
-                        %ul.nav-links
-                          - authors = tax.authors
-                          - if authors.present?
-                            - authors.uniq.each do |aut|
-                              %li.menu-author-name
-                                %a{:href => spree.author_path(id: aut.slug), title: aut.name}
-                                  %span #{truncate(aut.name, length: 22)}
-
-
+                .container
+                  .artists-center-link
+                    %a{:href => spree.authors_path, title: 'Artists'}
+                      %span View All
+                  .row
+                    - Spree::Taxon.all.each do |tax|
+                      .mega-col.col-sm-3.mega-col-inner
+                        .menu-title
+                          = link_to tax.name, "#{seo_url(tax)}?view=grid"
+                        .widget-inner
+                          %ul.nav-links
+                            - authors = tax.authors
+                            - if authors.present?
+                              - authors.uniq.each do |aut|
+                                %li.menu-author-name
+                                  %a{:href => spree.author_path(id: aut.slug), title: aut.name}
+                                    %span #{truncate(aut.name, length: 22)}
 
           -#%li.parent.dropdown
             %a.dropdown-toggle.has-category{"data-toggle" => "dropdown", href: spree.videos_path, target: "_self", title: Spree.t('menu.videos')}
@@ -167,53 +168,55 @@
               %b.caret
             .dropdown-menu.level1
               .dropdown-menu-inner
-                .mega-col-inner
-                  %ul.nav-links
-                    %li
-                      %a{:href => spree.videos_path, title: 'Videos'}
-                        %span View All
-                    - Spree::Video.last(10).each do |video|
+                .container
+                  .mega-col-inner
+                    %ul.nav-links
                       %li
-                        %a{:href => spree.video_path(id: video.id), title: video.title}
-                          %span #{truncate(video.title, length: 22)}
+                        %a{:href => spree.videos_path, title: 'Videos'}
+                          %span View All
+                      - Spree::Video.last(10).each do |video|
+                        %li
+                          %a{:href => spree.video_path(id: video.id), title: video.title}
+                            %span #{truncate(video.title, length: 22)}
           %li.parent.dropdown.full-width
             %a.dropdown-toggle.has-category{"data-toggle" => "dropdown", href: spree.videos_path, target: "_self", title: Spree.t('videos')}
               %span.menu-title= Spree.t('videos')
               %b.caret
             .dropdown-sub.dropdown-menu.sub-apmegamenu-2
               .dropdown-menu-inner
-                .row
-                  .mega-col.col-xs-5.col-xs-offset-1
-                    .products_menu
-                      .menu-title
-                        Last video
-                      .product-block
-                        - Spree::Video.last(10).each do |video|
-                          .product-container.clearfix
-                            .image
-                              %a.product_img_link{href: spree.video_path(id: video.id), title: video.title}
-                                %img.replace-2x.img-responsive{alt: video.title, src: spree_video_thumb_uri(video)}/
-                            .product-meta
-                              %h5.name
-                                %a.product-name{href: spree.video_path(id: video.id), title: video.title}
-                                  #{truncate(video.title, length: 75)}
+                .container
+                  .row
+                    .mega-col.col-xs-5.col-xs-offset-1
+                      .products_menu
+                        .menu-title
+                          Last video
+                        .product-block
+                          - Spree::Video.last(10).each do |video|
+                            .product-container.clearfix
+                              .image
+                                %a.product_img_link{href: spree.video_path(id: video.id), title: video.title}
+                                  %img.replace-2x.img-responsive{alt: video.title, src: spree_video_thumb_uri(video)}/
+                              .product-meta
+                                %h5.name
+                                  %a.product-name{href: spree.video_path(id: video.id), title: video.title}
+                                    #{truncate(video.title, length: 75)}
 
-                  .mega-col.col-xs-5
-                    - if Spree::Video.last
-                      .block-html
-                        .menu-title.is-ellipsed= Spree::Video.last.title
-                        .widget-inner
-                          .box-image
-                            .embed-responsive.embed-responsive-16by9
-                              != Spree::Video.last.embed_html
-                              -#%img.img-responsive{:alt => "HTML", :src => "/ap_rojo_files/apmenuitem_ihtml_2.jpg"}/
-                .row
-                  .col-xs-12.text-center
-                    %ul.nav-links
-                      %li
-                        %a{:href => spree.videos_path, title: 'Videos'}
-                          %span
-                            View All Videos
+                    .mega-col.col-xs-5
+                      - if Spree::Video.last
+                        .block-html
+                          .menu-title.is-ellipsed= Spree::Video.last.title
+                          .widget-inner
+                            .box-image
+                              .embed-responsive.embed-responsive-16by9
+                                != Spree::Video.last.embed_html
+                                -#%img.img-responsive{:alt => "HTML", :src => "/ap_rojo_files/apmenuitem_ihtml_2.jpg"}/
+                  .row
+                    .col-xs-12.text-center
+                      %ul.nav-links
+                        %li
+                          %a{:href => spree.videos_path, title: 'Videos'}
+                            %span
+                              View All Videos
 
           %li
             = link_to '/pages/auctions', target: '_self', title: Spree::t('auctions') do

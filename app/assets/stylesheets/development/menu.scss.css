@@ -19,7 +19,8 @@
     position: relative;
     display: block;
     text-align: center;
-    background-color: #fff
+    background-color: #fff;
+    position: static;
 }
 
 #apollo-menu .navbar {
@@ -43,7 +44,7 @@
 }
 
 #apollo-menu .navbar-nav > li.full-width > .dropdown-menu {
-    width: 100% !important
+    width: 100%;
 }
 
 #apollo-menu .navbar-nav > li.aligned-center > .dropdown-menu {
@@ -107,7 +108,7 @@
     font-family: "FontAwesome";
     position: absolute;
     top: 15px;
-    right: 20px
+    right: 10px
 }
 
 #apollo-menu .dropdown-menu {
@@ -115,7 +116,7 @@
     left: 0px;
     display: block;
     visibility: hidden;
-    height: auto;
+    min-height: 86vh;
     font-weight: 300;
     opacity: 0;
     filter: alpha(opacity=0);
