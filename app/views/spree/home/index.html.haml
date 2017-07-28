@@ -22,7 +22,7 @@
         %li{"data-slide-to" => "1", "data-target" => "#myCarousel"}
       / Wrapper for slides
       .carousel-inner
-        - Spree::Image.first(3).each_with_index do |image, i|
+        - Spree::Image.first(10).each_with_index do |image, i|
           - if i == 0
             .item.active
               .embed-responsive.embed-responsive-16by9

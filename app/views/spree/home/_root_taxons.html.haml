@@ -90,13 +90,13 @@
             .taxon-block-name
               = taxon_root.name
         .img-taxons
-          - product = taxon_root.children.sample.products.sample
+          - product = taxon_root.children.sample.try(:products).try(:sample)
           - if product.present?
             %img.img-responsive{alt: product.name, src: product.images.first.attachment.url}/
             .title_img_category{"data-mh" => "root-taxons-1"}
               Paiting by #{product.author.try(:name)}
         .img-taxons
-          - product = taxon_root.children.sample.products.sample
+          - product = taxon_root.children.sample.try(:products).try(:sample)
           - if product.present?
             %img.img-responsive{alt: product.name, src: product.images.first.attachment.url}/
             .title_img_category{"data-mh" => "root-taxons-2"}
