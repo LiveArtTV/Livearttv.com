@@ -16,7 +16,7 @@
       .container
         .footer-center-wrap
           .row
-            .col-md-3.col-sm-3.col-xs-12.col-sp-12
+            .col-md-3.col-sm-3.col-xs-12
               .block.footer-block.footerAccordion.box-contact-info
                 %h4.title_block get in touch
                 %ul.list-unstyled.block_content{:style => ""}
@@ -46,7 +46,7 @@
                       %a{:href => "/pages/search_terms", :title => "Search Terms"} Search Terms
                     %li.item
                       %a{:href => "/pages/contact_us", :title => "Contact Us"} Contact Us
-            .col-md-2.col-sm-2.col-xs-12.col-sp-12
+            .col-md-3.col-sm-3.col-xs-12
               #block_links_footer_2.block.footer-block.footerAccordion
                 %h4.title_block information
                 .block_content{:style => ""}
@@ -75,7 +75,7 @@
                         Returns
                     -#%li.item
                       %a{:href => "#!", :title => "Site Map"} Site Map
-            .col-md-2.col-sm-2.col-xs-12.col-sp-12
+            .col-md-3.col-sm-3.col-xs-12
               #block_links_footer_3.block.footer-block.footerAccordion
                 %h4.title_block my account
                 .block_content{:style => ""}
@@ -93,8 +93,11 @@
                     %li.item
                       %a{:href => "#", :title => "Track My Order"} Track My Order
             -#.col-md-3.col-sm-3.col-xs-12.col-sp-12
-              = render partial: 'spree/shared/guest_subscription'
-            .col-md-3.col-sm-3.col-xs-12.col-sp-12
+              #newsletter_block.block.footer-block.footerAccordion.inline
+                %h4.title_block Newsletter
+                .block_content{:style => ""}
+                  = render partial: 'spree/shared/guest_subscription'
+            .col-md-3.col-sm-3.col-xs-12
               #block_links_footer_3.block.footer-block.footerAccordion
                 %h4.title_block follow us
                 .block_content{:style => ""}

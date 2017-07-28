@@ -1,87 +1,98 @@
--#- content_for :sidebar do
-  %div{"data-hook" => "homepage_sidebar_navigation"}
-    = render :partial => 'spree/shared/taxonomies'
--# if video_link
--#%section.video
-  .container
-    -#- cache %w(product-videos, all) do
-      / 16:9 aspect ratio
+.landing-page
+  -#- content_for :sidebar do
+    %div{"data-hook" => "homepage_sidebar_navigation"}
+      = render :partial => 'spree/shared/taxonomies'
+  -# if video_link
+  -#%section.video
+    .container
+      -#- cache %w(product-videos, all) do
+        / 16:9 aspect ratio
+      .row
+        .col-md-12#product-videos
+          -#.embed-responsive.embed-responsive-16by9.spree-embed-video= render 'spree/products/video_player', :video => video_link
+  %section.root-taxons.carousel-section
+    .carousel_title.clearfix
+      %h1 BECOME A MEMBER & RECEIVE 10% OFF YOUR ENTIRE ORDER!
+    #myCarousel.carousel.slide{"data-ride" => "carousel", "data-interval" => "100000"}
+      / Indicators
+      -#%ol.carousel-indicators
+        %li.active{"data-slide-to" => "n", "data-target" => "#myCarousel"}
+        %li{"data-slide-to" => "1", "data-target" => "#myCarousel"}
+        %li{"data-slide-to" => "1", "data-target" => "#myCarousel"}
+        %li{"data-slide-to" => "1", "data-target" => "#myCarousel"}
+      / Wrapper for slides
+      .carousel-inner
+        - Spree::Image.first(3).each_with_index do |image, i|
+          - if i == 0
+            .item.active
+              .embed-responsive.embed-responsive-16by9
+                %img{:alt => image.alt, :src => image.attachment.url(:original)}
+          - else
+            .item
+              .embed-responsive.embed-responsive-16by9
+                %img{:alt => image.alt, :src => image.attachment.url(:original)}
+
+      / Left and right controls
+      %a.left.carousel-control{"data-slide" => "prev", :href => "#myCarousel"}
+        %span.glyphicon.glyphicon-chevron-left
+        %span.sr-only Previous
+      %a.right.carousel-control{"data-slide" => "next", :href => "#myCarousel"}
+        %span.glyphicon.glyphicon-chevron-right
+        %span.sr-only Next
+    .carousel_subtitle
+      %h2 Watch us live!
+      %h3 ROKU Channel 322 - APPLE TV Channel 322 - GOOGLE TV Channel 322 - AMAZON FIRE TV Channel 322
+
+    /Uncomment, when would be necessary to add video thumbnails below video
+    / %section.video-thumbnails
+    /   .text-center
+    /     .container
+    /       = render partial: 'spree/home/video_thumbnails', locals: { videos: @videos }
+
+  %section.root-taxons.clearfix
+    = render partial: 'root_taxons'
+
+  -#%section#columns.columns-container{"data-hook" => "homepage_products"}
+    .block-title-productlist.text-center
+      .container
+        %h4.title_block_home.page-subheading
+          popular in store
+        .block_des_home
+          %p.des_productlist.block_des_home
+            Claritas est etiam processus dynamicus, qui sequitur mutationem
+            consuetudium lectorum. Mirum est notare quam littera gothica putamus panteposuerit litterarum formas
+            humanitatis
+    - cache(cache_key_for_products) do
+      = render :partial => 'spree/shared/products', :locals => { :products => @products }
+  -#%section.block-home-banner.container-fluid
     .row
-      .col-md-12#product-videos
-        -#.embed-responsive.embed-responsive-16by9.spree-embed-video= render 'spree/products/video_player', :video => video_link
-%h2 BECOME A MEMBER & RECEIVE 10% OFF YOUR ENTIRE ORDER! 
-#myCarousel.carousel.slide{"data-ride" => "carousel"}
-  / Indicators
-  -#%ol.carousel-indicators
-    %li.active{"data-slide-to" => "n", "data-target" => "#myCarousel"}
-    %li{"data-slide-to" => "1", "data-target" => "#myCarousel"}
-    %li{"data-slide-to" => "1", "data-target" => "#myCarousel"}
-    %li{"data-slide-to" => "1", "data-target" => "#myCarousel"}
-  / Wrapper for slides
-  .carousel-inner
-    - Spree::Image.first(10).each_with_index do |image, i|
-      - if i == 0
-        .item.active
-          %img{:alt => image.alt, :src => image.attachment.url(:original)}
-      - else
-        .item
-          %img{:alt => image.alt, :src => image.attachment.url(:original)}
-
-  / Left and right controls
-  %a.left.carousel-control{"data-slide" => "prev", :href => "#myCarousel"}
-    %span.glyphicon.glyphicon-chevron-left
-    %span.sr-only Previous
-  %a.right.carousel-control{"data-slide" => "next", :href => "#myCarousel"}
-    %span.glyphicon.glyphicon-chevron-right
-    %span.sr-only Next
-
-/Uncomment, when would be necessary to add video thumbnails below video
-/ %section.video-thumbnails
-/   .text-center
-/     .container
-/       = render partial: 'spree/home/video_thumbnails', locals: { videos: @videos }
-
-%section.root-taxons
-  .text-center
-    .container.tax-container
-      = render partial: 'root_taxons'
-
--#%section#columns.columns-container{"data-hook" => "homepage_products"}
-  .block-title-productlist.text-center
+      .widget-banner.block
+        .block_content
+          .image-box
+            .img-banner.effect
+              %a{:href => "!#"}
+                %img.img-responsive{:alt => "Adv Banner", :src => "./ap_rojo_files/home_banner.png"}/
+            .des_banner_home
+              .container
+                .row
+                  .content_baner_home.text-center
+                    .text_first top wanted items of year
+                    %h3.title_banner_home.title_block_home mega discount
+                    %p
+                      Claritas est etiam processus dynamicus, qui sequitur mutationem consuetudium lectorum. Mirum est
+                      notare quam littera gothica putamus panteposuerit litterarum formas humanitatis
+  -#%section.home_product_list_2
+    .text-center
+      .container
+        %h4.title_block_home.page-subheading
+          Recently Added Items
+        - cache(cache_key_for_products) do
+          = render :partial => 'spree/shared/products', :locals => {slider: true, products: @products.last(40) }
+  %section.root-subscribe
     .container
-      %h4.title_block_home.page-subheading
-        popular in store
-      .block_des_home
-        %p.des_productlist.block_des_home
-          Claritas est etiam processus dynamicus, qui sequitur mutationem
-          consuetudium lectorum. Mirum est notare quam littera gothica putamus panteposuerit litterarum formas
-          humanitatis
-  - cache(cache_key_for_products) do
-    = render :partial => 'spree/shared/products', :locals => { :products => @products }
--#%section.block-home-banner.container-fluid
-  .row
-    .widget-banner.block
-      .block_content
-        .image-box
-          .img-banner.effect
-            %a{:href => "!#"}
-              %img.img-responsive{:alt => "Adv Banner", :src => "./ap_rojo_files/home_banner.png"}/
-          .des_banner_home
-            .container
-              .row
-                .content_baner_home.text-center
-                  .text_first top wanted items of year
-                  %h3.title_banner_home.title_block_home mega discount
-                  %p
-                    Claritas est etiam processus dynamicus, qui sequitur mutationem consuetudium lectorum. Mirum est
-                    notare quam littera gothica putamus panteposuerit litterarum formas humanitatis
--#%section.home_product_list_2
-  .text-center
-    .container
-      %h4.title_block_home.page-subheading
-        Recently Added Items
-      - cache(cache_key_for_products) do
-        = render :partial => 'spree/shared/products', :locals => {slider: true, products: @products.last(40) }
-.row
-  .col-md-3.col-sm-3.col-xs-12.col-sp-12
-    = render partial: 'spree/shared/guest_subscription'
+      %h2 BECOME A MEMBER & RECEIVE 10% OFF YOUR ENTIRE ORDER!
+      .row
+        .col-sm-5
+          %h3 Plus you’ll recieve all updates, promotions and special offers.
+        .col-sm-7
+          = render partial: 'spree/shared/guest_subscription'
