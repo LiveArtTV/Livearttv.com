@@ -1,25 +1,22 @@
 - @subscriber ||= Spree::Chimpy::Subscriber.new
-#newsletter_block.block.footer-block.footerAccordion.inline
-  -#%h4.title_block
-    Newsletter
-  .block_content{:style => ""}
-    .subscribeWrap
-      .des_newsletter
-        -#= Spree.t(:subscribe_title, scope: :chimpy)
-      #successSubscribe.alert.alert-success{style: 'display: none;'}
-        %p
-          %span.success-ico
-          Congratulations! You are subscribed to our news.
-      #failureSubscribe.alert.alert-error{style: 'display: none;'}
-        %p
-          %span.error-ico
-          Sorry. Please try later.
-      #incompleteSubscribe.alert.alert-warning{style: 'display: none;'}
-        %p Please, type email before sending
-    = form_for @subscriber, url: spree.chimpy_subscribers_path, id: 'mc-embedded-subscribe-form', class: 'form_newsletter', remote: true do |f|
-      = f.hidden_field :subscribed, value: true
-      = f.email_field :email, class: 'newsletter-input form-control', placeholder: Spree.t(:placeholder, scope: [:chimpy, :email]), aria: {label: 'Your email ...'}
-      = f.submit 'Subscribe', class: 'subscribe button_mini btn', id: 'subscribe'
+
+.subscribeWrap
+  .des_newsletter
+    -#= Spree.t(:subscribe_title, scope: :chimpy)
+  #successSubscribe.alert.alert-success{style: 'display: none;'}
+    %p
+      %span.success-ico
+      Congratulations! You are subscribed to our news.
+  #failureSubscribe.alert.alert-error{style: 'display: none;'}
+    %p
+      %span.error-ico
+      Sorry. Please try later.
+  #incompleteSubscribe.alert.alert-warning{style: 'display: none;'}
+    %p Please, type email before sending
+= form_for @subscriber, url: spree.chimpy_subscribers_path, id: 'mc-embedded-subscribe-form', class: 'form_newsletter', remote: true do |f|
+  = f.hidden_field :subscribed, value: true
+  = f.email_field :email, class: 'newsletter-input form-control', placeholder: Spree.t(:placeholder, scope: [:chimpy, :email]), aria: {label: 'Your email ...'}
+  = f.submit 'Subscribe', class: 'subscribe button_mini btn', id: 'subscribe'
 
 :javascript
   $(document).on('click', '#subscribe', function(e) {

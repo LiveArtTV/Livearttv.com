@@ -1,0 +1,206 @@
+@charset "UTF-8";
+/*----------------------------------------------------------------------------*\
+  $LANDING 2017 PAGE
+\*----------------------------------------------------------------------------*/
+
+
+
+/*  Elements
+\*----------------------------------------------------------------------------*/
+.landing-page {
+  background: $color-white;
+}
+
+
+
+/*  Slider section
+\*----------------------------------------------------------------------------*/
+.carousel_title {
+  padding-bottom: 2px;
+
+  h1 {
+    float: right;
+
+    background: $color-gray-b;
+    background-image: linear-gradient(to right, $color-gray-b 0%, $color-gray-b 25%, $color-gray-c 25%, $color-gray-c 50%, $color-gray-d 50%, $color-gray-d 75%, $color-gray-b 75%, $color-gray-b 100%);
+    margin: 0;
+    padding: $space-small $space-large $space-tiny $space;
+    color: $color-white;
+    font-weight: $weight-regular;
+  }
+}
+
+.carousel {
+  img {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 100%;
+    height: auto;
+  }
+}
+
+.carousel_subtitle {
+  margin-top: -$space*1.5;
+  position: relative;
+  margin-bottom: $space-large;
+
+  h2 {
+    text-transform: uppercase;
+    font-size: 46px;
+    display: inline-block;
+    background: $color-white;
+    color: $color-base;
+    margin: 0;
+    font-weight: $weight-regular;
+    padding: $space-small $space $space-small $space-large;
+  }
+
+  h3 {
+    margin: 0;
+    padding: 0 $space $space-small $space-large;
+  }
+}
+
+
+
+/*  Taxons section
+\*----------------------------------------------------------------------------*/
+.root-taxons {
+  margin-bottom: $space-large;
+}
+
+  .root-taxons__block {
+    float: left;
+    width: 50%;
+
+    @media (min-width: $screen-sm) {
+      width: 25%;
+    }
+
+    &:nth-child(1) {
+      .root-taxons__block-title {
+        background-color: #94cac8;
+      }
+    }
+
+    &:nth-child(2) {
+      .root-taxons__block-title {
+        background-color: #b2d9d8;
+      }
+    }
+
+    &:nth-child(3) {
+      .root-taxons__block-title {
+        background-color: #c8e4e3;
+      }
+    }
+
+    &:nth-child(4) {
+      .root-taxons__block-title {
+        background-color: #61b2af;
+      }
+    }
+
+    .title_img_category {
+      font-size: $font-size-h3;
+      text-align: center;
+      font-style: italic;
+      padding: $space-small;
+    }
+  }
+
+    .root-taxons__block-title {
+      display: table;
+      width: 100%;
+      height: 110px;
+      margin-bottom: $space-small;
+      table-layout: fixed;
+      word-wrap: break-word;
+
+      a {
+        display: table-cell;
+        vertical-align: middle;
+        text-align: center;
+        font-size: $font-size-h1;
+        color: $color-white;
+
+        &:hover {
+          text-decoration: none;
+        }
+      }
+    }
+
+
+
+/*  Home subscription
+\*----------------------------------------------------------------------------*/
+
+
+.root-subscribe {
+  margin-bottom: $space-large;
+
+  h2 {
+    text-transform: uppercase;
+    font-size: 39px;
+    text-align: center;
+    color: $color-base;
+    margin: 0;
+    font-weight: $weight-regular;
+    margin-bottom: $space;
+  }
+
+  h3 {
+    margin: 0;
+    line-height: 1.4;
+    font-weight: $weight-regular;
+    font-size: $font-size-h2;
+  }
+
+  .new_chimpy_subscriber {
+
+    @media (min-width: $screen-md) {
+      display: flex;
+      padding-top: $space-small;
+    }
+  }
+
+  .newsletter-input {
+    margin-right: $grid-gutter-width/2;
+
+    &:focus {
+      border-color: $color-gray-c;
+    }
+
+    &::-webkit-input-placeholder {
+      color: $color-white;
+    }
+    &::-moz-placeholder {
+      color: $color-white;
+    }
+    &:-ms-input-placeholder {
+      color: $color-white;
+    }
+  }
+
+  .subscribe {
+    border-radius: 0;
+    margin-top: $space-small;
+
+    @media (min-width: $screen-md) {
+      margin-top: 0;
+    }
+  }
+
+  .newsletter-input,
+  .subscribe {
+    color: $color-white;
+    background-color: $color-gray-c;
+    font-size: $font-size-h2;
+    text-align: center;
+    font-weight: $weight-regular;
+    text-transform: uppercase;
+    height: 60px;
+  }
+}
