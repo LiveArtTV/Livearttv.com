@@ -148,9 +148,9 @@
                   .artists-center-link
                     %a{:href => spree.authors_path, title: 'Artists'}
                       %span View All
-                  .row
+                  #dropdown-artist
                     - Spree::Taxon.all.each do |tax|
-                      .mega-col.col-sm-3.mega-col-inner
+                      .mega-col.mega-col-inner.col-masonry
                         .menu-title
                           = link_to tax.name, "#{seo_url(tax)}?view=grid"
                         .widget-inner
@@ -160,7 +160,7 @@
                               - authors.uniq.each do |aut|
                                 %li.menu-author-name
                                   %a{:href => spree.author_path(id: aut.slug), title: aut.name}
-                                    %span #{truncate(aut.name, length: 22)}
+                                    %span #{truncate(aut.name, length: 35)}
 
           -#%li.parent.dropdown
             %a.dropdown-toggle.has-category{"data-toggle" => "dropdown", href: spree.videos_path, target: "_self", title: Spree.t('menu.videos')}

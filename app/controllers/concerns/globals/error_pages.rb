@@ -6,7 +6,7 @@ module Globals
         rescue_from ActiveRecord::DeleteRestrictionError,
                     ActiveRecord::RecordInvalid,
                     ActionView::MissingTemplate do |exception|
-          notify_airbrake(exception)
+          #notify_airbrake(exception)
           if request.xhr?
             render nothing: true, status: 500
           else

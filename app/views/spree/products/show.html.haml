@@ -14,10 +14,12 @@
         .row
           #product-images.product-left-column.col-xs-12.col-sm-12.col-md-5{"data-hook" => "product_images"}
             #main-image2.product-block{"data-hook" => ""}
-              .product-image-container.image
+              .product-image-container.image.img-wrap
                 - product_image_orig = product_image_src(@product, :original)
                 %a.fancybox.fancy-no-hide{title: @product.name, href: product_image_orig}
                   = render :partial => 'image', locals: {img_class: 'img-responsive'}
+                -if @product.stock_items.count == 0
+                  %h1 SOLD
             #thumbnails.product-thumbs{"data-hook" => ""}
               = render :partial => 'thumbnails'
           .col-xs-12.col-sm-12.col-md-7
