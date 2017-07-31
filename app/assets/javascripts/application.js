@@ -73,6 +73,15 @@ $(document).ready(function(){
         $container2.addClass('loaded');
     });
 
+    var $container3 = $('#dropdown-artist');
+      $container3.masonry({
+          itemSelector: '.col-masonry',
+          columnWidth: function( containerWidth ) {
+            return (containerWidth / 4);
+          }
+      });
+
+
     $(".fancybox").fancybox({
         parent      : 'body',
         openEffect	: 'elastic',
