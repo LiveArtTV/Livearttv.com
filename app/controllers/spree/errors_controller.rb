@@ -1,6 +1,6 @@
 module Spree
   class ErrorsController < Spree::StoreController
-    layout 'spree_application'
+    layout 'spree/layouts/spree_application'
     respond_to :js, :html
 
     def not_found
