@@ -19,7 +19,6 @@ module Globals
           if request.xhr?
             render nothing: true, status: 404
           else
-            binding.pry
             render template: 'errors/not_found', layout: 'error', status: 404
           end
         end
