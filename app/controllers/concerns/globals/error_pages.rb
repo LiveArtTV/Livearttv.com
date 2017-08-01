@@ -7,7 +7,6 @@ module Globals
                     ActiveRecord::RecordInvalid,
                     ActionView::MissingTemplate do |exception|
           #notify_airbrake(exception)
-            binding.pry
           if request.xhr?
             render nothing: true, status: 500
           else
@@ -17,7 +16,6 @@ module Globals
 
         rescue_from ActiveRecord::RecordNotFound,
                     ActionController::RoutingError do |_exception|
-                      binding.pry
           if request.xhr?
             render nothing: true, status: 404
           else
