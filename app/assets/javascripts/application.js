@@ -181,3 +181,13 @@ $(function() {
     e.stopPropagation();
   });
 });
+
+
+function minmax(value, min, max)
+{
+    if(parseInt(value) < min || isNaN(parseInt(value)))
+        return 0;
+    else if(parseInt(value) > max)
+        return 1;
+    else return value;
+};
