@@ -24,7 +24,7 @@
     background: $color-gray-b;
     background-image: linear-gradient(to right, $color-gray-b 0%, $color-gray-b 25%, $color-gray-c 25%, $color-gray-c 50%, $color-gray-d 50%, $color-gray-d 75%, $color-gray-b 75%, $color-gray-b 100%);
     margin: 0;
-    padding: $space-small $space-large $space-tiny $space;
+    padding: ($space-tiny+2) $space*1.5 ($space-tiny - 2) $space;
     color: $color-white;
     font-weight: $weight-regular;
   }
@@ -42,24 +42,25 @@
 }
 
 .carousel_subtitle {
-  margin-top: -$space*1.5;
+  margin-top: -($space + 6);
   position: relative;
   margin-bottom: $space-large;
 
   h2 {
     text-transform: uppercase;
-    font-size: 46px;
+    font-size: 40px;
     display: inline-block;
     background: $color-white;
     color: $color-base;
     margin: 0;
     font-weight: $weight-regular;
-    padding: $space-small $space $space-small $space-large;
+    padding: ($space-small - 4) $space $space-small $space-large;
   }
 
   h3 {
     margin: 0;
     padding: 0 $space $space-small $space-large;
+    font-size: 22px;
   }
 }
 
@@ -69,11 +70,14 @@
 \*----------------------------------------------------------------------------*/
 .root-taxons {
   margin-bottom: $space-large;
+  font-size: 0;
 }
 
   .root-taxons__block {
-    float: left;
+    display: inline-block;
     width: 50%;
+    font-size: $font-size-h3;
+    vertical-align: top;
 
     @media (min-width: $screen-sm) {
       width: 25%;
@@ -104,7 +108,6 @@
     }
 
     .title_img_category {
-      font-size: $font-size-h3;
       text-align: center;
       font-style: italic;
       padding: $space-small;
@@ -114,7 +117,7 @@
     .root-taxons__block-title {
       display: table;
       width: 100%;
-      height: 110px;
+      height: 100px;
       margin-bottom: $space-small;
       table-layout: fixed;
       word-wrap: break-word;
@@ -123,8 +126,10 @@
         display: table-cell;
         vertical-align: middle;
         text-align: center;
-        font-size: $font-size-h1;
+        font-size: 34px;
+        line-height: 33px;
         color: $color-white;
+        text-transform: uppercase;
 
         &:hover {
           text-decoration: none;
@@ -143,7 +148,7 @@
 
   h2 {
     text-transform: uppercase;
-    font-size: 39px;
+    font-size: $font-size-h2;
     text-align: center;
     color: $color-base;
     margin: 0;
@@ -153,16 +158,16 @@
 
   h3 {
     margin: 0;
-    line-height: 1.4;
+    line-height: 35px;
     font-weight: $weight-regular;
-    font-size: $font-size-h2;
+    font-size: 26px;
   }
 
   .new_chimpy_subscriber {
 
     @media (min-width: $screen-md) {
       display: flex;
-      padding-top: $space-small;
+      padding-top: ($space-small - 1px);
     }
   }
 
@@ -201,6 +206,6 @@
     text-align: center;
     font-weight: $weight-regular;
     text-transform: uppercase;
-    height: 60px;
+    height: 50px;
   }
 }
