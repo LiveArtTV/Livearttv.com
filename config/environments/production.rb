@@ -85,11 +85,11 @@ Rails.application.configure do
   config.active_record.dump_schema_after_migration = false
 
   config.action_mailer.smtp_settings = {
-    :address => Rails.application.secrets.mailer[:address],
+    address: Rails.application.secrets.mailer[:address],
     :port => '587',
-    :domain => Rails.application.secrets.mailer[:domain],
+    domain: Rails.application.secrets.mailer[:domain],
     :authentication => :login,
-    :user_name => Rails.application.secrets.mailer[:user_name],
+    user_name: Rails.application.secrets.mailer[:user_name],
     password: Rails.application.secrets.mailer[:password],
     enable_starttls_auto: true
   }
