@@ -112,6 +112,14 @@
       font-style: italic;
       padding: $space-small;
     }
+
+    .img-taxons__image {
+      position: relative;
+      padding-top: 100%;
+      background-position: center center;
+      background-size: cover;
+      background-repeat: no-repeat;
+    }
   }
 
     .root-taxons__block-title {
