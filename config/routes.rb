@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
-  if Rails.env.production?
-    match '/', to: 'spree/landings#index', via: 'get'
-  end
+  #if Rails.env.production?
+  #match '/', to: 'spree/landings#index', via: 'get'
+  #end
   mount Spree::Core::Engine, at: '/'
 end
 
