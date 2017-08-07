@@ -92,12 +92,16 @@
         .img-taxons
           - product = taxon_root.children.sample.try(:products).try(:sample)
           - if product.present?
-            %img.img-responsive{alt: product.name, src: product.images.first.attachment.url}/
+            .img-taxons__image{:style => "background-image: url(#{product.images.first.attachment.url(:large)})"}
+              %img.hide{alt: product.name, src: product.images.first.attachment.url(:large)}/
+
             .title_img_category{"data-mh" => "root-taxons-1"}
               Paiting by #{product.author.try(:name)}
         .img-taxons
           - product = taxon_root.children.sample.try(:products).try(:sample)
           - if product.present?
-            %img.img-responsive{alt: product.name, src: product.images.first.attachment.url}/
+            .img-taxons__image{:style => "background-image: url(#{product.images.first.attachment.url(:large)})"}
+              %img.img-.hide{alt: product.name, src: product.images.first.attachment.url(:large)}/
+
             .title_img_category{"data-mh" => "root-taxons-2"}
               Paiting by #{product.author.try(:name)}
