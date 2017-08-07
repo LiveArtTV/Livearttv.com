@@ -85,12 +85,12 @@ Rails.application.configure do
   config.active_record.dump_schema_after_migration = false
   config.action_mailer.smtp_settings = {
     address: Rails.application.secrets.mailer['address'],
-    port: 587,
+    port: 465,
     domain: Rails.application.secrets.mailer['domain'],
     authentication: 'plain',
     user_name: Rails.application.secrets.mailer['user_name'],
     password: Rails.application.secrets.mailer['password'],
-    ssl: true
+    openssl_verify_mode: OpenSSL::SSL::VERIFY_NONE
   }
 
 end
