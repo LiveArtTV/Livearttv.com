@@ -15,7 +15,8 @@
     %p Please, type email before sending
 = form_for @subscriber, url: spree.chimpy_subscribers_path, id: 'mc-embedded-subscribe-form', class: 'form_newsletter', remote: true do |f|
   = f.hidden_field :subscribed, value: true
-  = f.email_field :email, class: 'newsletter-input form-control', placeholder: Spree.t(:placeholder, scope: [:chimpy, :email]), aria: {label: 'Your email ...'}
+  = f.email_field :email, class: 'newsletter-input form-control', placeholder: Spree.t(:placeholder, scope: [:chimpy, :email]),
+  :onfocus => "this.placeholder = ''", :onblur => "this.placeholder = '#{Spree.t(:placeholder, scope: [:chimpy, :email])}'", aria: {label: 'Your email ...'}
   = f.submit 'Subscribe', class: 'subscribe button_mini btn', id: 'subscribe'
 
 :javascript
