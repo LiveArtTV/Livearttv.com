@@ -15,7 +15,11 @@ Spree::Core::Engine.routes.append do
       end
       resources :videos, path: 'library'
     end
+
+    put 'products/:id/set_available', to: 'products#set_available', as: :product_available
+    put 'products/:id/set_unavailable', to: 'products#set_unavailable', as: :product_unavailable
   end
+
   resources :authors, only: [:index, :show], path: 'artists'
   resources :taxons do
     collection do

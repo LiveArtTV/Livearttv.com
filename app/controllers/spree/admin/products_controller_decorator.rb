@@ -18,6 +18,18 @@ Spree::Admin::ProductsController.class_eval do
     end
   end
 
+  def set_unavailable
+    @product.available_on = nil
+    @product.save!
+    redirect_to admin_products_path
+  end
+
+  def set_available
+    @product.available_on = Time.now
+    @product.save!
+    redirect_to admin_products_path
+  end
+
   def product_includes
     [{ variants: [:images], master: [:images, :default_price] }, :author]
   end
