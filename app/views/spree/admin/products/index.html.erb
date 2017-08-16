@@ -80,9 +80,9 @@
             <td class="status">
               <%= available_status(product) %>
               <%- if product.available? %>
-                <%= button_to 'Unavailable', admin_product_unavailable_path(product), method: "put", :class => 'btn-warning' %>
+                <%= button_to 'Unavailable', admin_set_unavailable_product_path(product), method: "put", :class => 'btn-warning' %>
               <%- else %>
-                <%= button_to 'Available', admin_product_available_path(product), method: "put", :class => 'btn-success' %>
+                <%= button_to 'Available', admin_make_product_available_path(product), method: "put", :class => 'btn-success' %>
               <% end %>
             </td>
             <td class="image"><%= mini_image product %></td>
