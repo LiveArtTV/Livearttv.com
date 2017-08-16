@@ -23,7 +23,6 @@ module Spree
       end
       respond_to do |format|
         format.html { redirect_to(pages_contact_artist_path, notice: 'Message was successfully sended.') }
-        format.js{ render text: params[:name].blank? ? 'success' : 'failed' }
       end
     end
 
