@@ -1,0 +1,44 @@
+%h4 CALL FOR ARTISTS / SUBMIT YOUR ARTWORK
+%p Elite Shopping TV / Live Art TV encourages artists to submit their work for consideration and exhibition. If accepted, your works will appear for sale both on our website, www.livearttv.com, and will be featured on one of our live streaming broadcasts from our studio in Hawley, PA via Roku, Amazon TV, Android TV, Apple TV. Representation also extends to promotions on all major social media channels, press releases, and personalized PR efforts. This is a wonderful opportunity for artists to promote their work and take their career to an entirely new level.
+
+%p All work submitted will be carefully reviewed by our knowledgeable in-house art appraiser, veteran art collector, and qualified staff members. To be considered, please email your portfolio images and a brief biography or send us a URL link to your website to: info@eliteshopping.tv.
+#successMessage.alert.alert-success{style: 'display: none;'}
+  %p
+    %span.success-ico
+    Message Sent
+#failureMessage.alert.alert-error{style: 'display: none;'}
+  %p
+    %span.error-ico
+    Sorry. Please try later.
+#incompleteMessage.alert.alert-warning{style: 'display: none;'}
+  %p Please, fill all fields before sending
+
+.row
+  .col-md-9.col-sm-12.col-xs-12
+    -#%form#contact_form.contact-form{"accept-charset" => "UTF-8", :action => pages_contact_us_path, :method => "post"}
+    = form_tag(pages_contact_artist_path, method: :post, id: 'contactForm1', action: 'contact_artist_send', class: 'contact-form', multipart: true) do
+      %input{type: 'text', name: 'name', style: 'display: none;'}
+      .contact-form-box
+        %fieldset
+          %h3.page-subheading
+          .row
+            .col-xs-12.col-sm-4.col-md-4
+              .form-group
+                %label.label--hidden{:for => "ContactFormName"} Name
+                %input#ContactFormName.form-control.grey{:autocapitalize => "words", :name => "contact[name]", :placeholder => "Name", :type => "text", required: true}/
+            .col-xs-12.col-sm-4.col-md-4
+              .form-group
+                %label.label--hidden{:for => "ContactFormEmail"} Email
+                %input#ContactFormEmail.form-control.grey{:autocapitalize => "off", :autocorrect => "off", :name => "contact[email]", :placeholder => "Email", :type => "email", required: true}/
+          .row
+            .col-xs-12
+              .form-group
+                %label.label--hidden{:for => "ContactFormMessage"} Message
+                %textarea#ContactFormMessage.form-control{:name => "contact[content]", :placeholder => "Message", :rows => "8"}
+          .row
+            .col-xs-12
+              .form-group
+                %label.label--hidden{:for => "ContactFormFile"}
+                %input#ContactFormFile{:type => "file", :class=>"form-control btn-metis-7 btn-file", :name => "contact[files][]", multiple: true}
+          .submit
+            %input.btn.btn-outline{:type => "submit", :value => "Send"}/

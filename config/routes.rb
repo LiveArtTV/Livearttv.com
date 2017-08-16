@@ -15,7 +15,11 @@ Spree::Core::Engine.routes.append do
       end
       resources :videos, path: 'library'
     end
+
+    put 'products/:id/set_available', to: 'products#set_available', as: :make_product_available
+    put 'products/:id/set_unavailable', to: 'products#set_unavailable', as: :set_unavailable_product
   end
+
   resources :authors, only: [:index, :show], path: 'artists'
   resources :taxons do
     collection do
@@ -28,9 +32,11 @@ Spree::Core::Engine.routes.append do
     end
   end
   get  'pages/contact_us'
+  get  'pages/contact_artist'
   get  'pages/about_us', controller: 'pages', action: 'about_us'
   get  'pages/auctions', controller: 'pages', action: 'auctions'
   post 'pages/contact_us', controller: 'pages', action: 'contact_us_send'
+  post 'pages/contact_artist', controller: 'pages', action: 'contact_artist_send'
   match '/404', to: 'errors#not_found', via: :all
   match '/500', to: 'errors#internal_server_error', via: :all
   match '/422', to: 'errors#unprocessable_entity', via: :all

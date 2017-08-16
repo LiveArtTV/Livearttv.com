@@ -18,6 +18,13 @@
           <div class="form-group">
             <%= f.label :name_cont, Spree.t(:name) %>
             <%= f.text_field :name_cont, :size => 15, class: "form-control js-quick-search-target" %>
+
+          </div>
+        </div>
+        <div class="col-md-6">
+          <div class="form-group">
+            <%= f.label :author_name_cont, Spree.t(:author_name) %>
+            <%= f.text_field :author_name_cont, :size => 20, class: "form-control" %>
           </div>
         </div>
         <div class="col-md-6">
@@ -70,7 +77,14 @@
       <% @collection.each do |product| %>
           <tr <%== "style='color: red;'" if product.deleted? %> id="<%= spree_dom_id product %>" data-hook="admin_products_index_rows" class="<%= cycle('odd', 'even') %>">
             <td class="sku"><%= product.sku rescue '' %></td>
-            <td class="status"><%= available_status(product) %> </td>
+            <td class="status">
+              <%= available_status(product) %>
+              <%- if product.available? %>
+                <%= button_to 'Unavailable', admin_set_unavailable_product_path(product), method: "put", :class => 'btn-warning' %>
+              <%- else %>
+                <%= button_to 'Available', admin_make_product_available_path(product), method: "put", :class => 'btn-success' %>
+              <% end %>
+            </td>
             <td class="image"><%= mini_image product %></td>
             <td><%= link_to product.try(:name), edit_admin_product_path(product) %></td>
             <%- if product.author %>
