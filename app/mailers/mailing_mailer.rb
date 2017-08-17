@@ -6,7 +6,7 @@ class MailingMailer < ActionMailer::Base
     @url = ActionMailer::Base.default_url_options[:host]
     # to = ActionMailer::Base.default[:from]
     if @params
-      mail(to: Spree::Config[:company_email], from: @params[:email], subject: @params[:subject], reply_to: @params[:email])
+      mail(to: Spree::Config[:company_email], from: "#{@params[:name]} <noreply@livearttv.com>", subject: @params[:subject], reply_to: @params[:email])
     end
   end
 
@@ -17,6 +17,6 @@ class MailingMailer < ActionMailer::Base
         attachments[file.original_filename] = File.open(file.path, 'rb'){|f| f.read}
     end
   end
-    mail(to: Spree::Config[:company_email], from: @params[:email], subject: @params[:subject] )
+    mail(to: Spree::Config[:company_email], from: "#{@params[:name]} <noreply@livearttv.com>", subject: @params[:subject] )
   end
 end
