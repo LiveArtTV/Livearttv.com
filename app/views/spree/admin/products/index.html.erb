@@ -79,7 +79,11 @@
             <td class="sku"><%= product.sku rescue '' %></td>
             <td class="status">
               <%= available_status(product) %>
-        
+              <%- if product.available? %>
+                <%= button_to 'OFF', admin_set_unavailable_product_path(product), method: "put", :class => 'btn-danger' %>
+              <%- else %>
+                <%= button_to 'ON', admin_make_product_available_path(product), method: "put", :class => 'btn-success' %>
+              <% end %>
             </td>
             <td class="image"><%= mini_image product %></td>
             <td><%= link_to product.try(:name), edit_admin_product_path(product) %></td>

@@ -16,8 +16,9 @@ Spree::Core::Engine.routes.append do
       resources :videos, path: 'library'
     end
 
-    #put 'products/:id/set_available', to: 'products#set_available', as: :make_product_available
-    #put 'products/:id/set_unavailable', to: 'products#set_unavailable', as: :set_unavailable_product
+    put 'products/:id/set_available', to: 'products#set_available', as: :make_product_available
+    put 'products/:id/set_unavailable', to: 'products#set_unavailable', as: :set_unavailable_product
+
   end
 
   resources :authors, only: [:index, :show], path: 'artists'
