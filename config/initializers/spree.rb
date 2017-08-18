@@ -30,7 +30,7 @@ Spree.config do |config|
   config.company_address = '157 Kimbles Road, Hawley, PA 18428'
   config.company_phone   = 'Office: 1-570-390-7800'
   config.company_phone_tol   = 'Toll Free 1-855-98-ELITE'
-  config.company_email   = 'rostov-7@yandex.ru'
+  config.company_email   = 'info@eliteshopping.tv'
   config.show_raw_product_description = true
   config.checkout_zone   = 'United States'
   config.facebook = 'https://www.facebook.com/Live-Art-TV-1887238398266577'
