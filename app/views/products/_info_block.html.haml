@@ -12,6 +12,6 @@
     %section#tab_author.tab-pane.page-product-box
       - if product.author
         .product-description.rte
-          %h5.brand #{product.author.name} ( #{product.author.year_of_birth} - #{product.author.year_of_death} )
+          %h5.brand #{product.author.name} ( #{product.author.year_of_birth} - #{product.author.year_of_death} ).
           .is-breakable.artist-description
             != simple_format(product.author.content)
