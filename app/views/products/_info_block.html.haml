@@ -2,7 +2,7 @@
 .more_info_block
   %ul.nav.nav-tabs.tab-info.page-product-heading
     %li.active
-      %a{data: {toggle: 'tab'}, href: '#tab_product'}= Spree::t('detailed_description')
+      %a{data: {toggle: 'tab'}, href: '#tab_product'}= Spree::t('description')
     %li
       %a{data: {toggle: 'tab'}, href: '#tab_author'}= Spree::t('about_the_artist')
   .tab-content
@@ -12,6 +12,6 @@
     %section#tab_author.tab-pane.page-product-box
       - if product.author
         .product-description.rte
-          %h5.brand= product.author.name
+          %h5.brand #{product.author.name} ( #{product.author.year_of_birth} - #{product.author.year_of_death} )
           .is-breakable.artist-description
             != simple_format(product.author.content)
