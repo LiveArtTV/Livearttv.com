@@ -81,30 +81,30 @@
 
 
 
-- cache(["taxon-roots", @taxon_roots.maximum(:updated_at).to_i].join('-')) do
-  - @taxon_roots.each do |taxon_root|
-    - if taxon_root.show_on_home
-      .root-taxons__block
-        .root-taxons__block-title
-          = link_to seo_url(taxon_root), class: 'img_category_link' do
-            .taxon-block-name
-              = taxon_root.name
-        .img-taxons
-          - product = taxon_root.children.sample.try(:products).try(:sample)
-          - if product.present?
-          - url = spree.product_url(product, taxon_id: @taxon.try(:id))
-            %a.product_img_link{href: url, title: product.name}
-              .img-taxons__image{:style => "background-image: url(#{product.images.first.attachment.url(:large)})"}
-                %img.hide{alt: product.name, src: product.images.first.attachment.url(:large)}/
 
-            .title_img_category{"data-mh" => "root-taxons-1"}
-              Paiting by #{product.author.try(:name)}
-        .img-taxons
-          - product = taxon_root.children.sample.try(:products).try(:sample)
-          - if product.present?
-            %a.product_img_link{href: url, title: product.name}
-              .img-taxons__image{:style => "background-image: url(#{product.images.first.attachment.url(:large)})"}
-                %img.img-.hide{alt: product.name, src: product.images.first.attachment.url(:large)}/
+- @taxon_roots.each do |taxon_root|
+  - if taxon_root.show_on_home
+    .root-taxons__block
+      .root-taxons__block-title
+        = link_to seo_url(taxon_root), class: 'img_category_link' do
+          .taxon-block-name
+            = taxon_root.name
+      .img-taxons
+        - product = taxon_root.children.first.try(:products).try(:sample)
+        - if product.present?
+        - url = spree.product_url(product, taxon_id: @taxon.try(:id))
+          %a.product_img_link{href: url, title: product.name}
+            .img-taxons__image{:style => "background-image: url(#{product.images.first.attachment.url(:large)})"}
+              %img.hide{alt: product.name, src: product.images.first.attachment.url(:large)}/
 
-            .title_img_category{"data-mh" => "root-taxons-2"}
-              Paiting by #{product.author.try(:name)}
+          .title_img_category{"data-mh" => "root-taxons-1"}
+            Paiting by #{product.author.try(:name)}
+      .img-taxons
+        - product = taxon_root.children.first.try(:products).try(:sample)
+        - if product.present?
+          %a.product_img_link{href: url, title: product.name}
+            .img-taxons__image{:style => "background-image: url(#{product.images.first.attachment.url(:large)})"}
+              %img.img-.hide{alt: product.name, src: product.images.first.attachment.url(:large)}/
+
+          .title_img_category{"data-mh" => "root-taxons-2"}
+            Paiting by #{product.author.try(:name)}

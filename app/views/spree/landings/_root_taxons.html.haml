@@ -6,7 +6,7 @@
           .taxon-block-name
             = taxon_root.name
       .img-taxons
-        - product = taxon_root.children.sample.try(:products).try(:sample)
+        - product = taxon_root.children.first.try(:products).try(:sample)
         - if product.present?
         - url = spree.product_url(product, taxon_id: @taxon.try(:id))
           %a.product_img_link{href: url, title: product.name}
@@ -16,7 +16,7 @@
           .title_img_category{"data-mh" => "root-taxons-1"}
             Paiting by #{product.author.try(:name)}
       .img-taxons
-        - product = taxon_root.children.sample.try(:products).try(:sample)
+        - product = taxon_root.children.first.try(:products).try(:sample)
         - if product.present?
           %a.product_img_link{href: url, title: product.name}
             .img-taxons__image{:style => "background-image: url(#{product.images.first.attachment.url(:large)})"}
