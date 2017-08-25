@@ -5025,11 +5025,11 @@ body.layout-boxed-md #header.navbar-fixed-top {
 }
 
 li.item a {
-  font-size: 14px;
+  font-size: 12px;
 }
 
 .list-unstyled.block_content li {
-  font-size: 14px;
+  font-size: 12px;
   //margin: 0px;
 }
 
@@ -5041,4 +5041,16 @@ li.item a {
 .footer-hover:hover {
     color: #e2bd65;
     font-size: 15px
+}
+
+.title_block.footer {
+    position: relative;
+    font-family: Poppins;
+    font-size: 13px;
+    font-weight: bold;
+    background: transparent;
+    color: #000;
+    text-transform: uppercase;
+    margin: 0px;
+    padding: 0px 0px 0px;
 }

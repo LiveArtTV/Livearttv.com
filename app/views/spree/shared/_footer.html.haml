@@ -18,7 +18,7 @@
           .row
             .col-md-3.col-sm-3.col-xs-12
               .block.footer-block.footerAccordion.box-contact-info
-                %h4.title_block get in touch
+                %h4.title_block.footer get in touch
                 %ul.list-unstyled.block_content{:style => ""}
                   %li.phone
                     %span #{Spree::Config[:company_phone_tol]}
@@ -48,7 +48,7 @@
                       %a{:href => "/pages/contact_us", :title => "Contact Us"} Contact Us
             .col-md-3.col-sm-3.col-xs-12
               #block_links_footer_2.block.footer-block.footerAccordion
-                %h4.title_block information
+                %h4.title_block.footer information
                 .block_content{:style => ""}
                   %ul.list-group.list-unstyled{:style => ""}
                     %li.item
@@ -77,7 +77,7 @@
                       %a{:href => "#!", :title => "Site Map"} Site Map
             .col-md-3.col-sm-3.col-xs-12
               #block_links_footer_3.block.footer-block.footerAccordion
-                %h4.title_block my account
+                %h4.title_block.footer my account
                 .block_content{:style => ""}
                   %ul.list-group.list-unstyled{:style => ""}
                     %li.item
@@ -99,19 +99,19 @@
                   = render partial: 'spree/shared/guest_subscription'
             .col-md-3.col-sm-3.col-xs-12
               #block_links_footer_3.block.footer-block.footerAccordion
-                %h4.title_block follow us
+                %h4.title_block.footer follow us
                 .block_content{:style => ""}
                   %ul.toggle-footer.list-group.list-unstyled{:style => ""}
                     %li.social_network
                       %span.facebook.icon
                         = link_to(Spree::Config[:facebook], target: "_blank")  do
-                          = image_tag('fb.svg', size: "45x45", alt: "facebook")
+                          = image_tag('fb.svg', size: "35x35", alt: "facebook", :class => "img-circle")
                       %span.twitter.icon
                         = link_to(Spree::Config[:twitter], target: "_blank") do
-                          = image_tag('tw.svg', size: "45x45", alt: "twitter")
+                          = image_tag('tw.svg', size: "35x35", alt: "twitter", :class => "img-circle")
                       %span.instagram.icon
                         = link_to(Spree::Config[:instagram], target: "_blank") do
-                          = image_tag('inst.svg', size: "45x45", alt: "instagram")
+                          = image_tag('inst.svg', size: "35x35", alt: "instagram", :class => "img-circle")
     %section#footernav.footer-nav
       .container
         #powered.powered.row.wow.animated{:style => "animation-name: none;"}

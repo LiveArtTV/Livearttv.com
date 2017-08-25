@@ -72,39 +72,134 @@
 /         Paiting by Antonio Levy Antonio Levy
 
 
+- taxon_1 = @taxon_roots.find(1)
+.root-taxons__block
+  .root-taxons__block-title
+    = link_to seo_url(taxon_1), class: 'img_category_link' do
+      .taxon-block-name
+        = taxon_1.name
+  .img-taxons
+    - if Spree::Product.exists?(138)
+      - product1 = Spree::Product.find(138)
+    - else
+      - product1 = taxon_1.children.first.try(:products).try(:sample)
+    - if product1.present?
+    - url = spree.product_url(product1, taxon_id: @taxon.try(:id))
+      %a.product_img_link{href: url, title: product1.name}
+        .img-taxons__image{:style => "background-image: url(#{product1.images.first.attachment.url(:large)})"}
+          %img.hide{alt: product1.name, src: product1.images.first.attachment.url(:large)}/
 
+      .title_img_category.landing-artist{"data-mh" => "root-taxons-1"}
+        Paiting by #{product1.author.try(:name)}
+  .img-taxons
+    - if Spree::Product.exists?(222)
+      - product2 = Spree::Product.find(222)
+    - else
+      - product2 = taxon_1.children.first.try(:products).try(:sample)
+    - if product2.present?
+    - url = spree.product_url(product2, taxon_id: @taxon.try(:id))
+      %a.product_img_link{href: url, title: product2.name}
+        .img-taxons__image{:style => "background-image: url(#{product2.images.first.attachment.url(:large)})"}
+          %img.hide{alt: product2.name, src: product2.images.first.attachment.url(:large)}/
 
+      .title_img_category.landing-artist{"data-mh" => "root-taxons-1"}
+        Paiting by #{product2.author.try(:name)}
 
+- taxon_2 = @taxon_roots.find(20)
+.root-taxons__block
+  .root-taxons__block-title
+    = link_to seo_url(taxon_2), class: 'img_category_link' do
+      .taxon-block-name
+        = taxon_2.name
+  .img-taxons
+    - if Spree::Product.exists?(145)
+      - product3 = Spree::Product.find(145)
+    - else
+      - product3 = taxon_2.children.first.try(:products).try(:sample)
+    - if product3.present?
+    - url = spree.product_url(product3, taxon_id: @taxon.try(:id))
+      %a.product_img_link{href: url, title: product3.name}
+        .img-taxons__image{:style => "background-image: url(#{product3.images.first.attachment.url(:large)})"}
+          %img.hide{alt: product3.name, src: product3.images.first.attachment.url(:large)}/
 
+      .title_img_category.landing-artist{"data-mh" => "root-taxons-1"}
+        Paiting by #{product3.author.try(:name)}
+  .img-taxons
+    - if Spree::Product.exists?(167)
+      - product4 = Spree::Product.find(167)
+    - else
+      - product4 = taxon_2.children.first.try(:products).try(:sample)
+    - if product4.present?
+    - url = spree.product_url(product4, taxon_id: @taxon.try(:id))
+      %a.product_img_link{href: url, title: product4.name}
+        .img-taxons__image{:style => "background-image: url(#{product4.images.first.attachment.url(:large)})"}
+          %img.hide{alt: product4.name, src: product4.images.first.attachment.url(:large)}/
 
+      .title_img_category.landing-artist{"data-mh" => "root-taxons-1"}
+        Paiting by #{product4.author.try(:name)}
 
+- taxon_3 = @taxon_roots.find(11)
+.root-taxons__block
+  .root-taxons__block-title
+    = link_to seo_url(taxon_3), class: 'img_category_link' do
+      .taxon-block-name
+        = taxon_3.name
+  .img-taxons
+    - if Spree::Product.exists?(127)
+      - product5 = Spree::Product.find(127)
+    - else
+      - product5 = taxon_3.children.first.try(:products).try(:sample)
+    - if product5.present?
+    - url = spree.product_url(product5, taxon_id: @taxon.try(:id))
+      %a.product_img_link{href: url, title: product5.name}
+        .img-taxons__image{:style => "background-image: url(#{product5.images.first.attachment.url(:large)})"}
+          %img.hide{alt: product5.name, src: product5.images.first.attachment.url(:large)}/
 
+      .title_img_category.landing-artist{"data-mh" => "root-taxons-1"}
+        Paiting by #{product5.author.try(:name)}
+  .img-taxons
+    - if Spree::Product.exists?(227)
+      - product6 = Spree::Product.find(227)
+    - else
+      - product6 = taxon_3.children.first.try(:products).try(:sample)
+    - if product6.present?
+    - url = spree.product_url(product6, taxon_id: @taxon.try(:id))
+      %a.product_img_link{href: url, title: product6.name}
+        .img-taxons__image{:style => "background-image: url(#{product6.images.first.attachment.url(:large)})"}
+          %img.hide{alt: product6.name, src: product6.images.first.attachment.url(:large)}/
 
+      .title_img_category.landing-artist{"data-mh" => "root-taxons-1"}
+        Paiting by #{product6.author.try(:name)}
 
+- taxon_4 = @taxon_roots.find(10)
+.root-taxons__block
+  .root-taxons__block-title
+    = link_to seo_url(taxon_4), class: 'img_category_link' do
+      .taxon-block-name
+        = taxon_4.name
+  .img-taxons
+    - if Spree::Product.exists?(131)
+      - product7 = Spree::Product.find(131)
+    - else
+      - product7 = taxon_4.children.first.try(:products).try(:sample)
+    - if product7.present?
+    - url = spree.product_url(product7, taxon_id: @taxon.try(:id))
+      %a.product_img_link{href: url, title: product7.name}
+        .img-taxons__image{:style => "background-image: url(#{product7.images.first.attachment.url(:large)})"}
+          %img.hide{alt: product7.name, src: product7.images.first.attachment.url(:large)}/
 
-- @taxon_roots.each do |taxon_root|
-  - if taxon_root.show_on_home
-    .root-taxons__block
-      .root-taxons__block-title
-        = link_to seo_url(taxon_root), class: 'img_category_link' do
-          .taxon-block-name
-            = taxon_root.name
-      .img-taxons
-        - product = taxon_root.children.first.try(:products).try(:sample)
-        - if product.present?
-        - url = spree.product_url(product, taxon_id: @taxon.try(:id))
-          %a.product_img_link{href: url, title: product.name}
-            .img-taxons__image{:style => "background-image: url(#{product.images.first.attachment.url(:large)})"}
-              %img.hide{alt: product.name, src: product.images.first.attachment.url(:large)}/
+      .title_img_category.landing-artist{"data-mh" => "root-taxons-1"}
+        Paiting by #{product7.author.try(:name)}
+  .img-taxons
+    - if Spree::Product.exists?(90)
+      - product8 = Spree::Product.find(90)
+    - else
+      - product8 = taxon_4.children.first.try(:products).try(:sample)
+    - if product8.present?
+    - url = spree.product_url(product8, taxon_id: @taxon.try(:id))
+      %a.product_img_link{href: url, title: product8.name}
+        .img-taxons__image{:style => "background-image: url(#{product8.images.first.attachment.url(:large)})"}
+          %img.hide{alt: product8.name, src: product8.images.first.attachment.url(:large)}/
 
-          .title_img_category{"data-mh" => "root-taxons-1"}
-            Paiting by #{product.author.try(:name)}
-      .img-taxons
-        - product = taxon_root.children.first.try(:products).try(:sample)
-        - if product.present?
-          %a.product_img_link{href: url, title: product.name}
-            .img-taxons__image{:style => "background-image: url(#{product.images.first.attachment.url(:large)})"}
-              %img.img-.hide{alt: product.name, src: product.images.first.attachment.url(:large)}/
-
-          .title_img_category{"data-mh" => "root-taxons-2"}
-            Paiting by #{product.author.try(:name)}
+      .title_img_category.landing-artist{"data-mh" => "root-taxons-1"}
+        Paiting by #{product8.author.try(:name)}

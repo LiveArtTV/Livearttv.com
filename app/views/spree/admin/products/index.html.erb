@@ -71,12 +71,14 @@
           <%= sort_link @search, :master_default_price_amount, Spree.t(:master_price), {}, {title: 'admin_products_listing_price_title'} %>
         </th>
         <th data-hook="admin_products_index_header_actions" class="actions"></th>
+        <th class="sold">Sold</th>
       </tr>
     </thead>
     <tbody>
       <% @collection.each do |product| %>
           <tr <%== "style='color: red;'" if product.deleted? %> id="<%= spree_dom_id product %>" data-hook="admin_products_index_rows" class="<%= cycle('odd', 'even') %>">
-            <td class="sku"><%= product.sku rescue '' %></td>
+            <td class="sku"><%= product.sku rescue '' %>
+            </td>
             <td class="status">
               <%= available_status(product) %>
               <%- if product.available? %>
@@ -92,11 +94,26 @@
             <%- else %>
             <td class="author"><%= %></td>
             <% end %>
-            <td class="text-center"><%= product.display_price.to_html rescue '' %></td>
+            <td class="text-center">
+              <%- if product.real_price? %>
+                <%= product.display_price.to_html rescue '' %>
+              <% end %>
+              <%- if product.request_price? %>
+                <%= Spree.t(:price_by_request) rescue '' %>
+              <% end %>
+              <%- if product.not_sale? %>
+                <%= Spree.t(:not_for_sale) rescue '' %>
+              <% end %>
+            </td>
             <td class="actions actions-3 text-right" data-hook="admin_products_index_row_actions">
               <%= link_to_edit product, no_text: true, class: 'edit' if can?(:edit, product) && !product.deleted? %>
               <%= link_to_clone product, no_text: true, class: 'clone' if can?(:clone, product) %>
               <%= link_to_delete product, no_text: true if can?(:delete, product) && !product.deleted? %>
+            </td>
+            <td class="sold">
+              <%- if product.stock_items.first.try(:count_on_hand) == 0  %>
+                <%= link_to 'Sold', '#', :class => 'btn-sm btn-info'  %>
+              <% end %>
             </td>
           </tr>
       <% end %>
