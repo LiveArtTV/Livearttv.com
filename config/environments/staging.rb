@@ -88,7 +88,7 @@ Rails.application.configure do
     delivery_method_settings: {
       user_name: 'apikey',
       password: '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',
-      domain: '#{your domain}.demo.sumatosoft.com'
+      domain: '#{your domain}.demo.sumatosoft.com',
       address: 'smtp.sendgrid.net',
       port: 587,
       authentication: :plain,
