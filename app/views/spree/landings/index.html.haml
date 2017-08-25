@@ -29,25 +29,31 @@
           .item.active
             .embed-responsive.embed-responsive-16by9
               = image_tag('carousel/Dali.jpg', alt: 'Dali')
-              
+
           .item
             .embed-responsive.embed-responsive-16by9
-              %img{:alt => 'Delvecchio', :src => asset_path('/carousel/Delvecchio.jpg')}
+
+              = image_tag('carousel/Delvecchio.jpg', alt: 'Delvecchio')
           .item
             .embed-responsive.embed-responsive-16by9
-              %img{:alt => 'DiChirico', :src => '/assets/images/carousel/DiChirico.jpg'}
+
+              = image_tag('carousel/DiChirico.jpg', alt: 'DiChirico')
           .item
             .embed-responsive.embed-responsive-16by9
-              %img{:alt => 'DSC', :src => '/assets/images/carousel/DSC.jpg'}
+
+              = image_tag('carousel/DSC.jpg', alt: 'DSC')
           .item
             .embed-responsive.embed-responsive-16by9
-              %img{:alt => 'Manera', :src => '/assets/images/carousel/Manera.jpg'}
+
+              = image_tag('carousel/Manera.jpg', alt: 'Manera')
           .item
             .embed-responsive.embed-responsive-16by9
-              %img{:alt => 'MG', :src => '/assets/images/carousel/MG.jpg'}
+
+              = image_tag('carousel/MG.jpg', alt: 'MG')
           .item
             .embed-responsive.embed-responsive-16by9
-              %img{:alt => 'Pink Violet', :src => '/assets/images/carousel/Pink.jpg'}
+    
+              = image_tag('carousel/Pink.jpg', alt: 'Pink')
 
         / Left and right controls
         %a.left.carousel-control{"data-slide" => "prev", :href => "#myCarousel"}
