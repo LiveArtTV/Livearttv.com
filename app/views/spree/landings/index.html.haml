@@ -28,10 +28,11 @@
         .carousel-inner
           .item.active
             .embed-responsive.embed-responsive-16by9
-              %img{:alt => 'Dali', :src => '/assets/images/carousel/Dali.jpg'}
+              = image_tag('carousel/Dali.jpg', alt: 'Dali')
+              
           .item
             .embed-responsive.embed-responsive-16by9
-              %img{:alt => 'Delvecchio', :src => '/assets/images/carousel/Delvecchio.jpg'}
+              %img{:alt => 'Delvecchio', :src => asset_path('/carousel/Delvecchio.jpg')}
           .item
             .embed-responsive.embed-responsive-16by9
               %img{:alt => 'DiChirico', :src => '/assets/images/carousel/DiChirico.jpg'}
