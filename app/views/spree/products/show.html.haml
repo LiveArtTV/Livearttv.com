@@ -18,7 +18,7 @@
                 - product_image_orig = product_image_src(@product, :original)
                 %a.fancybox.fancy-no-hide{title: @product.name, href: product_image_orig}
                   = render :partial => 'image', locals: {img_class: 'img-responsive'}
-                -if @product.stock_items.count == 0
+                -if @product.stock_items.first.try(:count_on_hand) == 0
                   %h1 SOLD
             #thumbnails.product-thumbs{"data-hook" => ""}
               = render :partial => 'thumbnails'
