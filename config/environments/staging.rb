@@ -98,5 +98,4 @@ Rails.application.configure do
 
   config.action_mailer.default_url_options = { host: 'eliteshopping.demo.sumatosoft.com' }
   config.action_mailer.asset_host = 'http://eliteshopping.demo.sumatosoft.com'
-  config.action_controller.asset_host = 'https://dr7i20qo9w2ma.cloudfront.net'
 end
