@@ -40,33 +40,51 @@ end
 
 Spree.user_class = "Spree::User"
 
-attachment_config = {
-    s3_credentials: {
-        access_key_id:     Rails.application.secrets.aws['access_key_id'],
-        secret_access_key: Rails.application.secrets.aws['secret_access_key'],
-        bucket:            Rails.application.secrets.aws['s3_bucket_name']
-    },
+if Rails.env.production?
+  attachment_config = {
+      s3_credentials: {
+          access_key_id:     Rails.application.secrets.aws['access_key_id'],
+          secret_access_key: Rails.application.secrets.aws['secret_access_key'],
+          bucket:            Rails.application.secrets.aws['s3_bucket_name']
+      },
 
-    storage:        :s3,
-    s3_headers:     { "Cache-Control" => "max-age=31557600" },
-    s3_protocol:    'https',
-    bucket:         Rails.application.secrets.aws['s3_bucket_name'],
-    url:            ':s3_alias_url',
-    if Rails.env.production?
-      s3_host_alias:  "dr7i20qo9w2ma.cloudfront.net"
-    end
-    #
-    # styles: {
-    #     mini:     "48x48>",
-    #     small:    "100x100>",
-    #     product:  "240x240>",
-    #     large:    "600x600>"
-    # },
-    #
-    path:           '/:class/:id/:style/:basename.:extension',
-    default_url:    '/:class/:id/:style/:basename.:extension',
-    default_style:  'product'
-}
+      storage:        :s3,
+      s3_headers:     { "Cache-Control" => "max-age=31557600" },
+      s3_protocol:    'https',
+      bucket:         Rails.application.secrets.aws['s3_bucket_name'],
+      url:            ':s3_alias_url',
+      s3_host_alias:  "dr7i20qo9w2ma.cloudfront.net",
+      #
+      # styles: {
+      #     mini:     "48x48>",
+      #     small:    "100x100>",
+      #     product:  "240x240>",
+      #     large:    "600x600>"
+      # },
+      #
+      path:           '/:class/:id/:style/:basename.:extension',
+      default_url:    '/:class/:id/:style/:basename.:extension',
+      default_style:  'product'
+  }
+else
+  attachment_config = {
+      s3_credentials: {
+          access_key_id:     Rails.application.secrets.aws['access_key_id'],
+          secret_access_key: Rails.application.secrets.aws['secret_access_key'],
+          bucket:            Rails.application.secrets.aws['s3_bucket_name']
+      },
+
+      storage:        :s3,
+      s3_headers:     { "Cache-Control" => "max-age=31557600" },
+      s3_protocol:    'https',
+      bucket:         Rails.application.secrets.aws['s3_bucket_name'],
+      url:            ':s3_alias_url',
+      path:           '/:class/:id/:style/:basename.:extension',
+      default_url:    '/:class/:id/:style/:basename.:extension',
+      default_style:  'product'
+  }
+
+end
 
 [Spree::Image, Spree::AuthorImage].each do |model|
   attachment_config.each do |key, value|
