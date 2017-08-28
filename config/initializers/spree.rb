@@ -52,7 +52,7 @@ attachment_config = {
     s3_protocol:    'https',
     bucket:         Rails.application.secrets.aws['s3_bucket_name'],
     url:            ':s3_alias_url',
-    s3_host_alias:  "dr7i20qo9w2ma.cloudfront.net",
+    s3_host_alias:  "dr7i20qo9w2ma.cloudfront.net" if  Rails.env.production,
     #
     # styles: {
     #     mini:     "48x48>",
