@@ -78,7 +78,7 @@ else
       s3_headers:     { "Cache-Control" => "max-age=31557600" },
       s3_protocol:    'https',
       bucket:         Rails.application.secrets.aws['s3_bucket_name'],
-      url:            ':s3_alias_url',
+      url:            ':s3_domain_url',
       path:           '/:class/:id/:style/:basename.:extension',
       default_url:    '/:class/:id/:style/:basename.:extension',
       default_style:  'product'
