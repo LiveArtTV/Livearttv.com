@@ -44,6 +44,7 @@ en:
       new_artist: New Artist
     breadcrumbs:
       orders_edit: 'Cart'
+      products_index: 'Products'
       checkout_edit: 'Checkout'
       users_edit: 'Account'
       users_show: 'Account'

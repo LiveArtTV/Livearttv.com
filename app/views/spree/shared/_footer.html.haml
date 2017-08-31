@@ -83,7 +83,10 @@
                     %li.item
                       %a{:href => "/signup", :title => "Create New Account"} Create New Account
                     %li.item
-                      %a{:href => "/login", :title => "Access My Account"} Access My Account
+                      - if current_spree_user
+                        %a{:href => "/account", :title => "Access My Account"} Access My Account
+                      - else
+                        %a{:href => "/login", :title => "Access My Account"} Access My Account
                     -#%li.item
                       %a{:href => "#!cart", :title => "View Cart"} View Cart
                     -#%li.item
