@@ -16,7 +16,7 @@
           %img.hide{alt: product1.name, src: product1.images.first.attachment.url(:large)}/
 
       .title_img_category.landing-artist{"data-mh" => "root-taxons-1"}
-        Paiting by #{product1.author.try(:name)}
+        = product1.author.try(:name)
   .img-taxons
     - if Spree::Product.exists?(222)
       - product2 = Spree::Product.find(222)
@@ -29,7 +29,7 @@
           %img.hide{alt: product2.name, src: product2.images.first.attachment.url(:large)}/
 
       .title_img_category.landing-artist{"data-mh" => "root-taxons-1"}
-        Paiting by #{product2.author.try(:name)}
+        = product2.author.try(:name)
 
 - taxon_2 = @taxon_roots.find(20)
 .root-taxons__block
@@ -49,7 +49,7 @@
           %img.hide{alt: product3.name, src: product3.images.first.attachment.url(:large)}/
 
       .title_img_category.landing-artist{"data-mh" => "root-taxons-1"}
-        Paiting by #{product3.author.try(:name)}
+        = product3.author.try(:name)
   .img-taxons
     - if Spree::Product.exists?(167)
       - product4 = Spree::Product.find(167)
@@ -62,7 +62,7 @@
           %img.hide{alt: product4.name, src: product4.images.first.attachment.url(:large)}/
 
       .title_img_category.landing-artist{"data-mh" => "root-taxons-1"}
-        Paiting by #{product4.author.try(:name)}
+        = product4.author.try(:name)
 
 - taxon_3 = @taxon_roots.find(11)
 .root-taxons__block
@@ -82,7 +82,7 @@
           %img.hide{alt: product5.name, src: product5.images.first.attachment.url(:large)}/
 
       .title_img_category.landing-artist{"data-mh" => "root-taxons-1"}
-        Paiting by #{product5.author.try(:name)}
+        = product5.author.try(:name)
   .img-taxons
     - if Spree::Product.exists?(227)
       - product6 = Spree::Product.find(227)
@@ -95,7 +95,7 @@
           %img.hide{alt: product6.name, src: product6.images.first.attachment.url(:large)}/
 
       .title_img_category.landing-artist{"data-mh" => "root-taxons-1"}
-        Paiting by #{product6.author.try(:name)}
+        = product6.author.try(:name)
 
 - taxon_4 = @taxon_roots.find(10)
 .root-taxons__block
@@ -115,7 +115,7 @@
           %img.hide{alt: product7.name, src: product7.images.first.attachment.url(:large)}/
 
       .title_img_category.landing-artist{"data-mh" => "root-taxons-1"}
-        Paiting by #{product7.author.try(:name)}
+        = product7.author.try(:name)
   .img-taxons
     - if Spree::Product.exists?(90)
       - product8 = Spree::Product.find(90)
@@ -128,4 +128,4 @@
           %img.hide{alt: product8.name, src: product8.images.first.attachment.url(:large)}/
 
       .title_img_category.landing-artist{"data-mh" => "root-taxons-1"}
-        Paiting by #{product8.author.try(:name)}
+        = product8.author.try(:name)
