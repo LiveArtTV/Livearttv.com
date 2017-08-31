@@ -4,14 +4,12 @@ Rails.application.routes.draw do
   end
   mount Spree::Core::Engine, at: '/'
 end
-
 Spree::Core::Engine.add_routes do
   namespace :admin, path: Spree.admin_path do
     put 'products/:id/set_available', to: 'products#set_available', as: :make_product_available
     put 'products/:id/set_unavailable', to: 'products#set_unavailable', as: :set_unavailable_product
   end
 end
-
 
 Spree::Core::Engine.routes.append do
   namespace :admin, path: Spree.admin_path do
