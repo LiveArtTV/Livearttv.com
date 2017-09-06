@@ -4,11 +4,11 @@ git_source(:github) do |repo_name|
   "https://github.com/#{repo_name}.git"
 end
 
-gem 'rails', '~> 4.2.8'
+gem 'rails', '~> 5.0.5'
 gem 'pg'
 gem 'sass-rails', '~> 5.0'
 gem 'uglifier', '>= 1.3.0'
-gem 'coffee-rails', '~> 4.1.0'
+gem 'coffee-rails', '~> 4.1'
 gem 'jquery-rails'
 gem 'jbuilder', '~> 2.0'
 gem 'haml'
@@ -22,10 +22,10 @@ gem 'to_xls'
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 
-gem 'spree', '~> 3.1.0'
+gem 'spree', '~> 3.2.0'
 gem 'font-awesome-rails'
-gem 'spree_auth_devise', '~> 3.1.0'
-gem 'spree_gateway', '~> 3.1.0'
+gem 'spree_auth_devise', '~> 3.3.0'
+gem 'spree_gateway', '~> 3.3.0'
 gem 'spree_videos', git: 'https://github.com/vladimir-shidlovsky/spree_videos.git', branch: '3-1-stable'
 # gem 'spree_videos', path: 'lib/gems/spree_videos'
 gem 'spree_chimpy', git: 'https://github.com/vladimir-shidlovsky/spree_chimpy.git', branch: '3-stable'
@@ -51,11 +51,8 @@ end
 group :development do
   # Access an IRB console on exception pages or by using <%= console %> in views
   gem 'web-console', '~> 2.0'
-  # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
-  gem 'spring'
-
-  gem 'better_errors'
   gem 'pry'
+  gem 'puma'
 
   gem 'capistrano', '~> 3.6.1', require: false
   gem 'capistrano-rails', '~> 1.1.8', require: false
