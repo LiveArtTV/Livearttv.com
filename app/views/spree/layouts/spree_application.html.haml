@@ -31,6 +31,6 @@
                 = flash_messages
                 = yield
               = render partial: 'spree/shared/sidebar' if content_for? :sidebar
-        = render partial: 'shared/youtube_popup', locals: {videos: @videos || Spree::Video.streams}
+        //= render partial: 'shared/youtube_popup', locals: {videos: @videos || Spree::Video.streams}
     = yield :templates
     = render partial: 'spree/shared/footer'

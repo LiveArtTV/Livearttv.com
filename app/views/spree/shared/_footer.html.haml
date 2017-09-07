@@ -27,7 +27,7 @@
                   %li.address
                     %span #{Spree::Config[:company_address]}
                   %li.email.is-breakable
-                    %span #{Spree::Config[:company_email]}
+                    %a{:href => "mailto:#{Spree::Config[:company_email]}"} #{Spree::Config[:company_email]}
                   %li.item
                     %a{:href => "/pages/contact_artist", :title => "Call for Artists "} Call for Artists
 
