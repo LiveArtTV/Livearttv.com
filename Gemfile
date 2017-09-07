@@ -53,6 +53,7 @@ group :development do
   gem 'web-console', '~> 2.0'
   gem 'pry'
   gem 'puma'
+  gem 'colorize'
 
   gem 'capistrano', '~> 3.6.1', require: false
   gem 'capistrano-rails', '~> 1.1.8', require: false

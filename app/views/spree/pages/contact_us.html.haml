@@ -53,4 +53,4 @@
           %li.phone
             %span #{Spree::Config[:company_phone]}
           %li.email
-            %span #{Spree::Config[:company_email]}
+            %a{:href => "mailto:#{Spree::Config[:company_email]}"} #{Spree::Config[:company_email]}
