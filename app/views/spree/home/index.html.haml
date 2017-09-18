@@ -2,14 +2,14 @@
   -#- content_for :sidebar do
     %div{"data-hook" => "homepage_sidebar_navigation"}
       = render :partial => 'spree/shared/taxonomies'
-  -# if video_link
-  -#%section.video
-    .container
-      -#- cache %w(product-videos, all) do
-        / 16:9 aspect ratio
-      .row
-        .col-md-12#product-videos
-          -#.embed-responsive.embed-responsive-16by9.spree-embed-video= render 'spree/products/video_player', :video => video_link
+  -#- if video_link
+    %section.video
+      .container
+        - cache %w(product-videos, all) do
+          / 16:9 aspect ratio
+        .row
+          .col-md-12#product-videos
+            .embed-responsive.embed-responsive-16by9.spree-embed-video= render 'spree/products/video_player', :video => video_link
   %section.root-taxons.carousel-section
     .container
       .carousel_title.clearfix
