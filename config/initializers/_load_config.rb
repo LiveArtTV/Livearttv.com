@@ -1,1 +1,5 @@
 require 'spree/chimpy/interface/orders'
+require 'spree/chimpy/interface/order_upserter'
+require 'spree/chimpy/interface/customer_upserter'
+require 'spree/chimpy/interface/products'
+require 'spree/chimpy/interface/list'
