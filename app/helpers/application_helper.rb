@@ -36,8 +36,7 @@ module ApplicationHelper
         sd:      'sddefault',
         orig:    'maxresdefault'
     }
-    thumb_file = 'thumb_not_found' + ([:high].include?(size) ? "_#{size}" : '') + '.png'
-    video.thumbnail_url.include?('assets/thumb_not_found.png') ? asset_path(thumb_file) : video.thumbnail_url.sub('/default.',"/#{thumb_yt_sizes[size]}.")
+    "http://img.youtube.com/vi/#{video.youtube_ref}/hqdefault.jpg"
   end
 
   def arrow(sort_by)
