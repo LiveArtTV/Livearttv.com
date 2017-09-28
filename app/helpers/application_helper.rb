@@ -36,7 +36,7 @@ module ApplicationHelper
         sd:      'sddefault',
         orig:    'maxresdefault'
     }
-    "http://img.youtube.com/vi/#{video.youtube_ref}/hqdefault.jpg"
+    "https://img.youtube.com/vi/#{video.youtube_ref}/hqdefault.jpg"
   end
 
   def arrow(sort_by)

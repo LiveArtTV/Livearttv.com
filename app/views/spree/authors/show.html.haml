@@ -47,7 +47,7 @@
 
           - else
             = content_tag(:div, id: 'video-thumbnails', class: 'spree-video-thumbnails-md') do
-              - @author.videos.map(&:youtube_data).each do |video|
+              - @author.videos.each do |video|
                 .col-sm-4
-                  = link_to "https://www.youtube.com/watch?v=#{video.id}", title: video.title, class: 'fancyYoutube video-overview-thumbnail', target: '_blank', data: {'video-id' => video.id}, remote: false do
+                  = link_to "https://www.youtube.com/embed/#{video.id}", title: video.title, class: 'fancyYoutube video-overview-thumbnail', target: '_blank', data: {'video-id' => video.id}, remote: false do
                     = image_tag(spree_video_thumb_uri(video), class: 'img-responsive')
