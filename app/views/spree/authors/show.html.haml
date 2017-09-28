@@ -46,8 +46,8 @@
             %p There are no videos by this artist
 
           - else
-              = content_tag(:div, id: 'video-thumbnails', class: 'spree-video-thumbnails-md') do
-                - @author.videos.each do |video|
-                  .col-sm-4
-                    = link_to "https://www.youtube.com/embed/#{video.youtube_ref}", title: video.title, class: 'fancyYoutube video-overview-thumbnail', target: '_blank', data: {'video-id' => video.id}, remote: false do
-                      = image_tag(spree_video_thumb_uri(video), class: 'img-responsive')
+            = content_tag(:div, id: 'video-thumbnails', class: 'spree-video-thumbnails-md') do
+              - @author.videos.each do |video|
+                .col-sm-4
+                  = link_to "//www.youtube.com/embed/#{video.youtube_ref}", title: video.title, class: 'fancyYoutube video-overview-thumbnail', target: '_blank', data: {'video-id' => video.id}, remote: false do
+                    = image_tag(spree_video_thumb_uri(video), class: 'img-responsive')

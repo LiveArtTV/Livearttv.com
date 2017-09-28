@@ -8,7 +8,7 @@ Spree::Video.class_eval do
 #  if youtube_url_params.empty?
   #youtube_data.embed_html
   #else
-    "<iframe width='560' height='315' src='https://www.youtube.com/embed/#{youtube_ref}' frameborder='0' allowfullscreen></iframe>"
+    "<iframe width='560' height='315' src='//www.youtube.com/embed/#{youtube_ref}' frameborder='0' allowfullscreen></iframe>"
   #end
-end
+  end
 end
