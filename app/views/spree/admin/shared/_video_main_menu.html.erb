@@ -1,0 +1,6 @@
+
+<%- if can? :admin, Spree::Video %>
+  <ul class="nav nav-sidebar">
+    <%= tab Spree::Video, url: spree.admin_videos_path, icon: 'user', label: plural_resource_name(Spree::Video) %>
+  </ul>
+<%- end %>

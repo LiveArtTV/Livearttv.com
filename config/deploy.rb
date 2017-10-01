@@ -3,7 +3,7 @@ require 'colorize'
 lock '3.6.1'
 
 set :application, 'eliteshopping'
-set :repo_url, 'git@github.com:SumatoSoft/eliteshopping.git'
+set :repo_url, 'ssh://git@bitbucket.sumatosoft.com:7999/el/eliteshopping.git'
 
 # Default branch is :master
 set :branch, `git rev-parse --abbrev-ref HEAD`.chomp
