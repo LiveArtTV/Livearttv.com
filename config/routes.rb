@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  mount Ckeditor::Engine => '/ckeditor'
   #if Rails.env.production?
     #match '/', to: 'spree/landings#index', via: 'get'
   #end
