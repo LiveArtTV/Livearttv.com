@@ -28,7 +28,7 @@ en:
   spree:
     artist:  Artist
     artists: Artists
-    library: Library
+    library: Video
     videos: Videos
     authors: Authors
     author:  Author

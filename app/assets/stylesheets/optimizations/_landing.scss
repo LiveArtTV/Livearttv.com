@@ -41,6 +41,14 @@
   }
 }
 
+
+.carousel_title.clearfix {
+  a {
+    color: white;
+    text-decoration: none;
+  }
+}
+
 .carousel_subtitle {
   margin-top: -($space + 6);
   position: relative;
