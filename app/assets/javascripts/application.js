@@ -34,12 +34,14 @@
 //= require masonry/jquery.loremimages.min
 //= require masonry/jquery.imagesloaded.min
 
+
 $(window).bind('page:change', function() {
     $.fancybox.init();
 });
 
 $(document).ready(function(){
-
+  var isNotMobile = !(/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent))
+  if(isNotMobile) {
     var $container = $('#list-artist-5-col');
     $container.imagesLoaded( function() {
         $container.masonry({
@@ -50,7 +52,17 @@ $(document).ready(function(){
         });
         $container.addClass('loaded');
     });
+  } else {
+     if (document.getElementById('list-artist-5-col')) {
+      document.getElementById('list-artist-5-col').style.opacity = '1';
+      var change = document.getElementsByClassName('product-list-item')
+      for (var i = 0; i < change.length; i++) {
+        change[i].style.width = '100%';
+      }
+    }
+  }
 
+  if(isNotMobile) {
     var $container1 = $('#products');
     $container1.imagesLoaded( function() {
         $container1.masonry({
@@ -61,7 +73,17 @@ $(document).ready(function(){
         });
         $container1.addClass('loaded');
     });
+  } else {
+    if (document.getElementById('products')) {
+      document.getElementById('products').style.opacity = '1';
+      var change1 = document.getElementsByClassName('product-list-item')
+      for (var i = 0; i < change1.length; i++) {
+        change1[i].style.width = '100%';
+      }
+    }
+  }
 
+  if(isNotMobile) {
     var $container2 = $('#taxons');
     $container2.imagesLoaded( function() {
         $container2.masonry({
@@ -72,6 +94,15 @@ $(document).ready(function(){
         });
         $container2.addClass('loaded');
     });
+  } else {
+    if (document.getElementById('taxons')) {
+      document.getElementById('taxons').style.opacity = '1';
+      var change2 = document.getElementsByClassName('product-container')
+      for (var i = 0; i < change2.length; i++) {
+        change2[i].style.width = '100%';
+      }
+    }
+  }
 
     var $container3 = $('#dropdown-artist');
       $container3.masonry({
