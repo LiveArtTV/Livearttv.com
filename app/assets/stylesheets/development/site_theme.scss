@@ -2165,6 +2165,13 @@ body.layout-boxed-md #header.navbar-fixed-top {
     float: right
 }
 
+@media only screen and (max-width: 770px){
+  .header_user_info {
+      float: right;
+      padding-right: 30px
+  }
+}
+
 .rtl .header_user_info {
     float: left
 }

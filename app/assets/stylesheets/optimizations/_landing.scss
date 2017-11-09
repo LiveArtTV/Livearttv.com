@@ -77,8 +77,6 @@
   }
 }
 
-
-
 /*  Taxons section
 \*----------------------------------------------------------------------------*/
 .root-taxons {
@@ -234,4 +232,170 @@
 .title_img_category.landing-artist {
   font-size: 16px;
   font-style: normal;
+}
+
+
+@media only screen and (max-width: 770px){
+  .carousel_title.clearfix {
+    h1 {
+      color: white;
+      text-decoration: none;
+      font-size: 16px;
+    }
+  }
+
+  .carousel_subtitle {
+    margin-top: -($space + 6);
+    position: relative;
+    // margin-bottom: $space-large;
+
+    h2 {
+      text-transform: uppercase;
+      font-size: 22px;
+      display: inline-block;
+      background: $color-white;
+      color: $color-base;
+      margin: 0;
+      font-weight: $weight-regular;
+      padding: ($space-small - 4) $space $space-small $space-small;
+    }
+
+    h3 {
+      margin: 0;
+      padding: 0 $space $space-small $space-small;
+      font-size: 16px;
+    }
+
+    .channels {
+      a {
+        color: black;
+        text-decoration: none;
+        line-height: 40px;
+      }
+    }
+  }
+
+
+  .root-taxons {
+    margin-bottom: $space-small;
+    font-size: 0;
+  }
+
+    .root-taxons__block {
+      display: inline-block;
+      width: 50%;
+      font-size: $font-size-h3;
+      vertical-align: top;
+
+      @media (min-width: $screen-sm) {
+        width: 25%;
+      }
+
+      &:nth-child(1) {
+        .root-taxons__block-title {
+          background-color: #94cac8;
+        }
+      }
+
+      &:nth-child(2) {
+        .root-taxons__block-title {
+          background-color: #b2d9d8;
+        }
+      }
+
+      &:nth-child(3) {
+        .root-taxons__block-title {
+          background-color: #c8e4e3;
+        }
+      }
+
+      &:nth-child(4) {
+        .root-taxons__block-title {
+          background-color: #61b2af;
+        }
+      }
+
+      .title_img_category {
+        text-align: center;
+        padding: $space-small;
+
+      }
+
+      .img-taxons__image {
+        position: relative;
+        padding-top: 100%;
+        background-position: center center;
+        background-size: cover;
+        background-repeat: no-repeat;
+      }
+    }
+
+      .root-taxons__block-title {
+        display: table;
+        width: 100%;
+        height: 40px;
+        margin-bottom: $space-small;
+        table-layout: fixed;
+        word-wrap: break-word;
+
+        a {
+          display: table-cell;
+          vertical-align: middle;
+          text-align: center;
+          font-size: 18px;
+          line-height: 33px;
+          color: $color-white;
+          text-transform: uppercase;
+
+          &:hover {
+            text-decoration: none;
+          }
+        }
+      }
+
+      .root-subscribe {
+        margin-bottom: $space-large;
+
+        h2 {
+          text-transform: uppercase;
+          font-size: 18px;
+          text-align: center;
+          color: $color-base;
+          margin: 0;
+          font-weight: $weight-regular;
+          margin-bottom: $space;
+        }
+
+        h3 {
+          margin: 0;
+          line-height: 35px;
+          font-weight: $weight-regular;
+          font-size: 20px;
+        }
+
+        .new_chimpy_subscriber {
+
+          @media (min-width: $screen-md) {
+            display: flex;
+            padding-top: ($space-small - 1px);
+          }
+        }
+
+
+      .newsletter-input,
+      .subscribe {
+        color: $color-white;
+        background-color: $color-gray-c;
+        font-size: 22px;
+        text-align: center;
+        font-weight: $weight-regular;
+
+        height: 40px;
+      }
+    }
+
+    .title_img_category.landing-artist {
+      font-size: 16px;
+      font-style: normal;
+    }
 }
