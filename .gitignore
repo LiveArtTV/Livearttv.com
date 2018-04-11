@@ -33,7 +33,6 @@ db/*.sqlite3
 /public/assets
 /public/shared/avatars
 /config/config.yml
-/config/database.yml
 /config/secrets.yml
 /coverage.data
 /coverage/
